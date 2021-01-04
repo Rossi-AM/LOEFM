@@ -37,52 +37,74 @@ L’esperimento si propone di misurare la velocità delle luce usando il metodo 
 
 \tableofcontents
 
+
+%%%  INTRODUZIONE TEORICA  %%%
+
 \section{Introduzione teorica}
 Il metodo di Focault per la misura della velocità della luce consiste nell'uso di uno specchio rotante, che riflette la luce emessa da una sorgente su di uno specchio concavo. 
 
 Una sorgente luminosa $S$ emette una luce che, opportunamente diaframmata da una lente $L_1$, attraversa una lastra semitrasparente angolata di 45° rispetto alla direzione del fascio. Una lente $L_2$ focalizza il fascio nel punto $S'$ sullo specchio concavo, dopo essere stata deflessa dallo specchio rotante. La luce riflessa dallo specchio concavo viene deflessa nuovamente dallo specchio rotante, che nel frattempo ha ruotato di un angolo 
 
-\[\alpha = \omega \frac{2D}{c}\]
+\begin{equation}
+\alpha = \omega \frac{2D}{c}
+\end{equation}
 
 dove $\omega$ è la velocità angolare dello specchio e $D$ è la distanza tra lo specchio rotante e lo specchio concavo.
 
 Il fascio luminoso di ritorno sulla lente $L_2$ viene focalizzato come se provenisse da una sorgente $S''$ spostata da $S'$ di una quantità 
 
-\[\Delta = 2 \alpha D\] 
+\begin{equation}
+\Delta = 2 \alpha D
+\label{DELTA}
+\end{equation}
 
 Tenendo presente che il fattore di amplificazione $G$ della lente $L_2$ è esprimibile mediante la seguente relazione:
 
-\[G=\frac{b}{D+a}\]
+\begin{equation}
+G=\frac{b}{D+a}
+\label{G}
+\end{equation}
 
-dove $b$ è la distanza tra $L_2$ e la sorgente luminosa e $a$  la distanza tra $L_2$ e lo specchio rotante. Lo spostamento laterale $\delta$ dell'immagine è quindi:
-
-\[\delta = G\Delta =\frac{2\alpha b D}{D + a}=\frac{4 D^2 b \omega}{c(D+a)}\]
+dove $b$ è la distanza tra $L_2$ e la sorgente luminosa e $a$  la distanza tra $L_2$ e lo specchio rotante. Lo spostamento laterale $\delta$ dell'immagine si ottiene quindi
+combinando le equazioni (\ref{DELTA}) e (\ref{G})
+\begin{equation}
+\delta = G\Delta =\frac{2\alpha b D}{D + a}=\frac{4 D^2 b \omega}{c(D+a)}
+\label{delta}
+\end{equation}
 
 È possibile ricavare $b$ dalla legge dei punti coniugati. Sapendo che:
 
-\[\frac{1}{b}+\frac{1}{D+a}=\frac{1}{f_2}\]
+\begin{equation}
+\frac{1}{b}+\frac{1}{D+a}=\frac{1}{f_2}
+\label{punticoniug}
+\end{equation}
 
 Si deduce che:
 
-\[b=\frac{f_2(D+a)}{D+a-f_2}\]
+\begin{equation}
+b=\frac{f_2(D+a)}{D+a-f_2}
+\end{equation}
 
-E quindi, conoscendo l'espressione di $\delta$ in cui compare $c$ e avendo ricavato l'unica variabile incognita $b$, si ottiene:
+E quindi, conoscendo l'espressione di $\delta$ dalla equazione (\ref{delta}), in cui compare $c$, e avendo ricavato l'unica variabile incognita $b$ dall'equazione
+(\ref{punticoniug}), si ottiene:
 
-\[c= \frac{4f_2D^2(\omega-\omega_0)}{[(D+a+f_2)\Delta\delta]}\]
+\begin{equation}
+c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a+f_2)\Delta\delta]}
+\end{equation}
 
 dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \omega_0$ è lo spostamento dell'immagine della sorgente luminosa.
 
-
-% \begin{comment}
 \begin{figure}[h]
     \centering
         \includegraphics[width=\linewidth]{IntroTeorica1.JPG}
     \caption{Schema apparato - intorno del beam-splitter}
 \end{figure}
-% \end{comment}
+
+%%%  PROGETTAZIONE DELL'ESPERIMENTO  %%%
 
 \section{Progettazione dell'esperimento}
-Il banco ottico di laboratorio era composto da una sorgente luminosa e un sistema di lenti e specchi, il tutto ancorato saldamente alle varie parti del banco mediante morse.
+Il banco ottico di laboratorio era composto da una sorgente luminosa e un sistema di lenti e specchi, il tutto ancorato saldamente alle varie parti del banco mediante 
+morse.
 
 \begin{figure}[h] %here, top, bottom, ! = forza posizionamento dove latex riesce, H mettilo dove cazzo dico io%
     \centering
@@ -93,10 +115,10 @@ Il banco ottico di laboratorio era composto da una sorgente luminosa e un sistem
 
 Prima di cominciare le misure di $c$ è necessario assicurarsi che gli elementi del banco ottico siano correttamente posizionati.
 
-\vspace{1mm}
+\vspace{3mm}
 
-In principio abbiamo misurato la lunghezza del percorso compiuto dal raggio luminoso dallo specchio rotante allo specchio concavo. Per fare ciò abbiamo raccolto 4 misure
-per le distanze %%%%%%%%%%%%%%
+In principio abbiamo misurato la lunghezza del cammino ottico del raggio luminoso dallo specchio rotante allo specchio concavo. Per fare ciò abbiamo raccolto 4 misure
+per le distanze tra specchio rotante e specchio 1 $d_{rot,1}$, tra specchio 1 e specchio 2 $d_{1,2}$ e tra specchio 2 e specchio concavo $d_{2,conc}$, per poi
 Come mostrato in Figura \ref{schema_apparato}, la sorgente luminosa coerente è un laser A CHE COSA?? fissato magneticamente a un binario graduato. La luce incontra una 
 prima lente $L_1$ posta a distanza ??????. 
 Siccome la luce incidente sulla lente proviene "dall'infinito" (le dimensioni lineari della lente sono molto ridotte rispetto alla distanza tra laser e $L_2$) essa viene
@@ -107,12 +129,13 @@ rotante - $S'$ - $S''$ - specchio concavo bisogna agire sulla cinghia dello spec
 Fatto questo si regola l'inclinazione di $S'$ per riflettere il raggio proveniente dallo specchio rotante approssimativamente nel centro di $S''$, attraverso due
 viti micrometriche poste dietro lo specchio. Si ripete quest'ultimo procedimento per potare il raggio dal centro di $S''$ al centro dello specchio concavo.
 
-\vspace{1mm}
+\vspace{3mm}
 
 Raggiunta la condizione di raggio che percorre tutta la lunghezza $D$, è necessario agire nuovamente sulle viti micrometriche degli specchi per fare tornare il raggio
 luminoso indietro fino al beam-splitter ripercorrendo il suo cammino di andata.
 % DA RIVEDERE
 
+\vspace{3mm}
 
 Problemi tecnici riscontrati: 
 
