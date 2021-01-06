@@ -222,15 +222,15 @@ Segnaliamo che durante l'esperienza in laboratorio abbiamo accidentalmente urtat
 tra loro durante le varie misure.
 
 Abbiamo deciso di analizzare e quantificare gli effetti di questi urti. Abbiamo ipotizzato che non fosse possibile non avere alcun effetto provocato da queste compromissioni
-dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato da questi urti,
-poichè riportava un surreale valore della velocità della luce pari a $c_{38}\approx 4,788 \cdot10^8 \pm 2,0 \cdot10^6 m/s$, con un errore molto maggiore rispetto a tutte le altre misure,
-come si vedrà nei paragrafi successivi. 
+dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della in \ref{RT} - Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato 
+da questi urti, poichè riportava un surreale valore della velocità della luce pari a $c_{38}\approx 4,788 \cdot10^8 \pm 2,0 \cdot10^6 m/s$, con un errore molto maggiore 
+rispetto a tutte le altre misure, come si vedrà nei paragrafi successivi. 
 
 Pertanto abbiamo suddiviso i valori $\delta_0$ e $\delta$ raccolti in base alla frequenza di rotazione a cui sono stati raccolti ($\nu=-750Hz$, $\nu=750Hz$, 
-$\nu=-1500Hz$, $\nu=1500Hz$) e ne abbiamo fatto un grafico, come riportato in nelle Figure (\ref{Tabs}), (\ref{Graf_750}), (\ref{Graf_1500}), (\ref{Graf_-750}), 
+$\nu=-1500Hz$, $\nu=1500Hz$) e ne abbiamo fatto un grafico, come riportato in \ref{RT} - Figure (\ref{Tabs}), (\ref{Graf_750}), (\ref{Graf_1500}), (\ref{Graf_-750}), 
 (\ref{Graf_-1500}). 
 Già da un primo confronto qualitativo, osservando i grafici, era possibile osservare come le misure di $\delta_0$ e $\delta$ fossero divise in tre insiemi. Un'analisi 
-quantitativa fatta applicando una distribuzione normale a ogni insieme per ogni $\nu$ (Figura (\ref{Gauss})) mostra come questi tre insiemi siano altamente incompatibili
+quantitativa fatta applicando una distribuzione normale a ogni insieme per ogni $\nu$ (\ref{RT} - Figura (\ref{Gauss})) mostra come questi tre insiemi siano altamente incompatibili
 (probabilità inferiore a $1\%$), con $z\gtrsim 3$. 
 Ne è risultato che il confine tra questi gruppi di misure sono proprio quei dati raccolti prima e dopo l'urto contro il beam splitter, ovvero le misure 22 e 38.
 
@@ -245,17 +245,13 @@ considerando il maggiore degli errori presenti sulle misure, e pertanto è stato
     \sigma c\begin{footnotesize}\textsubscript{BEST}\end{footnotesize}=\sqrt{(max(\sigma_{i}))^2+\sigma^2}
 \end{equation}
 
-Da un'analisi della distanza della misura 38 dalla Gaussiana delle misure è risultata una distanza z = 6,28 da cui abbiamo deciso di procedere a un rigetto.
-%%% Da qui devo parlare degli errori sistematici facendo riferimento alle misure RT divise nelle 4 tabelle, per poi passare a parlare del rigetto della 38
+Da un'analisi della distanza della misura 38 dalla Gaussiana delle misure è risultata una distanza z = 6,28 da cui abbiamo deciso di procedere a un rigetto, come mostrato
+in \ref{RT} - Figura (\ref{Rigetto}).
 
+Dopo questa serie di operazioni abbiamo ottenuto un insieme di 46 misure, ovvero quelle riportate in \ref{RT} - Figura (\ref{RT_DatiRaccolti}), con l'eccezione della 
+numero 38, rigettata.
 
-
-
-
-
-
-
-
+%%%%  DATI RAMELLA - REDAELLI  %%%
 
 \subsection{Analisi dati - Misure Ramella e Redaelli}
 
@@ -397,6 +393,13 @@ faccia riferimento a . Siccome abbiamo la miglior stima della velocità della lu
     \label{Gauss}
 \end{figure}
 
+%Rigetto misura 38
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{Rigetto.JPG}
+    \caption{Calcolo della migliore stima della velocità della luce basata sui valori raccolti da Rossi e Tambini $c_{1,BEST}$}
+    \label{Rigetto}
+\end{figure}
 \FloatBarrier %creo una barriera invisibile per assicurarmi che la roba sia posizionata dove la dichiaro
 
 \subsection{Grafici e Tabelle - Ramella e Redaelli} \label{RAM}
