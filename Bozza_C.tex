@@ -4,11 +4,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{graphicx}   %ALLOWS INSERTING IMAGES (AND MAYBE SOME MORE STUFF) %
+\usepackage{caption}
 \usepackage{subcaption} %ALLOWS CAPTIONS FOR SUBFIGURES%
 \usepackage{verbatim} % ALLOWS MULTILINE COMMENTS WITH \begin{comment} AND \end{comment} %
 \usepackage{amsmath,amssymb} % PERMETTE L'USO DI SIMBOLI MATEMATICI "AVANZATI" COME 'MINORE O UGUALE' E ALTRI %
 \usepackage{amstext}
 \usepackage{enumitem} %PERMETTE L'USO DI ELENCHI NUMERATI
+\usepackage[section]{placeins}
 
 \geometry{a4paper}
                         %Una riga vuota tra due scritte spazia di una riga anche sul pdf. Andare a capo una volta non provoca nulla nel pdf%
@@ -94,6 +96,7 @@ E quindi, conoscendo l'espressione di $\delta$ dalla equazione (\ref{delta}), in
 
 \begin{equation}
 c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a+f_2)\Delta\delta]}
+\label{c_equation}
 \end{equation}
 
 dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \omega_0$ è lo spostamento dell'immagine della sorgente luminosa.
@@ -134,9 +137,10 @@ occhi abbiamo adoperato una coppia di lamine polaroid, con base magnetica, poste
 è necessario porre una prima lente $L_1$ $70 mm$, seguendo la scala graduata con la sensibilità del millimetro, per poter fare convergere la luce proveniente "dall'infinito"
 \begin{comment}(le dimensioni lineari della lente sono molto ridotte rispetto alla distanza tra laser e $L_2$)\end{comment} alla sua distanza focale, che il produttore 
 della lente dichiara essere a una distanza $f_1 = 0,048 m$. A una distanza di $180mm$ dall'inizio della scala graduata è posto il beam-splitter, un elemento dotato di uno
-specchio semiriflettente orientato a 45° rispetto alla luce incidente, che permette di trasmettere la luce in arrivo alla lente $L_2$. La lente $L_2$, con 
+specchio semiriflettente orientabile rispetto alla luce incidente, che permette di trasmettere la luce in arrivo alla lente $L_2$, se angolato di $45^\circ$. La lente $L_2$, con 
 focale dichiarata dal produttore di $f_2=0,252m$, è posta a distanza $b = ???$ dal beam-splitter e trasmette a sua volta la luce allo specchio rotante. 
 Questo sistema di lenti serve per ottenere un'onda piana, e questo è possibile poichè la somma delle focali di $L_1$ ed $L_2$ è maggiore della loro distanza. 
+Il beam-splitter è uno strumento dotato di uno specchio
 
 
 Per permette alla luce di percorrere il sistema di specchi che va dallo specchio rotante, allo specchio $S'$, quindi allo specchio $S''$ e infine allo specchio concavo 
@@ -155,6 +159,12 @@ Raggiunta la condizione di raggio che percorre tutta la lunghezza $D$, è necess
 luminoso indietro fino al beam-splitter ripercorrendo il suo cammino di andata. Può essere in questa fase utile utilizzare un foglio di carta millimetrata da posizionare
 a mezz'aria dove si pensa che i raggi passino, per verificare spostandolo sempre più verso lo "specchio di destinazione" che i raggi coincidano e che il puntino luminoso
 del raggio di andata non si discosti da quello del raggio di ritorno.
+
+In ultimo si è provveduto a regolare la messa a fuoco del microscopio, dopo averlo inserito nel foro sulla parte superiore del beam-splitter, fissandolo a una data altezza
+all'interno del foro per mezzo di una vite. Il microscopio è utile per osservare il raggio di "ritorno" del laser, poichè in questo secondo passaggio per lo specchio, 
+angolato di $45^\circ$, il raggio urta la parte riflettente dello specchio e viene deviato verso il cannocchiale del beam-splitter, permettendone l'osservazione. è 
+possibile leggere la posizione di questo punto riflesso agendo su una vite micrometrica posta sul beam-splitter, che permette di centrare il puntino luminoso con un 
+crocifilo, garantendo una precisione di $\sigma = 10 \mu m$.
 
 \vspace{3mm}
 
@@ -187,33 +197,192 @@ della miglior stima della velocità della luce $c_{best}$, separatamente. Questo
             oraria e antioraria con frequenza variabile fino a circa i $1500 Hz$.
 \end{enumerate}
 
-\subsection{Analisi dati - Misure Ramella e ???}
-
-L'apparato utilizzato da Ramella e ??? era provvisto di motorino con frequenza di rotazione regolabile con continuità. Dopo avere raccolto i dati relativi alla 
-lunghezza del cammino ottico si è adoperato il foglio di calcolo per ricavarne un valore pari a $D = 13,60 \pm 0,01 m$ (\ref{RAM} - Figura \ref{RAM_D}).
-
-Si precisa che durante la trattazione di questo insieme di misure verranno indicate nel testo e nelle tabelle le rotazioni in senso orario (clockwise) come $CW$ e
-in senso antiorario (counterclockwise) come $CCW$.
 
 
 \subsection{Analisi dati - Misure Rossi e Tambini}
 
-L'apparato utilizzato da Rossi e Tambini era invece dotato di motorino con frequenza di rotazione non regolabile con continuità, ma solo a $\nu=750Hz$ e $\nu=1500Hz$
-in senso orario e antiorario. Dopo avere raccolto i dati relativi alla lunghezza del cammino ottico si è adoperato il foglio di calcolo per ricavarne un valore pari 
-a $D = 13,60 \pm 0,01 m$ (\ref{RT} - Figura \ref{RT_D}).
+L'apparato utilizzato da Rossi e Tambini era provvisto di motorino con frequenza di rotazione non regolabile con continuità, ma solo a $\nu=750Hz$ e $\nu=1500Hz$
+in senso orario e antiorario. Dopo avere raccolto i dati relativi alla lunghezza del cammino ottico abbiamo adoperato il foglio di calcolo per ricavarne un valore pari 
+a $D = 13,60 \pm 0,01 m$ (Sezione \ref{RT} - Figura \ref{RT_D}).
 
 Si specifica che durante la trattazione di questo insieme di misure si indicheranno nel testo e nelle tabelle le rotazioni in senso orario con segno positivo, mentre 
 quelle antiorarie con segno negativo. Questo non inficia i calcoli di quantità ricavate in maniera indiretta poichè le frequenze di rotazione sono state trattate in
 modulo.
+
+Siccome l'equazione \ref{c_equation} è risolubile inserendo dei valori di partenza $\omega_0$ e $\delta_0$ e dei valori finali $\omega$ e $\delta$, abbiamo proceduto
+raccogliendo coppie di misure, rispettivamente per valori iniziali e finali, per poi calcolare da ogni coppia un valore della velocità della luce $c$. I dati raccolti
+sono riportati in Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}.
+Il valore $\delta_0$ è stato misurato mettendo lo specchio in rotazione a una certa $\nu$, dopo avere aspettato che l'immagine del laser riflessa visibile nel microscopio
+del beam-splitter si fermasse in un punto. Infatti con l'utilizzo della vite micrometrica abbiamo centrato il puntino luminoso e ne abbiamo letto la posizione.
+Analogamente è stato fatto per il valore $\delta$: abbiamo impostato il motorino su una diversa velocità, osservato lo spostamento del puntino e ne abbiamo misurato la
+posizione.
+
+Segnaliamo che durante l'esperienza in laboratorio abbiamo accidentalmente urtato per due volte il beam-splitter. è infatti possibile notare, osservando i dati raccolti 
+(Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}), come i valori di $\delta_0$ e $\delta$ raccolti per uguali frequenze di rotazione presentino valori molto differenti 
+tra loro durante le varie misure.
+
+Abbiamo deciso di analizzare e quantificare gli effetti di questi urti. Abbiamo ipotizzato che non fosse possibile non avere alcun effetto provocato da queste compromissioni
+dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato da questi urti,
+poichè riportava un surreale valore della velocità della luce pari a $c_{38}\approx 4,788 *10^8 \pm 2,0 *10^6 m/s$, con un errore molto maggiore rispetto a tutte le altre misure,
+come si vedrà nei paragrafi successivi. 
+
+Pertanto abbiamo suddiviso i valori $\delta_0$ e $\delta$ raccolti in base alla frequenza di rotazione a cui sono stati raccolti ($\nu=-750Hz$, $\nu=750Hz$, 
+$\nu=-1500Hz$, $\nu=1500Hz$), come riportato in nelle Figure 
+
+%%% Da qui devo parlare degli errori sistematici facendo riferimento alle misure RT divise nelle 4 tabelle, per poi passare a parlare del rigetto della 38
+
+
+
+
+
+
+
+
+
+
+\subsection{Analisi dati - Misure Ramella e ???}
+
+L'apparato utilizzato da Ramella e ??? era invece dotato di motorino con frequenza di rotazione regolabile con continuità. Dopo avere raccolto i dati relativi alla 
+lunghezza del cammino ottico abbiamo adoperato il foglio di calcolo per ricavarne un valore pari a $D = 13,60 \pm 0,01 m$ (\ref{RAM} - Figura \ref{RAM_D}).
+
+Si precisa che durante la trattazione di questo insieme di misure verranno indicate nel testo e nelle tabelle le rotazioni dello specchio in senso orario (clockwise) come 
+$CW$ e in senso antiorario (counterclockwise) come $CCW$.
+
+La prima misura di $c$ effettuata è stata per rotazioni in senso orario.
+Siccome l'equazione \ref{c_equation} è risolubile inserendo dei valori di partenza $\omega_0$ e $\delta_0$ e dei valori finali $\omega$ e $\delta$, abbiamo raccolto
+i suddetti valori di partenza per poi, facendo ruotare lo specchio in senso orario con diverse frequenze, raccogliere un totale di 22 misure. Per i dati raccolti si
+faccia riferimento a . Siccome abbiamo la miglior stima della velocità della luce $c_{best}$ unendo
+
 
 %%%%%%%%%%%%%%%%%%%%%%%  FARE MACRO EXCEL PER INSERIRE RAPIDAMENTE SIMBOLI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Calcolo c\begin{footnotesize}\textsubscript{BEST}\end{footnotesize}} %SIMPY
 
 \section{Conclusioni}
 
+\newpage
+
 \section{Appendice}
 
-\subsection{Grafici e Tabelle - Ramella e ???}  \label{RAM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Grafici e Tabelle - Rossi e Tambini} \label{RT}
+
+%RT_D
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{RT_D.JPG}
+    \caption{Misura del cammino ottico $D$}
+    \label{RT_D}
+\end{figure}
+
+%RT_DatiRaccolti
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{RT_DatiRaccolti.JPG}
+    \caption{Dati Raccolti da Rossi-Tambini. I valori di $\delta$ e $\delta_0$ misurati per una stessa frequenza di rotazione sono evidenziati col medesimo colore.}
+    \label{RT_DatiRaccolti}
+\end{figure}
+
+%Tabelle_Coerenza
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[h]{0.2\textwidth}
+        \centering
+        \includegraphics{Coerenza_T1.JPG}
+        \caption{Misure raccolte per $\nu=750Hz$}
+        \label{Tab_750}        
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.2\textwidth}
+        \centering
+        \includegraphics{Coerenza_T2.JPG}
+        \caption{Misure raccolte per $\nu=1500Hz$}
+        \label{Tab_1500}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.2\linewidth}
+        \centering
+        \includegraphics{Coerenza_T3.JPG}
+        \caption{Misure raccolte per $\nu=-750Hz$}
+        \label{Tab_-750}        
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.2\linewidth}
+        \centering
+        \includegraphics{Coerenza_T4.JPG}
+        \caption{Misure raccolte per $\nu=-1500Hz$}
+        \label{Tab_-1500}
+    \end{subfigure}
+        \caption{Dati raccolti in tabelle secondo la $\nu$ dello specchio rotante}
+        \label{Tabs}
+\end{figure}
+
+%Coerenza_Grafici
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Coerenza_G1.JPG}
+    \caption{Grafico relativo a Figura (\ref{Tabs}\subref{Tab_750})}
+    \label{Graf_750}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Coerenza_G2.JPG}
+    \caption{Grafico relativo a Figura (\ref{Tabs}\subref{Tab_1500})}
+    \label{Graf_1500}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Coerenza_G3.JPG}
+    \caption{Grafico relativo a Figura (\ref{Tabs}\subref{Tab_-750})}
+    \label{Graf_-750}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Coerenza_G4.JPG}
+    \caption{Grafico relativo a Figura (\ref{Tabs}\subref{Tab_-1500})}
+    \label{Graf_-1500}
+\end{figure}
+
+%Coerenza_Gauss
+\begin{figure}
+    \centering
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Coerenza_Gauss1.JPG}
+        \caption{Distribuzione normale relativa a Figura (\ref{Tabs}\subref{Tab_750})}
+        \label{Gauss_750}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Coerenza_Gauss2.JPG}
+        \caption{Distribuzione normale relativa a Figura (\ref{Tabs}\subref{Tab_1500})}
+        \label{Gauss_1500}  
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Coerenza_Gauss3.JPG}
+        \caption{Distribuzione normale relativa a Figura (\ref{Tabs}\subref{Tab_-750})}
+        \label{Gauss_-750}     
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Coerenza_Gauss4.JPG}
+        \caption{Distribuzione normale relativa a Figura (\ref{Tabs}\subref{Tab_-1500})}
+        \label{Gauss_-1500}   
+    \end{subfigure}
+    \caption{Distribuzioni normali relative a Figura (\ref{Tabs})}
+    \label{Gauss}
+\end{figure}
+
+\FloatBarrier %creo una barriera invisibile per assicurarmi che la roba sia posizionata dove la dichiaro
+
+\subsection{Grafici e Tabelle - Ramella e ???} \label{RAM}
 
 % RAM_D
 \begin{figure}[h]
@@ -223,16 +392,7 @@ modulo.
     \label{RAM_D}
 \end{figure}
 
-\subsection{Grafici e Tabelle - Rossi e Tambini} \label{RT}
-
-%RT_D
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\linewidth]{RT_D.JPG}
-    \caption{Misura del cammino ottico $D$}
-    \label{RT_D}
-\end{figure}
-
+%DATI_CW
 
 
 
