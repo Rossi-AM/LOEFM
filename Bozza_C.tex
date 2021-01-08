@@ -31,16 +31,19 @@
 \maketitle
 
 %%%  ABSTRACT  %%%
-\begingroup\selectlanguage{english}
+\begingroup
+\selectlanguage{english}
 \begin{abstract}
     \centering
 L’esperimento si propone di misurare la velocità delle luce usando il metodo di Focault. Dopo l'analisi di un totale di 110 misure (di cui una rigettata), provenienti 
-da due sedute laboratoriali separate, abbiamo ottenuto un valore per la velocità della luce pari a $c_{BEST}=2,982\cdot10^8 \pm 8,6\cdot 10^6 m/s$.
+da due esperienze laboratoriali diverse, abbiamo ottenuto un valore per la velocità della luce pari a $c_{BEST}=2,982\cdot10^8 \pm 8,6\cdot 10^6 m/s$, compatibile
+entro una $\sigma$ con il valore vero $c_{vero}=2,998\cdot10^8 m/s$.
 \end{abstract}
 \endgroup
 
 %%%  INDICE  %%%%
 
+\selectlanguage{italian}
 \tableofcontents
 \newpage
 
@@ -50,7 +53,14 @@ da due sedute laboratoriali separate, abbiamo ottenuto un valore per la velocit�
 Il metodo di Focault per la misura della velocità della luce consiste nell'uso di uno specchio rotante, che riflette la luce emessa da una sorgente su di uno specchio 
 concavo. 
 
-Una sorgente luminosa $S$ emette una luce che, opportunamente diaframmata da una lente $L_1$, attraversa una lastra semitrasparente angolata di 45° rispetto alla 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{App_Focault.JPG}
+    \caption{Apparato di Focault BISOGNA CAMBIARE LA DICITURA SPECCHIO PIANO}
+    \label{App_Focault}
+\end{figure}
+
+Una sorgente luminosa $S$ emette una luce che diaframmata da una lente $L_1$ attraversa una lastra semiriflettente angolata di 45° rispetto alla 
 direzione del fascio. Una lente $L_2$ focalizza il fascio nel punto $S'$ sullo specchio concavo, dopo essere stata deflessa dallo specchio rotante. La luce riflessa 
 dallo specchio concavo viene deflessa nuovamente dallo specchio rotante, che nel frattempo ha ruotato di un angolo 
 
@@ -67,7 +77,7 @@ Il fascio luminoso di ritorno sulla lente $L_2$ viene focalizzato come se proven
 \label{DELTA}
 \end{equation}
 
-Tenendo presente che il fattore di amplificazione $G$ della lente $L_2$ è esprimibile mediante la seguente relazione:
+Sapendo che il fattore di amplificazione $G$ della lente $L_2$ è esprimibile come:
 
 \begin{equation}
 G=\frac{b}{D+a}
@@ -98,7 +108,7 @@ E quindi, conoscendo l'espressione di $\delta$ dalla equazione (\ref{delta}), in
 (\ref{punticoniug}), si ottiene:
 
 \begin{equation}
-c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a+f_2)\Delta\delta]}
+c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a-f_2)\Delta\delta]}
 \label{c_equation}
 \end{equation}
 
@@ -116,88 +126,91 @@ dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \om
 
 \section{Progettazione dell'esperimento}
 
-\begin{figure}[h] %here, top, bottom, ! = forza posizionamento dove latex riesce, H mettilo dove cazzo dico io%
+\begin{figure}[h] 
     \centering
     \includegraphics[width=0.6\linewidth]{Progettazione1.JPG}
     \caption{Schema dell'apparato di laboratorio}
     \label{schema_apparato}
 \end{figure}
 
-Il banco ottico di laboratorio era composto da una sorgente luminosa e un sistema di lenti e specchi, il tutto ancorato saldamente alle varie parti del banco mediante 
-morse.
+Il banco ottico di laboratorio era composto da un binario magnetico dove erano già presenti una sorgente luminosa e uno specchio rotante fissati magneticamente,
+e un sistema di specchi ancorato saldamente al tavolo mediante morse. Sul binario magnetico era possibile aggiungere lenti, squadrette e lamine polaroid anch'esse con base
+magnetica. Tutto l'apparato è schematicamente rappresentato in Figura \ref{schema_apparato}.
 
 Prima di cominciare le misure di $c$ è necessario assicurarsi che gli elementi del banco ottico siano correttamente posizionati.
 
 \vspace{3mm}
 
-Per fare ciò principio abbiamo misurato la lunghezza del cammino ottico $D$ del raggio luminoso dallo specchio rotante allo specchio concavo. Per fare ciò abbiamo raccolto 
+Per fare ciò abbiamo in principio misurato la lunghezza del cammino ottico $D$ del raggio luminoso dallo specchio rotante allo specchio concavo, raccogliendo 
 4 misure per le distanze tra specchio rotante e specchio 1 $d_{rot,1}$, tra specchio 1 e specchio 2 $d_{1,2}$ e tra specchio 2 e specchio concavo $d_{2,conc}$, per poi 
-ottenere tramite una somma delle loro medie aritmetiche (con incertezza $\sigma d = \sigma D = 0,01 m$) il valore di $D$. Gli strumenti utilizzati in questa fase sono
-stati due rotelle metriche di portata $15m$ e $3m$.
+ottenere tramite una somma delle loro medie aritmetiche il valore di $D$, con incertezza $\sigma D \approx 0,01 m = \sigma d$). Gli strumenti utilizzati in questa fase sono
+stati due rotelle metriche di portata $15m$ e $3m$ entrambe sensibili al centimetro.
 
-Come mostrato in Figura \ref{schema_apparato}, la sorgente luminosa coerente è un laser A CHE COSA?? fissato magneticamente a un binario graduato. Per evitare danni agli
-occhi abbiamo adoperato una coppia di lamine polaroid, con base magnetica, poste sul binario subito dopo il laser.
-è necessario porre una prima lente $L_1$ $70 mm$, seguendo la scala graduata con la sensibilità del millimetro, per poter fare convergere la luce proveniente "dall'infinito"
-\begin{comment}(le dimensioni lineari della lente sono molto ridotte rispetto alla distanza tra laser e $L_2$)\end{comment} alla sua distanza focale, che il produttore 
-della lente dichiara essere a una distanza $f_1 = 0,048 m$. A una distanza di $180mm$ dall'inizio della scala graduata è posto il beam-splitter, un elemento dotato di uno
-specchio semiriflettente orientabile rispetto alla luce incidente, che permette di trasmettere la luce in arrivo alla lente $L_2$, se angolato di $45^\circ$. La lente $L_2$, con 
-focale dichiarata dal produttore di $f_2=0,252m$, è posta a distanza $b = ???$ dal beam-splitter e trasmette a sua volta la luce allo specchio rotante. 
-Questo sistema di lenti serve per ottenere un'onda piana, e questo è possibile poichè la somma delle focali di $L_1$ ed $L_2$ è maggiore della loro distanza. 
-Il beam-splitter è uno strumento dotato di uno specchio
+\vspace{3mm}
 
+La sorgente luminosa coerente è un laser di potenza $0,35W$ che nonostante la bassa potenza ha richiesto l'utilizzo di una coppia di lamine polaroid per evitare danni agli
+occhi; sono state apposte magneticamente sul binario subito dopo il laser.
+Per permette alla luce di percorrere il sistema di specchi che va dallo specchio rotante, allo specchio $S_1$, quindi allo specchio $S_2$ e infine allo specchio concavo 
+ci siamo inizialmente accertati che la luce incidesse sul centro dello specchio rotante, posizionando una squadretta forata con base magnetica sul binario.
+Confermata la centratura del laser con lo specchio rotante, abbiamo quindi posto una prima lente $L_1$ a $70 mm$ seguendo la scala graduata con la sensibilità del 
+millimetro presente sul binario per poter fare convergere la luce proveniente "dall'infinito" nel suo fuoco, che il produttore 
+della lente dichiara essere a una distanza $f_1 = 0,048 m$. Abbiamo provveduto a regolare la posizione della lente per continuare ad avere il raggio centrato nel foro
+della squadretta (e pertanto nel centro dello specchio rotante). A una distanza di $180mm$ dall'inizio della scala graduata abbiamo posizionato il beam-splitter, un elemento dotato di uno
+specchio semiriflettente orientabile rispetto alla luce incidente, che permette di trasmettere la luce in arrivo alla lente $L_2$, e di riflettere quella in arrivo da 
+$L_2$ verso l'alto, dove posizioneremo il microscopio, se angolato di $45^\circ$. La lente $L_2$, con focale dichiarata dal produttore di $f_2=0,252m$, è stata da noi 
+apposta a circa $b = 370mm$ della scala graduata per ottenere un puntino sullo specchio concavo. 
 
-Per permette alla luce di percorrere il sistema di specchi che va dallo specchio rotante, allo specchio $S'$, quindi allo specchio $S''$ e infine allo specchio concavo 
-bisogna inizialmente accertarsi, posizionando una squadretta forata con base magnetica sul binario, che la luce incida sul centro dello specchio rotante.
-Contemporaneamente bisogna agire sulla cinghia dello specchio rotante per permettere al raggio incidente di raggiungere la parte riflettente dello specchio e quindi 
-subire una riflessione verso il centro (approssimativamente) di $S'$.
-Fatto questo si regola l'inclinazione di $S'$ per riflettere il raggio proveniente dallo specchio rotante approssimativamente nel centro di $S''$, attraverso due
-viti micrometriche poste dietro lo specchio. Si ripete quest'ultimo procedimento per portare il raggio dal centro di $S''$ al centro dello specchio concavo.
+\vspace{3mm}
+
+Ultimato il posizionamento delle lenti, abbiamo agito sulla cinghia dello specchio rotante per permettere al raggio proveniente da $L_2$ di raggiungere la parte riflettente 
+dello specchio e quindi subire una riflessione verso il centro (approssimativamente) di $S_1$.
+Fatto questo abbiamo regolato l'inclinazione di $S_1$ per riflettere il raggio proveniente dallo specchio rotante approssimativamente nel centro di $S_2$, attraverso due
+viti micrometriche poste dietro lo specchio. Abbiamo ripetuto quest'ultima manovra per portare il raggio dal centro di $S_2$ al centro dello specchio concavo.
 
 Specifichiamo che a causa della complessità della misura della focale di una lente le focali e le posizioni corrette per lenti e beam-splitter vengono fornite dai 
-docenti, e le consideriamo affette da un'incertezza sistematica trascurabile.
+docenti, e le consideriamo affette da un'incertezza trascurabile.
 
 \vspace{3mm}
 
-Raggiunta la condizione di raggio che percorre tutta la lunghezza $D$, è necessario agire nuovamente sulle viti micrometriche degli specchi per fare tornare il raggio
-luminoso indietro fino al beam-splitter ripercorrendo il suo cammino di andata. Può essere in questa fase utile utilizzare un foglio di carta millimetrata da posizionare
-a mezz'aria dove si pensa che i raggi passino, per verificare spostandolo sempre più verso lo "specchio di destinazione" che i raggi coincidano e che il puntino luminoso
-del raggio di andata non si discosti da quello del raggio di ritorno.
-
-In ultimo si è provveduto a regolare la messa a fuoco del microscopio, dopo averlo inserito nel foro sulla parte superiore del beam-splitter, fissandolo a una data altezza
-all'interno del foro per mezzo di una vite. Il microscopio è utile per osservare il raggio di "ritorno" del laser, poichè in questo secondo passaggio per lo specchio, 
-angolato di $45^\circ$, il raggio urta la parte riflettente dello specchio e viene deviato verso il cannocchiale del beam-splitter, permettendone l'osservazione. è 
-possibile leggere la posizione di questo punto riflesso agendo su una vite micrometrica posta sul beam-splitter, che permette di centrare il puntino luminoso con un 
-crocifilo, garantendo una precisione di $\sigma = 10 \mu m$.
+Raggiunta la condizione di raggio che percorre tutta la lunghezza $D$, era necessario agire nuovamente sulle viti micrometriche degli specchi per fare tornare il raggio
+luminoso indietro fino al beam-splitter ripercorrendo il suo cammino di andata. È stato utile utilizzare un foglio di carta millimetrata da posizionare
+a mezz'aria dove supponevamo che i raggi passassero, per verificare, spostando il foglio verso lo "specchio di destinazione", che i raggi coincidessero e che il puntino luminoso
+del raggio di andata non si discostasse da quello del raggio di ritorno.
 
 \vspace{3mm}
 
-\underline{Problemi tecnici riscontrati:} 
+Verificato che il raggio di ritorno incidesse nel foro superiore del beam splitter, abbiamo inserito e messo a fuoco il microscopio (regolando l'altezza di fissaggio) nel
+foro superiore del beam-splitter. Il microscopio è utile per osservare il raggio di "ritorno" del laser poichè in questo secondo passaggio per lo specchio del beam-splitter
+angolato di $45^\circ$, il raggio urta la parte riflettente e viene deviato verso il microscopio dotato di crocifilo. È possibile leggere la posizione di questo punto 
+riflesso agendo su una vite micrometrica posta sul beam-splitter che permette di centrare il puntino luminoso con il crocifilo con precisione di $\sigma = 10 \mu m$.
 
-Sebbene sia abbastanza agevole misurare le distanze tra specchi, posizionare le lenti e il beam-splitter e fondamentale già da questa prima fase prestare la 
-/underline{massima attenzione} a non toccare il banco di lavoro (singolare, sebbene $S'$ e $S''$ fossero posti su un secondo tavolo, il che rendeva utile misurare alcune
-distanze con la rotella di portata $15m$). 
-Questo potrebbe compromettere gravemente la taratura del banco.
+\vspace{3mm}
 
+\underline{Problemi riscontrati:} 
+
+Sebbene sia stato abbastanza agevole misurare le distanze tra specchi, posizionare le lenti e il beam-splitter è stato fondamentale già da questa prima fase prestare la 
+massima attenzione a non toccare i tavoli di lavoro per evitare di compromettere gravemente la taratura dell'apparato.
 È invece complicato e dispendioso a livello di tempo correggere la posizione degli specchi. Infatti mentre uno dei due sperimentatori lavorava sulle viti micrometriche,
 l'altro aveva il compito di tracciare il percorso del raggio o osservandone la posizione sulle pareti (se e quando possibile) o aiutandosi con la carta millimetrata 
 quando esso era prossimo a raggiungere il centro dello specchio.
-
-Il compito certamente più arduo è fare ritornare il raggio di ritorno su quello di andata, poichè la carta millimetrata è l'unico strumento valido. Durante il suo utilizzo
-il rischio di coprire il raggio di andata (facendo scomparire quello di ritorno) nel tentativo di vederli entrambi sul bordo del foglio è alto.
+Il compito certamente più arduo è stato fare ritornare il raggio di ritorno su quello di andata, poichè la carta millimetrata era l'unico strumento valido. Durante il suo utilizzo
+il rischio di coprire il raggio di andata (facendo scomparire quello di ritorno) nel tentativo di vederli entrambi sul bordo del foglio era alto.
 
 %%%  MISURE  %%%
+
+\newpage
 
 \section{Misure}
 
 \subsection{Raccolta dati}
-L'esperienza è stata svolta da Rossi in collaborazione con Tambini e Ramella in collaborazione con Redaelli. Si è deciso di analizzare i due set di misure, fino al calcolo 
-della miglior stima della velocità della luce $c_{best}$, separatamente. Questo a causa di differenze:
+L'esperienza è stata svolta da Rossi in collaborazione con Tambini e Ramella in collaborazione con Redaelli. Abbiamo deciso di analizzare i due set di misure separatamente
+fino al calcolo della miglior stima della velocità della luce $c_{best}$. Questo a causa di differenze:
 
 \begin{enumerate}
-    \item Sulla misura di $D$ poichè sono stati usati due apparati dello stesso modello ma fisicamente differenti, e quindi si sono presentate differenze.
+    \item Sulla misura di $D$, poichè sono stati usati due apparati dello stesso modello ma fisicamente differenti, e quindi si sono presentate differenze.
     \item Sul motore dello specchio rotante utilizzato. Il gruppo Rossi-Tambini ha utilizzato un motore per lo specchio rotante che permetteva solo la regolazione in 
             senso orario e antiorario con una frequenza di rotazione di $\nu = 1500 Hz$ e $\nu = 750 Hz$. Mentre il motore del gruppo Ramella-Redaelli permetteva una rotazione
-            oraria e antioraria con frequenza variabile fino a circa i $1500 Hz$.
+            oraria e antioraria con frequenza variabile fino a circa $1500 Hz$.
 \end{enumerate}
 
 In ogni caso i dati raccolti seguono una numerazione progressiva che inizia con la prima misura di Rossi-Tambini e termina con l'ultima di Ramella-Redaelli.
@@ -206,55 +219,74 @@ In ogni caso i dati raccolti seguono una numerazione progressiva che inizia con 
 
 L'apparato utilizzato da Rossi e Tambini era provvisto di motorino con frequenza di rotazione non regolabile con continuità, ma solo a $\nu=750Hz$ e $\nu=1500Hz$
 in senso orario e antiorario. Dopo avere raccolto i dati relativi alla lunghezza del cammino ottico abbiamo adoperato il foglio di calcolo per ricavarne un valore pari 
-a $D = 13,60 \pm 0,01 m$ (Sezione \ref{RT} - Figura \ref{RT_D}). Per potere calcolare il valore di $c$ abbiamo anche raccolto i valori di $f_2$ e $a$, indicati
-\ref{RT} - Figura \ref{RT_Apparato}.
+a $D = 13,60 \pm 0,01 m$ (Sezione \ref{RT} - Figura \ref{RT_D}). Per potere calcolare il valore di $c$ (\ref{c_equation}) abbiamo anche raccolto i valori di $f_2$ e $a$,
+indicati in Sezione \ref{RT} - Figura \ref{RT_Apparato}.
+
+\vspace{3mm}
 
 Si specifica che durante la trattazione di questo insieme di misure si indicheranno nel testo e nelle tabelle le rotazioni in senso orario con segno positivo, mentre 
 quelle antiorarie con segno negativo. Questo non inficia i calcoli di quantità ricavate in maniera indiretta poichè le frequenze di rotazione sono state trattate in
 modulo.
 
-Siccome l'equazione \ref{c_equation} è risolubile inserendo dei valori di partenza $\omega_0$ e $\delta_0$ e dei valori finali $\omega$ e $\delta$, abbiamo proceduto
-raccogliendo coppie di misure, rispettivamente per valori iniziali e finali, per poi calcolare da ogni coppia un valore della velocità della luce $c$. I dati raccolti
+\vspace{3mm}
+
+Siccome l'equazione (\ref{c_equation}) è risolubile inserendo dei valori di partenza $\omega_0$ e $\delta_0$ e dei valori finali $\omega$ e $\delta$, abbiamo proceduto
+raccogliendo coppie di misure (rispettivamente per valori iniziali e finali) per poi calcolare da ogni coppia un valore della velocità della luce $c$. I dati raccolti
 sono riportati in Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}.
-Il valore $\delta_0$ è stato misurato mettendo lo specchio in rotazione a una certa $\nu$, dopo avere aspettato che l'immagine del laser riflessa visibile nel microscopio
-del beam-splitter si fermasse in un punto. Infatti con l'utilizzo della vite micrometrica abbiamo centrato il puntino luminoso e ne abbiamo letto la posizione.
-Analogamente è stato fatto per il valore $\delta$: abbiamo impostato il motorino su una diversa velocità, osservato lo spostamento del puntino e ne abbiamo misurato la
+Abbiamo misurato il valore $\delta_0$ mettendo lo specchio in rotazione a una certa $\nu$ e aspettando che l'immagine del laser riflessa visibile nel microscopio
+si fermasse. Abbiamo quindi agito sulla vite micrometrica per centrare il puntino luminoso e leggerne la posizione con la precisione di $10 \mu m$.
+Analogamente è stato fatto per il valore $\delta$: abbiamo impostato il motorino su una diversa velocità, osservato il puntino spostarsi e fermarsi, e ne abbiamo letto la
 posizione.
 
-Segnaliamo che durante l'esperienza in laboratorio abbiamo accidentalmente urtato per due volte il beam-splitter. è infatti possibile notare, osservando i dati raccolti 
+\vspace{3mm}
+
+Segnaliamo che durante l'esperienza in laboratorio abbiamo accidentalmente urtato per due volte il beam-splitter. È infatti possibile notare, osservando i dati raccolti 
 (Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}), come i valori di $\delta_0$ e $\delta$ raccolti per uguali frequenze di rotazione presentino valori molto differenti 
 tra loro durante le varie misure.
 
 Abbiamo deciso di analizzare e quantificare gli effetti di questi urti. Abbiamo ipotizzato che non fosse possibile non avere alcun effetto provocato da queste compromissioni
-dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della in \ref{RT} - Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato 
+dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della in Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato 
 da questi urti, poichè riportava un surreale valore della velocità della luce pari a $c_{38}\approx 4,788 \cdot10^8 \pm 2,0 \cdot10^6 m/s$, con un errore molto maggiore 
 rispetto a tutte le altre misure, come si vedrà nei paragrafi successivi. 
 
-Pertanto abbiamo suddiviso i valori $\delta_0$ e $\delta$ raccolti in base alla frequenza di rotazione a cui sono stati raccolti ($\nu=-750Hz$, $\nu=750Hz$, 
-$\nu=-1500Hz$, $\nu=1500Hz$) e ne abbiamo fatto un grafico, come riportato in \ref{RT} - Figure \ref{Tabs}, \ref{Graf_750}, \ref{Graf_1500}, \ref{Graf_-750}, 
+Pertanto abbiamo suddiviso i valori $\delta_0$ e $\delta$ raccolti in base alla frequenza di rotazione ($\nu=-750Hz$, $\nu=750Hz$, 
+$\nu=-1500Hz$, $\nu=1500Hz$) e ne abbiamo fatto un grafico, come riportato in Sezione \ref{RT} - Figure \ref{Tabs}, \ref{Graf_750}, \ref{Graf_1500}, \ref{Graf_-750}, 
 \ref{Graf_-1500}. 
 Già da un primo confronto qualitativo, osservando i grafici, era possibile osservare come le misure di $\delta_0$ e $\delta$ fossero divise in tre insiemi. Un'analisi 
-quantitativa fatta applicando una distribuzione normale a ogni insieme per ogni $\nu$ ()\ref{RT} - Figura \ref{Gauss}) mostra come questi tre insiemi siano altamente incompatibili
+quantitativa fatta applicando una distribuzione normale a ogni insieme per ogni $\nu$ (Sezione \ref{RT} - Figura \ref{Gauss}) mostra come questi tre insiemi siano altamente incompatibili
 (probabilità inferiore a $1\%$), con $z\gtrsim 3$. 
-Ne è risultato che il confine tra questi gruppi di misure sono proprio quei dati raccolti prima e dopo l'urto contro il beam splitter, ovvero le misure 22 e 38.
+È risultato che il confine tra questi gruppi di misure sono proprio quei dati raccolti prima e dopo l'urto contro il beam splitter, ovvero le misure 22 e 38.
 
 Nonostante questi urti, le misure risultano essere coerenti con il valore vero della velocità della luce $c_{vero}\approx 2,998\cdot10^8 m/s$, eccezion fatta per la misura 38.
-In questo specifico caso l'urto è avvenuto tra le due misure e infatti il valore stimato della velocità della luce per questa misura risulta essere $c_{38}=4,788\cdot10^8 \pm
-2,0\cdot10^6 m/s$. Abbiamo deciso di procedere al rigetto di questa misura, verificando che $c_{38}$ distanze $6,28\sigma$ dal valore medio delle misure.
-
-Specifichiamo che la media di queste misure, di quelle di Ramella e Redaelli, e dei due set di dati uniti sono state fatte tramite una media aritmetica. Per l'errore
-abbiamo voluto tenere conto non solo della discrepanza tra le singole misure, calcolando la loro deviazione standard $\sigma$, ma anche di un eventuale errore sistematico aggiungendo
-considerando il maggiore degli errori presenti sulle misure, e pertanto è stato ottenuto come somma in quadratura di questi due termini:
+In questo specifico caso l'urto è avvenuto tra le due misure della coppia e infatti il valore stimato della velocità della luce per questa misura risulta essere $c_{38}=4,788\cdot10^8 \pm
+2,0\cdot10^6 m/s$. Abbiamo deciso di procedere al rigetto di questa misura, verificando che $c_{38}$ distasse $6,28\sigma$ dal valore medio delle misure.
+%%%%%%%%%%%%%%%%% DA QUI %%%%%%%%%%%%%%%%%%%%%
+Specifichiamo che la media di queste misure e di quelle di Ramella-Redaelli sia stata fatta tramite una media aritmetica. Per l'errore
+abbiamo voluto tenere conto non solo di una componente casuale, calcolando la loro deviazione standard $\sigma$, ma anche di una componente sistematica aggiungendovi
+il maggiore degli errori presenti sulle misure.
+Questo perchè l'errore sulla singola misura di $c$ tiene conto solo della componente sistematica generata da $D$, $f_2$ e $a$, essendo calcolato come
 \begin{equation}
-    \sigma c_{BEST} =\sqrt{(max(\sigma_{i}))^2+\sigma^2}
+    \centering
+    \sigma c = \sqrt{\bigg(\frac{\partial c}{\partial a}\cdot \sigma a\bigg)^2 + \bigg(\frac{\partial c}{\partial f_2}\cdot \sigma f_2 \bigg)^2 + \bigg(\frac{\partial c}{\partial D}\cdot \sigma D \bigg)^2} 
+    \label{c_error}
+\end{equation}
+
+Pertanto l'errore sulla media dei valori raccolti da Rossi-Tambini $\sigma c_{1,BEST}$ (e nella prossima Sezione da Ramella-Redaelli $\sigma c_{2,BEST}$) è espresso come:
+
+\begin{equation}
+    \sigma c_{n,BEST} =\sqrt{(max(\sigma_{i}))^2+\sigma^2}
     \label{c_Errore}
 \end{equation}
 
-Da un'analisi della distanza della misura 38 dalla Gaussiana delle misure è risultata una distanza z = 6,28 da cui abbiamo deciso di procedere a un rigetto, come mostrato
-in \ref{RT} - Figura \ref{Rigetto}.
-
+dove $n=1,2$, $\sigma_{i}$ è l'errore sistematico della singola misura calcolato come (\ref{c_error}) e $\sigma$ è la deviazione standard dell'insieme di misure.
+%%%%%%%%%%%%%%%%QUESTO PEZZO DA VEDER BENE, IL GRAFICO SOTTO E' DA REINSERIRE E BISOGNA CAMBIARGLI NOME
+Da un'analisi della distanza della misura 38 dalla Gaussiana dei dati raccolti è risultato un valore z = 6,28 da cui abbiamo deciso di procedere a un rigetto, come mostrato
+in Sezione \ref{RT} - Figura \ref{Rigetto}.
+Il centro di questa Gaussiana è il valore $c=3,022 \cdot 10^8$ e la sua ampiezza è $\sigma = 3$
 Dopo questa serie di operazioni abbiamo ottenuto un insieme di 46 misure, ovvero quelle riportate in \ref{RT} - Figura \ref{RT_DatiRaccolti}, con l'eccezione della 
-numero 38, rigettata.
+numero 38, rigettata, che hanno come migliore stima $c_{1,BEST} = 2,984 \cdot 10^8 \pm 1,05 \cdot 10^7 m/s$.
+
+%%%%%%%%%%%%%A QUI %%%%%%%%%%%%%%%%%%%%%%
 
 %%%%  DATI RAMELLA - REDAELLI  %%%
 
