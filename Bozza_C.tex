@@ -202,7 +202,7 @@ il rischio di coprire il raggio di andata (facendo scomparire quello di ritorno)
 
 \section{Misure}
 
-\subsection{Raccolta dati}
+\subsection{Raccolta dati} \label{raccolta_dati}
 L'esperienza è stata svolta da Rossi in collaborazione con Tambini e Ramella in collaborazione con Redaelli. Abbiamo deciso di analizzare i due set di misure separatamente
 fino al calcolo della miglior stima della velocità della luce $c_{best}$. Questo a causa di differenze:
 
@@ -214,6 +214,27 @@ fino al calcolo della miglior stima della velocità della luce $c_{best}$. Quest
 \end{enumerate}
 
 In ogni caso i dati raccolti seguono una numerazione progressiva che inizia con la prima misura di Rossi-Tambini e termina con l'ultima di Ramella-Redaelli.
+
+Specifichiamo che la media degli insiemi di dati Rossi-Tambini e Ramella-Redaelli sia stata fatta tramite una media aritmetica. Per l'errore
+abbiamo voluto tenere conto non solo di una componente casuale, calcolando la loro deviazione standard $\sigma$, ma anche di una componente sistematica aggiungendovi
+il maggiore degli errori presenti sulle misure.
+Questo perchè l'errore sulla singola misura di $c$ tiene conto solo della componente sistematica generata da $D$, $f_2$ e $a$, essendo calcolato come
+\begin{equation}
+    \centering
+    \sigma c = \sqrt{\bigg(\frac{\partial c}{\partial a}\cdot \sigma a\bigg)^2 + \bigg(\frac{\partial c}{\partial f_2}\cdot \sigma f_2 \bigg)^2 + \bigg(\frac{\partial c}{\partial D}\cdot \sigma D \bigg)^2} 
+    \label{c_error}
+\end{equation}
+
+Pertanto l'errore sulla media dei valori raccolti da Rossi-Tambini $\sigma c_{1,avg}$ o da Ramella-Redaelli $\sigma c_{2,avg}$) è espresso come:
+
+\begin{equation}
+    \sigma c_{n,avg} =\sqrt{(max(\sigma_{i}))^2+\sigma^2}
+    \label{c_Errore}
+\end{equation}
+
+dove $n=1,2$ e identifica l'insieme di misure, $\sigma_{i}$ è l'errore sistematico della singola misura calcolato come (\ref{c_error}) e $\sigma$ è la deviazione standard dell'insieme di misure.
+
+
 
 \subsection{Analisi dati - Misure Rossi e Tambini} \label{DataAnalysis_RT}
 
@@ -244,10 +265,14 @@ Segnaliamo che durante l'esperienza in laboratorio abbiamo accidentalmente urtat
 (Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}), come i valori di $\delta_0$ e $\delta$ raccolti per uguali frequenze di rotazione presentino valori molto differenti 
 tra loro durante le varie misure.
 
+\vspace{3mm}
+
 Abbiamo deciso di analizzare e quantificare gli effetti di questi urti. Abbiamo ipotizzato che non fosse possibile non avere alcun effetto provocato da queste compromissioni
 dell'apparato di misura. Inoltre abbiamo supposto che la misura 38 della in Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti} fosse stata pesantamente affetta da un errore causato 
 da questi urti, poichè riportava un surreale valore della velocità della luce pari a $c_{38}\approx 4,788 \cdot10^8 \pm 2,0 \cdot10^6 m/s$, con un errore molto maggiore 
 rispetto a tutte le altre misure, come si vedrà nei paragrafi successivi. 
+
+\vspace{3mm}
 
 Pertanto abbiamo suddiviso i valori $\delta_0$ e $\delta$ raccolti in base alla frequenza di rotazione ($\nu=-750Hz$, $\nu=750Hz$, 
 $\nu=-1500Hz$, $\nu=1500Hz$) e ne abbiamo fatto un grafico, come riportato in Sezione \ref{RT} - Figure \ref{Tabs}, \ref{Graf_750}, \ref{Graf_1500}, \ref{Graf_-750}, 
@@ -257,36 +282,14 @@ quantitativa fatta applicando una distribuzione normale a ogni insieme per ogni 
 (probabilità inferiore a $1\%$), con $z\gtrsim 3$. 
 È risultato che il confine tra questi gruppi di misure sono proprio quei dati raccolti prima e dopo l'urto contro il beam splitter, ovvero le misure 22 e 38.
 
+\vspace{3mm}
+
 Nonostante questi urti, le misure risultano essere coerenti con il valore vero della velocità della luce $c_{vero}\approx 2,998\cdot10^8 m/s$, eccezion fatta per la misura 38.
 In questo specifico caso l'urto è avvenuto tra le due misure della coppia e infatti il valore stimato della velocità della luce per questa misura risulta essere $c_{38}=4,788\cdot10^8 \pm
-2,0\cdot10^6 m/s$. Abbiamo deciso di procedere al rigetto di questa misura, verificando che $c_{38}$ distasse $6,28\sigma$ dal valore medio delle misure.
-%%%%%%%%%%%%%%%%% DA QUI %%%%%%%%%%%%%%%%%%%%%
-Specifichiamo che la media di queste misure e di quelle di Ramella-Redaelli sia stata fatta tramite una media aritmetica. Per l'errore
-abbiamo voluto tenere conto non solo di una componente casuale, calcolando la loro deviazione standard $\sigma$, ma anche di una componente sistematica aggiungendovi
-il maggiore degli errori presenti sulle misure.
-Questo perchè l'errore sulla singola misura di $c$ tiene conto solo della componente sistematica generata da $D$, $f_2$ e $a$, essendo calcolato come
-\begin{equation}
-    \centering
-    \sigma c = \sqrt{\bigg(\frac{\partial c}{\partial a}\cdot \sigma a\bigg)^2 + \bigg(\frac{\partial c}{\partial f_2}\cdot \sigma f_2 \bigg)^2 + \bigg(\frac{\partial c}{\partial D}\cdot \sigma D \bigg)^2} 
-    \label{c_error}
-\end{equation}
+2,0\cdot10^6 m/s$. Abbiamo deciso di procedere al rigetto di questa misura, verificando che $c_{38}$ distasse $6,28\sigma$ dal valore medio delle misure $c_{1,pre} = 3,022 \cdot 10^8 \pm 2,81 \cdot 10^7 m/s$
+Dopo il rigetto abbiamo ottenuto un insieme di 46 misure riportate in Sezione \ref{RT} - Figura \ref{RT_DatiRaccolti}.
 
-Pertanto l'errore sulla media dei valori raccolti da Rossi-Tambini $\sigma c_{1,BEST}$ (e nella prossima Sezione da Ramella-Redaelli $\sigma c_{2,BEST}$) è espresso come:
-
-\begin{equation}
-    \sigma c_{n,BEST} =\sqrt{(max(\sigma_{i}))^2+\sigma^2}
-    \label{c_Errore}
-\end{equation}
-
-dove $n=1,2$, $\sigma_{i}$ è l'errore sistematico della singola misura calcolato come (\ref{c_error}) e $\sigma$ è la deviazione standard dell'insieme di misure.
-%%%%%%%%%%%%%%%%QUESTO PEZZO DA VEDER BENE, IL GRAFICO SOTTO E' DA REINSERIRE E BISOGNA CAMBIARGLI NOME
-Da un'analisi della distanza della misura 38 dalla Gaussiana dei dati raccolti è risultato un valore z = 6,28 da cui abbiamo deciso di procedere a un rigetto, come mostrato
-in Sezione \ref{RT} - Figura \ref{Rigetto}.
-Il centro di questa Gaussiana è il valore $c=3,022 \cdot 10^8$ e la sua ampiezza è $\sigma = 3$
-Dopo questa serie di operazioni abbiamo ottenuto un insieme di 46 misure, ovvero quelle riportate in \ref{RT} - Figura \ref{RT_DatiRaccolti}, con l'eccezione della 
-numero 38, rigettata, che hanno come migliore stima $c_{1,BEST} = 2,984 \cdot 10^8 \pm 1,05 \cdot 10^7 m/s$.
-
-%%%%%%%%%%%%%A QUI %%%%%%%%%%%%%%%%%%%%%%
+\vspace{3mm}
 
 %%%%  DATI RAMELLA - REDAELLI  %%%
 
@@ -294,36 +297,34 @@ numero 38, rigettata, che hanno come migliore stima $c_{1,BEST} = 2,984 \cdot 10
 
 L'apparato utilizzato da Ramella e Redaelli era invece dotato di motorino con frequenza di rotazione regolabile con continuità. Dopo avere raccolto i dati relativi alla 
 lunghezza del cammino ottico abbiamo adoperato il foglio di calcolo per ricavarne un valore pari a $D = 13,60 \pm 0,01 m$ (\ref{RAM} - Figura \ref{RAM_D}). Per potere 
-calcolare il valore di $c$ abbiamo anche raccolto i valori di $f_2$ e $a$, indicati \ref{AM} - Figura \ref{RAM_Apparato}.
+calcolare il valore di $c$ abbiamo anche raccolto i valori di $f_2$ e $a$, indicati \ref{RAM} - Figura \ref{RAM_Apparato}.
 
 Si precisa che durante la trattazione di questo insieme di misure verranno indicate nel testo e nelle tabelle le rotazioni dello specchio in senso orario (clockwise) come 
 $CW$ e in senso antiorario (counterclockwise) come $CCW$.
 
-La prima misura di $c$ effettuata è stata per rotazioni in senso orario.
+Abbiamo effettuato la prima misura di $c$ per rotazioni in senso orario.
 Siccome l'equazione (\ref{c_equation}) è risolubile inserendo dei valori di partenza $\omega_0$ e $\delta_0$ e dei valori finali $\omega$ e $\delta$, abbiamo raccolto
 i suddetti valori di partenza per poi, facendo ruotare lo specchio in senso orario con diverse frequenze, ottenere un totale di 22 misure per $\omega$ e $\delta$ divise
-in misure di andata (frequenze crescenti) e misure di ritorno (frequenze decrescenti). Per i dati raccolti si faccia riferimento a \ref{RAM} - Figura \ref{RAM_CW}.
+in misure di andata (frequenze crescenti) e misure di ritorno (frequenze decrescenti). Per i dati raccolti si faccia riferimento a Sezione \ref{RAM} - Figura \ref{RAM_CW}.
 
-La seconda misura di $c$ è stata effettuata con rotazioni dello specchio in senso antiorario (CCW, counterclockwise). Come descritto sopra si è raccolto un insieme di
-misure composto da valori di andata, con frequenza di rotazione dello specchio crescente, e valori di ritorno, con frequenza di rotazione decrescente. Si è ottenuto un 
+Per la seconda misura di $c$ abbiamo fatto ruotare lo specchio in senso antiorario (CCW, counterclockwise). Come descritto sopra abbiamo collezionato un insieme di
+misure composto da valori di andata, con frequenza di rotazione dello specchio crescente, e valori di ritorno, con frequenza di rotazione decrescente. È un 
 totale di 21 misure, ripotate in Sezione \ref{RAM} - Figura \ref{RAM_CCW}.
 
 La terza ed ultima misura della velocità della luce ha prodotto 20 misure, tutte raccolte alla massima frequenza raggiungibile dal motore dello specchio in ambo i sensi di
 rotazione, di circa $1500Hz$.
-Inizialmente si sono misurate due $\omega_0$, una per $\nu=1500 Hz$ (positiva, quindi rotazione CW, come già indicato in sezione \ref{DataAnalysis_RT}) e una per $\nu=-
+Inizialmente abbiamo misurato due $\omega_0$, una per $\nu=1500 Hz$ (positiva, quindi rotazione CW, come già indicato in sezione \ref{DataAnalysis_RT}) e una per $\nu=-
 1500Hz$ (rotazione CCW). Come già esplicitato in Sezione \ref{DataAnalysis_RT}, la trattazione in modulo delle grandezze negative non compromette i risultati dei calcoli. 
-Si è scelto di raccogliere questo terzo insieme di misure poichè la stima più accurata della velocità della luce si ottiene con $\Delta\delta$ elevati e pertanto è 
-necessario avere $\Delta\nu$ elevati. Questo perchè l'errore relativo su entrambe le grandezze si riduce all'aumentare del loro valore.
+Abbiamo scelto di raccogliere questo terzo insieme di misure poichè la stima più accurata della velocità della luce si ottiene con $\Delta\delta$ elevati, e pertanto è 
+necessario avere $\Delta\nu$ elevati. L'accuratezza aumenta perchè l'errore relativo su entrambe le grandezze si riduce all'aumentare del loro valore.
 Per i dati raccolti si veda Sezione \ref{RAM} - Figura \ref{RAM_TURBO}.
 
 \section{Calcolo c\begin{footnotesize}\textsubscript{BEST}\end{footnotesize}}
 
 Per il calcolo di un valore definitivo $c_{BEST}$ si sono uniti la totalità dei dati misurati da Rossi-Tambini e Ramella-Redaelli (Sezione \ref{C} - Figura 
-\ref{Dati_Completi}). Si è calcolata una media aritmetica per l'insieme di dati di Rossi-Tambini e una per l'insieme Ramella-Redaelli.
-Per l'errore abbiamo considerato sia la deviazione standard dei valori, sia una componente che potesse in una qualche misura quantificare un eventuale errore sistematico cioè il massimo degli errori delle misure, e le abbiamo sommate in 
-quadrature seguendo l'equazione \ref{c_Errore}.
-Come riportato in \ref{C} - Figura \ref{Calcolo_cbest}, la miglior stima della velocità della luce per Rossi-Tambini è stata $c_{1,BEST}=2,984\cdot10^8 \pm 1,05\cdot10^7 m/s$
-e per Ramella-Redaelli $c_{2,BEST}=2,979\cdot10^8\pm 1,54\cdot10^7 m/s$.
+\ref{Dati_Completi}). Si è calcolata una media aritmetica per l'insieme di dati Rossi-Tambini e una per l'insieme Ramella-Redaelli, aventi come errore una quantità
+calcolata come indicato in Sezione \ref{raccolta_dati} dall'equazione (\ref{c_error}). Come riportato in \ref{C} - Figura \ref{Calcolo_cbest},abbiamo ottenuto una miglior stima della 
+velocità della luce per Rossi-Tambini di $c_{1,BEST}=2,984\cdot10^8 \pm 1,05\cdot10^7 m/s$ e per Ramella-Redaelli di $c_{2,BEST}=2,979\cdot10^8\pm 1,54\cdot10^7 m/s$.
 Tramite una media ponderata di questi due valori, tra loro compatibili entro una $\sigma$, si è ottenuta la miglior stima della velocità della luce pari a
 
 \begin{center}
@@ -331,8 +332,9 @@ Tramite una media ponderata di questi due valori, tra loro compatibili entro una
 \end{center}
 che dista $z=0,18\sigma$ dal valore vero della velocità della luce $c_{vero}=2,998\cdot10^8 m/s$.
 
-Osservando la figura \ref{Calcolo_cbest} sopraindicata e anche la figura \ref{Graf_cbest} è possibile notare come i valori $c_{1,BEST}$ e $c_{2,BEST}$ siano entrambi
-inferiori al $c_{vero}$, e pertanto è possibile supporre in entrambi gli esperimenti la presenza di un errore sistematico che sottostimi il valore di $c$.
+Osservando in sezione \ref{C} le Figure \ref{Calcolo_cbest} e \ref{Graf_cbest} è possibile notare come i valori $c_{1,BEST}$ e $c_{2,BEST}$ siano entrambi
+inferiori al $c_{vero}$, e pertanto è possibile supporre in entrambi gli esperimenti la presenza di un errore sistematico che sottostimi il valore di $c$, ma che riusciamo
+a compensare con la nostra trattazione dell'errore per la singola misura di $c$.
 
 \section{Conclusioni}
 
@@ -351,7 +353,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{RT_D.JPG}
-    \caption{Misura del cammino ottico $D$}
+    \caption{Misura del cammino ottico $D$ per Rossi-Tambini}
     \label{RT_D}
 \end{figure}
 
@@ -401,7 +403,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
         \caption{Misure raccolte per $\nu=-1500Hz$}
         \label{Tab_-1500}
     \end{subfigure}
-        \caption{Dati raccolti in tabelle secondo la $\nu$ dello specchio rotante}
+        \caption{Dati divisi in tabelle secondo la $\nu$ dello specchio rotante}
         \label{Tabs}
 \end{figure}
 
@@ -472,7 +474,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{Rigetto.JPG}
-    \caption{Calcolo della migliore stima della velocità della luce basata sui valori raccolti da Rossi e Tambini $c_{1,BEST}$}
+    \caption{Calcolo della migliore stima della velocità della luce basata sui valori raccolti da Rossi e Tambini $c_{1,PRE}$ prima del rigetto. Tabella relativa al rigetto della misura 38}
     \label{Rigetto}
 \end{figure}
 \FloatBarrier %creo una barriera invisibile per assicurarmi che la roba sia posizionata dove la dichiaro
@@ -484,7 +486,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.55\linewidth]{RAM_D.JPG}
-    \caption{Misura del cammino ottico $D$}
+    \caption{Misura del cammino ottico $D$ per Ramella-Redaelli}
     \label{RAM_D}
 \end{figure}
 
@@ -492,7 +494,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{RAM_Apparato.JPG}
-    \caption{Dati dell'apparato di Ramella e Redaelli, comprensivi della focale $f_2$ della lente $L_2$ e della distanza tra $L_2$ e lo specchio rotante $a$}
+    \caption{Dati dell'apparato di Ramella-Redaelli, comprensivi della focale $f_2$ della lente $L_2$ e della distanza tra $L_2$ e lo specchio rotante $a$}
     \label{RAM_Apparato}
 \end{figure}
 
@@ -500,7 +502,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\linewidth]{RAM_CW.JPG}
-    \caption{Dati raccolti per rotazioni in senso orario (CW)}
+    \caption{Dati raccolti da Ramella-Redaelli per rotazioni in senso orario (CW)}
     \label{RAM_CW}
 \end{figure}
 
@@ -508,7 +510,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{RAM_CCW.JPG}
-    \caption{Dati raccolti per rotazioni in senso antiorario (CCW)}
+    \caption{Dati raccolti da Ramella-Redaelli per rotazioni in senso antiorario (CCW)}
     \label{RAM_CCW}
 \end{figure}
 
@@ -516,7 +518,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{RAM_TURBO.JPG}
-    \caption{Dati raccolti per rotazioni in ambo i sensi alla massima velocità angolare}
+    \caption{Dati raccolti da Ramella-Redaelli per rotazioni in ambo i sensi alla massima velocità angolare}
     \label{RAM_TURBO}
 \end{figure}
 
@@ -528,7 +530,7 @@ $c_{BEST}$ sia compatibile con $c_{vero}$ è possibile la presenza di errori sis
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.47\linewidth]{Dati_Completi.JPG}
-    \caption{Totalità dei dati raccolti, ad eccezione della misura 38, rigettata}
+    \caption{Totalità dei dati raccolti da Rossi-Tambini, ad eccezione della misura 38 rigettata}
     \label{Dati_Completi}
 \end{figure}
 
