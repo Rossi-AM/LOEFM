@@ -36,7 +36,7 @@
 \begin{abstract}
     \centering
 L’esperimento si propone di misurare la velocità delle luce usando il metodo di Focault. Dopo l'analisi di un totale di 110 misure (di cui una rigettata), provenienti 
-da due esperienze laboratoriali diverse, abbiamo ottenuto un valore per la velocità della luce pari a $c_{BEST}=2,982\cdot10^8 \pm 8,6\cdot 10^6 m/s$, compatibile
+da due esperienze di laboratorio diverse, abbiamo ottenuto un valore per la velocità della luce pari a $c_{BEST}=2,982\cdot10^8 \pm 8,6\cdot 10^6 m/s$, compatibile
 entro una $\sigma$ con il valore vero $c_{vero}=2,998\cdot10^8 m/s$.
 \end{abstract}
 \endgroup
@@ -56,11 +56,12 @@ concavo.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{App_Focault.JPG}
-    \caption{Apparato di Focault BISOGNA CAMBIARE LA DICITURA SPECCHIO PIANO}
+    \captionsetup{justification=centering,margin=0cm}
+    \caption{Apparato di Focault con specchio piano e lente a occhio di gatto (in questo esperimento è stato adoperato uno specchio concavo)}
     \label{App_Focault}
 \end{figure}
 
-Una sorgente luminosa $S$ emette una luce che diaframmata da una lente $L_1$ attraversa una lastra semiriflettente angolata di 45° rispetto alla 
+Una sorgente luminosa $S$ emette una luce che, diaframmata da una lente $L_1$, attraversa una lastra semiriflettente angolata di 45° rispetto alla 
 direzione del fascio. Una lente $L_2$ focalizza il fascio nel punto $S'$ sullo specchio concavo, dopo essere stata deflessa dallo specchio rotante. La luce riflessa 
 dallo specchio concavo viene deflessa nuovamente dallo specchio rotante, che nel frattempo ha ruotato di un angolo 
 
@@ -91,6 +92,12 @@ combinando le equazioni (\ref{DELTA}) e (\ref{G})
 \label{delta}
 \end{equation}
 
+Moltiplicando entrambi i membri dell'equazione (\ref{delta}) per $\frac{c}{\delta}$ otteniamo:
+\begin{equation}
+    c=\frac{4D^2b\omega}{(D+a)}
+    \label{first_C}
+\end{equation}
+
 È possibile ricavare $b$ dalla legge dei punti coniugati. Sapendo che:
 
 \begin{equation}
@@ -102,17 +109,26 @@ Si deduce che:
 
 \begin{equation}
 b=\frac{f_2(D+a)}{D+a-f_2}
+\label{b}
 \end{equation}
 
-E quindi, conoscendo l'espressione di $\delta$ dalla equazione (\ref{delta}), in cui compare $c$, e avendo ricavato l'unica variabile incognita $b$ dall'equazione
-(\ref{punticoniug}), si ottiene:
+E quindi, conoscendo l'espressione di $c$ dalla equazione (\ref{first_C}) e avendo esplicitato $b$ nell'equazione (\ref{b}), si ottiene:
 
 \begin{equation}
-c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a-f_2)\Delta\delta]}
-\label{c_equation}
+c = \frac{4f_2D^2\omega}{[(D+a-f_2)\delta]}
+\label{c_nodiff}
 \end{equation}
+% c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a-f_2)\Delta\delta]}
 
-dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \omega_0$ è lo spostamento dell'immagine della sorgente luminosa.
+Poichè, come vedremo nella sezione \ref{Prog_esperimento}, non è possibile determinare la posizione dell'immagine quando lo specchio rotante è fermo,
+è più pratico raccogliere una misura $\delta_0$ di riferimento a una velocità di prova $\omega_0$ e valutare lo spostamento dell'immagine $\Delta\delta = \delta-\delta_0$
+corrispondente alla variazione di velocità $\Delta\omega = \omega-\omega_0$.
+
+Pertanto la formula di $c$ diventa:
+\begin{equation}
+    c = \frac{4f_2D^2(\omega-\omega_0)}{[(D+a-f_2)\Delta\delta]}
+    \label{c_equation}
+\end{equation}
 
 \begin{figure}[h]
     \centering
@@ -124,7 +140,7 @@ dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \om
 
 \newpage
 
-\section{Progettazione dell'esperimento}
+\section{Progettazione dell'esperimento} \label{Prog_esperimento}
 
 \begin{figure}[h] 
     \centering
@@ -133,21 +149,28 @@ dove $\omega_0$ è la velocità angolare iniziale e $\Delta\delta = \omega - \om
     \label{schema_apparato}
 \end{figure}
 
-Il banco ottico di laboratorio era composto da un binario magnetico dove erano già presenti una sorgente luminosa e uno specchio rotante fissati magneticamente,
-e un sistema di specchi ancorato saldamente al tavolo mediante morse. Sul binario magnetico era possibile aggiungere lenti, squadrette e lamine polaroid anch'esse con base
-magnetica. Tutto l'apparato è schematicamente rappresentato in Figura \ref{schema_apparato}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{FotoBinario.jpgs}
+    \caption{Foto del binario magnetico}
+    \label{FotoBinario}
+\end{figure}
+
+Il banco ottico di laboratorio è composto da un binario magnetico dove sono presenti una sorgente luminosa e uno specchio rotante fissati magneticamente. Il binario magnetico
+è anche dotato di una scala graduata sensibile al millimetro che permette di conoscere la posizione di ogni singolo componente dell'apparato. Sul banco ottico è inoltre 
+presente un sistema di specchi ancorato saldamente al tavolo mediante morse. Sul binario magnetico è possibile aggiungere lenti, squadrette (strumenti per la 
+regolazione del fascio luminoso) e lamine polaroid. Tutto l'apparato è rappresentato in Figura \ref{schema_apparato} e \ref{FotoBinario}.
 
 Prima di cominciare le misure di $c$ è necessario assicurarsi che gli elementi del banco ottico siano correttamente posizionati.
 
 \vspace{3mm}
 
-Per fare ciò abbiamo in principio misurato la lunghezza del cammino ottico $D$ del raggio luminoso dallo specchio rotante allo specchio concavo, raccogliendo 
+Per fare ciò abbiamo per prima cosa misurato la lunghezza del cammino ottico $D$ del raggio luminoso dallo specchio rotante allo specchio concavo, raccogliendo 
 4 misure per le distanze tra specchio rotante e specchio 1 $d_{rot,1}$, tra specchio 1 e specchio 2 $d_{1,2}$ e tra specchio 2 e specchio concavo $d_{2,conc}$, per poi 
-ottenere tramite una somma delle loro medie aritmetiche il valore di $D$, con incertezza $\sigma D \approx 0,01 m = \sigma d$). Gli strumenti utilizzati in questa fase sono
-stati due rotelle metriche di portata $15m$ e $3m$ entrambe sensibili al centimetro.
+sommarle e ottenere il valore di $D$. Gli strumenti utilizzati in questa fase sono due rotelle metriche di portata $15m$ e $3m$ entrambe sensibili al centimetro.
 
 \vspace{3mm}
-
+% (con incertezza $\sigma D \approx 0,01 m = \sigma d$)
 La sorgente luminosa coerente è un laser di potenza $0,35W$ che nonostante la bassa potenza ha richiesto l'utilizzo di una coppia di lamine polaroid per evitare danni agli
 occhi; sono state apposte magneticamente sul binario subito dopo il laser.
 Per permette alla luce di percorrere il sistema di specchi che va dallo specchio rotante, allo specchio $S_1$, quindi allo specchio $S_2$ e infine allo specchio concavo 
