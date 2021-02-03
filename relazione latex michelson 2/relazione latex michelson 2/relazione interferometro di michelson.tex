@@ -1,0 +1,594 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{amstext}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\geometry{a4paper}
+
+\usepackage[french,italian]{babel}
+\frenchspacing
+
+\title{Relazione sull'interferometro di Michelson}
+\author{Lorenzo Ramella, Alessandro Matteo Rossi, Marco Tambini}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In questa esperienza abbiamo utilizzato l'interferometro di Michelson per misurare la lunghezza d'onda di un laser e, grazie a quest'ultima, l'indice di rifrazione dell'aria; successivamente abbiamo misurato la lunghezza di un pacchetto di luce bianca e abbiamo calcolato la differenza tra le due frequenze emesse da una lampada al sodio.
+riportiamo qui sotto i risultati:
+\[ \lambda_laser = 0,619 \pm 0,016 [\mu m] \]
+\[ n_{aria} = 1,000255 \pm 7 \cdot 10^{-6} \]
+\[ L_{pacchetto} = 7,5 \pm 2,8 [\mu m] \]
+\[ \Delta \lambda_{na} = 6,285 \pm 0,007 [\textrm{Å}] \]
+\end{abstract}
+\tableofcontents
+
+
+
+\section{Proggettazione dell'esperienza}
+Le sorgenti di luce usate per questo esperimento sono: un laser, posizionato su una rotaia allineata con la parte "centrale" dell'apparato, una lampada al sodio (Na) e una lampada ad incandescenza. La rotaia è stata necessaria anche per posizionare la lente dispersiva per le misure del laser e la fibra ottica da attacare alle altre lampade.
+
+La parte centrale è formata da: uno specchio semiriflettente $S_1$, uno specchio che permette spostamenti orizzontali $S_3$, uno specchio di cui possiamo modificare l'inclinazione $S_2$, una lastra compensatrice $L_C$ e una camera depressurizzabile rimovibile necessaria per le misure dell'indice di rifrazione dell'aria. 
+
+La visualizzazio dei risultati è avvenuta su due schermi, uno situato più in lontananza mentre il secondo mobile e situato a una distanza molto minore rispetto al secondo schermo.
+
+
+%immagine apparato
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{IM strumentazione}
+  \caption{Foto dell'apparato sperimentale}
+\end{figure}
+
+
+La presa delle misure è stata effettuata tramite un calibro palmer con una sensibilità di $0,01[mm]$, il calibro è tuttavia collegato allo specchio da una leva che riduce di 1/5 lo spostamento, abbiamo quindi usato un incertezza sulle misure di lunghezza pari a $2 \sqrt2 [\mu m]$.
+% uso paint per scrivere cosa sono le varie cose? se si devo installarlo e reimparare ad usarlo
+
+
+
+
+\section{Introduzione teorica}
+\subsection{Richiami teorici}
+Come suggerisce il nome interferometro, il fenomeno che possiamo osservare è quello dell'interferenza. 
+Per potere ossrvare delle figure di interferenza stabili abbiamo bisogno di due fattori: le luci che causano interferenza devono avere una differenza di fase costante e la loro intensità deve essere simile; se si verificano le condizioni sopra descritte possiamo osservare due tipi principali di interferenza:
+
+Interferenza costruttiva, visibile come zone luminose, se:
+\[ \Delta \phi = 0 \rightarrow I = 4 I_0 \]
+
+Interferenza distruttiva, visibile come zone scure, se: 
+\[ \Delta \phi = \pi \rightarrow I = 0 \]
+
+L'interferenza si applica tuttavia solo in casi di onde sinusoidali infinite, impossibili in caso reale dati i tempi di emissione finiti. La presenza di tempi finiti implica untroncamento dell'onda sinusoidale, la sezione troncata viene definita pacchetto d'onda. Viene quindi definito l'intervallo di tempo $\Delta t_c$, detto tempo di coerenza, nel quale l'onda si mantiene sinusoidale e può essere considerata un'onda sinusoidale infinita. Al tempo di coerenza possiamo quindi associare una lunghezza di coerenza $L_c$ corrispondente allo spazio percorso durante il tempo di coerenza dalla luce.
+
+La lunghezza di frequenza è maggiore nei casi in cui i pacchetti siano emessi in maniera coerente, come nel laser, o in cui si abbia una luce monocromatica, situazione simille alla lampada al sodio, mentre risulta drasticamente minore in casi di luce non coerente, come nel caso della luce bianca.
+
+
+\subsection{Percorso della luce}
+
+%immagine apparato
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{IM percorso luce}
+  \caption{schema apparato dove la linea tratteggiata indica il percorso della luce}
+\end{figure}
+
+
+Nel suo percorso la luce incontra inizialmene la lastra semiriflettente $S_1$, scontrandosi con essa il fascio si divide in due: un primo fascio prosegue indisturbato verso lo specchio $S_2$ e, dopo essere tornato indietro, viene riflesso da $S_1$ sullo schermo. Il secondo fascio viene invece riflesso, ripercorre nuovmente la lastra $S_1$ e viene riflesso da $S_3$, a questo punto attraversa nuovamente $S_1$ arrivando inifne sullo schermo. La lastra di compensazione è un semplice panello di spessore, materiale e inclinazione uguali a $S_1$ in maniera tale da far percorrere alla luce indirizzata verso $S_2$ lo stesso cammino ottico dato che la luce inidirizzata verso $S_3$ passa per $S_1$ due volte in più.
+Una volta arrivata sullo schermo la luce indirizzata verso $S_2$ interferisce con quella indirizzata verso $S_3$; è importante notare che, per le leggi della rilessione, i due fasci avranno una differenza di fase di $\pi$ e quindi, in condizioni di ortogonalizzazione e di pari distanza tra gli specchi, dovremmo avere interferenza puramente distruttiva e non riuscire a verdere nessuna frangia.
+
+
+\subsection{Interpretazione dei risultati}
+Nel nostro sistema ottico possiamo allineare i due specchi e definire due fuochi come mostrato (Figura 3).
+
+%immagine apparato
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{IM fuochi}
+  \caption{schema apparato dove la linea tratteggiata indica il percorso della luce}
+\end{figure}
+
+
+Immaginando che ognuno dei due punti funga da origine di un onda sferica possiamo visualizzare i punti nello spazio di uguale lunminosità come iperboloidi di rotazione. Se intersechiamo gli iperboloidi con un piano, nel nostro caso rappresentato dallo schermo, dovrebbero essere visualizzati come cerchi concentrici o, nel caso in cui gli specchi non siano ortogonali a causa dell'inclinazione di $S_2$, si visualizzeranno invece degli elissi. 
+Se lo specchio $S_2$ non è ortogonale e lo specchio $S_3$ viene sposato in maniera tale che la congiungente  $F_1$ e $F_2$ sia pressoché parallela allo schermo dovremmo invece visualizzare delle linee perpendicolari verticali. 
+
+Prendendo un punto sulo schermo possiamo notare che troviamo interferenza costruttiva se la differenza di cammino tra $F_1$ e $F_2$ può essere descritta come:
+
+\begin{equation} 
+F_1P - F_2 P = 2d \cos{\theta} = m \lambda 
+\end{equation}
+
+Dove la seconda parte è un modo di riscrivere la prima parte in funzione della distanza $d$ tra $F_1$ e $F_2$ e dell'angolo tra la normale allo schermo e $F_1 P$ che chiamiamo $\theta$; la seconda parte indica invece le condizioni di interferenza costruttiva in cui $\lambda$ è la lunghezza d'onda della luce mentre $m \in N$ %inserire numeri naturali
+e determina gli ordini delle fasce luminose; notiamo che a una variazione pari a $\lambda$ della distanza dei due specchi otterremo nuovamente delle figure di interferenza nelle stesse posizioni iniziali ma in cui l'n -esimo ordine è stato sostituito con l'n-1 -esimo.
+
+
+\subsection{Misure}
+Dalla formula $eq.1$ possiamo quindi ricavare:
+
+\begin{equation} 
+2 n \Delta{x} = N_\lambda \lambda 
+\end{equation}
+
+Dove $n$ è l'indice di rifrazione dell'aria, $\Delta{x}$ è lo spostamento eseguito, $\lambda$ è la lunghezza d'onda del laser e $N_\lambda$ è il numero di fasce (sopra nominati ordini) che si vedono passare. la presenza del 2 davanti al $\Delta{x}$ tiene conto del fatto che la luce percorre lo spazio sia in "andata" che in "ritorno"
+
+In $eq.2$ non conosciamo tuttavia l'indice di rifrazione dell'aria; per la sua misura utilizzeeremo una cameretta depressurizzabile. Tenendo conto della differenza di cammino ottico nel caso in cui nella camera vi sia vuoto e nel caso in cui vi sia aria a pressione atmosferica possiamo usare l formula:
+
+\begin{equation}
+ 2D (n {-} 1) = N_n \lambda
+\end{equation}
+
+In cui $D$ è la lunghezza della cameretta, $n$ è l'indice di rifrazione dell'aria e 1 quello del vuoto, $\lambda$ è la stessa lunghezza d'onda della formula precedente mentre $N_n$ è il numero di fasce  che passano mentre la cameretta si ripressurizza.
+
+La lampada a incandescenza non è una sorgente di luce coerente e possiamo quindi notare interferenza solo nel caso in cui i pacchetti di luce provenienti dai due percorsi si incontrano. possiamo quindi dire che:
+
+\begin{equation} 
+L = \Delta{x} 
+\end{equation}
+
+In cui non mettamo un 2 davanti a $\Delta{x}$ come nelle precedenti misure dato che sarebbe necessario un 2 anche davanti a $L$.
+
+l'ultim misura è quella del $\Delta_\lambda$ della lampada Na. Data la presenza di due frequenze l'effetto che vedremo sarà molto simile a quello di una luce monocromatica ma, a causa della differenza delle due frequenze, spostando $S_3$ noteremo che in alcuni punti le frange luminose di $\lambda_1$ si sovrapporrano con quelle scure di $\lambda_2$, quando ci troveremo in questi punti non saremo in grado di distinguere alcuna frangia di interferenza sullo schermo. Troviamo che non vedremo frange per:
+
+\begin{equation} 
+\Delta_1 = 2 N_1 \frac{\lambda_2}{2} = (2 N_1 + 1) \frac{\lambda_1}{2} 
+\end{equation}
+
+Da cui otterremo nuovamente frange per:
+
+\begin{equation} 
+\Delta_2 = 2N_2 \lambda_2 =(2 N_1 + 1) \lambda_1 
+\end{equation}
+
+Risolvendo per $N_1$ e $N_2$ possiamo quindi giungere alla conclusione che:
+
+\begin{equation} 
+\Delta_m = m \frac{\lambda_1 \lambda_2}{\lambda_1 {-} \lambda_2} = 2 \Delta{x} 
+\end{equation}
+
+Dove consideriamo $m$ il passaggio tra due condizioni di "frangia netta"; ricaviamo quindi che la differenza tra le $\lambda$ della lampada Na vale:
+
+\begin{equation} 
+\Delta{\lambda} = \frac{m \bar \lambda^2}{2 \Delta{x}} 
+\end{equation}
+
+in cui $ \bar \lambda^2$ è l media tra i valori delle $\lambda$ della lampada Na.
+
+
+
+
+\section{Setup}
+Prima di iniziare ci siamo messi in condizione di ortogonalità degli specchi. Abbiamo utilizzato il laser posto su una rotaia allineata con l'apparato e, girando le viti poste sul retro dello specchio $S_2$, abbiamo fatto combaciare i due puntini luminosi presenti sullo specchio. Allineaiti i puntini abbiamo posto la lente dispersiva sulla rotaia assicurandoci che la luce arrivasse correttamente all'apparato e abbiamo agito nuovamente sulle viti di $S_2$ fino a notare figure di interferenza. Una volta ottenuti dei cerchi concentrici abbiamo aggiustato lo specchio per vedere solo una parte dell'ellisse in maniera tale da semplificare la lettura dei risultati
+
+
+
+
+\section{Misura $\lambda$ laser}
+Per effettuare la prima misura abbiamo fissato un punto sullo schermo in cui erano ben visibili fasce scure (possono essere usate anche fasce luminose) e, dopo aver segnato la posizione iniziale, abbiamo iniziato a girare lentamente la rotella contando le fasce scure che passavano. Per diminuire l'incertezza abbiamo dato maggiore importanza alla chiarezza di lettura del calibro piuttosto che ad avere lo stesso tipo di frangia della posizione iniziale.
+
+Nel nostro caso abbiamo preso 4 set di misure e, con ognuno di essi, abbiamo calcolato $\lambda$ usando l'approssimazione $n = 1$. Abbiamo propagato l'incertezza tramite la formula:
+
+\begin{equation} 
+\sigma_\lambda= \sqrt{(\frac{2 n}{N} \sigma_{\Delta x})^2 + ({-} \frac{2 n \Delta x}{N^2} \sigma_N)^2}
+\end{equation}
+
+Annotiamo che abbiamo deciso di utilizzare un incertezza su $N$ di 2 dato che riteniamo possibile che l'osservatore abbia confuso una riga precedente con una successiva durante il conto di circa 190 righe.
+Una volta ottenuti questi risultati abbiamo utilizzato una media pesata ed abbiamo ottenuto:
+\[ \lambda_laser = 0,617 \pm 0,016 [\mu m] \]
+Riportiamo quindi in (Tabella 1) i dati grezzi ed i risultati parziali.
+
+
+%tabella lambda
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | c | c | c | c |}
+\hline
+ \# & $X_1 [m \cdot 10^-5/5]$ & $X_2 [m \cdot 10^-5/5]$ & $\Delta_X [m \cdot 10^-5/5]$ & $\Delta_X [\mu m]$ & $N_\lambda$ & $\lambda [\mu m]$ & $\sigma_\lambda [\mu m]$\\
+\hline
+   1 & 100 & 131 & 31 & 62 & 200 & 0,620 & 0,029\\
+   2 & 150 & 178 & 28 & 56 & 177 & 0,633 & 0,033\\
+   3 & 200 & 231 & 31 & 62 & 196 & 0,633 & 0,030\\
+   4 & 250 & 275 & 25 & 50 & 171 & 0,585 & 0,034\\
+\hline
+\end{tabular}
+\caption{dati calcolo $\lambda$}
+\label{table:1}
+\end{table}
+
+%immagine risultato laser
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM laser}
+  \caption{etichetta con informazioni del laser}
+\end{figure}
+
+%immagine etichetta
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM etichetta laser}
+  \caption{foto dell'interferenza del laser}
+\end{figure}
+
+\pagebreak
+\section{Misura indice di rifrazione aria}
+Per effettuare la seconda abbiamo posizionato la cameretta, usata per creare il vuoto, tra $S_1$ e $S_3$. dopo aver posizionato la cameretta ed esserci accerati che la valvola fosse chiusa abbiamo acceso la pompa fino a quando abbiamo visto che la pressione si era stabilizzata. Per la presa della misura abbiamo aperto leggermente la valvola contando le frange che passavano in maniera analoga alla Misura 1.
+
+%immagine etichetta
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM cameretta}
+  \caption{immagine della cameretta depressurizzabile attaccata, tramite al tubo giallo, alla pompa}
+\end{figure}
+
+\pagebreak
+Per l'analisi d'ati abbiamo utilizzato lo stesso metodo utilizzato in Misura 1 dove tuttavia l'incertezza è stata calcolata tramite la formula:
+
+\begin{equation}
+\sigma_n = \sqrt{ (\frac{N}{2D} \sigma_\lambda)^2 + ({-} \frac{N \lambda}{2 D^2} \sigma_D)^2 + (\frac{\lambda}{2D} \sigma_N)^2} 
+\end{equation}
+
+E dove abbiamo utilizzato la $\lambda$ calcolata in Misura 1. abbiamo ottenuto il seguente valore:
+\[ n_{aria} = 1,000254 \pm 7 \cdot 10^{-6} \]
+
+Data la mancanza della conoscenza di fattori quali la temperatura della stanza e un accurata misurazione della pressione atmosferica, riportiamo il valore dell'indice di rifrazione dell'aria in condizioni standard reperito dal sito ${https://it.wikipedia.org/wiki/Indice_di_rifrazione}$
+\[ n_{aria} = 1,000293  \]
+Non riteniamo implausibile il valore ottenuto, benché a diverse deviazioni standard di distanza,  dato che il discostamento potrebbe essere causato dalle differenti condizioni di temperatura e pressione.
+
+Riportiamo in (Tabella 2) i dati grezzi ed i risultati parziali
+
+
+%tabella n
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | }
+\hline
+ \# & $N_n$ & $n$ & $\sigma_n$\\
+\hline
+   1 & 40 & 1,000247 & $1,5 \cdot 10*{-5}$\\
+   2 & 41 & 1,000253 & $1,5 \cdot 10*{-5}$\\
+   3 & 42 & 1,000259 & $1,5 \cdot 10*{-5}$\\
+   4 & 42 & 1,000259 & $1,5 \cdot 10*{-5}$\\
+\hline
+\end{tabular}
+\caption{dati calcolo indice di rifrazione aria}
+\label{table:2}
+\end{table}
+
+
+
+
+\section{Sistema $\lambda$-$n$}
+I dati forniti in Misura 1 e Misura 2 sono fortemente influenzati dall'iniziale assunzione di porre $n = 1$ In Misura 1, per correggere questo errore abbiamo applicato due metodi dato che non siamo in grado di identificare il migliore prima di effettuare i calcoli. 
+
+
+
+\subsection{Sistema}
+Per il primo metodo abbiamo messo a sistema $eq.2$ ed $eq.3$ ottenendo quindi:
+
+\begin{equation} 
+n= \frac{1}{1 - \frac{\Delta_x}{N_\lambda} \frac{N_n}{D}} 
+\end{equation}
+
+In cui abbiamo raccolto le misure
+
+\[ a = \frac{\Delta_x}{N_\lambda} \]
+\[ b = \frac{N_n}{D} \]
+
+Per poter eseguire l'analisi statistica dato che non avremmo potuto ricavare misure singole dai dati, al contrario di quanto fatto per misure 1 e 2 provenendo essi sia dalla misura per $\lambda$ che dalla misura per $n$. Abbiamo calcolato lincertezza sia per $a$ che per $b$ tramite la formula di propagazione degli errori e, dai valori risultati, abbiamo calcolato una media pesata ottenendo i valori di $a$, $\sigma_a$, $b$ e $\sigma_b$ utilizzati per calcolare $n$ e, tramite la propagazione degli errori, $\sigma_n$. il valore isultato è:
+\[ n_{aria} = 1,000256 \pm 1,4 \cdot 10^{-5} \]
+Da cui abbiamo proceduto a eseguire in maniera analoga alla Misura 1, il calcolo di $\lambda$ in cui l'errore, per tenere conto dell'incertezza su n, è calcolato come:
+
+\begin{equation} 
+\sigma_\lambda= \sqrt{(\frac{2 n}{N_\lambda} \sigma_{\Delta x})^2 + (\frac{2 \Delta_x}{N_\lambda} \sigma_n) + ({-} \frac{2 n \Delta x}{N_\lambda^2} \sigma_{N_\lambda})^2} 
+\end{equation}
+
+Abbiamo quindi ottenuto il valore:
+\[ \lambda_laser = 0,619 \pm 0,016 [\mu m] \]
+Per controllare la tabella con i risultati parziali controllare in Appendice Grafici e tabelle immagine %numero immagine
+
+
+
+\subsection{Metodo ricorsivo}
+Per il secondo metodo abbiamo eseguito gli stessi calcoli delle Misure 1 e 2; inizialmente abbiamo supposto $n = 1$ e da esso abbiamo calcolato $\lambda_1$ e $n_1$ ottenendo gli stessi risultati sopracitati, abbiamo poi utilizzato il nuovo valore di $n$ ottenuto per calcolare nuovamente sia $\lambda_2$ che $n_2$. dopo aver iterato il processo 4 volte abbiamo ottenuto dei risultati che non variavano in maniera significativa, riportiamo la differenza dei valori tra la terza e la quarta iterazione:
+\[ \lambda_laser = 1,029 \cdot 2^{-11} \pm 2,6 \cdot 2^{-13} [\mu m] \]
+\[ n_{aria} = 1,663 \cdot 10^{-11} \pm 0 \]
+Nonostante gia alla terza iterazione non notavamo differenze nelle cifre significative da noi utilizzate, rendendo quindi la quarta iterazione non strettamente necessaria, abbiamo deciso di tenerla comunque dato che con questa iterazione la differenza di $\sigma_n$ si annullava completamente nel foglio di calcolo Excell da noi usato. riportiamo quindi i valori trovati:
+\[ \lambda_laser = 0,619 \pm 0,016 [\mu m] \]
+\[ n_{aria} = 1,000255 \pm 2 \cdot 10^{-6} \]
+Per controllare la tabella con i risultati parziali controllare in Appendice (Tabella 6)
+
+
+
+\subsection{Analisi risultati}
+Riportiamo in (figura 7 e 8) i grafici per l'analisi dei risultati.
+
+%grafici lambda e n
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM grafico risultati lambda}
+  \caption{comparazione risultati lambda laser}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM grafico risultati n}
+  \caption{comparazione risultati indice di rifrazione dell'aria}
+\end{figure}
+
+
+Riteniamo che i nostri risultati per quanto riguarda $\lambda$ possano essere considerati attendibili dato che si trovano tutte entro una deviazione standard di distanza dal valore "vero", fornito dal costruttore del laser, di $0,633 \mu m$. Dato che i risultati ottenuti dai due metodi sono esattamente uguali per $\lambda$ e non abbiamo un valore accurato per il riferimento di $n$, li riteniamo entrambi validi e non riteniamo di poter definire un metodo più accurato dell'altro con il numero di dati a nostra disposizione. 
+
+
+
+
+\section{Msiura lunghezza pacchetto di luce bianca}
+
+\subsection{Setup}
+In seguito alle misure con laser siamo quindi passati alla misura della lunghezza del pacchetto d'onda della luce bianca, dato che la lunghezza di coerenza della luce bianca è molto più piccola rispetto a quella del laser, ci siamo dovuti porre in condizioni in cui l'asse tra i due fuochi e lo specchio fossero pressoché paralleli. per trovare questa condizione abbiamo iniziato a girare la rotella fino ad arrivare a vedere delle linee verticali leggermente curve, abbiamo continuato fino a quando la curvatura ha cambiato direzione e ci siamo posizionati nel punto in cui notavamo il cambio di curvatura. abbiamo quindi spento il laser e abbiamo posizionato la fibra ottica sulla rotaia direttamente davanti a $S_1$ (la lente divergente è necessaria solo per il laser). nonostante il posizionamento eseguitp con il laser non abbiamo notato interferenza e abbiamo quindi continuato a girare la rotella finché sullo schermo abbiamo iniziato a vedere un alternanza di varie frange colorate come in (Figura 9).
+
+%immagine pacchetto di luce
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM pacchetto}
+  \caption{situazione di interferenza del pacchetto di luce bianca}
+\end{figure}
+
+
+\subsection{Misura}
+ci siamo posti in una condizione in cui non riuscivamo a vedere frange, abbiamo iniziato a girare la rotella fino a iniziare a vedere le frange e abbiamo segnato la posizione, abbiamo poi continuato a girare la rotella fino a tornare in condizione in cui lo schermo era completamente bianco segnando il punto in cui non riuscivamo più a vedere le frange.
+ 
+Per la misura abbiamo effettuato un totale di 4 misure, girando la rotella sia in senso orario che in senso antiorario per ridurre possibili errori. Dai nostri dati abbiamo ottenuto, usando una media aritmetica, un valore del pacchetto pari a:
+\[ L_{pacchetto} = 7,5 \pm 2,8 [\mu m] \]
+Notiamo che la misura ha un valore dello stesso ordine di grandezza dell'incertezza strumentale usato come incertezza e riteniamo quindi che possa essere errata. purtroppo non abbiamo un valore preciso con cui compararla. Dopo con un confronto con il gruppo Ve 13 abbiamo saputo che loro hanno ottenuto un valore di $14 \mu m$ e riteniamo che la misura sia plausibile dal punto dell'ordine di misura anche se, avendo usato lampade diverse, non possiamo considerarlo un valore adatto a una comparazione al di fuori dell'ordine di grandezza.
+
+Riportiamo in (Tabella 3) i dati grezzsi e i risultati parziali.
+
+
+%tabella pachetto d'onda luce bianca
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | c | }
+\hline
+\# & $X_1 [m \cdot 10^-5/5]$ & $X_2 [m \cdot 10^-5/5]$ & $\Delta_X [m \cdot 10^-5/5]$ & $\Delta [\mu m]$\\
+\hline
+   1 & 1591 & 1587 & 4 & 8\\
+   2 & 1587 & 1591 & 4 & 8\\
+   3 & 1587 & 1590 & 3 & 6\\
+   4 & 1591 & 1587 & 4 & 8\\
+\hline
+\end{tabular}
+\caption{dati calcolo pacchetto di luce bianca}
+\label{table:3}
+\end{table}
+
+
+Abbiamo provato a mettere un filtro verde davanti alla luce per provare a vedere cosa succedeva nel caso di una luce più simile a una luce monocromatica. Abbiamo preso una sola misura dato che volevamo un semplice paragone trovando che la lunghezza del pacchetto è passata da $7,5 \mu m$ senza filtro a $68 \mu m$ con il filtro allungando, come ipotizzato, la lunghezza di coerenza.
+
+
+
+
+\section{Misura $\Delta_\lambda$ lampada  Na}
+Per la quarta abbiamo staccato la fibra ottica dalla lampada ad incandescenza e l'abbiamo attaccata alla lampada Na. una volta attacata la lampada abbiamo iniziato avedere delle frange gialle in maniera simile a quanto visto con il laser. Abbiamo ruotato la rotella fino a vedere le frange scure scomparire e segnato quindi la prima misura, usata riferimento anche per le altre. Abbiamo continuato a ruotare la rotella vedendo le frange scure ricomparire e, dopo aver continuato a girare, siamo tornati nella condizione in cui le frange scure scomparivano. Abbiamo ripetuto i passaggi per quatro volte, prendendo le posizioni in cui le frange scomparivano, ma avendo colpito accidentalmente l'apparato abbiamo dovuto fermarci e rieseguire il setup dell'apparato prima ndi prendere altre 5 misure.
+
+Riportiamo in (Tabella 4 e 5) i dati grezzi e i risultati parziali.
+
+%tabella Na 1
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | c | c | c | c |}
+\hline
+ \# & $X_1 [m \cdot 10^-5/5]$ & $X_2 [m \cdot 10^-5/5]$ & $\Delta_X [m \cdot 10^-5/5]$ & $\Delta_X [\mu m]$ & $M$ & $\Delta_\lambda [\textrm{Å}]$ & $\sigma_{\Delta_\lambda} [\textrm{Å}]$\\
+\hline
+   1 & 1583 & 1495 & 88 & 176 & 1 & 9,866 & 0,159\\
+   2 & 1583 & 1293 & 290 & 580 & 2 & 5,987 & 0,029\\
+   3 & 1583 & 1139 & 444 & 888 & 3 & 5,866 & 0,019\\
+   4 & 1583 & 1092 & 491 & 982 & 4 & 7,073 & 0,020\\
+\hline
+\end{tabular}
+\caption{dati calcolo $\Delta_{\lambda_{na}}$ 1}
+\label{table:4}
+\end{table}
+
+
+%tabella Na 2
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | c | c | c | c |}
+\hline
+ \# & $X_1 [m \cdot 10^-5/5]$ & $X_2 [m \cdot 10^-5/5]$ & $\Delta_X [m \cdot 10^-5/5]$ & $\Delta_X [\mu m]$ & $M$ & $\Delta_\lambda [\textrm{Å}]$ & $\sigma_{\Delta_\lambda} [\textrm{Å}]$\\
+\hline
+   1 & 1580 & 1430 & 150 & 300 & 1 & 5,788 & 0,055\\
+   2 & 1580 & 1285 & 295 & 590 & 2 & 5,886 & 0,028\\
+   3 & 1580 & 1145 & 435 & 870 & 3 & 5,987 & 0,019\\
+   4 & 1580 & 1000 & 580 & 1160 & 4 & 5,987 & 0,015\\
+   5 & 1580 & 949 & 631 & 1262 & 5 & 6,879 & 0,015\\
+\hline
+\end{tabular}
+\caption{dati calcolo $\Delta_{\lambda_{na}}$ 2}
+\label{table:5}
+\end{table}
+
+
+\pagebreak
+Dove abbiamo indicato con m il numero di passaggi $"senza$ $frange$-$senza$ $frange"$ rispetto alla posizione iniziale.
+
+Da ognuna delle tabelle abbiamo calcolato, in maniera analoga al processo usato in Misura 1, i valori di $\Delta_\lambda$ e ne abbiamo fatto due medie pesate ottenendo i seguenti risultati:
+\[ \Delta \lambda_{na} = 6,361 \pm 0,012 [\textrm{Å}] \]
+\[ \Delta \lambda_{na} = 6,258 \pm 0,009 [\textrm{Å}] \]
+abbiamo deciso di scartare il valore che si aggira sui $9 \textrm{Å}$ visibile in tabella 4 dato che risulta circa 300 $\sigma$ mentre il secondo valore più distante è a circa 60 $\sigma$ di distanza. purtroppo non ci siamo potuti affidare al criterio di chauvenet per determinare se scartare la misura dato un grave problema di sottostima dell'incertezza di cui parleremo in seguito.
+
+Dopo aver scartato il dato abbiamo ottenuto il valore:
+\[ \Delta \lambda_{na} = 6,339 \pm 0,0012 [\textrm{Å}] \]
+Data la presenza della media pesata il valore scartato non risulta gravemente alterato ma più vicino al valore aspettato.
+Abbiamo quindi fatto una media pesata con i valori ottenuti dalle due tabelle ottenendo il valore:
+\[ \Delta \lambda_{na} = 6,285 \pm 0,007 [\textrm{Å}] \]
+Riportiamo in (Figura 10) il grafico per la comparazione dei risultati
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM grafico risultati delta lambda}
+  \caption{comparazione risultati $\Delta_\lambda$}
+\end{figure}
+
+
+Come si può notare dai dati e dal grafico i nostri valori dono a diverse $\sigma$ di distanza dal valore vero, ciò è causato dal fatto che l'errore considerato è solo quello strumentale calcolato con la formula:
+
+\begin{equation} 
+\sigma_{\Delta_\lambda} = \sqrt{ ({-} \frac{n {\bar \lambda}^2}{2 \Delta_x^2} \sigma_{\Delta_x})^2} 
+\end{equation}
+
+L'errore predominante in questa misura risulta invece quello sulla lettura della posizione in cui scompaiono le fascie scure dato che il passaggio è molto graduale e non si nota un "taglio netto".%va bene usare taglio netto?
+ per aggirare il problema avremmo dovuto misurare più volte una posizione per ottenere l'errore statistico ma, a causa di una svista dello sperimentatore, ciò non è stato fatto. 
+
+Riteniamo quindi di non poter eseguire alcuna analisi statistica per la compatibilità dei nostri valori rispetto al valore vero calcolato tramite i valori forniti delle $\lambda$ della lampada Na.
+
+
+
+
+\section{Conclusioni}
+Riteniamo i risultati ottenuti per la Misura 1 compatibili data la loro distanza di circa una deviazione standard dal valore vero. Per la Misura 2 ci limitiamo a considerare i valori plausibili data l'assenza di un valore con cui compararli. Per la Misura 3, non avendo nessun valore adatto alla comparazione, riteniamo che il risultato possa essere plausibile in comparazione al valore ottenuto dai nostri compagni e all'analisi fatta con il filtro verde ma riteniamo che il valore preciso possa essere errato data la grande incerteza. Per la Misura 4 ci limitiamo a riportare i dati senza un analisi statistica data la problematica dell'incertezza sulla misura di cui abbiamo discusso sopra.
+
+
+
+
+\section{Appendice grafici e tabelle}
+\subsection{Misura $\lambda$}
+
+%immagine tabella lambda
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{IM tabella lambda}
+  \caption{tabella dati per il calcolo di $\lambda_{laser}$ e risultati}
+\end{figure}
+
+\subsection{Misura indice di rifrazione aria}
+
+%Immagine tabella n
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM tabella n}
+  \caption{tabella dati per il calcolo dell'indice di rifrazione aria e risultati}
+\end{figure}
+
+\subsection{Sistema $\lambda$-$n$}
+\subsubsection{Sistema}
+
+%Immagine tabelle sistema
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{IM tabella a}
+  \caption{tabella dati per il cacolo di a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM tabella b}
+  \caption{tabella dati per il calcolo di b}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\linewidth]{IM tabella lambda sistema}
+  \caption{tabella per il calcolo di $\lambda$}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM risultati sistema}
+  \caption{risultati sistema}
+\end{figure}
+%fine tabelle sistema
+
+\subsubsection{Metodo ricorsivo}
+
+%tabella sistema ricorsivo
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c | c | c | }
+\hline
+ $ricorsioni$ & $\lambda [\mu m]$ & $\sigma_\lambda [\mu m]$ & $n$ & $\sigma_n$\\
+\hline
+ 1 & 0,618919207 & 0,015532975 & 1 & 0\\
+ 2 & 0,619077181 & 0,015536939 & 1,000255241 & 7,42201E-06\\
+ 3 & 0,619077221 & 0,01553694 & 1,000255306 & 7,4239E-06\\
+ 4 & 0,619077221 & 0,01553694 & 1,000255306 & 7,4239E-06\\
+\hline
+ $\Delta_{4 3}$ & -1,0292E-11 & -2,58319E-13 & -1,66287E-11 & 0\\
+\hline
+\end{tabular}
+\caption{risultati sistemi ricorsivo copiati dal foglio di calcolo Excell}
+\label{table:6}
+\end{table}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM tabella ricorsione}
+  \caption{tabela risultati del metodo ricorsivo parziali e finali}
+\end{figure}
+
+\subsection{Misura pacchetto di luce bianca}
+
+%tabella pacchetto
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM tabella pacchetto}
+  \caption{tabella dati per il calcolo della lunghezza del pacchetto di luce bianca, dati filtro verde e risultati}
+\end{figure}
+
+\subsection{Misura $\Delta_\lambda$ lampada Na}
+
+%tabelle delta lambda
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.75\linewidth]{IM tabella delta lambda set 1}
+  \caption{tabella dati per il calcolo di $\Delta_\lambda$ e risultato parziale (set1)}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.75\linewidth]{IM tabella delta lambda set 1 scarto}
+  \caption{tabella dati per il calcolo di $\Delta_\lambda$ dopo lo scarto e risultato parziale (set 1)}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.75\linewidth]{IM tabella delta lambda set 2}
+  \caption{tabella dati per il calcolo di $\Delta_\lambda$ e risultato parziale (set 2)}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.25\linewidth]{IM risultati delta lambda}
+  \caption{risultato finale calcolo di $\Delta_\lambda$}
+\end{figure}
+%fine tabelle delta lambda
+
+\subsection{Comparazione risultati}
+
+%inizio tabelle comparazione risultati
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM comparazione lambda}
+  \caption{risultati e grafico di comparazione $\lambda$}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM comparazione n}
+  \caption{risultati e grafico di comparazione dell'indice di rifrazione aria}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{IM comparazione delta lambda}
+  \caption{risultatie grafico di comparazione delle $\Delta_\lambda$ della lampada Na}
+\end{figure}
+
+\end{document}
