@@ -7,9 +7,14 @@
 \usepackage{subcaption}
 \usepackage{verbatim}
 \usepackage{amsmath,amssymb}
+\usepackage[section]{placeins}
+\usepackage{amstext}
+\usepackage{enumitem} %PERMETTE L'USO DI ELENCHI NUMERATI
+
+
 \geometry{a4paper}
 
-\usepackage[french,italian]{babel}
+\usepackage[french,italian,english]{babel}
 \frenchspacing
 
 \title{Relazione dell'esperimento di Millikan}
@@ -19,8 +24,11 @@
 \begin{document}
 \maketitle
 
+\begingroup
+\selectlanguage{english}
 \begin{abstract}
 L’esperimento si propone di fornire una stima della carica dell’elettrone. La carica viene studiata partendo dallo studio del moto di alcune goccioline d’olio elettricamente cariche in presenza ed in assenza di un campo elettrico. L'esperienza è stata svolta da due studenti in due turni separati di laboratorio.
+
 
 \vspace{4mm}
 
@@ -37,6 +45,9 @@ I dati ottenuti sono stati uniti e da questi si è potuti giungere ad una stima 
 \[q_e = - 1,59 \cdot\ 10^{-19} \pm 4 \cdot 10^{-21} \, \textrm{C}\]
 
 \end{abstract}
+\endgroup
+
+\selectlanguage{italian}
 \tableofcontents
 
 \section{Introduzione teorica}
@@ -612,7 +623,7 @@ Riducendo l'incertezza ad una cifra significativa e ricordando che la carica del
 
 Il valore accettato della carica dell'elettrone è 
 
-\[q= - 1,6022 \cdot 10^{-21} \, \textrm{C}\]
+\[q= - 1,6022 \cdot 10^{-19} \, \textrm{C}\]
 
 \begin{figure}[h]
 \centering
