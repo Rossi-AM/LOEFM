@@ -29,11 +29,14 @@
 \selectlanguage{english}
 \begin{abstract}
 In questa esperienza abbiamo utilizzato l'interferometro di Michelson per misurare la lunghezza d'onda di un laser e, grazie a quest'ultima, l'indice di rifrazione dell'aria; successivamente abbiamo misurato la lunghezza di un pacchetto di luce bianca e abbiamo calcolato la differenza tra le due frequenze emesse da una lampada al sodio.
+
 Riportiamo qui sotto i risultati:
 \[ \lambda_{laser} = 0,619 \pm 0,016 \; \mu m \]
 \[ n_{aria} = 1,000255 \pm 7 \cdot 10^{-6} \]
 \[ L_{pacchetto} = 7,5 \pm 2,8 \; \mu m \]
 \[ \Delta \lambda_{Na} = 6,285 \pm 0,007 \; \textrm{Å} \]
+
+L'esperimento è stato svolto da Tambini, mentre Ramella e Rossi hanno contribuito all'analisi dei dati e alla stesura della relazione.
 \end{abstract}
 \endgroup
 
@@ -43,16 +46,22 @@ Riportiamo qui sotto i risultati:
 
 
 \section{Progettazione dell'esperienza}
-Le sorgenti di luce usate per questo esperimento sono un laser posizionato su una rotaia allineata con la parte "centrale" dell'apparato, una lampada al sodio (Na) e una lampada ad incandescenza. La rotaia è stata necessaria anche per posizionare la lente dispersiva per le misure del laser e la fibra ottica da attaccare alle altre lampade.
+Le sorgenti di luce usate per questo esperimento sono un laser, posizionato su una rotaia allineata con la parte "centrale" dell'apparato, una lampada al sodio (Na) e una lampada ad incandescenza. La rotaia è stata necessaria anche per posizionare la lente dispersiva per le misure del laser e la fibra ottica da attaccare alle altre lampade per indirizzarne la luce, non essendo posizionabili sulle rotaie.
+
+%immagine apparato
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{IM percorso luce}
+  \caption{Schema dell'apparato sperimentale. La linea tratteggiata indica il percorso della luce}
+\end{figure}
 
 \vspace{3mm}
 
-La parte centrale è formata da uno specchio semiriflettente $S_1$, uno specchio che permette spostamenti orizzontali $S_3$, uno specchio di cui possiamo modificare l'inclinazione $S_2$, una lastra compensatrice $L_C$ e una camera depressurizzabile removibile necessaria per le misure dell'indice di rifrazione dell'aria. 
+La parte centrale dell'apparato, schematizzata in Figura 1, è formata da uno specchio semiriflettente $S_1$, uno specchio $S_3$ mobile lungo la propria normale, uno specchio $S_2$ di cui possiamo modificare l'inclinazione, una lastra compensatrice $L_C$ e una camera a vuoto removibile necessaria per le misure dell'indice di rifrazione dell'aria. 
 
 \vspace{3mm}
 
-La visualizzazione dei risultati è avvenuta su due schermi: un primo situato più in lontananza mentre il secondo mobile e situato a una distanza molto minore rispetto al secondo schermo.
-%%% non ho capito dove sono gli schermi quindi non correggo
+La visualizzazione dei risultati è avvenuta su due schermi: uno fisso situato in lontananza e uno mobile situato in prossimità dell'apparato (il foglio di carta in Figura 2).
 
 \vspace{2mm}
 
@@ -64,7 +73,8 @@ La visualizzazione dei risultati è avvenuta su due schermi: un primo situato pi
 \end{figure}
 
 
-La presa delle misure è stata effettuata tramite un calibro palmer con una sensibilità di $0,01 \; mm$. Il calibro è tuttavia collegato allo specchio da una leva che riduce di 1/5 lo spostamento. Abbiamo quindi usato un incertezza sulle misure di lunghezza pari a $2 \sqrt2 \; \mu m$.
+
+La presa delle misure è stata effettuata tramite un calibro palmer con una sensibilità di $0,01 \; mm$. Il calibro è tuttavia collegato allo specchio da una leva che riduce di 1/5 lo spostamento. Abbiamo quindi usato un'incertezza sulle misure di lunghezza pari a $2 \sqrt2 \; \mu m$.
 % uso paint per scrivere cosa sono le varie cose? se si devo installarlo e reimparare ad usarlo
 
 
@@ -72,8 +82,9 @@ La presa delle misure è stata effettuata tramite un calibro palmer con una sens
 
 \section{Introduzione teorica}
 \subsection{Richiami teorici}
-Come suggerisce il nome interferometro, il fenomeno che possiamo osservare è quello dell'interferenza. 
-Per potere osservare delle figure di interferenza stabili abbiamo bisogno di due fattori: le luci che causano interferenza devono avere una differenza di fase costante e la loro intensità deve essere simile. Se si verificano le condizioni sopradescritte possiamo osservare due tipi principali di interferenza:
+Il fenomeno che possiamo osservare con l'apparato finora descritto è quello dell'interferenza.
+
+Per potere osservare delle figure di interferenza stabili abbiamo bisogno di due fattori: i raggi luminosi che causano interferenza devono avere una differenza di fase costante e la loro intensità deve essere simile. Se si verificano le condizioni sopradescritte possiamo osservare due tipi principali di interferenza:
 
 Interferenza costruttiva, visibile come zone luminose, se:
 \[ \Delta \phi = 0 \rightarrow I = 4 I_0 \]
@@ -81,38 +92,31 @@ Interferenza costruttiva, visibile come zone luminose, se:
 Interferenza distruttiva, visibile come zone scure, se: 
 \[ \Delta \phi = \pi \rightarrow I = 0 \]
 
-L'interferenza si applica tuttavia solo in casi di onde sinusoidali infinite, inottenibili sperimentalmente dati i tempi di emissione finiti. La presenza di tempi finiti implica un troncamento dell'onda sinusoidale. La sezione troncata viene definita pacchetto d'onda. Viene quindi definito l'intervallo di tempo $\Delta t_c$, detto tempo di coerenza, nel quale l'onda si mantiene sinusoidale e può essere considerata una sinusoide infinita. Al tempo di coerenza possiamo quindi associare una lunghezza di coerenza $L_c$ corrispondente allo spazio percorso durante il tempo di coerenza dalla luce.
+L'interferenza si applica tuttavia solo in casi di onde sinusoidali infinite, non ottenibili sperimentalmente dati i tempi di emissione finiti. La presenza di tempi finiti implica un troncamento dell'onda sinusoidale. La sezione troncata viene definita pacchetto d'onda. Viene quindi definito l'intervallo di tempo $\Delta t_c$, detto tempo di coerenza, nel quale l'onda si mantiene sinusoidale e può essere considerata un'onda sinusoidale infinita. Al tempo di coerenza possiamo quindi associare una lunghezza di coerenza $L_c$ corrispondente allo spazio percorso durante il tempo di coerenza dalla luce nel vuoto.
 
-La lunghezza di frequenza è maggiore nei casi in cui i pacchetti siano emessi in maniera coerente, come nel laser, o in cui si abbia una luce monocromatica, situazione simile alla lampada al sodio, mentre risulta drasticamente minore in casi di luce non coerente, come nel caso della luce bianca.
+La lunghezza di coerenza è maggiore nei casi in cui i pacchetti siano emessi in maniera coerente, come nel laser, o in cui si abbia una luce monocromatica, situazione simile alla lampada al sodio, mentre risulta drasticamente minore in casi di luce non coerente, come nel caso della luce bianca.
 
 
 \subsection{Percorso della luce}
 
-%immagine apparato
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.7\linewidth]{IM percorso luce}
-  \caption{Schema apparato, dove la linea tratteggiata indica il percorso della luce}
-\end{figure}
 
-
-Nel suo percorso la luce incontra inizialmente la lastra semiriflettente $S_1$, scontrandosi con essa il fascio si divide in due: un primo fascio prosegue indisturbato verso lo specchio $S_2$ e, dopo essere tornato indietro, viene riflesso da $S_1$ sullo schermo. Il secondo fascio viene invece riflesso, ripercorre nuovmente la lastra $S_1$ e viene riflesso da $S_3$, a questo punto attraversa nuovamente $S_1$ arrivando infine sullo schermo. La lastra di compensazione è un pannello di spessore, materiale e inclinazione uguali a $S_1$ in maniera tale da far percorrere alla luce indirizzata verso $S_2$ lo stesso cammino ottico dato che la luce indirizzata verso $S_3$ passa per $S_1$ due volte in più.
-Una volta arrivata sullo schermo la luce indirizzata verso $S_2$ interferisce con quella indirizzata verso $S_3$. È importante notare che, per le leggi della riflessione, i due fasci avranno una differenza di fase di $\pi$ \begin{comment} phi? \end{comment} e quindi, in condizioni di ortogonalizzazione e di pari distanza tra gli specchi, dovremmo avere interferenza puramente distruttiva e non riuscire a vedere nessuna frangia.
+Nel suo percorso la luce incontra inizialmente la lastra semiriflettente $S_1$, incidendo su di essa il fascio si divide in due: un primo fascio prosegue indisturbato verso lo specchio $S_2$ e, dopo essere tornato indietro, viene riflesso da $S_1$ sullo schermo. Il secondo fascio viene invece riflesso, ripercorre nuovamente la lastra $S_1$ e viene riflesso da $S_3$, a questo punto attraversa nuovamente $S_1$ arrivando infine sullo schermo. La lastra di compensazione è un pannello di spessore, materiale e inclinazione uguali a $S_1$ in maniera tale da far percorrere alla luce indirizzata verso $S_2$ lo stesso cammino ottico dato che la luce indirizzata verso $S_3$ passa per $S_1$ due volte in più.
+Una volta arrivata sullo schermo, la luce indirizzata verso $S_2$ interferisce con quella indirizzata verso $S_3$. È importante notare che, per le leggi della riflessione, i due fasci avranno una differenza di fase di $\pi$ e quindi, in condizioni di ortogonalizzazione e di pari distanza tra gli specchi, dovremmo avere interferenza puramente distruttiva e non riuscire a vedere nessuna frangia.
 
 
 \subsection{Interpretazione dei risultati}
-Nel nostro sistema ottico possiamo allineare i due specchi e definire due fuochi come mostrato in Figura 3.
+Nel nostro sistema ottico possiamo allineare i due specchi e definire due sorgenti virtuali $F_1$ e $F_2$ come mostrato in Figura 3. Queste sorgenti virtuali sono rispettivamente l'immagine virtuale della luce incidente su $S_3$, proveniente da $S_1$, e l'immagine virtuale della luce incidente su $S_2$, prodotta dallo specchio virtuale $S'_2$.
 
 %immagine apparato
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.3\linewidth]{IM fuochi}
-  \caption{Schema apparato, dove la linea tratteggiata indica il percorso della luce}
+  \caption{Schema dell'apparato rappresentante le due sorgenti virtuali $F_1$ e $F_2$}
 \end{figure}
 
 
-Immaginando che ognuno dei due punti funga da origine di un onda sferica possiamo visualizzare i punti nello spazio di uguale luminosità come iperboloidi di rotazione. Se intersechiamo gli iperboloidi con un piano, nel nostro caso rappresentato dallo schermo, dovrebbero essere visualizzati come cerchi concentrici o, nel caso in cui gli specchi non siano ortogonali a causa dell'inclinazione di $S_2$, delle elissi. 
-Se lo specchio $S_2$ non fosse ortogonale e lo specchio $S_3$ venisse spostato in maniera tale che la congiungente $F_1$ e $F_2$ sia pressoché parallela allo schermo dovremmo invece visualizzare delle linee parallele verticali. 
+Immaginando che ognuno dei due punti funga da origine di un'onda sferica, possiamo visualizzare i punti nello spazio di uguale luminosità come iperboloidi di rotazione. Se intersechiamo gli iperboloidi con un piano, nel nostro caso rappresentato dallo schermo, dovrebbero essere visualizzati come cerchi concentrici o, nel caso in cui gli specchi non siano ortogonali a causa dell'inclinazione di $S_2$, si visualizzeranno invece delle elissi. 
+Se lo specchio $S_2$ non fosse ortogonale e lo specchio $S_3$ venisse spostato in maniera tale che la congiungente tra $F_1$ e $F_2$ sia pressoché parallela allo schermo dovremmo invece visualizzare delle linee parallele verticali. 
 
 \vspace{3mm}
 
@@ -122,14 +126,12 @@ Prendendo un punto sullo schermo possiamo notare che troviamo interferenza costr
 F_1P - F_2 P = 2d \cos{\theta} = m \lambda 
 \end{equation}
 
-Dove la seconda parte è un modo di riscrivere la prima parte in funzione della distanza $d$ tra $F_1$ e $F_2$ e dell'angolo tra la normale allo schermo e $F_1 P$ che chiamiamo $\theta$; la seconda parte indica invece le condizioni di interferenza costruttiva in cui $\lambda$ è la lunghezza d'onda della luce mentre $m \in N$ %inserire numeri naturali
-e determina gli ordini delle fasce luminose.
+Dove la seconda parte è un modo di riscrivere la prima parte in funzione della distanza $d$ tra $F_1$ e $F_2$ e dell'angolo tra la normale allo schermo e $F_1 P$ che chiamiamo $\theta$; la seconda parte indica invece le condizioni di interferenza costruttiva in cui $\lambda$ è la lunghezza d'onda della luce mentre $m \in \mathbb{N}$
+determina gli ordini delle fasce luminose.
 
 \vspace{3mm}
 
-Notiamo che per una variazione pari a $\lambda$ della distanza dei due specchi otteniamo nuovamente delle figure di interferenza nelle stesse posizioni iniziali ma in cui l'n-esimo ordine è sostituito con l'(n-1)-esimo.
-
-\clearpage
+Notiamo che per una variazione pari a $\lambda$ della distanza tra i due specchi otteniamo nuovamente delle figure di interferenza nelle stesse posizioni iniziali ma in cui l'n-esimo ordine è sostituito con l'(n-1)-esimo.
 
 \subsection{Misure}
 Dalla Equazione (1) possiamo quindi ricavare:
@@ -138,34 +140,39 @@ Dalla Equazione (1) possiamo quindi ricavare:
 2 n \Delta{x} = N_\lambda \lambda 
 \end{equation}
 
-Dove $n$ è l'indice di rifrazione dell'aria, $\Delta{x}$ è lo spostamento di $S_3$ dalla posizione iniziale, $\lambda$ è la lunghezza d'onda del laser (incognita) e $N_\lambda$ è il numero di frange di interferenza che si vedono passare spostando $S_3$. La presenza del fattore 2 davanti a $\Delta{x}$ tiene conto del fatto che uno spostamento $\Delta x$ di $S_3$ provoca un distanziamento ulteriore di $2 \Delta x$ tra $F_1$ ed $F_2$.
+Dove $n$ è l'indice di rifrazione dell'aria, $\Delta{x}$ è lo spostamento di $S_3$ dalla posizione iniziale, $\lambda$ è la lunghezza d'onda del laser e $N_\lambda$ è il numero di frange di interferenza che si vedono passare per un punto dello schermo spostando $S_3$. La presenza del fattore 2 davanti a $\Delta{x}$ tiene conto del fatto che la luce percorre lo spazio $\Delta x$ in ambedue le direzioni.
 
 \vspace{3mm}
 
-Nell'Equazione (2) non conosciamo tuttavia l'indice di rifrazione dell'aria. Per la sua misura utilizzeeremo una cameretta depressurizzabile. Tenendo conto della differenza di cammino ottico nel caso in cui nella camera vi sia vuoto e nel caso in cui vi sia aria a pressione atmosferica possiamo usare la formula:
+Nell'Equazione (2) non conosciamo tuttavia l'indice di rifrazione dell'aria. Per la sua misura utilizzeremo una camera a vuoto. Tenendo conto della differenza di cammino ottico nel caso in cui nella camera vi sia vuoto e nel caso in cui vi sia aria a pressione atmosferica possiamo usare la formula:
 
 \begin{equation}
  2D (n - 1) = N_n \lambda
 \end{equation}
 
-In cui $D$ è la lunghezza della cameretta, $n$ è l'indice di rifrazione dell'aria e 1 quello del vuoto, $\lambda$ è la stessa lunghezza d'onda della formula precedente mentre $N_n$ è il numero di fasce  che passano mentre la cameretta si ripressurizza.
+In cui $D$ è la lunghezza della cameretta, $n$ è l'indice di rifrazione dell'aria e 1 quello del vuoto, $\lambda$ è la stessa lunghezza d'onda della formula precedente mentre $N_n$ è il numero di righe che passano per un punto dello schermo mentre la cameretta si ripressurizza.
 
 \vspace{3mm}
 
-La lampada a incandescenza non è una sorgente di luce coerente e possiamo quindi notare interferenza solo nel caso in cui i pacchetti di luce provenienti dai due percorsi si incontrano. possiamo quindi dire che:
+La lampada a incandescenza non è una sorgente di luce coerente e possiamo quindi notare interferenza solo nel caso in cui i pacchetti di luce provenienti dai due percorsi si incontrano. Possiamo quindi dire che:
 
 \begin{equation} 
 L = \Delta{x} 
 \end{equation}
 
-In cui non mettamo un fattore 2 davanti al termine $\Delta{x}$ come nelle precedenti misure dato che sarebbe necessario un fattore 2 anche davanti al termine $L$.
-L'ultima misura è quella del $\Delta\lambda$ della lampada al sodio. Data la presenza di due frequenze l'effetto che vedremo sarà molto simile a quello di una luce monocromatica ma, a causa della differenza delle due frequenze, spostando $S_3$ noteremo che in alcuni punti le frange luminose di $\lambda_1$ si sovrapporrano con quelle scure di $\lambda_2$, quando ci troveremo in questi punti non saremo in grado di distinguere alcuna frangia di interferenza sullo schermo. Troviamo che non vedremo frange per:
+dove L è la lunghezza del pacchetto.
+
+Non mettiamo un fattore 2 davanti al termine $\Delta{x}$ come nelle precedenti misure dato che sarebbe necessario un fattore 2 anche davanti al termine $L$.
+
+\vspace{3mm}
+
+L'ultima misura è quella del $\Delta\lambda$ della lampada al sodio. Data la presenza di due frequenze l'effetto che vedremo sarà molto simile a quello di una luce monocromatica ma, a causa della differenza delle due frequenze, spostando $S_3$ noteremo che in alcuni punti le frange luminose di $\lambda_1$ si sovrapporrano con quelle scure di $\lambda_2$, quando ci troveremo in questi punti non saremo in grado di distinguere alcuna frangia di interferenza sullo schermo. Non vedremo frange per:
 
 \begin{equation} 
 \Delta_1 = 2 N_1 \frac{\lambda_2}{2} = (2 N_1 + 1) \frac{\lambda_1}{2} 
 \end{equation}
 
-Da cui otterremo nuovamente frange per:
+E otterremo nuovamente frange per:
 
 \begin{equation} 
 \Delta_2 = 2N_2 \lambda_2 =(2 N_1 + 1) \lambda_1 
@@ -177,13 +184,13 @@ Risolvendo per $N_1$ e $N_2$ possiamo quindi giungere alla conclusione che:
 \Delta m = m \frac{\lambda_1 \lambda_2}{\lambda_1 {-} \lambda_2} = 2 \Delta{x} 
 \end{equation}
 
-Dove consideriamo $m$ il passaggio tra due condizioni di "frangia netta"; ricaviamo quindi che la differenza tra le $\lambda$ della lampada al sodio vale:
+Dove consideriamo $m$ il passaggio tra due condizioni di "frangia netta". Ricaviamo quindi che la differenza tra le $\lambda$ della lampada al sodio vale:
 
 \begin{equation} 
 \Delta{\lambda} = \frac{m \bar \lambda^2}{2 \Delta{x}} 
 \end{equation}
 
-in cui $ \bar \lambda^2$ è la media al quadrato tra i valori delle $\lambda$ della lampada al Na.
+in cui $ \bar \lambda^2$ è la media al quadrato tra i valori delle $\lambda$ della lampada al sodio.
 
 
 
