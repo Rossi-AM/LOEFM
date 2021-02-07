@@ -196,26 +196,26 @@ in cui $ \bar \lambda^2$ è la media al quadrato tra i valori delle $\lambda$ de
 
 
 \section{Setup}
-Prima di iniziare ci siamo messi in condizione di ortogonalità degli specchi. Abbiamo utilizzato il laser posto su una rotaia allineata con l'apparato e, girando le viti poste sul retro dello specchio $S_2$, abbiamo fatto combaciare i due puntini luminosi presenti sullo specchio. Allineati i puntini abbiamo posto la lente dispersiva sulla rotaia assicurandoci che la luce arrivasse correttamente all'apparato e abbiamo agito nuovamente sulle viti di $S_2$ fino a notare figure di interferenza. Una volta ottenuti dei cerchi concentrici abbiamo aggiustato lo specchio per vedere solo una parte dell'ellisse in maniera tale da semplificare la lettura dei risultati.
+Prima di iniziare ci siamo messi in condizione di ortogonalità degli specchi. Abbiamo utilizzato il laser posto su una rotaia allineata con l'apparato e, girando le viti poste sul retro dello specchio $S_2$, abbiamo fatto sovrapporre i due puntini luminosi sullo specchio $S_3$. Abbiamo quindi posto la lente dispersiva sulla rotaia assicurandoci che la luce arrivasse correttamente all'apparato e abbiamo agito nuovamente sulle viti di $S_2$ fino a notare figure di interferenza. Una volta ottenuti dei cerchi concentrici (che confermavano l'ortogonalità tra $S_2$ ed $S_3$) abbiamo aggiustato lo specchio per vedere solo una parte dell'ellisse in maniera tale da semplificare la lettura dei risultati.
 
 
 
 
 \section{Misura $\lambda_{laser}$}
-Per effettuare la prima misura abbiamo osservato un punto sullo schermo in cui erano ben visibili fasce scure (possono essere usate anche fasce luminose) e, dopo aver segnato la posizione iniziale di $S_3$, abbiamo iniziato a girare lentamente la rotella contando le fasce scure che transitavano per il punto. Per diminuire l'incertezza abbiamo dato maggiore importanza alla chiarezza di lettura del calibro piuttosto che ad avere lo stesso tipo di frangia della posizione iniziale.
+Per effettuare la prima misura abbiamo osservato un punto sullo schermo in cui erano ben visibili fasce scure (possono essere usate anche fasce luminose) e, dopo aver segnato la posizione iniziale letta dal calibro, abbiamo iniziato a girare lentamente la rotella contando le fasce scure che transitavano per il punto. Per diminuire l'incertezza abbiamo dato maggiore importanza alla chiarezza di lettura del calibro piuttosto che ad avere lo stesso tipo di frangia della posizione iniziale.
 
 \vspace{3mm}
 
-Nel nostro caso abbiamo preso 4 gruppi di misure e, con ognuno di essi, abbiamo calcolato $\lambda$ usando l'approssimazione $n = 1$. Abbiamo propagato l'incertezza tramite la formula:
+Nel nostro caso abbiamo preso 4 set di misure e, con ognuno di essi, abbiamo calcolato $\lambda$ usando l'approssimazione $n = 1$. Abbiamo propagato l'incertezza tramite la formula:
 
 \begin{equation} 
-\sigma\lambda= \sqrt{\bigg(\frac{2 n}{N} \sigma\Delta X\bigg)^2 + \bigg({-} \frac{2 n \Delta X}{N^2} \sigma N\bigg)^2}
+\sigma\lambda= \sqrt{\bigg(\frac{2 n}{N} \sigma_{\Delta X}\bigg)^2 + \bigg({-} \frac{2 n \Delta X}{N^2} \sigma_N\bigg)^2}
 \end{equation}
 
-Specifichiamo che abbiamo deciso di utilizzare un incertezza su $N$ pari a 2 dato che riteniamo possibile che l'osservatore abbia confuso una riga precedente con una successiva durante il conto di circa 190 righe.
+Specifichiamo che abbiamo deciso di utilizzare un incertezza su $N$ pari a 2 dato che riteniamo possibile che l'osservatore abbia confuso una riga precedente con una successiva durante il conto di quasi 200 righe.
 Una volta ottenuti questi risultati abbiamo utilizzato una media pesata ed abbiamo ottenuto:
 \[ \lambda_{laser} = 0,617 \pm 0,016 \; \mu m \]
-Riportiamo quindi in (Tabella 1) i dati grezzi ed i risultati parziali, dove l'unica di misura di $X_1$, $X_2$ e $\Delta X$ è la sensibilità della vite ridotta di $\frac{1}{5}$ con la leva, quindi pari a $m \cdot 10^{-5} /5 = 2 \; \mu m$
+Riportiamo quindi in Tabella 1 i dati grezzi ed i risultati parziali.
 
 
 %tabella lambda
@@ -223,7 +223,7 @@ Riportiamo quindi in (Tabella 1) i dati grezzi ed i risultati parziali, dove l'u
 \centering
 \begin{tabular}{ | c | c | c | c | c | c | c | c |}
 \hline
- \# & $X_1 \; [2 \; \mu m]$ & $X_2 \; [2 \; \mu m]$ & $\Delta X = X_2 - X_1\; [2 \; \mu m]$ & $\Delta X \; [\mu m]$ & $N_\lambda$ & $\lambda \; [\mu m]$ & $\sigma\lambda \; [\mu m]$\\
+ \# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [\mu m]$ & $N_\lambda$ & $\lambda \; [\mu m]$ & $\sigma\lambda \; [\mu m]$\\
 \hline
    1 & 100 & 131 & 31 & 62 & 200 & 0,620 & 0,029\\
    2 & 150 & 178 & 28 & 56 & 177 & 0,633 & 0,033\\
@@ -252,21 +252,21 @@ Riportiamo quindi in (Tabella 1) i dati grezzi ed i risultati parziali, dove l'u
 \pagebreak
 
 \section{Misura indice di rifrazione dell'aria}
-Per effettuare la seconda misura abbiamo posizionato la cameretta depressurizzabile tra $S_1$ e $S_3$. Ci siamo accertati che la valvola di ingresso dell'aria fosse chiusa abbiamo acceso la pompa a vuoto fino a quando la pressione si è stabilizzata (come l'abbiamo capito??? Vedendo che non si muovevano le frange di interferenza???). Per effettuare la misura abbiamo aperto leggermente la valvola contando le frange che transitavano per un punto dello schermo da noi scelto (in maniera analoga alla misura di $\lambda_{laser}$).
+Per effettuare la seconda misura abbiamo posizionato la camera a vuoto tra $S_1$ e $S_3$. Ci siamo accertati che la valvola di ingresso dell'aria fosse chiusa e abbiamo acceso la pompa a vuoto fino a quando la pressione si è stabilizzata (abbiamo osservato il manometro). Per effettuare la misura abbiamo aperto leggermente la valvola contando le frange che transitavano per un punto dello schermo da noi scelto (in maniera analoga alla misura di $\lambda_{laser}$).
 
 %immagine etichetta
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.6\linewidth]{IM cameretta}
-  \caption{Immagine della cameretta depressurizzabile attaccata alla pompa tramite il tubo giallo}
+  \caption{Immagine della camera a vuoto attaccata alla pompa tramite il tubo giallo}
 \end{figure}
 
 \pagebreak
 
-Per l'analisi dati abbiamo utilizzato la propagazione degli errori con le incertezze di $\lambda$, $D$ ed $N$, tramite la formula
+Per l'analisi dati abbiamo utilizzato lo stesso metodo utilizzato in Misura 1 dove tuttavia l'incertezza è stata calcolata tramite la propagazione degli errori con le incertezze di $\lambda$, $D$ ed $N$, tramite la formula
 
 \begin{equation}
-\sigma_n = \sqrt{ (\frac{N}{2D} \sigma_\lambda)^2 + ({-} \frac{N \lambda}{2 D^2} \sigma_D)^2 + (\frac{\lambda}{2D} \sigma_N)^2} 
+\sigma_n = \sqrt{ \bigg(\frac{N}{2D} \sigma_\lambda \bigg)^2 + \bigg({-} \frac{N \lambda}{2 D^2} \sigma_D \bigg)^2 + \bigg(\frac{\lambda}{2D} \sigma_N \bigg)^2} 
 \end{equation}
 
 utilizzando la $\lambda$ calcolata in Misura 1. Abbiamo ottenuto il seguente valore:
@@ -300,7 +300,7 @@ Riportiamo in Tabella 2 i dati grezzi ed i risultati parziali
 
 
 \section{Sistema $\lambda$-$n$}
-I dati forniti in Misura 1 e Misura 2 sono fortemente influenzati dall'iniziale assunzione di porre $n = 1$. Per correggere questo errore abbiamo applicato due metodi non essendo in grado di identificare il migliore prima di effettuare i calcoli. 
+I dati forniti in Misura 1 e Misura 2 sono fortemente influenzati dall'iniziale assunzione di porre $n = 1$ in Misura 1. Per correggere questo errore abbiamo applicato due metodi, non essendo in grado di identificare il migliore prima di effettuare i calcoli. 
 
 
 
@@ -316,12 +316,12 @@ In cui abbiamo raccolto le misure
 \[ a = \frac{\Delta_x}{N_\lambda} \]
 \[ b = \frac{N_n}{D} \]
 
-Per poter eseguire l'analisi statistica dato che non avremmo potuto ricavare misure singole dai dati, al contrario di quanto fatto per misure 1 e 2 provenendo essi sia dalla misura per $\lambda$ che dalla misura per $n$. Abbiamo calcolato lincertezza sia per $a$ che per $b$ tramite la formula di propagazione degli errori e, dai valori risultati, abbiamo calcolato una media pesata ottenendo i valori di $a$, $\sigma a$, $b$ e $\sigma b$ utilizzati per calcolare $n$ e, tramite la propagazione degli errori, $\sigma n$. il valore risultato è:
+Per poter eseguire l'analisi statistica dato che non avremmo potuto ricavare misure singole dai dati, al contrario di quanto fatto per misure 1 e 2 provenendo essi sia dalla misura per $\lambda$ che dalla misura per $n$. Abbiamo calcolato lincertezza sia per $a$ che per $b$ tramite la formula di propagazione degli errori e, dai valori risultati, abbiamo calcolato una media pesata ottenendo i valori di $a$, $\sigma_a$, $b$ e $\sigma_b$ utilizzati per calcolare $n$ e, tramite la propagazione degli errori, $\sigma_n$. il valore risultato è:
 \[ n_{aria} = 1,000256 \pm 1,4 \cdot 10^{-5} \]
 Da cui abbiamo proceduto a eseguire in maniera analoga alla Misura 1, il calcolo di $\lambda$ in cui l'errore, per tenere conto dell'incertezza su n, è calcolato come:
 
 \begin{equation} 
-\sigma\lambda= \sqrt{(\frac{2 n}{N_\lambda} \sigma\Delta x)^2 + (\frac{2 \Delta x}{N_\lambda} \sigma n) + ({-} \frac{2 n \Delta x}{N_\lambda^2} \sigma{N_\lambda})^2} 
+\sigma\lambda= \sqrt{\left(\frac{2 n}{N_\lambda} \sigma_{\Delta x}\right)^2 + \left(\frac{2 \Delta x}{N_\lambda} \sigma_n\right) + \left({-} \frac{2 n \Delta x}{N_\lambda^2} \sigma_{N_\lambda}\right)^2} 
 \end{equation}
 
 Abbiamo quindi ottenuto il valore:
@@ -334,7 +334,7 @@ Per controllare la tabella con i risultati parziali controllare in Appendice Gra
 Per il secondo metodo abbiamo eseguito gli stessi calcoli delle Misure 1 e 2. Inizialmente abbiamo supposto $n = 1$ e da esso abbiamo calcolato $\lambda_1$ e $n_1$ ottenendo gli stessi risultati sopraindicati, abbiamo poi utilizzato il nuovo valore di $n$ ottenuto per calcolare nuovamente sia $\lambda_2$ che $n_2$. dopo aver iterato il processo 4 volte abbiamo ottenuto dei risultati che non variavano in maniera significativa, riportiamo la differenza dei valori tra la terza e la quarta iterazione:
 \[ \lambda_{laser} = 1,029 \cdot 2^{-11} \pm 2,6 \cdot 2^{-13} \; \mu m \]
 \[ n_{aria} = 1,663 \cdot 10^{-11} \pm 0 \]
-Sebbene alla terza iterazione non notassimo differenze nelle cifre significative da noi utilizzate abbiamo deciso di procedere comunque a una quarta dato per annullare completamente (cioè????) la differenza di $\sigma_n$. 
+Sebbene alla terza iterazione non notassimo differenze nelle cifre significative da noi utilizzate, abbiamo deciso di procedere comunque a una quarta dato per annullare completamente la differenza di $\sigma_n$. 
 
 \vspace{3mm}
 
@@ -370,7 +370,7 @@ Riteniamo che i nostri risultati per quanto riguarda $\lambda$ possano essere co
 \section{Misura lunghezza pacchetto di luce bianca}
 
 \subsection{Setup}
-In seguito alle misure con laser siamo quindi passati alla misura della lunghezza del pacchetto d'onda della luce bianca (emessa da una lampada a incandescenza). Dato che la lunghezza di coerenza della luce bianca è molto più piccola rispetto a quella del laser, ci siamo dovuti porre in condizione in cui l'asse tra i due fuochi e lo specchio fossero pressoché paralleli, al fine di ottenere interferenza. Infatti è possibile ottenere interferenza solo tra pacchetti di luce coerenti, e se la distanza tra le sorgenti virtuali $F_1$ ed $F_2$ è quasi nulla è possibile fare ricombinare sullo schermo due semi-pacchetti provenienti dalla divisione di un medesimo pacchetto emesso dalla lampada a incandescenza. Per trovare questa condizione abbiamo iniziato a girare la rotella fino ad avere una figura di interferenza composta da linee verticali leggermente curve. Abbiamo quindi continuato fino a quando la curvatura ha cambiato direzione e ci siamo posizionati nel punto in cui notavamo il cambio di curvatura. Abbiamo quindi spento il laser e abbiamo posizionato la fibra ottica sulla rotaia direttamente davanti a $S_1$ (la lente divergente è necessaria solo per il laser). Nonostante il posizionamento eseguito con il laser non abbiamo notato interferenza e abbiamo quindi continuato a girare la rotella finché sullo schermo abbiamo iniziato a vedere un'alternanza di varie frange colorate come in Figura 9.
+In seguito alle misure con laser siamo quindi passati alla misura della lunghezza del pacchetto d'onda della luce bianca. Dato che la lunghezza di coerenza della luce bianca è molto più piccola rispetto a quella del laser, ci siamo dovuti porre in condizione in cui l'asse tra i due fuochi e lo specchio fossero pressoché paralleli, al fine di ottenere interferenza. Per trovare questa condizione abbiamo iniziato a girare la rotella fino ad avere una figura di interferenza composta da linee verticali leggermente curve. Abbiamo quindi continuato fino a quando la curvatura ha cambiato direzione e ci siamo posizionati nel punto in cui notavamo il cambio di curvatura. Abbiamo quindi spento il laser e abbiamo posizionato la fibra ottica sulla rotaia direttamente davanti a $S_1$ (la lente divergente è necessaria solo per il laser). Nonostante il posizionamento eseguito con il laser non abbiamo notato interferenza e abbiamo quindi continuato a girare la rotella finché sullo schermo abbiamo iniziato a vedere un'alternanza di varie frange colorate come in Figura 9.
 
 %immagine pacchetto di luce
 \begin{figure}[h!]
@@ -387,7 +387,7 @@ Ci siamo posti in una condizione in cui non riuscivamo a vedere frange, abbiamo 
 
 Abbiamo effettuato un totale di 4 misure, girando la rotella sia in senso orario che in senso antiorario per ridurre possibili errori. Dai nostri dati abbiamo ottenuto, usando una media aritmetica, un valore del pacchetto pari a:
 \[ L_{pacchetto} = 7,5 \pm 2,8 \; \mu m \]
-Notiamo che la misura ha un valore dello stesso ordine di grandezza dell'incertezza strumentale usato come incertezza e riteniamo quindi che possa essere errata. Purtroppo non abbiamo un valore preciso con cui compararla. Dopo con un confronto con il gruppo Ve-13, che ha ottenuto un valore di $L_{pacchetto}=14 \; \mu m$ riteniamo che la misura abbia un'ordine di grandezza coerente anche se, avendo usato lampade diverse (cioè?), non possiamo considerarlo un valore adatto a una comparazione che vada oltre l'ordine di grandezza.
+Notiamo che la misura ha un valore dello stesso ordine di grandezza dell'incertezza strumentale, usato come incertezza, e riteniamo quindi che possa essere errata. Purtroppo non abbiamo un valore preciso con cui compararla. Dopo con un confronto con il gruppo Ve-13, che ha ottenuto un valore di $L_{pacchetto}=14 \; \mu m$ riteniamo che la misura abbia un'ordine di grandezza coerente anche se, avendo usato lampade diverse, non possiamo considerarlo un valore adatto a una comparazione che vada oltre l'ordine di grandezza.
 
 \vspace{3mm}
 
@@ -399,7 +399,7 @@ Riportiamo in Tabella 3 i dati grezzi e i risultati parziali.
 \centering
 \begin{tabular}{ | c | c | c | c | c | }
 \hline
-\# & $X_1 \; [m \cdot 10^-5/5]$ & $X_2 \; [m \cdot 10^-5/5]$ & $\Delta X \; [m \cdot 10^-5/5]$ & $\Delta \; [\mu m]$\\
+\# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta \; [\mu m]$\\
 \hline
    1 & 1591 & 1587 & 4 & 8\\
    2 & 1587 & 1591 & 4 & 8\\
@@ -412,13 +412,12 @@ Riportiamo in Tabella 3 i dati grezzi e i risultati parziali.
 \end{table}
 
 
-Abbiamo provato a mettere un filtro verde davanti alla luce per provare a vedere cosa succedesse nel caso di una luce più simile a una luce monocromatica (che effetto ha il filtro verde???). Dopo avere raccolto una sola misura (per avere un termine di paragone quantitativo) abbiamo ricavato una lunghezza del pacchetto pari a $68 \; \mu m$. Come previsto la presenza del filtro verde diminuisce il $\Delta\nu$ di frequenze che compongono la luce, pertanto aumenta il tempo di coerenza e quindi la lunghezza di coerenza.
-
+Abbiamo provato a mettere un filtro verde davanti alla luce per provare a vedere cosa succedesse nel caso di una luce più simile a una luce monocromatica. Dopo avere raccolto una sola misura (per avere un termine di paragone quantitativo) abbiamo ricavato una lunghezza del pacchetto pari a $68 \; \mu m$. Come previsto la presenza del filtro verde aumenta la lunghezza di coerenza.
 
 
 
 \section{Misura $\Delta\lambda$ della lampada al sodio}
-Per la quarta abbiamo disconnesso la fibra ottica dalla lampada ad incandescenza e l'abbiamo attaccata alla lampada Na. Una volta attaccata la lampada abbiamo iniziato a vedere delle frange gialle in maniera similmente a quanto visto con il laser. Abbiamo ruotato la rotella fino a vedere le frange scure scomparire e segnato quindi la prima misura, usata come riferimento anche per le altre. Abbiamo continuato a girare la rotella vedendo le frange scure ricomparire e, dopo aver continuato a ruotare, siamo tornati nella condizione in cui le frange scure scomparivano. Abbiamo ripetuto i passaggi per quatro volte, prendendo le posizioni in cui le frange scomparivano, ma avendo colpito accidentalmente l'apparato abbiamo dovuto fermarci e rieseguire la messa a punto dell'apparato prima di prendere altre 5 misure.
+Per la quarta abbiamo disconnesso la fibra ottica dalla lampada ad incandescenza e l'abbiamo attaccata alla lampada Na. Una volta attaccata la lampada abbiamo iniziato a vedere delle frange gialle in maniera simile a quanto visto con il laser. Abbiamo ruotato la rotella fino a vedere le frange scure scomparire e segnato quindi la prima misura, usata come riferimento anche per le altre. Abbiamo continuato a girare la rotella vedendo le frange scure ricomparire e, dopo aver continuato a ruotare, siamo tornati nella condizione in cui le frange scure scomparivano. Abbiamo ripetuto i passaggi per quatro volte, prendendo le posizioni in cui le frange scomparivano, ma avendo colpito accidentalmente l'apparato abbiamo dovuto fermarci e rieseguire la messa a punto dell'apparato prima di prendere altre 5 misure.
 
 \vspace{3mm}
 
@@ -431,7 +430,7 @@ Riportiamo in Tabella 4 e 5 i dati grezzi e i risultati parziali
 \centering
 \begin{tabular}{ | c | c | c | c | c | c | c | c |}
 \hline
- \# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [\mu m]$ & $M$ & $\Delta\lambda \; [\textrm{Å}]$ & $\sigma\Delta\lambda \; [\textrm{Å}]$\\
+ \# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [\mu m]$ & $M$ & $\Delta\lambda \; [\textrm{Å}]$ & $\sigma_{\Delta\lambda} \; [\textrm{Å}]$\\
 \hline
    1 & 1583 & 1495 & 88 & 176 & 1 & 9,866 & 0,159\\
    2 & 1583 & 1293 & 290 & 580 & 2 & 5,987 & 0,029\\
@@ -449,7 +448,7 @@ Riportiamo in Tabella 4 e 5 i dati grezzi e i risultati parziali
 \centering
 \begin{tabular}{ | c | c | c | c | c | c | c | c |}
 \hline
-\# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [\mu m]$ & $M$ & $\Delta\lambda \; [\textrm{Å}]$ & $\sigma\Delta\lambda \; [\textrm{Å}]$\\
+\# & $X_1 \; [m \cdot 10^{-5}/5]$ & $X_2 \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [m \cdot 10^{-5}/5]$ & $\Delta X \; [\mu m]$ & $M$ & $\Delta\lambda \; [\textrm{Å}]$ & $\sigma_{\Delta\lambda} \; [\textrm{Å}]$\\
 \hline
    1 & 1580 & 1430 & 150 & 300 & 1 & 5,788 & 0,055\\
    2 & 1580 & 1285 & 295 & 590 & 2 & 5,886 & 0,028\\
@@ -467,7 +466,7 @@ dove abbiamo indicato con m il numero di passaggi $"senza$ $frange$-$senza$ $fra
 Da ognuna delle tabelle abbiamo calcolato, in maniera analoga al processo usato in Misura 1, i valori di $\Delta\lambda$ e ne abbiamo fatto due medie pesate ottenendo i seguenti risultati:
 \[ \Delta \lambda_{Na} = 6,361 \pm 0,012 \; \textrm{Å} \]
 \[ \Delta \lambda_{Na} = 6,258 \pm 0,009 \; \textrm{Å} \]
-abbiamo deciso di scartare il valore che si aggira sui $9 \textrm{Å}$ visibile in Tabella 4 dato che risulta circa 300$\sigma$ mentre il secondo valore più distante è a circa 60$\sigma$ di distanza. Purtroppo non ci siamo potuti affidare al criterio di Chauvenet per determinare se scartare la misura dato un grave problema di sottostima dell'incertezza di cui parleremo in seguito.
+abbiamo deciso di scartare il valore che si aggira sui $9 \; \textrm{Å}$ visibile in Tabella 4 dato che risulta circa 300$\sigma$ mentre il secondo valore più distante è a circa 60$\sigma$ di distanza. Purtroppo non ci siamo potuti affidare al criterio di Chauvenet per determinare se scartare la misura dato un grave problema di sottostima dell'incertezza di cui parleremo in seguito.
 
 \vspace{3mm}
 
@@ -491,12 +490,12 @@ Riportiamo in Figura 10 il grafico per la comparazione dei risultati.
 Come si può notare dai dati e dal grafico i nostri valori sono a diverse $\sigma$ di distanza dal valore vero. Ciò è causato dal fatto che l'errore considerato è solo quello strumentale calcolato con la formula:
 
 \begin{equation} 
-\sigma\Delta\lambda = \sqrt{ (- \frac{n {\bar \lambda}^2}{2 \Delta X^2} \sigma\Delta X)^2} 
+\sigma_{\Delta\lambda} = \sqrt{ (- \frac{n {\bar \lambda}^2}{2 \Delta X^2} \sigma_{\Delta X})^2} 
 \end{equation}
 
 L'errore predominante in questa misura è invece quello sulla lettura della posizione in cui scompaiono le fascie scure, dato che la transizione non è netta ma molto graduale.
 
-NON CAPISCO QUESTO PARAGRAFO 
+
 Per aggirare il problema avremmo dovuto misurare più volte una posizione per ottenere l'errore statistico ma, a causa di una svista dello sperimentatore, ciò non è stato fatto. 
 
 \vspace{3mm}
@@ -510,7 +509,7 @@ Riteniamo quindi di non poter eseguire alcuna analisi statistica per la compatib
 Riteniamo i risultati ottenuti per la Misura 1 compatibili data la loro distanza di circa una deviazione standard dal valore vero. Per la Misura 2 ci limitiamo a considerare i valori plausibili data l'assenza di un valore con cui compararli. Per la Misura 3, non avendo nessun valore adatto alla comparazione, riteniamo che il risultato possa essere plausibile in comparazione al valore ottenuto dai nostri compagni e all'analisi fatta con il filtro verde ma riteniamo che il valore preciso possa essere errato data la grande incerteza. Per la Misura 4 ci limitiamo a riportare i dati senza un analisi statistica data la problematica dell'incertezza sulla misura di cui abbiamo discusso sopra.
 
 
-
+\clearpage
 
 \section{Appendice}
 \subsection{Misura $\lambda$}
@@ -522,7 +521,6 @@ Riteniamo i risultati ottenuti per la Misura 1 compatibili data la loro distanza
   \caption{Tabella dati per il calcolo di $\lambda_{laser}$ e risultati}
 \end{figure}
 
-\clearpage 
 
 \subsection{Misura indice di rifrazione aria}
 
@@ -632,7 +630,7 @@ Riteniamo i risultati ottenuti per la Misura 1 compatibili data la loro distanza
 \end{figure}
 %fine tabelle delta lambda
 
-\pagebreak
+\clearpage
 
 \subsection{Comparazione risultati}
 
