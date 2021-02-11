@@ -49,6 +49,7 @@
         \begin{tabular}[h]{||c|c|c|c||}
             \hline
             & \cellcolor{blue}$\lambda_{blue} [nm]$ & \cellcolor{green} $\lambda_{verde}[nm]$ & \cellcolor{red} $\lambda_{rosso}[nm]$\\
+            \hline
             Puntatore & $442,6 \pm 7,4$ & $534,8 \pm 11,2$ & $654,0 \pm 21,7$\\
             \hline
             Torcia & $454,0 \pm 4,1$ & $ 558,1 \pm 8,8 $ & $ 686,5 \pm 10,5 $ \\
@@ -126,7 +127,7 @@ Se si osservasse il secondo ordine ($m=2$), l'angolo $\phi$ diventerebbe troppo 
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 \section{Progettazione dell'esperienza} \label{Progettazione}
 
-L'esperienza è stata organizzata con gli strumenti a disposizione nella abitazione. L'ambiente in cui si è svolta la misura è rappresentato in Figura \ref{ambiente}.
+L'esperienza è stata organizzata con gli strumenti a disposizione nell'abitazione. L'ambiente in cui si è svolta la misura è rappresentato in Figura \ref{ambiente}.
 
 \begin{figure}[h!]
     \centering
@@ -136,7 +137,7 @@ L'esperienza è stata organizzata con gli strumenti a disposizione nella abitazi
 \end{figure}
 
 
-Per prima cosa sono stati scelte le sorgenti di luce. Si è optato per un puntatore laser con 2 led dedicati all'emissione di luce bianca, di cui uno oscurato con della pasta adesiva per diminuire l'intensità luminosa e facilitare quindi le misure, e una torcia a led, con intensità luminosa molto maggiore del puntatore. 
+Per prima cosa sono state scelte le sorgenti di luce. Si è optato per un puntatore laser con 2 led dedicati all'emissione di luce bianca, di cui uno oscurato con della pasta adesiva per diminuire l'intensità luminosa e facilitare quindi le misure, e una torcia a led, con intensità luminosa molto maggiore del puntatore. 
 
 \begin{figure}[h!]
     \centering
@@ -163,7 +164,11 @@ Fatto ciò, si è posizionato un tomo alto circa $8,5 \; cm$ con il bordo destro
 
 \vspace{3mm}
 
-Ultimata questa parte sono state oscurate porte e finestre, garantendo così il buio completo nel momento in cui fossero state spente le luci. Per posizionare i reticoli sono stati usati:
+Ultimata questa parte sono state oscurate porte e finestre, garantendo così il buio completo nel momento in cui fossero state spente le luci. 
+
+\pagebreak
+
+Per posizionare i reticoli sono stati usati:
 \begin{enumerate}
     \item Un secondo tomo alto anch'esso $8,5 \; cm$ circa a cui fissare parallelamente al suolo il reticolo lungo, tenuto teso da uno stecchino di legno fissato sul lato lungo. Il reticolo si trovava circa alla stessa altezza dal suolo della sorgente.
     \item Due mollette da bucato identiche per il reticolo corto, per mantenerlo alla stessa altezza della sorgente dal pavimento, come mostrato in Figura \ref{impalcatura}
@@ -178,7 +183,7 @@ Ultimata questa parte sono state oscurate porte e finestre, garantendo così il 
 
 Il posizionamento dello smartphone è stato effettuato con un ulteriore tomo che permettesse alla fotocamera di essere centrata sul reticolo e il più possibile ortogonale ad esso.
 
-La distanza $z$ tra reticolo e sorgente si è mantenuta sempre intorno ai $4,43 \; m$. Per maggiore precisione è stata misurata più volte dopo ogni cambio di sorgente e/o reticolo applicando come incertezza la deviazione standard. Si segnala che data la difficoltà di misurare distanze così lunghe con precisione, l'incertezza delle singole misure non è la sensibilità dello strumento ma $0,01 \; m$
+La distanza $z$ tra reticolo e sorgente si è mantenuta sempre intorno ai $4,43 \; m$. Per maggiore precisione è stata misurata più volte dopo ogni cambio di sorgente e/o reticolo. Si segnala che data la difficoltà di misurare distanze così lunghe con precisione, l'incertezza delle singole misure non è la sensibilità dello strumento o la deviazione standard ma $0,01 \; m$.
 L'ortogonalità sorgente - reticolo - fotocamera è stata verificata e se necessario manualmente corretta ad ogni misura, osservando l'ombra che la sorgente produceva degli altri due elementi sul muro opposto ad essa e ruotando il reticolo sul proprio asse verticale di conseguenza.
 
 \vspace{3mm}
@@ -191,7 +196,7 @@ Per analizzare le immagini raccolte e ricavare il valore di $\Delta x$ per poter
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 \section{Passo del reticolo lungo}
 
-La prima grandezza che si è voluta ricavare è il passo del reticolo lungo. Sono stati misurati i $\Delta x$ delle lunghezze d'onda diffratte dal reticolo corto emesse dal puntatore attraverso l'Equazione (\ref{first_order_equation}) e conoscendo questi valori si sono potuti misurare i $\Delta x$ del reticolo lungo e ricavare il suo passo $d_{lungo}$.
+La prima grandezza che si è voluta ricavare è il passo del reticolo lungo. Sono stati misurati i $\Delta x$ e quindi le lunghezze d'onda diffratte dal reticolo corto emesse dal puntatore attraverso l'Equazione (\ref{first_order_equation}), e conoscendo questi valori si sono potuti misurare i $\Delta x$ del reticolo lungo e ricavare il suo passo $d_{lungo}$.
 
 \subsection{Misura \textrm{$\lambda_{puntatore}$}} \label{3.1}
 Dopo avere posizionato la sorgente e il reticolo lungo come descritto in Sezione \ref{Progettazione} sono state raccolte 7 misure per la distanza sorgente-reticolo $z$ e altre 7 per la lunghezza del lato corto del vocabolario $L$ (complanare al punto di emissione di ambo le sorgenti). Quest'ultima sarà usata come lunghezza per definire la scala di misura su \textit{ImageJ} e rimarrà invariata per ogni misura. 
@@ -280,11 +285,15 @@ Si è proceduto a misurare i $ \Delta x $ con \textit{ImageJ} ottenendo quanto r
 \end{table}
 
 
-Siccome l'analisi dati viene fatta con un programma controllato dall'utente e non da un algoritmo, mi è sembrato inopportuno limitarmi a propagare l'errore di $L$ e $z$. Infatti ci possono essere state molteplici sorgenti di errore. Il reticolo poteva non essere perfettamente ortogonale con fotocamera e sorgente, o non alla stessa altezza da terra nonostante la massima attenzione posta. Questo si nota nel fatto che le misure di sinistra siano leggermente più grandi di quelle a destra (proprio per questa ragione non è stato analizzato lo spettro del secondo ordine di sinistra! Non era presente uno spettro di destra che potesse compensare lo spostamento verso l'alto dei $\Delta x$ di cui verrà successivamente fatta una media!). Una causa alternativa di questo errore sistematico può essere stata una angolazione della fotocamera rispetto al reticolo, dovuta al tocco per scattare. Inoltre i $\Delta x$ sono stati misurati con \textit{ImageJ} a gruppi di 5, uno per colore, tenendo fisso un estremo di misura sulla sorgente e muovendo l'altro, per poi riposizionare anche l'estremo della sorgente e ripetere il procedimento. Questa scelta è stata adottata per evitare errori dovuti a un errato posizionamento dell'estremo sulla sorgente. Ciononostante la sorgente e gli spettri risultano molto espansi, a causa dei riflessi contro le superfici lucide e quindi un errore può comunque derivare da questo.
+Siccome l'analisi dati viene fatta con un programma controllato dall'utente e non da un algoritmo, mi è sembrato inopportuno limitarmi a propagare l'errore di $L$ e $z$. Infatti ci possono essere state molteplici sorgenti di errore. Il reticolo poteva non essere perfettamente ortogonale con fotocamera e sorgente, o non alla stessa altezza da terra nonostante la massima attenzione posta. Questo si nota nel fatto che le misure di sinistra siano leggermente più grandi di quelle a destra (proprio per questa ragione non è stato analizzato lo spettro del secondo ordine di sinistra; non era presente uno spettro di destra che potesse compensare lo spostamento verso l'alto dei $\Delta x$ di cui verrà successivamente fatta una media). 
 
 \vspace{3mm}
 
-In generale queste problematiche, che in gran parte nascono dagli strumenti rudimentali a disposizione per organizzare l'ambiente e le misure, mi hanno fatto ritenere che la scelta più adatta fosse definire l'incertezza dei $\Delta x$ come deviazione standard delle 6 misure prese per ogni colore. L'incertezza così facendo aumenta e riesce a tenere maggiormente conto di tutte le possibili fonti di errore.
+Una causa alternativa di questo errore sistematico può essere stata una angolazione della fotocamera rispetto al reticolo, dovuta al tocco per scattare. Inoltre i $\Delta x$ sono stati misurati con \textit{ImageJ} a gruppi di 5, uno per colore, tenendo fisso un estremo di misura sulla sorgente e muovendo l'altro, per poi riposizionare anche l'estremo della sorgente e ripetere il procedimento. Questa scelta è stata adottata per evitare errori dovuti a un errato posizionamento dell'estremo sulla sorgente. Ciononostante la sorgente e gli spettri risultano molto espansi, anche a causa dei riflessi contro le superfici lucide, e quindi un errore può comunque derivare da questo.
+
+\vspace{3mm}
+
+In generale queste problematiche, che in gran parte nascono dagli strumenti rudimentali a disposizione per organizzare l'ambiente e le misure, mi hanno fatto ritenere che la scelta più adatta fosse definire l'incertezza dei $\Delta x$ come deviazione standard delle 6 misure totali prese per ogni colore. L'incertezza così facendo aumenta e riesce a tenere maggiormente conto di tutte le possibili fonti di errore.
 
 \vspace{3mm}
 
@@ -307,6 +316,7 @@ I risultati ottenuti per i $\Delta x$  medi $\overline{\Delta x}$ sono riportati
 \caption{$\Delta x$ medi per diffrazione del puntatore sul reticolo corto}
 \end{table}
 
+\pagebreak 
 Da qui usando l'Equazione (\ref{first_order_equation}) se ne sono ricavate le $\lambda$ riportate in Tabella 6.
 
 \begin{table}[h]
@@ -322,7 +332,6 @@ Da qui usando l'Equazione (\ref{first_order_equation}) se ne sono ricavate le $\
 \caption{$\lambda$ per diffrazione del puntatore sul reticolo corto}
 \end{table}
 
-\pagebreak
 L'errore su $\lambda$ è stato ricavato con la propagazione degli errori:
 
 \begin{equation}
@@ -332,7 +341,7 @@ L'errore su $\lambda$ è stato ricavato con la propagazione degli errori:
 
 \vspace{3mm}
 
-Si precisa che i LED (Light Emitting Diode) seguono la tecnologia RGB, ovvero emettono luce apparentemente bianche con il solo ausilio dei colori rosso, verde e blu. Pertanto è altamente probabile che il ciano e l'arancione siano dei colori posizionati correttamente nello spettro, ma percepiti in quanto la diffrazione è solo al primo ordine. Per ordini superiori questi colori dovrebbero scomparire o perdere molta intensità.
+Si precisa che i LED (Light Emitting Diode) per illuminazione seguono la tecnologia RGB, ovvero emettono luce apparentemente bianca con il solo ausilio dei colori rosso, verde e blu. Pertanto è altamente probabile che il ciano e l'arancione siano dei colori posizionati correttamente nello spettro, ma percepiti in quanto la diffrazione è solo al primo ordine. Per ordini superiori questi colori dovrebbero scomparire o perdere molta intensità.
 
 
 %%% -----------------------------------------------------------------------------------------------------%
@@ -430,7 +439,7 @@ Da cui si sono ottenuti dei valori medi $\overline{\Delta x}$ riportati in Tabel
 
 \vspace{3mm}
 
-Avendo già ricavato le lunghezze d'onda emesse dal puntatore, come riportato in Tabella 6, è possibile utilizzare nuovamente l'Equazione \ref{first_order_equation} per ricavare il passo $d$ del reticolo lungo da ogni $\lambda$. Sono riportati in Tabella 11 i curiosi risultati, la cui incertezza è ricavata mediante la propagazione degli errori:
+Avendo già ricavato le lunghezze d'onda emesse dal puntatore, come riportato in Tabella 6, è possibile utilizzare nuovamente l'Equazione (\ref{first_order_equation}) per ricavare il passo $d$ del reticolo lungo da ogni $\lambda$. Sono riportati in Tabella 11 i curiosi risultati, la cui incertezza è ricavata mediante la propagazione degli errori:
 
 \begin{equation}
     \sigma_d = \sqrt{\left(\frac{\lambda}{\Delta x}\cdot\sigma_z\right)^2 + \left(\frac{z}{\Delta x}\cdot\sigma_\lambda\right)^2 + \left(\frac{z \lambda}{\Delta x^2}\cdot\sigma_{\Delta x}\right)^2}
@@ -440,7 +449,7 @@ Avendo già ricavato le lunghezze d'onda emesse dal puntatore, come riportato in
     \centering
 \begin{tabular}{||c|c|c|c|c|c||}
     \hline
-     & \cellcolor{blue}$d{blu}$ [nm] & \cellcolor{cyan}$d_{ciano} [nm]$ & \cellcolor{green}$d_{verde}[nm]$ & \cellcolor{orange}$d_{arancio}[nm]$ & \cellcolor{red}$d_{rosso}[nm]$ \\
+     & \cellcolor{blue}$d_{blu}$ [nm] & \cellcolor{cyan}$d_{ciano} [nm]$ & \cellcolor{green}$d_{verde}[nm]$ & \cellcolor{orange}$d_{arancio}[nm]$ & \cellcolor{red}$d_{rosso}[nm]$ \\
     \hline
     Media & 0,879 & 0,861 & 0,835 & 0,800 & 0,785 \\
     $\sigma$ & 0,023 & 0,029 & 0,026 & 0,026 & 0,030\\
@@ -449,7 +458,11 @@ Avendo già ricavato le lunghezze d'onda emesse dal puntatore, come riportato in
 \caption{Passo del reticolo lungo}
 \end{table}
 
-Definisco curiosi i risultati poichè rappresentano approssimativamente una retta con pendenza negativa (Figura \ref{graph_d}). Considerando che $z$ nell'Equazione (\ref{first_order_equation}) è uguale per ogni passo calcolato, il problema di queste misure necessariamente soggiace o sulle $\lambda$ misurate con il reticolo corto o sui $\Delta x$ del reticolo lungo. Ritengo che l'errore sia da imputare all'analisi delle foto con il software. Infatti, prendendo come esempio la Figura \ref{LedCorto}, il blu risulta molto corto in termini di lunghezza nello spettro ma anche molto luminoso, rendendo difficile ad esempio misurarne sempre il punto medio. Invece il verde è molto lungo e il suo punto medio è quindi più facile da misurare, mentre l'arancio quasi si mescola con il rosso, non avendo un confine abbastanza definito.
+Definisco curiosi i risultati poichè rappresentano approssimativamente una retta con pendenza negativa (Figura \ref{graph_d}). Considerando che $z$ nell'Equazione (\ref{first_order_equation}) è uguale per ogni passo calcolato, il problema di queste misure è necessariamente generato o dalle $\lambda$ misurate con il reticolo corto o dai $\Delta x$ del reticolo lungo. Ritengo che l'errore sia da imputare all'analisi delle foto con il software. 
+
+\vspace{3mm}
+
+Infatti, prendendo come esempio la Figura \ref{LedCorto}, il blu risulta molto corto in termini di lunghezza nello spettro ma anche molto luminoso, rendendo difficile ad esempio misurarne sempre il punto medio. Invece il verde è molto lungo e il suo punto medio è quindi più facile da misurare, mentre l'arancio quasi si mescola con il rosso e non presenta un confine abbastanza definito.
 
 \vspace{3mm}
 
@@ -461,6 +474,8 @@ Al netto di queste considerazioni su quale possa essere la causa dell'errore e c
     \caption{Grafico dei valori del passo del reticolo lungo ottenuti dalle varie lunghezze d'onda}
     \label{graph_d}
 \end{figure}
+
+\vspace{3mm}
 
 Il valore ottenuto è 
 
@@ -524,7 +539,7 @@ Una spiegazione plausibile è che la presenza di una vetrina sul lato sinistro d
 
 \vspace{3mm}
 
-L'analisi software degli spettri del primo ordine ha prodotto i valori $\Delta x$ riportati in Tabella 13 e 14
+L'analisi software degli spettri del primo ordine ha prodotto i valori $\Delta x$ riportati nelle Tabelle 13 e 14
 
 \begin{table}[h]
     \centering
@@ -650,7 +665,7 @@ dove $m=2$ è il secondo ordine.
     \label{confrontoCorto}
 \end{figure}
 
-Appare evidente sia dai dati riportati nelle tabelle sopra che dalla Figura \ref{confrontoCorto} che al crescere della lunghezza d'onda aumenti la discrepanza tra due righe dello stesso colore al primo e al secondo ordine. Ritengo che anche questo sia spiegabile alla luce del fatto che il secondo ordine di massimo abbia maggiore dispersione angolare, e quindi maggiore difficoltà nel misurare con precisione uno stesso punto. Questo si nota soprattutto nel verde e nel rosso, che oltre a essere alcune delle più discrepanti (il rosso ha una discrepanza di $4,51\sigma$ tra i due ordini), sono al secondo ordine le più incerte. Inoltre il ciano e l'arancione non appaiono nello spettro per $m=2$ di destra, e questo inevitabilmente porta le misure ad avere una componente sistematica che aumenta il loro valore.
+Appare evidente sia dai dati riportati nelle tabelle sopra che dalla Figura \ref{confrontoCorto} che al crescere della lunghezza d'onda aumenti la discrepanza tra due righe dello stesso colore al primo e al secondo ordine. Ritengo che anche questo sia spiegabile alla luce del fatto che il secondo ordine di massimo abbia maggiore dispersione angolare, e quindi maggiore difficoltà nel misurare con precisione uno stesso punto. Questo si nota soprattutto nel verde e nel rosso, che, oltre a essere alcune delle più discrepanti (il rosso ha una discrepanza di $4,51\sigma$ tra i due ordini), sono al secondo ordine le più incerte. Inoltre il ciano e l'arancione non appaiono nello spettro per $m=2$ di destra, e questo inevitabilmente porta le misure ad avere una componente sistematica che aumenta il loro valore.
 
 \vspace{3mm}
 
@@ -743,6 +758,7 @@ Per completezza vengono riportati i dati, le figure e alcune considerazioni circ
 \caption{$\lambda$ per diffrazione della torcia sul reticolo lungo}
 \end{table}
 
+\clearpage
 Procedendo a un confronto tra le misure dello spettro del primo ordine per la torcia, effettuate col reticolo corto, e del primo ordine effettuate col reticolo lungo si ottiene con poca sorpresa che all'aumentare della lunghezza d'onda diminuisce la distanza in deviazioni standard. Infatti le misure del reticolo lungo hanno incertezza crescente in maniera vertiginosa all'aumentare della lunghezza d'onda, il che garantisce la compatibilità (Tabella 26, Figura \ref{confrontotraidue}).
 
 \begin{table}[h]
@@ -771,15 +787,15 @@ L'esperimento può dirsi concluso in maniera parzialmente soddisfacente.
 
 \vspace{3mm}
 
-La densità di fenditure del reticolo ignoto è stata stimata in $\rho_{lungo} = 1202 \pm 51 \; fend/mm$, che risulta compatibile con il valore ottenuto da altri studenti (e che valida la correttezza della misura solo nel caso in cui gli studenti abbiano ricevuto lo stesso reticolo di passo ignoto). 
+La densità di fenditure del reticolo ignoto è stata stimata in $\rho_{lungo} = 1202 \pm 51 \; fend/mm$, con analogo ordine di grandezza del valore ottenuto da altri studenti (e che rende plausibile la misura solo nel caso in cui gli studenti abbiano ricevuto lo stesso reticolo di passo ignoto). 
 
 \vspace{3mm}
 
-I valori di $\lambda$ ottenuti misurando con il reticolo corto risultano accettabili in quanto tengono conto della tecnologia RGB dei led ma comprendono anche alcune lunghezze d'onda frutto dell'unione dei tre colori base.
+I valori di $\lambda$ del puntatore ottenuti misurando con il reticolo corto risultano accettabili in quanto tengono conto della tecnologia RGB dei led ma comprendono anche alcune lunghezze d'onda frutto dell'unione dei tre colori base.
 
 \vspace{3mm}
 
-Sfortunatamente non è stato possibile confermare sperimentalmente la correttezza di $\rho_{lungo}$ a causa delle problematiche esposte in Sezione 4.2, sebbene le misure delle lunghezze d'onda emesse dalla torcia diffratte dal reticolo corto fossero attendibili come posizione nell'intervallo della luce visibile.
+Sfortunatamente non è stato possibile confermare sperimentalmente la correttezza di $\rho_{lungo}$ a causa delle problematiche esposte in Sezione 4.2, che non hanno reso possibile un cofronto tra le lunghezze d'onda ricavate con i due reticoli. Ciononostante le misure delle lunghezze d'onda emesse dalla torcia diffratte dal reticolo corto sono attendibili come posizione nell'intervallo della luce visibile.
 
 
 
