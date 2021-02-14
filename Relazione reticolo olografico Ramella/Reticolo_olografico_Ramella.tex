@@ -9,7 +9,7 @@
 \usepackage{amsmath,amssymb}
 \geometry{a4paper}
 
-\usepackage[french,italian]{babel}
+\usepackage[english,italian]{babel}
 \frenchspacing
 
 \title{Relazione dell'esperimento del reticolo olografico}
@@ -19,6 +19,8 @@
 \begin{document}
 \maketitle
 
+\begingroup
+\selectlanguage{english}
 \begin{abstract}
 L’esperimento si propone di usare un reticolo olografico di passo noto per misurare le lunghezze d'onda di alcune lampade di uso quotidiano. I risultati ottenuti sono stati quindi usati per stimare il passo di un secondo reticolo olografico.
 
@@ -48,6 +50,8 @@ La mia miglior stima del passo del secondo reticolo è:
 \[9,3 \cdot 10^{-7} \pm 3 \cdot 10^{-8} \; \textrm{m}\]
 
 \end{abstract}
+\endgroup
+\selectlanguage{italian}
 \tableofcontents
 
 \clearpage
@@ -160,11 +164,13 @@ Una volta fotografate le immagini, è stato usato un software di nome FIJI per l
 
 Di questa lampada sono state fatte due misure, a due distanze diverse:
 
-la prima a circa 8 metri di distanza, per avere come riferimento un valore di $z$ molto grande; 
+\begin{itemize}
+  \item la prima a circa 8 metri di distanza, per avere come riferimento un valore di $z$ molto grande; 
+  \item la seconda, vista l'impraticità della misura ad 8 metri, è stata fatta a circa 3 metri di distanza.
 
-la seconda, vista l'impraticità della misura ad 8 metri, è stata fatta a circa 3 metri di distanza.
+\end{itemize}
 
-\vspace{5mm}
+\vspace{3mm}
 
 Per la misura di $z$ sono state eseguite 8 misurazioni con il metro laser, mirando al centro del portapenne, e la deviazione standard è stata assunta come incertezza. Al valore finale è stato aggiunto un fattore di correzione di $9$ cm, dovuto al raggio di $4$ cm del portapenne e all'avvicinamento, in fase di misura, del reticolo alla fotocamera di $5$ cm (misurati con un comune righello, $s = 1$ mm) a causa di un iniziale posizionamento errato del reticolo (errore commesso in entrambe le misure a causa di una svista).
 
@@ -433,6 +439,8 @@ Mentre le lunghezze d'onda misurate del blu e del verde sono compatibili tra di 
 \end{figure}
 
 In questa misura emerge fortemente il problema dell'uso della deviaizone standard come incertezza. Le misure di $\Delta x$ sono state eseguite usando come riferimento il centro della sorgente luminosa e il centro dell'immagine. Il problema con questo modo di procedere è che si ottengono misure molto precise e con una devizione standard molto piccola, e mentre questo modo di procedere si è rivelato efficace per le misure delle lunghezze d'onda, per la misura del passo si ottengono delle incertezze decisamente troppo piccole.
+
+\vspace{3mm}
 
 Ho deciso quindi di trascurare l'incertezza strumentale e fare una semplice media aritmetica, e usare la deviazione standard della media come incertezza della mia stima del passo.
 
