@@ -11,7 +11,7 @@
 
 \geometry{a4paper}
 
-\usepackage[italian]{babel}
+\usepackage[italian,english]{babel}
 \frenchspacing
 
 \title{Relazione sul reticolo olografico}
@@ -21,8 +21,12 @@
 \begin{document}
 \maketitle
 
+\begingroup
+\selectlanguage{english}
 \begin{abstract}
 In questa esperienza ho usato un reticolo olografico per misurare la lunghezza d'onda di un laser e, tramite la lunghezza d'onda ottenuta, ho misurato il passo di un altro reticolo il cui passo non è stato fornito. I due reticoli sono inoltre stati usati per la stima dei colori emessi da una torcia bianca.
+
+\vspace{3mm}
 
 Riporto i valori ottenuti (i pedici indicano il reticolo usato):
 \[ \lambda_{laser} = 637 \pm 35 \; [nm] \]
@@ -39,17 +43,26 @@ $rosso:$ \;\;\; $\lambda_1 = 652 \pm 63\; [nm] \;\;\; \lambda_2 = 646 \pm 32\; [
 
 \end{centering}
 \end{abstract}
+\endgroup
+
+\selectlanguage{italian}
 \tableofcontents
 
+\clearpage
+
 \section{Introduzione teorica}
-Questo esperimento si basa sulle proprietà ondulatorie della luce. Il reticolo olografico è formato da una "pellicola" su cui, a una distanze regolari, delle righe sono state oscurate. Quando la luce passa attravverso le righe non oscurate del reticolo, per il principio di huygens-fresnel, ognuna delle righe si comporta come una sorgende di onda sferica. La differenza di cammino delle varie fenditure causa un effetto di interferenza che permette di separare le varie lunghezze d'onda. In condizioni normali le varie lunghezze d'onda si ricombinano e continuiamo quindi a vedere luce bianca (Figura 1). Per poter visualizzare le varie frequenze separate è necessario che i fasci luminosi siano paralleli tra di loro; per ottenere questa condizione può essere usata una sorgente i cui raggi siano già collimati, come nel caso di un laser, o può essere usata una lente per collimare i raggi di una torcia.
+Questo esperimento si basa sulle proprietà ondulatorie della luce. Il reticolo olografico è formato da una "pellicola" su cui, a una distanze regolari, delle righe sono state oscurate. Quando la luce passa attravverso le righe non oscurate del reticolo, per il principio di Huygens-Fresnel, ognuna delle righe si comporta come una sorgente di onda sferica. La differenza di cammino tra le varie fenditure causa un effetto di interferenza che permette di separare le varie lunghezze d'onda. 
+
+\vspace{3mm}
+
+In condizioni normali le varie lunghezze d'onda si ricombinano e continuiamo quindi a vedere luce bianca (Figura 1). Per poter visualizzare le varie frequenze separate è necessario che i fasci luminosi siano paralleli tra di loro. Per ottenere questa condizione può essere usata una sorgente i cui raggi siano già collimati, come nel caso di un laser, o può essere usata una lente per collimare i raggi di una sorgente sferica, come ad esempio una torcia.
 
 
 %immagine reticolo non collimato
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{IM reticolo non collimato}
-  \caption{situazione in cui il fascio di luce non risulta collimato}
+  \caption{Situazione in cui il fascio di luce non risulta collimato}
 \end{figure}
 
 
@@ -59,7 +72,9 @@ Una volta ottenuti dei fasci collimati possiamo utilizzare la relazione:
 d (\sin \theta + \sin \alpha_n(\lambda)) = n \lambda
 \end{equation}
 
-In cui $d$ è il passo del reticolo, $\sin \theta$ è l'angolo di incidenza rispetto alla normale del reticolo, $\sin \alpha_n(\lambda)$ è l'angolo a cui si trova la lunghezza d'onda analizzata mentre $m$ e    $\lambda$ sono rispettivamente l'ordine che si stà analizzando e la lunghezza d'onda.
+In cui $d$ è il passo del reticolo, $\theta$ è l'angolo di incidenza rispetto alla normale del reticolo, $\alpha_n(\lambda)$ è l'angolo a cui si trova la lunghezza d'onda analizzata, $n$ è l'ordine che si sta analizzando e $\lambda$ è la lunghezza d'onda.
+
+\vspace{3mm}
 
 Se ci poniamo in condizioni di ortogonalità tra la luce e il reticolo il valore di $\sin \theta$ diventa 0 e possiamo quindi semplificare ottenendo:
 
@@ -67,54 +82,67 @@ Se ci poniamo in condizioni di ortogonalità tra la luce e il reticolo il valore
 d \sin \alpha = n \lambda
 \end{equation}
 
-Un altra importante specifica necessaria per poter visualizzare la diffrazione è il porsi in campo lontano, come visibile in Figure 2 e 3; se ci si pone troppo vicini allo schermo le varie lunghezze d'onda non hanno il tempo di separarsi e si visualizza quindi luce bianca. Definiamo campo lontano una condizione in cui $L << l$ dove $L$ è la distanza del reticolo dallo schermo(campo lontano) e $l$ è la porzione illuminata sul reticolo.
+Un'altra condizione necessaria per poter visualizzare la diffrazione è il porsi in campo lontano, come visibile nelle Figure 2 e 3. Se ci si pone troppo vicini allo schermo le varie lunghezze d'onda non hanno il tempo di separarsi e si osserva quindi solo luce bianca. 
+
+\vspace{3mm}
+
+Definiamo campo lontano una condizione in cui $L << l$ dove $L$ è la distanza del reticolo dallo schermo (campo lontano) e $l$ è la porzione illuminata sul reticolo.
 
 
 %immagine reticolo collimato corto
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{IM reticolo collimato vicino}
-  \caption{situazione in cui lo schermo risulta troppo vicino}
+  \caption{Situazione in cui lo schermo risulta troppo vicino}
 \end{figure}
 
 %immagine reticolo collimato lungo
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{IM reticolo collimato lontano}
-  \caption{situazione di campo lontano}
+  \caption{Situazione di campo lontano}
 \end{figure}
 
 
 \pagebreak
 \section{Progettazione dell'esperienza}
-Per questa esperienza abbiamo utilizzato due reticoli, il primo di passo noto: $500 [righe/mm]$ mentre il secondo di passo ignoto. 
+Per questa esperienza ho utilizzato due reticoli, il primo di passo noto pari a $500 \; [righe/mm]$ mentre il secondo di passo ignoto. 
 
-Come sorgenti luminose abbiamo usato un puntatore laser di lunghezza d'onda ignota e una torcia. La torcia utilizzata ha, attaccata in fronte alla lampada, una lente mobile che, se estesa alla massima distanza, rende i raggi emessi paralleli rendendo la torcia adatta per le misure descritte.
+\vspace{3mm}
+
+Come sorgenti luminose ho usato un puntatore laser di lunghezza d'onda ignota e una torcia. La torcia utilizzata ha, attaccata in fronte alla lampada, una lente mobile che, se estesa alla massima distanza, rende i raggi emessi paralleli rendendo la torcia adatta per le misure descritte.
+
+\vspace{3mm}
 
 Lo schermo usato è un muro che essendo, essendo non bianco, potrebbe aver leggermente falsato la visione del colore ma non ritengo ciò abbia influito in maniera significativa e non ne ho quindi  tenuto conto nell'analisi dati.
 
-Per la presa delle misure della lunghezza ho usato un metro a nastro dalla portata di $3 \; m$ e dalla sensibilità del $mm$.
+\vspace{3mm}
+
+Per la presa delle misure della lunghezza ho usato un metro a nastro dalla portata di $3 \; m$ e dalla sensibilità del millimetro.
 
 \section{Incertezza delle misure per la torcia}
-Dato che l'immagine della torcia non risulta perfettamente netta ma ha delle leggere "sfocature" sui bordi esterni, ho deciso di prendere 5 misure della larghezza dell'immagine della torcia a una distanza di $2,25 \; m$ per ottenere, utilizzando la deviazione standard, una stima dell'incertezza sulle misure della torcia che è stata sommata, tramite la somma in quadratura, all'incertezza strumentale ottenendo il valore:
-\[ \sigma_D = 0,004 [m]\]
-Che è stato usato come incertezza sulle misure per le misure della torcia.
+Dato che l'immagine della torcia non risulta perfettamente netta ma ha delle leggere "sfocature" sui bordi esterni, ho deciso di prendere 5 misure della larghezza dell'immagine della torcia a una distanza di $2,25 \; m$ per ottenere, utilizzando la deviazione standard, una stima dell'incertezza sulle misure della torcia che è stata sommata in quadratura all'incertezza strumentale ottenendo il valore
+\[ \sigma_D = 0,004 \; [m]\]
+che è stato usato come incertezza sulle misure per le misure della torcia.
 
-riportiamo in Figura 4 la tabella contenente i dati.
+\clearpage
+
+Riporto in Figura 4 la tabella contenente i dati.
 
 %tabella incertezza torcia
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.25\linewidth]{IM tabella incertezza torcia}
-  \caption{tabella contenente i dati usati per calcolare l'incertezza delle misure della torcia}
+  \caption{Dati usati per calcolare l'incertezza delle misure della torcia}
 \end{figure}
 
 
+\section{Misura della $\lambda_{laser}$}
+Per calcolare la lunghezza d'onda del laser ho attaccatto il reticolo al bordo di un mobile posizionato parallelamente al muro. Ho quindi posizionato il laser attaccato al reticolo cercando di ottenere il più possibile una situazione di ortogonalità con quest'ultimo. Ho quindi proceduto ad accendere il laser e misurare la distanza tra il reticolo e il massimo (puntiforme) di ordine zero. Dopo avere annotato la distanza, chiamata $L$ in Figura 5, ho proceduto a misurare la distanza dell'ordine zero dai massimi (puntiformi) del primo e del secondo ordine (misure $D$ in Figura 5). 
 
+\vspace{3mm}
 
-
-\section{misura della $\lambda_{laser}$}
-Per calcolare la lunghezza d'onda del laser ho attaccatto il reticolo al bordo di un mobile posizionato parallelamente al muro; ho quindi posizionato il laser attaccato al reticolo cercando di ottenere il più possibile una situazione di ortogonalità con quest'ultimo. Ho quindi proceduto ad accendere il laser e misurare la disanza tra il reticolo e il punto di ordine zero; dopo aver segnato la distanza, chiamata $L$ in Figura 5, ho proceduto a misurare la distanza dell'ordine zero dai punti del primo e del secondo ordine (misure $D$ in Figura 5). Per l'analisi dati ho calcolato il valore di $\sin \alpha$  utilizzando la formula di carattere geometrico:
+Per l'analisi dati ho calcolato il valore di $\sin \alpha$  utilizzando la formula di carattere geometrico:
 
 \begin{equation}
  \sin \alpha =\frac{L^2}{\sqrt{D^2 + L^2}}
@@ -126,7 +154,7 @@ In cui ho propagato le incertezze ottenendo:
 \sigma_{\sin \alpha} = \sqrt{\bigg( \frac{L^2 \sigma_D}{(D^2 + L^2)^{\frac{3}{2}}} \bigg)^2 + \bigg( \frac{L  D  \sigma_L}{(D^2 + L^2)^{\frac{3}{2}}} \bigg)^2} 
 \end{equation}
 
-Ho poi calcolato i vari valori individuali delle $\lambda$ usando la formula Eq.5 derivata dalla formula Eq.2 e, per ciascuna di esse, ho propadato l'errore tramite la formula Eq.6
+Ho poi calcolato i valori delle singole $\lambda$ usando l'Equazione (5) derivata dall'Equazione (2) e, per ciascuna di esse, ho propagato l'errore tramite l'Equazione (6).
 
 \begin{equation}
 \lambda = \frac{D \sin \alpha}{n}
@@ -138,22 +166,30 @@ Ho poi calcolato i vari valori individuali delle $\lambda$ usando la formula Eq.
 
 Ho usato i risultati ottenuti per calcolare, usando una media pesata, il valore:
 \[ \lambda_{laser} = 637.3 \pm 0.1 \; [nm] \]
-Ritengo che l'incertezza sia troppo bassa è ho quindi deciso di calcolare la deviazione standard dei valori $\lambda$ e, tramite la somma in quadratura, unirla all'incertezza per ottenere un incertezza che tenga conto anche di possibili errori non strumentali quali il laser non perfettamente ortogonale o eventuali imperfezioni nelle misure data la conformazione della stanza. Il valore finale è risultato quindi essere:
+Ritenendo che l'incertezza fosse troppo bassa ho deciso di calcolare la deviazione standard dei valori $\lambda$ e, tramite la somma in quadratura, unirla all'incertezza derivata dalla propagazione degli errori. 
+
+\vspace{3mm}
+
+Così facendo ho ottenuto un'incertezza che tenesse conto anche di possibili errori non strumentali, ad esempio il laser non perfettamente ortogonale o eventuali imprecisioni nelle misure data la conformazione della stanza. 
+
+\vspace{3mm}
+
+Il valore finale è risultato quindi essere:
 \[ \lambda{laser} = 637 \pm 35 \; [nm] \]
-Riporto in Figure 5 e 6 le tabelle con i dati grezzi, i risultati parziali e i valori finali
+Riporto in Figure 5 e 6 le tabelle con i dati grezzi, i risultati parziali e i valori finali.
 
 %tabella laser 1
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1\linewidth]{IM tabella laser 1}
-  \caption{tabella contenente i dati del laser per il reticolo 1 e i risultati parziali}
+  \caption{Tabella contenente i dati del laser per il reticolo 1 e i risultati parziali}
 \end{figure}
 
 %risultati laser 1
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{IM risultati laser 1}
-  \caption{risultati misura $\lambda_{laser}$}
+  \caption{Risultati misura $\lambda_{laser}$}
 \end{figure}
 
 
@@ -161,7 +197,7 @@ Riporto in Figure 5 e 6 le tabelle con i dati grezzi, i risultati parziali e i v
 
 \pagebreak
 \section{Misura del passo del secondo reticolo}
-Per la misura del passo del secondo reticolo ho scambiato il reticolo utilizzato e ho proceduto in maniera analoga a quanto fatto nella misura precedente. Per l'analisi dei dati ho proceduto in maniera analoga alla misura precedente fino al calcolo di $\sin \alpha$. Ho quindi usato la formula Eq.7, sempre derivata da Eq.2, per il calcolo di $d$ e ho propagato gli errori come mostrato in Eq.8.
+Per la misura del passo del secondo reticolo ho scambiato il reticolo utilizzato e ho proceduto in maniera analoga a quanto fatto nella misura precedente. Per l'analisi dati ho proceduto analogamente fino al calcolo di $\sin \alpha$. Ho quindi usato l'Equazione (7), sempre derivata dall'Equazione (2), per il calcolo di $d$ e ho propagato gli errori come mostrato in Equazione (8).
 
 \begin{equation}
  d = \frac{\lambda}{\sin \alpha}
@@ -171,7 +207,9 @@ Per la misura del passo del secondo reticolo ho scambiato il reticolo utilizzato
  \sigma_d = \sqrt{ \bigg( \frac{\sigma_\lambda}{\sin \alpha} \bigg)^2 + \bigg( \frac{- \lambda \sigma_{\sin \alpha}}{\sin^2 \alpha} \bigg)^2 }
 \end{equation}
 
-Nelle equazioni appena scitte non è presente $n$ e dato che il secondo ordine non era visibile e tutte le misure risultano prese al primo ordine.
+Nelle equazioni appena scitte non è presente $n$, dato che il secondo ordine non era visibile e tutte le misure risultano prese al primo ordine.
+
+\vspace{3mm}
 
 Ho quindi usato una media pesata e la deviazione standard come già precedentemente fatto per $\lambda$ ottenendo il valore:
 \[ d = 994 \pm 87 \; [nm] \]
@@ -183,14 +221,14 @@ Riporto in Figure 7 e 8 le tabelle con i dati grezzi, i risultati parziali e i v
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1\linewidth]{IM tabella laser 2}
-  \caption{tabella contenente i dati del laser per il reticolo 2 e i risultati parziali}
+  \caption{Tabella contenente i dati del laser per il reticolo 2 e i risultati parziali}
 \end{figure}
 
 %risultati laser 2
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{IM risultati laser 2}
-  \caption{risultati misura passo del reticolo}
+  \caption{Risultati misura passo del reticolo}
 \end{figure}
 
 
@@ -199,10 +237,19 @@ Riporto in Figure 7 e 8 le tabelle con i dati grezzi, i risultati parziali e i v
 \pagebreak
 \section{Misure dello spettro della torcia}
 \subsection{Primo reticolo}
-Al contrario delle misure del laserper le misure dello spettro della torcia mi sono spostato in una stanza buia per riuscire a vedere meglio la luce. Ho posizionato la torcia su una scatola e ho attaccato la torcia alla scatola utillizzando dello scotch; ho successivamente posizionato attaccato alla torcia è l'o fissato con altro scotch per tenerlo fermo.
+Al contrario delle misure del laser, per le misure dello spettro della torcia mi sono spostato in una stanza buia per riuscire a vedere meglio la luce. Ho posizionato la torcia su una scatola e ho attaccato la torcia alla scatola utilizzando dello scotch. Ho successivamente posizionato il reticolo in prossimità della torcia e l'ho fissato saldamente con altro scotch.
 
-Per questa misura ho preso la distanza tra il reticolo e il centro dell'immagine della torcia. Per ottenere maggiore chiarezza nelle misure della posizione dei vari ordini, ho utilizzato la distanza tra il bordo sinistro dell'immagine di ordine 0 e il bordo sinistro delle immagini ai vari ordini per le misure a destra è i bordi destri per le misure a sinistra. Ho deciso di prendere misure per i colori: rosso, arancione, giallo e blu dato che, ruotando il reticolo, i quadrati della torcia non si sovrappongono perfettamente e dagli angoli mi pare di vedere i colori precedenti con l'aggiunta del verde (vedere Figura).%numero figura
- Purtroppo il verde non risultava ben visibile al primo ordine e non sono riuscito quindi ad introdurlo nella presa dati mentre il giallo non sono risucito a distinguere correttamente il giallo al secondo ordine e ho segnato quindi solo.
+\vspace{3mm}
+
+Per questa misura ho raccolto la distanza tra il reticolo e il centro dell'immagine della torcia. Per maggiore precisione nelle misure della posizione delle bande colorate ho misurato la distanza tra il bordo sinistro dell'immagine di ordine 0 e il bordo sinistro delle immagini ai vari ordini per gli spettri a destra e viceversa per gli spettri a sinistra. 
+
+\vspace{3mm}
+NON SI CAPISCE BENE-------------------------------
+Ho deciso di prendere misure per i colori rosso, arancione, giallo e blu dato che, ruotando il reticolo, i quadrati della torcia non si sovrapponevano perfettamente e dagli angoli mi pare di vedere i colori precedenti con l'aggiunta del verde (vedere Figura).%numero figura
+ 
+\vspace{3mm}
+
+Purtroppo il verde non risultava ben visibile al primo ordine e non sono riuscito quindi ad introdurlo nella presa dati mentre il giallo non sono risucito a distinguere correttamente il giallo al secondo ordine e ho segnato quindi solo.
 
 %torcia dritta
 \begin{figure}[h!]
