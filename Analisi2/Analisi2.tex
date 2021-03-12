@@ -162,6 +162,7 @@ Da qui chiamo \textbf{integrale superiore} e \textbf{integrale inferiore} le scr
     \[
         \overline{\int_{a}^{b}} f(x) dx = \underline{\int_{a}^{b}} f(x) dx \doteq \int_{a}^{b} f(x)dx
     \]
+    \label{Riemann}
 \end{definition}
 
 Si può semplificare questa definizione con una caratterizzazione delle funzioni R-integrabili che renda la definizione più facile. Prima però un risultato preliminare.
@@ -188,14 +189,59 @@ Si può semplificare questa definizione con una caratterizzazione delle funzioni
 \begin{theorem}[Criterio per la R-integrabilità]
     Sia $f:[a,b]\rightarrow \mathbb{R}$ limitata. Allora $f\in\mathcal{R}([a,b]) \Leftrightarrow \forall\varepsilon >0 \; \exists P\in\mathcal{P}: S(P,f)-s(P,f)<\varepsilon$.
     \begin{proof}[Dim]
-        
+
+        ($\Leftarrow$)
+
+        Per ogni partizione $P$ abbiamo $s(P,f) \leq \underline{\int_{}^{}}f \leq \overline{\int_{}^{}}f \leq S(P,f)$ da cui $S(P,f)-s(P,f) \geq \overline{\int_{}^{}}f-\underline{\int_{}^{}}f$.
+
+        Da cui, per ipotesi,
+        $\forall \varepsilon > 0 \; \exists P: \varepsilon > S(P,f) - s(P,f) \geq \overline{\int_{}^{}}f-\underline{\int_{}^{}}f$. Al limite integrale inferiore e superiore coincidono soddisfando Def. \ref{Riemann}.
+
+        ($\Rightarrow$) Se $f$ è R-integrabile allora $\int_{a}^{b}f = \overline{\int_{}^{}} f = \underline{\int_{}^{}} f$. Poichè l'integrale superiore è $\inf$ delle somme superiori, per ogni $\varepsilon > 0 \overline{\int_{}^{}}f+ \varepsilon/2$ non è minorante: esiste una partizione $P_1$ tale che $S(P_1,f)<\overline{\int_{}^{}}f+ \varepsilon/2$. Ragionamento analogo, con i dovuti cambi di segno, si può fare per le somme inferiori e con una partizione $P_2$. Pertanto prendendo $P = P_1 \bigcup P_2$ raffinamento di queste partizioni per il Lemma si ha la descrescita delle somme superiori e la crescita delle somme inferiori e quindi la tesi.
     \end{proof}
 \end{theorem}
 
 
+\newpage
+\section{Lezione 3 - 10/03/2021}
 
+Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia R-integrabile su un intervallo $I$ chiuso e limitato.
 
+\begin{theorem}[Condizioni sufficienti per l'integrabilità]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ una funzione limitata. Allora
+    \begin{enumerate}
+        \item $f$ è continua $\Rightarrow f \in \mathcal{R}([a,b])$
+        \item $f$ è monotona $\Rightarrow f \in \mathcal{R}([a,b])$
+        \item $f$ ha un numero finito di punti di discontinuità $\Rightarrow f \in \mathcal{R}([a,b])$
+    \end{enumerate}
+    
+    \begin{proof}[Dim. 1]
+        Se $f$ è continua su $[a,b]$ allora per Heine-Cantor è uniformemente continua, cioè
+        \[
+        \forall \varepsilon > 0 \; \exists \delta>0: \forall x,y: \left|x-y \right| < \delta, \left|f(x)-f(y)\right| < \frac{\varepsilon}{b-a}
+        \]
+        Presa ora una partizione $P=\lbrace x_0,...,x_n \rbrace$ di $[a,b]$ di taglia $\Delta x_i < \delta$. Poichè $f$ è continua su ogni subintervallino $[x_{i-1}, x_i]$ esistono $s_i$ e $t_i$ tali che $M_i=f(s_i)$ e $m_i=f(t_i)$, cioè sup e inf sono assunti per Weierstrass. 
 
+        Ma allora la differenza tra somme superiori e inferiori è
+
+        \[
+        S(P,f) - s(P,f) = \displaystyle\sum_{i=0}^{n} (M_i-m_i)\Delta x_i < \frac{\varepsilon}{b-a}\displaystyle\sum_{i=0}^{n} \Delta x_i = \varepsilon
+        \]  
+
+        il che è equivalente al criterio di R-integrabilità, da cui si deduce che la funzione sia per l'appunto R-integrabile.
+    \end{proof}
+    \begin{proof}[Dim. 2]
+        
+    \end{proof}
+\end{theorem}
+
+\begin{remark}
+    I punti (1) e (3) sono molto simili. Infatti essere continua vuol dire avere un numero finito di punti di discontinuità, cioè 0.
+\end{remark}
+
+\begin{remark}
+    Nel caso di funzione continua (1) non è necessario specificare la limitatezza della funzione, poichè per Weierstrass l'immagine di un compatto [a,b] è compatta, e quindi provvista di massimo e minimo.
+\end{remark}
 
 \newpage
 \section{Tavola degli integrali}
