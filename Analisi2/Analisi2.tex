@@ -1,0 +1,232 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}   %ALLOWS INSERTING IMAGES (AND MAYBE SOME MORE STUFF) %
+\usepackage{caption}
+\usepackage{subcaption} %ALLOWS CAPTIONS FOR SUBFIGURES%
+\usepackage{verbatim} % ALLOWS MULTILINE COMMENTS WITH \begin{comment} AND \end{comment} %
+\usepackage{amsmath}
+\usepackage{amssymb} % PERMETTE L'USO DI SIMBOLI MATEMATICI "AVANZATI" COME 'MINORE O UGUALE' E ALTRI %
+\usepackage{amstext}
+\usepackage{enumitem} %PERMETTE L'USO DI ELENCHI NUMERATI
+\usepackage[section]{placeins}
+\usepackage{amsthm}
+
+\geometry{a4paper}
+                        %Una riga vuota tra due scritte spazia di una riga anche sul pdf. Andare a capo una volta non provoca nulla nel pdf%
+\usepackage[italian]{babel}
+%\usepackage[french, italian]{babel} non funzione per motivi a me ignoti
+\frenchspacing 
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{Osservazione}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Ex}[section]
+
+
+
+%%%  INTESTAZIONE  %%%
+
+\title{Riassunto Analisi 2}
+\author{Alessandro Matteo Rossi}
+\date{\today}
+
+
+%%%  INIZIO DOCUMENTO  %%%
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lezione 1 - 01/03/2021}
+
+
+\begin{definition}[Integrale indefinito]
+    Dato $\Omega \subseteq \mathbb{R}$ aperto e $f:\Omega \rightarrow \mathbb{R}$ diciamo che $f$ ammette primitiva in $\Omega$ se $\exists F:\Omega \rightarrow \mathbb{R}$ derivabile tale che $F'(x)=f(x) \; \forall x \in \Omega$. $F$ è detta primitiva di $f$.
+\end{definition}
+
+La nozione può essere estesa a $\tilde\Omega = [a,b]$ se presenti la derivata destra in $a$ e sinistra in $b$.
+
+\vspace{3mm}
+
+\begin{remark}
+    Esistono funzioni che non ammettono primitiva. Ad esempio la funzione di Heaviside definita come $f(x)=
+    \begin{cases}
+    0, & \text{$x < 0$} \\
+    1, & \text{$x > 0$} \\
+    \end{cases}$. Infatti non esiste una funzione $F$ che abbia come derivata $f$ per ogni punto.
+\end{remark}
+
+\vspace{3mm}
+
+In $\mathbb{R}$ parlare di \textit{aperto connesso} o \textit{intervallo} è equivalente.
+
+\begin{remark}
+    Se su $\Omega = I$ intervallo $F$ e $G$ sono primitive di $f$ su $I=(a,b)$ allora $(F-G)'=0$ $\Rightarrow$ $F-G=cost$ per Lagrange, da cui deriva la caratterizzazione delle costanti.
+\end{remark}
+
+\begin{example}[Integrale di $1/x$]
+    Presa $f(x)=\frac{1}{x}$ su $\mathbb{R} \backslash \lbrace 0 \rbrace$ essa ha integrale pari a 
+        $\int_{}^{} \frac{1}{x} \, dx = 
+        \begin{cases}
+        \log x + c & \text{$x > 0$} \\
+        \log (-x) +d  & \text{$x < 0$} \\
+        \end{cases}$. 
+    È fondamentale non usare il valore assoluto poiche il nostro integrale è definito su intervalli, e pertanto $f$ è da integrare sui due intervalli su cui è definita.
+\end{example}
+
+Una condizione necessaria per avere primitiva è la \textbf{proprietà di Darboux} (è evidente che pertanto le funzioni derivate godano di (D)). Una funzione ha la proprietà di Darboux se mappa intervalli in intervalli.
+
+\begin{theorem}
+    Se $f$ ammette primitiva su $I$, allora $f$ gode di (D) su $I$.
+    \begin{proof}[Dim]
+        Siano $a,b \in I$ e sia $\gamma \in [f(a),f(b)]$ (se coincidono la tesi è ovvia!). Voglio mostrare che $\exists \, c \in [a,b]: f(c)=\gamma$, supponendo che $f(a)<\gamma < f(b)$. Sia $G(x)=F(x)-\gamma x$ dove $F'=f$. $G$ è derivabile, in quanto somma di funzioni derivabili $\Rightarrow$ è continua. La derivata di $G$ è $G'=f-\gamma$ che non è monotona ed essendo continua non è iniettiva $\Rightarrow$ non è invertibile. Allora $\exists x_1,x_2 \in (a,b): G(x_1) = G(x_2)$ e per il teorema di Rolle $\exists c \in (x_1,x_2): G'(c)=0$ e quindi $f(c) = \gamma$, che è (D).
+    \end{proof}
+\end{theorem}
+
+\newpage
+\section{Lezione 2 - 04/03/2021}
+
+Esistono funzioni che pur essendo (D) non sono integrabili, a riprova del fatto che è solo una condizione necessaria.
+\begin{example}
+    $f(x) = \begin{cases}
+        \sin \frac{1}{x} & \text{$x \neq 0$} \\
+        \frac{1}{2} & \text{$x=0$} \\
+    \end{cases}$
+    gode di (D) ma non ammette primitiva. Se per $x=0$ valesse 0, allora avrebbe primitiva.
+\end{example}
+
+Esistono due teorie dell'integrazione: quella classica di Riemann e quella moderna di Lebesgue. La teoria moderna non permette di calcolare "più" integrali di quella classica: è migliore perchè permette di dominare l'errore più efficientemente quando si calcolano integrali approssimati (spessissimo l'integrale è solo stimabile e non calcolabile con esattezza). L'integrale classico di Cauchy-Riemann è uno strumento utile per determinare la misura di superfici o solidi.
+
+\vspace{3mm}
+
+Faccio tre puntualizzazioni:
+\begin{enumerate}
+    \item Le funzioni "buone" intese come continue, monotone e ovunque derivabili sono una assoluta minoranza. In matematica domina quella che noi consideriamo patologia. È impossibile (inteso come probabilità tendente a 0) pescare dal secchio di tutte le funzioni possibili una funzione "buona", mentre è certo (inteso come probabilità tendente a 1) pescare una funzione patologica. Appare evidente che le funzioni mai derivabili sono la quasi totalità. Se ne deduce che prendere una funzione "a caso" che sia continua e derivabile ovunque voglia dire tutt'altro che prenderne una "a caso". 
+    
+    Riusciamo però a dominare la matematica con le poche funzioni "buone" rimaste, che sono continue e derivabili, perchè posso approssimare bene quanto voglio una funzione patologica con una buona (con deboli ipotesi), tanto quanto posso approssimare un trascendente (probabilità 1 se pesco tra i numeri) con un razionale (probabilità 0).
+    \item Denoto con $Y^{X}$ l'insieme di tutte le funzioni $f:X\rightarrow Y$.
+    \item D'ora in poi, se non diversamente specificato, considererò intervalli chiusi e limitati $[a,b]\subset \mathbb{R}$ e funzioni $f$ limitate.
+\end{enumerate}
+
+\begin{definition}[Partizione]
+    Una partizione di $[a,b]$ è un insieme ordinato di $n+1$ punti casuali. $P=\lbrace x_0,x_1, ...,x_n \rbrace$ t.c. $a=x_0 < x_1 < x_2 <...<x_n=b$.
+
+    Il massimo delle ampiezze degli intervalli $\max\lbrace\Delta x_i\rbrace$ è detto \textbf{taglia della partizione}, dove $\Delta x= x_i - x_{i-1}$ con $i=1,... ,n$.
+\end{definition}
+
+Per arrivare a parlare di integrale inteso come area sottesa al grafico di una funzione è necessario introdurre i concetti di somme superiori e inferiori.
+
+\vspace{5mm}
+
+Considero una funzione $f:[a,b]\rightarrow \mathbb{R}$ limitata sull'intervallo $I=[a,b]$. Sia $P=\lbrace x_0,...,x_n \rbrace$ una partizione di $[a,b]$. Scriviamo $M_i=\underset{x\in [x_{i-1},x_i]}{\sup} f(x)$ e $m_i =\underset{x\in [x_{i-1},x_i]}{\inf} f(x)$ e definiamo le \textbf{somme superiori} come $S(P,f)=\displaystyle\sum_{i=0}^{n}M_i \Delta x_i$ e le \textbf{somme inferiori} come $s(P,f)=\displaystyle\sum_{i=0}^{n}m_i \Delta x_i$, relative alla partizione $P$.
+
+\begin{remark}[$P$ e $\mathcal{P}$]
+    Considerando $\mathcal{P}$, l'isnieme di tutte le partizioni $P$ di $I=[a,b]$ ho che 
+    \[
+    M(b-a) \geq S(P,f) \geq s(P,f) \geq m(b-a) \;\;\; \forall P \in \mathcal{P}
+    \]
+\end{remark}
+
+Da qui chiamo \textbf{integrale superiore} e \textbf{integrale inferiore} le scritture
+\[
+    \overline{\int_{a}^{b}} f(x) dx= \underset{P\in\mathcal{P}}{\inf} S(f,P) \;\;\;\;\;\;\;\;\; \underline{\int_{a}^{b}} f(x) dx= \underset{P\in\mathcal{P}}{\sup} s(f,P)
+\]
+
+È evidente che $\overline\int_{a}^{b} f(x) dx \geq \underline\int_{a}^{b} f(x) dx$
+
+\begin{example}[Funzione di Dirichlet]
+    $f(x) = \begin{cases}
+        1 & x\in[a,b]\cap \mathbb{Q} \\
+        0 & x\in[a,b]\; \backslash\; \mathbb{Q} \\
+    \end{cases}$
+    In questo caso la disuguaglianza tra integrale superiore e inferiore è stretta, poichè $\underset{I}{\max}f=1$ e $\underset{I}{\min}f=0$.
+\end{example}
+
+\begin{definition}[Integrale di Riemann]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ limitata. Diciamo che $f$ è \textbf{R-integrabile} o $f\in \mathcal{R}([a,b])$ se l'integrale superiore coincide con l'integrale inferiore.
+    \[
+        \overline{\int_{a}^{b}} f(x) dx = \underline{\int_{a}^{b}} f(x) dx \doteq \int_{a}^{b} f(x)dx
+    \]
+\end{definition}
+
+Si può semplificare questa definizione con una caratterizzazione delle funzioni R-integrabili che renda la definizione più facile. Prima però un risultato preliminare.
+
+\begin{lemma}[Raffinamento di una partizione]
+    Una partizione $P^*=P \bigcup \lbrace\xi_1,...,\xi_n \rbrace$ che si ottiene aggiungendo un numero finito di punti a $P$ si dice \textbf{raffinamento}.
+    
+    Se $P^*$ è un raffinamento di $P$, allora $S(P,f) \geq S(P^*,f) \geq s(P^*,f) \geq s(P,f)$.
+    \begin{proof}[Dim]
+        Per dimostrarlo è sufficiente aggiungere un solo punto alla partizione. Se $\xi \in (x_{i-1},x_i)$ allora $\underset{x \in [x_{i-1},x_i]}{\sup} f(x) = \max \lbrace \underset{x \in [x_{i-1},\xi]}{\sup} f(x), \underset{x \in [\xi,x_i]}{\sup} f(x) \rbrace$
+
+        \vspace{3mm}
+
+        quindi
+
+        \vspace{2mm}
+
+        $M_i \Delta x_i = \underset{x \in [x_{i-1},x_i]}{\sup} f(x) \Delta x_i = \underset{x \in [x_{i-1},x_i]}{\sup} f(x)(x_i -\xi + \xi - x_{i-1}) \geq \underset{x \in [x_{i-1},\xi]}{\sup} f(x)(\xi-x_{i-1}) + \underset{x \in [\xi,x_i]}{\sup} f(x)(x_i- \xi)$.
+
+        È quindi evidente che aggiungendo punti alla partizione le somme superiori descrescano e quelle inferiori crescano.
+    \end{proof}
+\end{lemma}
+
+\begin{theorem}[Criterio per la R-integrabilità]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ limitata. Allora $f\in\mathcal{R}([a,b]) \Leftrightarrow \forall\varepsilon >0 \; \exists P\in\mathcal{P}: S(P,f)-s(P,f)<\varepsilon$.
+    \begin{proof}[Dim]
+        
+    \end{proof}
+\end{theorem}
+
+
+
+
+
+
+\newpage
+\section{Tavola degli integrali}
+
+Gli integrali notevoli sono ottenibili leggendo la tabella delle derivate al contrario.
+\begin{center}
+    \begin{tabular}{||c|c|c||}
+        \hline
+        $f$ & $\int_{}^{} f$ & C.E. \\
+        \hline\hline
+        0 & $c \in \mathbb{R}$ & \\
+        $x^n$ & $\frac{x^{n+1}}{n+1} + c $ & $ n \in \mathbb{N}_0, x \in \mathbb{R}$ \\
+        $x^\alpha$ & $\frac{x^{\alpha+1}}{\alpha+1}+c$ & $ \alpha \in -1, x > 0, \alpha \in \mathbb{R}$ \\
+        $\frac{1}{x}$ & $\begin{cases}
+                        \log x + c & \text{$x > 0$} \\
+                        \log (-x), & \text{$x < 0$} \\
+                        \end{cases}$ & \\
+        $e^{x}$ & $e^{x} + c$ & $x \in \mathbb{R}$ \\
+        $\sin x$ & $-\cos x + c$ & $x \in \mathbb{R}$ \\
+        $\cos x$ & $\sin x + c$ & $x \in \mathbb{R}$ \\
+        $Ch x$ & $Sh x + c$ & $x \in \mathbb{R}$ \\
+        $Sh x$ & $Ch x + c$ & $x \in \mathbb{R}$ \\
+        $1 + \tan^2 x = \frac{1}{\cos^2 x}$ & $\tan x + c$ & $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$ \\
+        $\frac{1}{1+x^2}$ & $\arctan x + c$ & $x \in \mathbb{R}$ \\
+        $\frac{1}{\sqrt{1-x^2}}$ & $\arcsin x + c$ & $x \in (-1,1)$ \\
+        $-\frac{1}{\sqrt{1-x^2}}$ & $\arccos x + c$ & $x \in (-1,1)$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+%È
+\end{document}
+
+
