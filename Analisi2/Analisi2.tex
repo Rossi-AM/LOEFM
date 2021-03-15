@@ -231,7 +231,14 @@ Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia 
         il che è equivalente al criterio di R-integrabilità, da cui si deduce che la funzione sia per l'appunto R-integrabile.
     \end{proof}
     \begin{proof}[Dim. 2]
-        
+        Prendo $f$ monotona crescente (ad esempio) e una partizione $P=\lbrace x_0,...,x_n \rbrace$ dell'intervallo $[a,b]$ tale che la sua taglia sia $\Delta x < \frac{\varepsilon}{f(b)-f(a)}$.
+
+        Poichè $f$ è monotona il massimo e il minimo sulla partizione sono $M_i=f(x_i)$ e $m_i=f(x_{i-1})$. Allora la differenza fra somme superiori e inferiori è \[S(P,f) - s(P,f) = \sum_{i=0}^{n}(M_i-m_i)\Delta x_i < \frac{\varepsilon}{f(b)-f(a)} \sum_{i=0}^{n}[f(x_i)-f(x_{i-1})] = \varepsilon\]
+
+        Che altro non è che la condizione di integrabilità.
+    \end{proof}
+    \begin{proof}[Dim. 3]
+        In questo caso è fondamentale lavorare con una funzione limitata. Dimostro per un punto e poi iterando posso dimostrarlo per un insieme finito di punti. Suppongo di avere un'unica discontinuità in $c \in [a,b]$. Fissato $\varepsilon>0$ considero due punti $c-\delta$ e $c+\delta$ con $\delta$ infinitesimo. La funzione è quindi continua sugli intervallini $[c-\delta,c]$ e $[c,c+\delta]$.
     \end{proof}
 \end{theorem}
 
@@ -243,6 +250,9 @@ Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia 
     Nel caso di funzione continua (1) non è necessario specificare la limitatezza della funzione, poichè per Weierstrass l'immagine di un compatto [a,b] è compatta, e quindi provvista di massimo e minimo.
 \end{remark}
 
+\begin{remark}
+    Lavorare su intervalli chiusi non è necessario finchè la funzione è limitata. L'intervallo compatto serve per garantire l'esistenza di estremi finiti per Weierstrass.
+\end{remark}
 \newpage
 \section{Tavola degli integrali}
 
