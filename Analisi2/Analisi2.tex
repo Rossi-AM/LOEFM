@@ -238,10 +238,17 @@ Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia 
         Che altro non è che la condizione di integrabilità.
     \end{proof}
     \begin{proof}[Dim. 3]
-        In questo caso è fondamentale lavorare con una funzione limitata. Dimostro per un punto e poi iterando posso dimostrarlo per un insieme finito di punti. Suppongo di avere un'unica discontinuità in $c \in [a,b]$. Fissato $\varepsilon>0$ considero due punti $c-\delta$ e $c+\delta$ con $\delta$ infinitesimo. La funzione è quindi continua sugli intervallini $[c-\delta,c]$ e $[c,c+\delta]$.
-    \end{proof}
+        In questo caso è fondamentale lavorare con una funzione limitata. Dimostro per un punto e poi iterando posso dimostrarlo per un insieme finito di punti. Suppongo di avere un'unica discontinuità in $c \in [a,b]$. Fissato $\varepsilon>0$ considero due punti $c-\delta$ e $c+\delta$ con $\delta = \frac{\varepsilon}{6M}$ dove $M=\underset{x\in[a,b]}\sup |f(x)|$. La funzione è quindi continua sull'unione di intervalli disgiunti compatti $E=[a,c-\delta]\cup [c+\delta,b] = E_1 \cup E_2$, pertanto è R-integrabile su $E$. Considerando le restrizioni di $f$, cioè $f_1$ su $E_1$ e $f_2$ su $E_2$ esistono rispettivamente partizioni $P_1$ e $P_2$ tali che 
+        \[
+            S(P_i,f_i) - s(P_i,f_i) < \varepsilon/3        
+        \]
+        Aggiungendo all'unione delle due partizioni anche i due semiintorni di $c$ si ottiene $P=P_1 \cup \lbrace c-\delta \rbrace \cup \lbrace c+\delta \rbrace \cup P_2$ e quindi l'integrabilità su tutto il dominio.
+        \end{proof}
 \end{theorem}
 
+\begin{remark}
+    In termini semplici, non conta quanti punti di discontinuità ho, a patto che siano un insieme finito, perchè posso raffinare la partizione quanto voglio e vedere intuitivamente che qualsiasi cosa succede in un intorno della discontinuità viene ampiamente dominata dagli altri intervallini. Geometricamente alterare una funzione in un punto vuol dire aggiungere all'integrale un segmento, che per definizione ha area nulla.
+\end{remark}
 \begin{remark}
     I punti (1) e (3) sono molto simili. Infatti essere continua vuol dire avere un numero finito di punti di discontinuità, cioè 0.
 \end{remark}
@@ -253,6 +260,121 @@ Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia 
 \begin{remark}
     Lavorare su intervalli chiusi non è necessario finchè la funzione è limitata. L'intervallo compatto serve per garantire l'esistenza di estremi finiti per Weierstrass.
 \end{remark}
+
+\begin{remark}
+    Anche una funzione con un'infinità numerabile di discontinuità è R-integrabile. La dimostrazione è artificiosa, pertanto introduco solo il concetto di \textbf{misura}, utile caratterizzazione per questo fine.
+\end{remark}
+
+\begin{definition}[Misura]
+    Un sottoinsieme di $\mathbb{R}$, $S\subset \mathbb{R}$, ha \textbf{misura di Lebesgue} o L-misura nulla, e si scrive $\mu(S)=0$ se 
+    \[
+        \forall \varepsilon > 0 \; \exists \; \lbrace I_n \rbrace_{n\in \mathbb{N}} \; \text{successione di intervalli} : S \subset \bigcup_{n=1}^{+\infty} \; \text{e} \; \sum_{n=1}^{+\infty} l(I_n)<\varepsilon
+    \]
+    dove $l(I_n)$ denota il diametro (o lunghezza) dell'intervallo.
+\end{definition}
+
+\begin{example}
+    Ovviamente ogni punto ha L-misura nulla, poichè lo ricopro con una successione fatta da un unico intervallo e il cui diametro è piccolo a piacere e quindi più piccolo di $\varepsilon$.
+
+    Anche ogni insieme al più numerabile ha L-misura nulla: ricopro ogni punto con una serie geometrica $\displaystyle\sum_{i=0}^{n}\frac{\varepsilon}{2}$. Sommando tutti diametri degli intervalli, la cui unione è sottoinsieme di $S$, ottengo un diametro totale inferiore a $\varepsilon$.
+
+    Si può anche dimostrare che un insieme, esprimibile come unione al più numerabile di insiemi con L-misura nulla, ha L-misura nulla.
+\end{example}
+
+Dopo questa parentesi sulla misura di Lebesgue, che porterà in AM3 all'omonimo integrale, giungo alla caratterizzazione delle funzioni integrabili. Evidenzio il fatto che mentre l'R-integrale partizioni l'asse x per poi sommare i contributi superiori e inferiori, l'L-integrale si basa sulla partizione dell'asse y, per poi lavorare per controimmagini.
+
+\begin{theorem}[Caratterizzazione delle funzioni integrabili con la misura di Lebesgue]
+    Sia $f:[a,b] \rightarrow \mathbb{R}$ limitata. Allora $f\in \mathcal{R}([a,b]) \Leftrightarrow$ l'insieme dei suoi punti di discontinuità ha L-misura nulla. 
+\end{theorem}
+
+\begin{remark}
+    È quindi evidente che una funzione con un'infinità numerabile di discontinuità sia R-integrabile, poichè un insieme al più numerabile ha L-misura nulla, come spiegato nell'esempio precedente. Grazie a questo posso anche decidere dove mettere le discontinuità in una funzione poichè mi è sufficiente garantire la L-misura nulla di quell'insieme.
+
+    Non esiste una funzione discontinuità solo sugli irrazionali poichè inesprimbili come unione numerabile di insiemi chiusi.
+\end{remark}
+
+\begin{definition}[funzione caratteristica]
+    Una \textbf{funzione caratteristica} è quella funzione $f:S\rightarrow \mathbb{R}$ che vale 1 nei punti di $S$ e 0 altrove.
+    \[
+        \chi_S(x) = \begin{cases}
+            1 & x\in S \\
+            0 & x \notin S \\
+        \end{cases}
+    \]
+\end{definition}
+
+\begin{example}
+    La funzione di Dirichlet è la funzione caratteristica di $\mathbb{Q}$ se la faccio valere 1 lì, altrimenti è la caratteristica degli irrazionali.
+\end{example}
+
+\begin{example}
+    È evidente che se $\chi_S$ è sempre nulla l'insieme $S$ sia vuoto e se viceversa vale sempre 1, allora il dominio è tutto $S$.
+\end{example}
+
+Adesso osserviamo più da vicino $\mathcal{R}([a,b])$. Esso è strutturabile come spazio vettoriale, e questo permette di ottenere delle proprietà di cui gli integrali godono. In $\mathcal{R}([a,b])$ spazio vettoriale sul campo $\mathbb{R}$ (o $\mathbb{C}$) sono definite le operazioni di somma tra gli elementi e di prodotto per scalare del campo. Pertanto sono anche definite le combinazioni lineare di elementi di $\mathcal{R}([a,b])$, ovvero $\displaystyle\sum_{i=1}^{n}\lambda_ia_i$ con $\lambda \in \mathbb{R}$ e $a\in \mathcal{R}([a,b])$.
+
+\vspace{3mm}
+
+\begin{remark}[Proprietà dell'integrale 1]
+    Considero $\mathbb{R}^S$ insieme di tutte le funzioni $f:S\rightarrow \mathbb{R}$ dove $S=[a,b]$ intervallo. $\mathbb{R}^S$ è strutturabile a spazio vettoriale definendo la somma come $(f+g)(x)=f(x)+g(x)$ e il prodotto per scalare come $(\lambda\cdot f)(x)=\lambda \cdot f(x)$ con $\lambda\in\mathbb{R}, f,g\in\mathbb{R}^S$.
+
+    Da questo di deduce che $\mathcal{R}([a,b])$ sia sottospazio di $\mathbb{R}^S$ poichè è chiuso rispetto alle combinazioni lineari: prese due funzioni integrabili, quindi facenti parte di $\mathcal{R}([a,b])$ la loro combinazione lineare è ancora integrabile, quindi è ancora inclusa in $\mathcal{R}([a,b]$.
+
+    Questo perchè se le due funzioni sono integrabili i loro punti di discontinuità hanno L-misura nulla, e per quanto già visto in Ex 3.1, unione di al più un'infinità numerabili di insieme di L-misura nulla ha L-misura nulla, e quindi è ancora R-integrabile.
+\end{remark}
+
+\newpage
+\section{Lezione 4 - 11/03/2021}
+
+\begin{definition}[Trasformazione lineare] 
+    Una \textbf{trasformazione lineare} è un'applicazione $A:V\rightarrow W$ spazi vettoriali che verifica le relazioni:
+    \begin{enumerate}
+        \item [L1)] $A(x+y) = Ax+Ay \quad \forall x,y \in V$
+        \item [L2)] $A(\lambda x)=\lambda A x \quad \forall x \in V, \forall \lambda \in \mathbb{K}$
+    \end{enumerate}
+
+    Se prendo come spazio di partenza $V=\mathcal{R}([a,b])$ e come spazio di arrivo $W=\mathbb{R}$ allora l'applicazione 
+    \[
+        A:V\rightarrow W \quad \mathcal{R}([a,b]) \ni f \mapsto A(f) := \int_{a}^{b}f(t) \: dt \in \mathbb{R}
+    \]
+    è un'applicazione lineare.
+
+    L'integrale è un esempio di trasformazione lineare da $\mathcal{R}([a,b])$ a $\mathbb{R}$.
+\end{definition}
+
+\begin{remark}
+    Le trasformazioni lineari a valori in $\mathbb{R}$ sono chiamate \textbf{funzionali lineari}. È facilmente dimostrabile che presa $A: \rightarrow W$ si abbia che $A(V)$ è uno spazio vettoriale contenuto in $W$. Ma $A(V)$ per definizione di spazio vettoriale è chiuso rispetto alle combinazioni lineari e quindi è sottospazio di $W$. 
+    
+    Parlando di $\mathbb{R}$, esso ha due sottospazi che sono il banale $\lbrace 0 \rbrace$ e $\mathbb{R}$ stesso (non altri perchè non sarebbe chiuso rispetto alle combinazioni lineari). Potendo gli integrali essere non nulli allora $\mathcal{R}([a,b])$ (che era già spazio vettoriale su reali) è sottospazio di $\mathbb{R}$.
+    Inoltre l'applicazione $A:\mathcal{R}([a,b])\rightarrow \mathbb{R}$ è suriettiva poichè la sua immagine sono i reali.
+
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 2]
+    Questa caratterizzazione riguarda la \textbf{composizione di funzioni}. Considero $f\in\mathcal{R}([a,b])$ e $\varphi$ continua. Allora $\varphi \circ f \in \mathcal{R}([a,b])$. Questa è una conseguenza del fatto che la composizione di funzioni continue e limitate origini una continua e limitata. Anche se presente un insieme di punti di discontinuità $D\neq \varnothing$ ho che $D_{\varphi \circ f} \subseteq D_f$ e siccome $\mu(D_f)=0$ (L-misura nulla) $\Rightarrow \mu(D_{\varphi\circ f}) \Rightarrow$ la composizione è R-integrabile.
+
+    Attenzione! Non è vero che $f\circ\varphi$ è integrabile, ma non so il perchè e dovrei invece saperlo...
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 3]
+    Conseguenza importante dell'integrabilità della composizione (sotto le ipotesi della precedente affermazione) è che la composizione di una funzione integrabile con se stessa è ancora integrabile.
+    \[
+        f\in\mathcal{R} \Rightarrow f^2=f\circ f\in\mathcal{R}
+    \]
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 4]
+    Altra conseguenza dell'integrabilità della composizione (sotto le stesse ipotesi di prima) è che prese $f,g \in \mathcal{R} \Rightarrow f\cdot g \in \mathcal{R}$
+\end{remark}
+
+
+
+
+
+
+
+
+
 \newpage
 \section{Tavola degli integrali}
 
