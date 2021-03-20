@@ -365,12 +365,78 @@ Adesso osserviamo più da vicino $\mathcal{R}([a,b])$. Esso è strutturabile com
 
 \begin{remark}[Proprietà dell'integrale 4]
     Altra conseguenza dell'integrabilità della composizione (sotto le stesse ipotesi di prima) è che prese $f,g \in \mathcal{R} \Rightarrow f\cdot g \in \mathcal{R}$
+    \begin{proof}[Dim]
+        $f\cdot g = \frac{1}{2}[(f+g)^2-f^2-g^2] \in \mathcal{R}$ poichè sono somme algebriche e quadrati di funzioni R-integrabili. Detta in modo più pulito, in uno spazio vettoriali la moltiplicazione è un'operazione interna.
+    \end{proof}
 \end{remark}
 
+\begin{remark}[Proprietà dell'integrale 5]
+    Altra conseguenza dell'integrabilità della composizione (sotto le stesse ipotesi di prima) è che $f\in\mathcal{R}([a,b])\Rightarrow |f|\in \mathcal{R}([a,b])$.
+    \begin{proof}[Dim]
+        Usando la composizione posso rappresentare $|f|=\varphi \circ f$ con $\varphi(y)=|y|$ e ottenere il modulo. In alternativa posso dire che $D_{|f|}\subseteq D_f$ ed essendo $\mu(f)=0$ per considerazioni già fatte anche $\mu(|f|)=0$ e quindi è $\mathcal{R}$.
+        \end{proof}
+        Attenzione! $\mu(|f|)=0 \nRightarrow \mu(f)=0$. Inoltre una funzione non integrabile, essa può avere modulo integrabile. Questa osservazione dà una condizione solo sufficiente.
+\end{remark}
 
+\begin{example}
+    Prendo Dirichlet con -1 e 1 come $f(x)=\begin{cases}
+        -1 & x\in\mathbb{Q} \\
+        1 & x\in\mathbb{R}\backslash\mathbb{Q}\\
+    \end{cases}$
+    Questa funzione non è integrabile, ma il suo modulo $|f|=1$ lo è.
+\end{example}
 
+\begin{remark}[Proprietà dell'integrale 6]
+    (Altra conseguenza della composizione, di cui non ho identificato il nesso). Presa $f:S\rightarrow\mathbb{R}$ essa ha componente positiva e negativa che sono rispettivamente
+    \[
+        f^+=\max\lbrace f,0 \rbrace  \qquad f^-=\min\lbrace -f,0 \rbrace
+    \]
+    Entrambe sono a valori in $\mathbb{R}^+$. Se potessi inserire un disegno vedrei immediatamente che 
+    \[
+        |f|=f^++f^- \qquad f=f^+-f^-  
+    \]
+    $f,f^+,f^-$ sono tutte R-integrabili, poichè ottenibili come combinazione lineare delle altre due.
+    Inoltre è anche visibile che
+    \[
+        f^+=\frac{|f|+f}{2} \qquad f^-=\frac{|f|-f}{2}
+    \]
+    da cui si deduce che 
+    \[
+        \int f = \int f^+ - \int f^-
+    \]
+    Questo ragionamento porta alla evidente conclusione che quando calcolo un integrale prendo come positive le aree positive e come negative le aree sotto l'asse delle x.
+\end{remark}
 
+\begin{remark}[Relazioni tra moduli di integrali e integrali di moduli]
+    Forte di quanto detto nella precedente osservazione posso dire che
+    \[
+        \left|\int_{a}^{b}(f^+-f^-)\right| = \left|\int_{a}^{b}f\right|=\left|\int_{a}^{b}f^+-\int_{a}^{b}f^- \right| \leq \int_{a}^{b}f^+-\int_{a}^{b}f^- = \int_{a}^{b} |f|
+    \]
+    Questa è una conseguenza della monotonia dell'integrale, poichè se $\forall x \in [a,b] \; f \geq g \Rightarrow \int_{a}^{b}f \geq \int_{a}^{b}g$.
+\end{remark}
 
+Specifico che anche se sto indicando l'integrabilità sull'intervallo come $\mathcal{R}([a,b])$ è totalmente equivalente parlare di integrabilità su aperti o semiaperti, poichè questo vorrebbe dire avere un insieme finito di discontinuità e la R-integrabilità rimane garantita.
+
+\begin{theorem}[Integrabilità su intervalli spezzati]
+    $f\in\mathcal{R}([a,b]) \Leftrightarrow f\in\mathcal{R}([a,c]), f\in\mathcal{R}([c,b])$ con $c\in[a,b]$.
+    \begin{proof}[($\Rightarrow$)]
+        Se ho una partizione $P$ su $[a,b]$ se aggiungo il punto $c$ ne ho un raffinamento $P^*$. Se la R-integrabilità era garantita all'inizio lo è sicuramente con un raffinamento.
+    \end{proof}
+    \begin{proof}[($\Leftarrow$)]
+        Se la $f$ è integrabile su $[a,c]$ e $[c,b]$ vuol dire che $\mu([a,c])=\mu([c,b])=0$. So che l'unione di insiemi di L-misura nulla ha L-misura nulla, quindi l'integrabilità è garantita anche su $[a,b]$.
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+    Se $f\geq 0 \Rightarrow \int_{a}^{b}f \geq 0$. \; Se $f\leq 0 \Rightarrow \int_{a}^{b}f \leq 0$. Entrambi per la monotonia dell'integrale.
+\end{theorem}
+
+\begin{theorem}
+    Sia $f\in\mathcal{C}([a,b])$ e $f$ è di segno costante. Se $\int_{a}^{b}f=0 \Rightarrow f=0$.
+    \begin{proof}[Dim per assurdo]
+        Sia 
+    \end{proof}
+\end{theorem}
 
 
 
