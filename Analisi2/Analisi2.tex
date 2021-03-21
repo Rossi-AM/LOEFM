@@ -434,11 +434,29 @@ Specifico che anche se sto indicando l'integrabilità sull'intervallo come $\mat
 \begin{theorem}
     Sia $f\in\mathcal{C}([a,b])$ e $f$ è di segno costante. Se $\int_{a}^{b}f=0 \Rightarrow f=0$.
     \begin{proof}[Dim per assurdo]
-        Sia 
+        Dimostro per una $f\geq 0$. Sia per assurdo $f(c)>0$ per qualche $c\in[a,b]$. Per la continuità di $f$ ho che $\exists \, \alpha,\beta \: : a<\alpha<c<\beta<b \,\wedge\, f(x) > \frac{f(c)}{2} \:\text{con}\: x\in(\alpha,\beta)$.
+        Prendo $g(x)= \begin{cases}
+            f(x) & x\in(\alpha,\beta) \\
+            0 & altrove \\
+        \end{cases}$
+        Allora $g \leq f \Rightarrow \int_a^b g \leq \int_a^b f$ ma $\int_a^b f > (\beta-\alpha)\frac{f(c)}{2}>0$. Assurdo! $f$ ha integrale nullo per ipotesi!
     \end{proof}
 \end{theorem}
 
+\begin{theorem}[Media integrale]
+    Sia $f\in\mathcal{R}([a,b])$ e $f(x)\in[\alpha,\beta] \; \forall x\in[a,b]$. Allora $\gamma=\frac{1}{b-a}\int_a^bf(x)dx\in[\alpha,\beta]$.
+    \begin{proof}[Dim]
+        Per una funzione limitata ho che questa si trova tra $\inf f$ e $\sup f$, ed è vero che 
+        \[
+            (b-a)\inf f \leq \int_a^b f\leq (b-a)\sup f 
+        \]
+        Da cui posso definire $\gamma := \frac{1}{b-a}\int_a^b f$
+    \end{proof}
+\end{theorem}
 
+\begin{remark}
+    Il teorema della media integrale è un corollario di (D). In particolare se $f$ è continua allora il valore $\gamma$ viene realmente assunto dalla funzione per il teorema dei valori intermedi. La media integrale è una generalizzazione della media aritmetica. La media aritmetica viene fatta su un insieme discreto di punti e infatti il suo valore potrebbe non essere uno degli addendi.
+\end{remark}
 
 
 \newpage
