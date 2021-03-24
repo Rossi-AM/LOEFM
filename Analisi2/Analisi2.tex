@@ -458,6 +458,24 @@ Specifico che anche se sto indicando l'integrabilità sull'intervallo come $\mat
     Il teorema della media integrale è un corollario di (D). In particolare se $f$ è continua allora il valore $\gamma$ viene realmente assunto dalla funzione per il teorema dei valori intermedi. La media integrale è una generalizzazione della media aritmetica. La media aritmetica viene fatta su un insieme discreto di punti e infatti il suo valore potrebbe non essere uno degli addendi.
 \end{remark}
 
+\vspace{3mm}
+
+Adesso introduciamo alcune convenzioni: considerando una funzione limitata $f\in\mathcal{R}([a,b])$ con $a<b$ (ho quindi un intervallo orientato) dico che:
+
+\[
+    \int_a^a f(x) \, dx = 0 \; \text{(anche se $f$ non è definita in a)} \qquad \int_a^b f(x) \, dx = -\int_b^a f(x)\, dx    
+\]
+
+\begin{remark}[Validità delle disuguaglianze tra integrali]
+    Non è più vero quanto detto in Oss. 4.7 poichè invertendo gli estremi di integrazione inverto il segno, ma è vero per $a \lesseqgtr b$ che 
+    \[
+        \left|\int_a^b f \right| \leq \left|\int_a^b \left| f \right| \right|
+    \]
+\end{remark}
+
+\begin{remark}[Introduzione alla funzione integrale]
+    Presa una qualunque funzione $f$ R-integrabie su $[a,b]$ (e ovviamente aperti o semiaperti) posso dire che esista sempre l'integrale $\displaystyle{F(x)=\int_\alpha^x f} \; \forall x \in [a,b]$. Ovviamente $F(\alpha)=0$ per convenzione. La crescita o la decrescita di $F$ dipende dal legame con la sua derivata, ma questo lo vedremo nel TFCI.
+\end{remark}
 
 \newpage
 \section{Tavola degli integrali}
@@ -487,6 +505,71 @@ Gli integrali notevoli sono ottenibili leggendo la tabella delle derivate al con
         \hline
     \end{tabular}
 \end{center}
+
+\newpage
+\section{Classi di funzioni integrabili per parti}
+
+L'integrazione per parti segue la formula 
+
+\[
+    \int f(x)g'(x)\, dx=f(x)g(x)- \int f'(x)g(x)\, dx
+\]
+
+dove $f(x)$ è il \textbf{fattore finito} e $g(x)$ è il \textbf{fattore differenziale}
+\begin{itemize}
+    \item [1.] $\displaystyle{\int P(x)sinx\,dx}\quad \displaystyle{\int P(x)cosx\,dx}$ dove $P(x)$ è il fattor finito.
+    \item [2.] $\displaystyle{\int P(x)e^x\, dx} \quad \displaystyle{\int P(x)Shx\, dx} \quad \displaystyle{\int P(x)Chx\, dx}$ dove $P(x)$ è il fattor finito.
+    \item [3.] $\displaystyle{\int P(x)log^nx\, dx}$ con $n\in\mathbb{N}$ dove il logaritmo è il fattor finito.
+    \item [4.] $\displaystyle{\int P(e^x)sinx\,dx} \quad \displaystyle{\int P(e^x)cosx\,dx}$ dove la funzione trigonometrica è il fattor finito.
+    \item [5.] $\displaystyle{\int P(x)artgx\, dx} \quad \displaystyle{\int P(x)arsinx\, dx} \quad \displaystyle{\int P(x)arcosx\, dx}$ dove non ho capito chi sia cosa.
+\end{itemize}
+
+L'integrazione per parti può essere usata per trovare \textbf{formule ricorsive} (dimostrazioni sul quaderno a Esercitazione 2). Alcune notevoli sono:
+\begin{itemize}
+    \item $\displaystyle{I_n=\int \frac{1}{(1+x^2)^n}\,dx}$ con $n\in\mathbb{N}$ $\Longrightarrow$ $\displaystyle{I_{n+1}= \frac{2n-1}{2n}I_n+\frac{x}{2n(1+x^2)^n}}+c$
+    \item $\displaystyle{\int x^3 (1+x^2)^n\, dx}$ con $n\in\mathbb{N}$ $\Longrightarrow$ $\displaystyle{I_{n+1}=\frac{x^2(1+x^2)^{n+1}}{2(n+1)} - \frac{(1+x^2)^{n+2}}{2(n+1)(n+2)}}+c$
+    \item $\displaystyle{\int sin^nx\,dx} \quad \displaystyle{\int cos^mx\,dx} \quad \displaystyle{\int sin^nx\,cos^mx\,dx}$ con $n,m\in\mathbb{N}$ e $n,m \geq 2$
+    \begin{itemize}
+        \item [$\circ$] $\displaystyle{C_n=-\frac{1}{n}sin^{n-1}x\,cosx+\frac{n-1}{n}C_{n-2}}$ 
+        \item [$\circ$] $\displaystyle{D_n=\frac{1}{n}cos^{n-1}x\,sinx+\frac{n-1}{n}D_{n-2}}$
+        \item [$\circ$] non la so
+    \end{itemize}
+\end{itemize}
+
+Queste formule sono dimostrabili, e sui pdf sono dimostrate. La logica è integrare per parti fino a ritrovare il pezzo iniziale. Quando le si usa, se voglio trovare ad esempio $I_4$ devo necessariamente calcolare tutti le $I$ precedenti. Non è corto, ma è l'unico modo.
+
+\newpage
+\section{Incollamenti e funzioni razionali}
+
+Se devo integrare una funzione che so essere R-integrabile ma che è definita a tratti la integro intervallo per intervallo, usando costanti additive diverse, per poi con un limite trovare il valore delle n costanti in funzione della prima.
+
+\vspace{3mm}
+
+Considero una funzione razionale del tipo $\displaystyle{f(x)=\frac{P(x)}{Q(x)}}$ con $P(x)$ e $Q(x)$ polinomi. Se $deg(P)\geq deg(Q)$ divido una per l'altra, ottenendo qualcosa della forma $\displaystyle{f(x)=R(x)+\frac{S(x)}{Q(x)}}$. Così facendo riesco ad ottenere, magari iterando, il grado del numeratore del risultato inferiore a quello del denominatore ($deg(P)<deg(Q)$) e quindi posso scomporre quanto ottenuto.
+
+\vspace{3mm}
+
+Adesso vediamo un po' di casi:
+
+\begin{itemize}
+    \item [1.] $deg(Q)=1$. 
+                \newline
+                Questo vuol dire che ho $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{A}{x-x_0}\,dx=Alog\left|x-x_0\right|+c}$ con il logaritmo scritto in forma "sintetica" (andrebbe diviso sui due intervalli).
+    \item [2.] $deg(Q)=2$
+                \newline
+                $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{Ax+B}{ax^2+bx+c}\,dx}$.
+                \begin{itemize}
+                    \item [$\circ$] $\displaystyle{\Delta Q>0 \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{C}{x-x_1}+\frac{D}{x-x_2}}$. 
+                    
+                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{x-x_2}\,dx=C\,log\left|x-x_1\right|+D\,log\left|x-x_2\right|+c}$
+                \end{itemize}
+\end{itemize}   
+
+
+
+
+\newpage
+\section{Integrazione di funzioni razionali}
 
 %È
 \end{document}
