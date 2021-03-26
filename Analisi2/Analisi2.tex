@@ -478,6 +478,95 @@ Adesso introduciamo alcune convenzioni: considerando una funzione limitata $f\in
 \end{remark}
 
 \newpage
+\section{Lezione 5 - 15/03/2021}
+
+\begin{remark}[Funzione integrale e discontinuità]
+    Se nella integranda sono presenti delle discontinuità queste avranno sulla funzione integrale l'effetto di cambiare la sua velocità di crescita, ovvero impatta la sua derivata. Questo non modifica però la continuità di $F$. Infatti in prossimità di una discontinuità $\beta$ di $f$ ho che
+    \[
+        F(\beta)=\int_\alpha^\beta f \qquad F(x>\beta) = \int_\alpha^\beta f + \int_\beta^x f
+    \]
+    Essere in prossimità di $\beta$ vuol dire che $\left|x-\beta\right|<\delta$ e avrò che le immagini di questi punti sono $\left|f(\beta)-f(x)\right|<\varepsilon$. Ma questa è la definzione di continuità! Pertanto la funzione integrale $F$ è continua.
+\end{remark}
+
+\begin{remark}[Filosofeggiazioni]
+    La derivata "sregolarizza" le funzioni, mentre per l'integrale è il contrario. Cioè, integrando una funzione discontinua ottengo una funzione continua, mentre derivando una funzione (che deve essere necessariamente continua affinchè sia possibile) ne ottengo una che in genere è peggiore.
+\end{remark}
+
+\begin{definition}[\textbf{Funzione lipschitziana} in spazi normati]
+    Data $f:\Omega \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^m$, essa è K-lipschitziana su $\Omega$ se $\exists K \geq 0$ t.c. $\displaystyle{\frac{\left|\left|f(x)-f(y)\right|\right|}{x-y}\leq K \quad \forall x,y \in\Omega}$.
+\end{definition}
+
+\begin{definition}[\textbf{Funzione lipschitziana} in spazi metrici]
+    Dati $(X_1,d_1)$ e $(X_2,d_2)$, $f:X_1\rightarrow X_2$ è K-lipschitziana se $\exists K \geq 0$ t.c. $\displaystyle{\forall x,y \in X_1 \Rightarrow d_2(f(x),f(y))\leq K\cdot d_1(x,y)}$ 
+\end{definition}
+
+\begin{theorem}
+    Sia $F:\mathbb{R} \rightarrow \mathbb{R}$ derivabile (tranne al più in qualche punto) con i reali come spazio metrico. Allora $F$ è K-lipschitziana $\Leftrightarrow \underset{X}{sup}\left|F'(x)\right|\leq K$
+    \begin{proof}[Dim. ($\Rightarrow$)]
+        Siccome $F$ è lipschitziana so che $\displaystyle{\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K}$ $\forall x,x_0 \in \mathbb{R}$ da cui passando al limite si ottiene $F'(x_0)\leq K$.
+    \end{proof}
+    \begin{proof}[Dim ($\Leftarrow$)]
+        Siccome $F'(x_0)\leq K$ $\forall x_0 \in \mathbb{R}$ posso usare il Teo Lagrange (ho le ipotesi di funzione continua su $[a,b]$ compatto e derivabile su $(a,b)$ soddisfatte) per dire che allora in un intervallo $[a,b] \in \mathbb{R}$ $\exists c\in(a,b):f'(c)=\frac{f(b)-f(a)}{b-a}$ da cui potendo scegliere arbitrariamente $a$ e $b$ ottengo che $\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K$ $\forall x,x_0 \in \mathbb{R}$ che altro non è che la definizione di lipschitzianità.
+    \end{proof}
+\end{theorem}
+
+\begin{example}
+    $F(x)=\left|x\right|$ è 1-lip su $\mathbb{R}$ ma non è globalmente derivabile. Infatti la lipschitzianità non implica necessariamente la derivabilità. La lipschitzianità è però più forte della uniforme continuità, infatti la implica (e a cascata l'uniforme continuità implica la continuità semplice). Lipschitz $\Rightarrow$ uniforme continuità $\Rightarrow$ continuità. Posso ovviamente esistere funzioni globalmente continue ma non lipschitziane, come $x^{1/3}$.
+    
+    Ora dimostro che Lipschitz $\Rightarrow$ uniforme continuità.
+    \begin{proof}[Dim]
+        Avendo $f$ lipschitziana vuol dire che $\forall x,y\in\mathbb{R} \; \left|f(x)-f(y)\right| \leq K\cdot \left|x-y\right|$. Se prendo, per arrivare alla continuità uniforme, un $\varepsilon>0$ e $\left|x-y\right|<\delta(\varepsilon)=\varepsilon/K$ ho che per l'arbitrarietà di $\varepsilon$ vale che $\left|f(x)-f(y)\right| < \varepsilon$, che altro non è che la definizione di uniforme continuità (la quale so implicare la continuità semplice).
+    \end{proof}
+\end{example}
+
+\begin{remark}[Precisazioni sulla lipschitzianità]
+    Parlare di una funzione K-lip vuol dire che $K=inf \alpha: F \;\text{è}\; \alpha-lip$. K infatti è "la" costante di Lipschitz. A volte non ho necessità di trovare la migliore costante di Lipschitz, ma solo una qualunque. È evidente che presa una funzione $F$ che sia K-lipschitziana e preso un valore $H>K$ allora $F$ sia anche H-lipschitziana, poichè $\displaystyle{\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K<H}$.
+\end{remark}
+
+\begin{theorem}[TFCI]
+    Sia $f\in\mathcal{R}([a,b])$ e $F(x)=\int_a^x f(t)\,dt$. Allora
+    \begin{enumerate}
+        \item [1.] $F$ è lipschitziana su $[a,b]$ ($\Rightarrow$ uniformemente continua $\Rightarrow$ continua per quanto detto in Ex 5.1).
+        \item [2.] Se $f$ è continua in $x_0\in[a,b] \Rightarrow$ $F$ è derivabile in $x_0$ e $F'(x_0)=f(x_0)$.
+    \end{enumerate}
+
+    \begin{proof} [Dim 1]
+        Voglio dimostrare che $f\in\mathcal{R}([a,b]) \Rightarrow$ $F$ è limitata t.c. $\left|F(x)\right| \leq K$ $\forall x \in [a,b]$(il che è sufficiente a garantirmi la continuità).
+        \[
+        \left|F(x)-F(p)\right|=\left|\int_a^x f(t)\, dt - \int_a^p f(t)\, dt \right| = \left|\int_a^x f(t)\,dt + \int_p^a f(t)\,dt \right| = \left|\int_p^x f(t)\, dt\right|\leq \left|\int_p^x \left| f(t)\right|\,dt \right| \leq K\left|x-p\right|
+        \]
+        per una qualche costante $K$ (che suppongo essere la media integrale, ma non ho conferme). Ma ciò che ho ottenuto alla fine della catena di disuglianze altro non è che la lipschitzianità!
+    \end{proof}
+    \begin{proof}[Dim 2]
+        Partendo dalla continuità di $F$ appena dimostrata voglio arrivare a dire che la continuità in un punto implica la derivabilità, con derivata pari all'integranda valutata nel punto. Detto in formule:
+        \[
+            \forall x \in [a,b]: \left|x-x_0\right| < \delta \Rightarrow \left|\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| \leq \varepsilon
+        \]
+        
+        Poichè $f$ è continua in $x_0$ ho Che
+        \[
+            \forall \varepsilon >0 \; \exists\, \delta=\delta(\varepsilon): \; \forall t\in (x_0-\delta,x_0+\delta) \cap [a,b] \Rightarrow \left|f(t)-f(x_0)\right| < \varepsilon
+        \]
+        Riprendendo la prima espressione posso svilupparla:
+        \[
+            \left|\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| = \left|\frac{\int_a^xf(t)\,dt-\int_a^{x_0}f(t)\,dt}{x-x_0}-f(x_0)\right| = \left|\frac{\int_{x_0}^xf(t)\,dt}{x-x_0}-\frac{\int_{x_0}^xf(x_0)\,dt}{x-x_0}\right| = 
+        \]
+        \[
+            =\left|\frac{}{}\right| \leq \frac{}{}   
+        \]  
+    \end{proof}
+\end{theorem}
+
+\begin{remark}[Precisazioni sul TFCI 1]
+    Ovviamente nelle ipotesi del TFCI non sto chiedendo una funzione continua, perchè purchè l'insieme dei punti di discontinuità sia $\mu(D)=0$ la R-integrabilità è garantita.
+\end{remark}
+
+\begin{remark}[Precisazioni sul TFCI 2]
+    Se $f$ è globalmente continua su $[a,b]$ allora $F'(x) = f(x) \; \forall x\in[a,b]$ e ovviamente $f$ ammette primitiva.
+\end{remark}
+
+
+\newpage
 \section{Tavola degli integrali}
 
 Gli integrali notevoli sono ottenibili leggendo la tabella delle derivate al contrario.
