@@ -578,10 +578,46 @@ Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo 
 \begin{theorem}[FFCI]
     Sia $f\in\mathcal{C}([a,b])$ e sia $\varPhi$ una primitiva di $f$ su $[a,b]$. Allora $\displaystyle{\int_a^bf(t)\,dt=\varPhi(b)-\varPhi(a)}$.
     \begin{proof}[Dim.]
-        Poichè $f$ è continua sull'intervallo ho che $F(x)=...$
+        Poichè $f$ è continua sull'intervallo ho che $F(x)=\int_a^xf(t)\,dt$ è una primitiva di $f$ (la continuità ovviamente mi garantisce la R-integrabilità).
+        $Rightarrow$ $F$ e $\varPhi$ differiscono di una costante. Posso quindi scrivere qualcosa del tipo $\displaystyle{\varPhi(x)=F(x)+c \quad \forall\,x \in [a,b]}$. Ma quindi ho che
+        \[
+            \varPhi(b)-\varPhi(a) = F(b) + c - F(a) - c = F(b) - F(a) = \int_a^bf(t)\,dt   
+        \]
+        e così ho dimostrato la tesi.
     \end{proof}
 \end{theorem}
 
+\begin{remark}[Notazione dell'integrale definito]
+    Parlando di valutazione della funzione integrale tra due punti, cioè $g(b)-g(a)$, posso anche indicarlo con $g(x)\big|_a^b$.
+\end{remark}
+
+\begin{theorem}[FFCI più sciolta]
+    Questa versione della FFCI chiede meno ipotesi. Si enuncia e dimostra come segue.
+
+    Sia $f\in\mathcal{R}([a,b])$ con primitiva $\varPhi$. Allora $\displaystyle{\int_a^bf(x)\,dx=\varPhi(b)-\varPhi(a)}$.
+    \begin{proof}[Dim.]
+        DA PRENDERE DAGLI APPUNTI 11MARZO2021.PDF
+    \end{proof}
+\end{theorem}
+
+\begin{remark}[Osservazioni sulla FCI]
+    \begin{enumerate}
+        \item [1.] Nella FFCI è essenziale richiedere che $f$ sia la derivata di $\varPhi$ in ogni punto dell'intervallo $[a,b]$ (quindi è importante richiedere che sia $\mathcal{C}$). Ad esempio $f(x)=sign(x)$ ha integrale $G(x)=\begin{cases}
+            -x & x \leq 0 \\
+            x+1 & x>0\\
+        \end{cases}$.
+        Ho che $G'(x)=f(x) \; \forall x \neq 0$, ma ottengo l'assurdo $0=\int_{-1}^1f(x)\,dx \neq G(1)-G(-1)=1$.
+        \item [2.] Nella formulazione più sciola della FFCI, dove non si richiede la continuità di $f$ è importante richiedere la sua integrabilità. 
+    \end{enumerate}
+\end{remark}
+
+\begin{remark}[Integrazioni di funzioni pari e dispari]
+    Sia $a>0$ e sia $f\in\mathcal{R}((c-a,c+a))$.
+
+    Se $f$ è \textbf{pari} rispetto a $c$ sia ha che $\int_{c-a}^{c+a}f(x)\,dx=2\int_c^{c+a}f(x)\,dx$. Infatti con $t=-z$ ho che $\int_0^af(t)\,dt=-\int_0^{-a}f(-z)\,dz=..$
+
+    Se $f$ è \textbf{dispari} rispetto a $c$ si ha $\int_{c-a}^{c+a}f(x)\,dx=0$
+\end{remark}
 
 \newpage
 \section{Tavola degli integrali}
