@@ -552,18 +552,35 @@ Adesso introduciamo alcune convenzioni: considerando una funzione limitata $f\in
             \left|\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| = \left|\frac{\int_a^xf(t)\,dt-\int_a^{x_0}f(t)\,dt}{x-x_0}-f(x_0)\right| = \left|\frac{\int_{x_0}^xf(t)\,dt}{x-x_0}-\frac{\int_{x_0}^xf(x_0)\,dt}{x-x_0}\right| = 
         \]
         \[
-            =\left|\frac{}{}\right| \leq \frac{}{}   
+            =\left|\frac{\int_{x_0}^x(f(t)-f(x_0))\,dt}{x-x_0}\right| \leq \frac{\left|\int_{x_0}^x(f(t)-f(x_0))\,dt\right|}{\left|x-x_0\right|}  = (\star)  
         \]  
+        Ma come già detto nelle prime due espressioni ho che $\left|x-x_0\right|<\delta$ e $\left|t-x_0\right|<\delta$ e quindi $\left|f(t)-f(x_0)\right|<\varepsilon$. Da cui:
+        \[
+            (\star) < \frac{\left|\int_{x_0}^x \varepsilon\,dt\right|}{\left|x-x_0\right|} = \frac{\varepsilon\left|x-x_0\right|}{\left|x-x_0\right|}=\varepsilon    
+        \] 
     \end{proof}
 \end{theorem}
 
 \begin{remark}[Precisazioni sul TFCI 1]
-    Ovviamente nelle ipotesi del TFCI non sto chiedendo una funzione continua, perchè purchè l'insieme dei punti di discontinuità sia $\mu(D)=0$ la R-integrabilità è garantita.
+    Ovviamente nelle ipotesi del TFCI non sto chiedendo una funzione continua, perchè purchè l'insieme dei punti di discontinuità sia $\mu(D)=0$ e la funzione sia limitata la R-integrabilità è garantita.
 \end{remark}
 
 \begin{remark}[Precisazioni sul TFCI 2]
-    Se $f$ è globalmente continua su $[a,b]$ allora $F'(x) = f(x) \; \forall x\in[a,b]$ e ovviamente $f$ ammette primitiva.
+    Se $f$ è globalmente continua su $[a,b]$ allora $F\in\mathcal{C}^1([a,b])$ e quindi $F'(x) = f(x) \; \forall x\in[a,b]$ e ovviamente $f$ ammette primitiva. Essere $\mathcal{C}^n$ su un intervallo vuol dire essere continua e derivabile $n$ volte con tutte le $n$ derivate continue.
 \end{remark}
+
+\begin{remark}[Precisazioni sul TFCI 3]
+    Se il punto $x_0$ considerato nel secondo punto TFCI fosse un estremo dell'intervallo mi basterebbe avere la derivata destra o sinistra.
+\end{remark}
+
+Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo Integrale (FFCI o FCI).
+
+\begin{theorem}[FFCI]
+    Sia $f\in\mathcal{C}([a,b])$ e sia $\varPhi$ una primitiva di $f$ su $[a,b]$. Allora $\displaystyle{\int_a^bf(t)\,dt=\varPhi(b)-\varPhi(a)}$.
+    \begin{proof}[Dim.]
+        Poichè $f$ è continua sull'intervallo ho che $F(x)=...$
+    \end{proof}
+\end{theorem}
 
 
 \newpage
