@@ -614,10 +614,29 @@ Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo 
 \begin{remark}[Integrazioni di funzioni pari e dispari]
     Sia $a>0$ e sia $f\in\mathcal{R}((c-a,c+a))$.
 
-    Se $f$ è \textbf{pari} rispetto a $c$ sia ha che $\int_{c-a}^{c+a}f(x)\,dx=2\int_c^{c+a}f(x)\,dx$. Infatti con $t=-z$ ho che $\int_0^af(t)\,dt=-\int_0^{-a}f(-z)\,dz=..$
+    Se $f$ è \textbf{pari} rispetto a $c$ sia ha che $\int_{c-a}^{c+a}f(x)\,dx=2\int_c^{c+a}f(x)\,dx$. Infatti con $c=0$ e $t=-z$ ho che $\int_0^af(t)\,dt=-\int_0^{-a}f(-z)\,dz=\int_{-a}^0f(z)\,dz$ da cui la tesi.
 
-    Se $f$ è \textbf{dispari} rispetto a $c$ si ha $\int_{c-a}^{c+a}f(x)\,dx=0$
+    Se $f$ è \textbf{dispari} rispetto a $c$ si ha $\int_{c-a}^{c+a}f(x)\,dx=0$. Infatti con $t=-z$ e $c=0$ ho che $\int_{-a}^{a}f(x)\,dx=-\int_a^{-a}f(-z)\,dz=\int_a^{-a}f(z)\,dz=-\int_{-a}^af(z)\,dz$
 \end{remark}
+
+\begin{definition}[Funzione localmente integrabile]
+    Sia $f:(\alpha,\beta)\rightarrow \mathbb{R}$ (o intervalli semiaperti o chiusi). Diremo che $f$ è localmente R-integrabile su $(\alpha,\beta)$ se $\forall x \in (\alpha,\beta)$ esiste un intorno $(x-\delta,x+\delta)$ in cui $f$ è R-integrabile.
+\end{definition}
+
+\begin{remark}
+    Se $f\in\mathcal{R}([a,b])\Rightarrow f\in\mathcal{R}_{loc} \Leftrightarrow f\in\mathcal{R}_{loc}(I) \Leftrightarrow f\in\mathcal{R}(I) \;\forall\; \text{compatto} \subset I$.
+
+    Il viceversa della prima implicazione non è vero, infatti $f(x)=\frac{1}{x}$ è $\mathcal{R}_{loc}((0,1))$ ma non è $\mathcal{R}([a,b])$.
+
+    Inoltre $\mathcal{R}_{loc}$ è uno spazio vettoriale contenuto in $\mathcal{R}(I)$ se $I$ è compatto.
+\end{remark}
+
+\begin{remark}
+    Ogni $f:\mathbb{R}\rightarrow\mathbb{R}$ è $\mathcal{R}_{loc}(\mathbb{R})$ e questo è abbastanza intuitivo.
+
+    $f\in\mathcal{R}_{loc}([a,b])$ con $a,b\in\mathbb{R}$ $\Leftrightarrow f\in\mathcal{R}([a,b])$. L'intervallo deve essere necessariamente compatto, solo così posso garantirmi la limitatezza. Se non fosse compatto potrei non avere limitatezza e quindi non avere R-integrabilità.
+\end{remark}
+
 
 \newpage
 \section{Tavola degli integrali}
