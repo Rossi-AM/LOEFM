@@ -637,6 +637,50 @@ Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo 
     $f\in\mathcal{R}_{loc}([a,b])$ con $a,b\in\mathbb{R}$ $\Leftrightarrow f\in\mathcal{R}([a,b])$. L'intervallo deve essere necessariamente compatto, solo così posso garantirmi la limitatezza. Se non fosse compatto potrei non avere limitatezza e quindi non avere R-integrabilità.
 \end{remark}
 
+\newpage
+\section{Lezione 6 - 18/03/2021}
+
+\begin{remark}
+    Quando ho un'integrale definito come $\displaystyle{\int_a^b f(x)\,dx}$ la variabile $x$ è muta, come l'indice in una sommatoria, nel senso che non appare nel risultato finito. Specifico che il parallelismo tra integrali e serie sia esteso anche molto oltre questo dettaglio.
+\end{remark}
+
+\begin{remark}[Sostituzione negli integrali definiti]
+    L'integrazione per sostituzione negli integrali definiti richiede un'azione anche sugli estremi di integrazione. Il teorema di integrazione per sostituzione lo trovo nella apposita sezione. Spiego cosa devo fare con un esempio:
+    \[\int_0^\pi \frac{dx}{1+cos^2x}=\quad (\text{sostituzione: } tg\,x = t \rightarrow x=artg\,t, \:dx=\frac{1}{1+t^2}dt)=\int_{tg\,0}^{tg\,\pi}...\,dt=\int_0^0...\,dt=0\]
+
+    Evidentemente c'è un problema nel modo in cui ho lavorato sugli estremi, perchè l'integrale di una funzione mai nulla non può essere nullo. L'errore è nel fatto che la sostituzione che sto facendo con $x=artg\,t$ ha codominio $(-\frac{\pi}{2}, \frac{\pi}{2})$ mentre l'integrale lo voglio fare sull'intervallo $(0,\pi)$. \textbf{Se voglio fare una sostituzione devo lavorare su due intervalli in corrispondenza biunivoca}. È evidente che il modo migliore per avere questa corrispondenza sia trovare l'integrale in $(0,\frac{\pi}{2})$ e $(\frac{\pi}{2},\pi)$ per poi incollarli.
+\end{remark}
+
+\begin{remark}
+    Sia $f:\mathbb{R}\rightarrow\mathbb{R}$ periodica di periodo $T$, cioè $f(x+T)=f(x)\;\forall x\in\mathbb{R}$, e integrabile su $(0,T)$. Allora $f\in\mathcal{R}_{loc}(\mathbb{R})$ e la funzione $\displaystyle{F(x)=\int_x^{x+T}f(t)\,dt}$ è costante. $\displaystyle{\int_0^T f(t)\,dt=\int_x^{x+T}f(t)\,dt \quad \forall x\in\mathbb{R}}$. Ricordo che locale integrabilità vuol dire integrabilità in ogni intervallo limitato $(a,b)\subseteq\mathbb{R}$.
+    \begin{proof}[Dim]
+        Dall'additività dell'integrale si ha
+        \[\int_x^{x+T}f(t)\,dt=\int_x^0 f(t)\,dt + \int_0^T f(t)\,dt + \int_T^{T+x}f(t)\,dt = \int_o^T f(t)\,dt\]
+        Poichè dalla periodicità ho che 
+        \[\int_x^0 f(t)\,dt=\int_x^0 f(t+T)\, dt = (\text{sostituzione: }t+T=z) = \int_{x+T}^T f(z)\,dz = -\int_T^{x+T} f(t)\,dt\]
+    \end{proof}
+\end{remark}
+
+\begin{remark}
+    Ricordo che la definizione di funzione integrale è $\displaystyle{F(x)=\int_\alpha^x f(t)\,dt}$, dove la funzione $f$ è $f:I\rightarrow\mathbb{R}$ con $\alpha,x\in I$ (i due punti appartengono all'intervallo, poichè se c'è l'integrabilità sull'aperto anche aggiungendo un numero finito di punti non la modifico).
+
+    Il dominio della funzione integrale $\Omega_F$ deve essere un intervallo $\subset \overline{I}$. Questo perchè se il dominio di $F$, che è $\Omega_F$, non fosse un intervallo, allora dovrebbero esistere due punti $x,y\in\Omega_F$ tali che $[\alpha,x]\subset I$ e $[\alpha,y]\subset I$. Ma questo significherebbe che potenzialmente $[x,y]\not\subset\Omega_F$ (l'intervallo che unisce $x$ ed $y$ non è contenuto completamente nel dominio della funzione integrale), il che è assurdo. Vorrebbe dire che in $\Omega_F$ potrei andare da $\alpha$ ad $x$, da $\alpha$ ad $y$ ma non da $x$ ad $y$.
+
+    \vspace{3mm}
+
+    In generale è possibile incontrare funzioni \underline{definite tramite} integrali, ma che non sono funzioni integrali! Ad esempio $\displaystyle{F(x)=\int_{a(x)}^{b(x)}f(t,x)\,dt}$ è una funzione definita tramite integrale, e nell'ipotesi in cui $f(t,x)$, $a(x)$, $b(x)$ siano continue, anche $F(x)$ lo è, ma ciononostante non è una funzione integrale, perchè il suo dominio non è un intervallo.
+
+    \vspace{3mm}
+
+    Un altro esempio è $\displaystyle{F(x)=\int_1^{x^2}\frac{dt}{t}}=2log\left|x\right|$, che è una funzione definita in $\mathbb{R}\backslash\lbrace0\rbrace$ che ovviamente non è un intervallo. Il dominio di $F$ non comprende lo zero poichè in quel punto la funzione non è limitata. Se evitassi il caso $x=0$ comunque non sarebbe una funzione integrale, perchè come estremo superiore ho $x^2$, mentre dovrei avere per definizione solo $x$.
+\end{remark}
+
+
+
+
+
+
+
 
 \newpage
 \section{Tavola degli integrali}
