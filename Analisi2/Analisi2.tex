@@ -706,25 +706,84 @@ Se devo integrare una funzione che so essere R-integrabile ma che è definita a 
 
 \vspace{3mm}
 
-Considero una funzione razionale del tipo $\displaystyle{f(x)=\frac{P(x)}{Q(x)}}$ con $P(x)$ e $Q(x)$ polinomi. Se $deg(P)\geq deg(Q)$ divido una per l'altra, ottenendo qualcosa della forma $\displaystyle{f(x)=R(x)+\frac{S(x)}{Q(x)}}$. Così facendo riesco ad ottenere, magari iterando, il grado del numeratore del risultato inferiore a quello del denominatore ($deg(P)<deg(Q)$) e quindi posso scomporre quanto ottenuto.
+Considero una funzione razionale del tipo $\displaystyle{f(x)=\frac{P(x)}{Q(x)}}$ con $P(x)$ e $Q(x)$ polinomi. Se $deg(P)\geq deg(Q)$ divido una per l'altra, ottenendo qualcosa della forma $\displaystyle{\frac{P(x)}{Q(x)}=R(x)+\frac{S(x)}{Q(x)}}$. Così facendo riesco ad ottenere, magari iterando, il grado del numeratore del risultato inferiore a quello del denominatore ($deg(P)<deg(Q)$) e quindi posso scomporre quanto ottenuto.
 
 \vspace{3mm}
 
 Adesso vediamo un po' di casi:
 
 \begin{itemize}
-    \item [1.] $deg(Q)=1$. 
+    \item [1.] $\textbf{deg(Q)=1}$
                 \newline
-                Questo vuol dire che ho $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{A}{x-x_0}\,dx=Alog\left|x-x_0\right|+c}$ con il logaritmo scritto in forma "sintetica" (andrebbe diviso sui due intervalli).
-    \item [2.] $deg(Q)=2$
+                Questo vuol dire che ho $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{A}{x-x_0}\,dx=Alog\left|x-x_0\right|+c}$ con il logaritmo scritto in forma "sintetica" che vale su un solo intervallo dei possibili.
+    \item [2.] $\textbf{deg(Q)=2}$
+                \newline
                 \newline
                 $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{Ax+B}{ax^2+bx+c}\,dx}$.
                 \begin{itemize}
-                    \item [$\circ$] $\displaystyle{\Delta Q>0 \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{C}{x-x_1}+\frac{D}{x-x_2}}$. 
+                    \item [$\circ$] $\displaystyle{\Delta_Q>0 \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{C}{x-x_1}+\frac{D}{x-x_2}}$. 
                     
-                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{x-x_2}\,dx=C\,log\left|x-x_1\right|+D\,log\left|x-x_2\right|+c}$
+                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{x-x_2}\,dx=C\,log\left|x-x_1\right|+D\,log\left|x-x_2\right|+c}$.
+                    Ovviamente supponendo $x_1<x_2$ la primitiva trovata vale su uno dei seguenti intervalli $(-\infty,x_1)\vee(x_1,x_2)\vee(x_2,+\infty)$.
+
+                    \item [$\circ$] $\displaystyle{\Delta_Q=0} \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{Ax+B}{a(x-x_1)^2}=\frac{C}{x-x_1}+\frac{D}{(x-x_1)^2}$.
+                    
+                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{(x-x_1)^2}\,dx}=C\log\left|x-x_1\right|-\frac{D}{x-x_1} +cost$.
+                    La primitiva trovata ovviamente vale su uno dei due intervalli dove è definita.
+
+                    \item [$\circ$] $\displaystyle{\Delta_Q<0}$. In questo caso il denominatore non è scomponibile in $\mathbb{R}$, ma posso ricondurmi a una forma comoda con il completamento del quadrato. 
+                    $\displaystyle{ax^2+bx+c=a[(x-x_1)^2+k^2]}$. Da cui posso arrivare a dire $\displaystyle{\frac{Ax+B}{ax^2+bx+c}=C\frac{2ax+b}{ax^2+bx+c}+\frac{D}{(x-x_1)^2+k^2}}$.
+
+                    I due termini posso ora integrarli facilmente, perchè il primo è un $Clog\left|ax^2+bx+c\right|$ con il modulo poichè è vero che l'argomento non ha zeri, ma potrebbe essere sempre negativo, e il secondo è $\displaystyle{D\int\frac{1}{k^2}\frac{1}{1+(\frac{x-x_1}{k})^2}\,dx=\frac{D}{k}\int\frac{\frac{1}{k}}{1+(\frac{x-x_1}{k})^2}=\frac{D}{k}artg\frac{x-x_1}{k}}$.
+
+                    In questo caso non ho problemi di intervalli, perchè la primitiva è su tutto $\mathbb{R}$.
                 \end{itemize}
-\end{itemize}   
+    \item [3.]  $\textbf{deg(Q)>2}$ Questo è il caso peggiore, in cui la ricerca della primitiva è lunga ed estremamente tecnica. È sempre possibile scomporre in modo  unico in fattori primi il polinomio $Q(x)$ come segue:
+    \[Q(x)=\alpha(x-x_1)^{n_1}\cdot(x-x_2)^{n_2}\cdot...\cdot(x-x_k)^{n_k}\cdot(x^2+\gamma_1x+\delta_1)^{m_1}\cdot(x^2+\gamma_2x+\delta_2)^{m_2}\cdot...\cdot(x^2+\gamma_jx+\delta_j)^{m_j}\]
+    dove $\alpha\in\mathbb{R}$, le $x_1 \; i=1,..,k$ le radici reali di $Q(x)$ ciascuna con molteplicità $n_i$ mentre i restanti termini sono trinomi di secondo grado irriducibili in $\mathbb{R}$.
+
+    Si può dimostrare (sinonimo di "si fotta la dimostrazione") che se $deg(Q(x))<12$ è sempre possibile decomporre la frazione $\frac{P(x)}{Q(x)}$ come
+    \[\frac{P(x)}{Q(x)}=\frac{\alpha_{11}}{x-x_1}+\frac{\alpha_{12}}{(x-x_1)^2}+...+\frac{\alpha_{1n_2}}{(x-x_1)^{n_1}}+\frac{\alpha_{21}}{x-x_2}+\frac{\alpha_{22}}{(x-x_2)^2}+...+\frac{\alpha_{2n_2}}{(x-x_2)^{n_2}}+...+\frac{\alpha_{k1}}{x-x_k}+\]
+    \[+\frac{\alpha_{k2}}{(x-x_k)^2}+...+\frac{\alpha_{kn_k}}{(x-x_k)^{n_k}}+\frac{C_{11}x+D_{11}}{x^2+\gamma_1x+\delta_1}+\frac{C_{12}x+D_{12}}{(x^2+\gamma_1x+\delta_1)^2}+...+\frac{C_{1m_1}x+D_{1m_1}}{(x^2+\gamma_1x+\delta_1)^{m_1}}+\]
+    \[+\frac{C_{21}x+D_{21}}{x^2+\gamma_2x+\delta_2}+\frac{C_{22}x+D_{22}}{(x^2+\gamma_2x+\delta_2)^2}+...+\frac{C_{2m_2}x+D_{2m_2}}{(x^2+\gamma_2x+\delta_2)^{m_2}}+...+\frac{C_{j1}x+D_{j1}}{x^2+\gamma_jx+\delta_j}+\]
+    \[+\frac{C_{j2}x+D_{j2}}{(x^2+\gamma_jx+\delta_j)^2}+...+\frac{C_{jm_j}x+D_{jm_j}}{(x^2+\gamma_jx+\delta_j)^{m_j}}\]
+
+    In questa espressione i binomi li integro in maniera semplice, come integrale di una potenza e i trinomi irriducibili posso vederli come
+    \[\frac{Cx+D}{(x^2+\gamma x+\delta)^m}=C\frac{2x+\gamma}{(x^2+\gamma x+\delta)^m}+\frac{\tilde{D}}{(x^2+\gamma x+\delta)^m}\]
+
+    dove l'integrazione del primo addendo è un logaritmo e quella del secondo è un arcotangente (come faccio nel caso di $\Delta_Q<0$) che, se avesse una molteplicità non unitaria posso ricondurla alla formula ricorsiva di $\displaystyle{\frac{1}{(1+x^2)^m}}$.
+
+\end{itemize}
+
+\newpage
+\section{Integrali per sostituzione}
+
+Siano $f:I\rightarrow\mathbb{R}$ e $\varphi:J\rightarrow I$ due funzioni tali che $f\in\mathcal{C}^1(I)$ e $\varphi\in\mathcal{C}^1(J)$ biettiva. Se $F$ è una primitiva di $f$, cioè $\displaystyle{\int f(t)\,dt=F(t)+c \quad \forall t\in I}$ allora una primitiva di $g(x)=f(\varphi(x))\varphi'(x)$ è $G(x)=F(\varphi(x))+c$ cioè
+\[\int f(\varphi(x))\varphi'(x)\,dx = \int f(t)\,dt\bigg|_{t=\varphi(x)}=F(\varphi(x))+C \quad \forall x\in J\]
+
+Vicerversa se conosco $G$, una primitiva di $g(x)=f(\varphi(x))\varphi'(x) \quad \forall x\in J$, cioè $\int g(x)\,dx=G(x)+c \quad \forall x \in J$, allora una primitiva di $f$ è $F(t)=G(x)\bigg|_{x=\varphi^{-1}(t)}=G(\varphi^{-1}(t))+c \quad \forall t \in I$ cioè
+
+\[\int f(t)\,dt=G(\varphi^{-1}(t))+c \quad \forall t\in I\]
+
+Infatti, per la legge di trasformazione dei differeziali, che verrà giustificata in seguito, ponendo $x=\varphi^{-1}(t)$ $\displaystyle{\;dx=(\varphi^{-1})'(t)\,dt=\frac{1}{\varphi'(\varphi^{-1}(t))}\,dt}$ da cui $\int g(x)\,dx=\int f(\varphi(\varphi^{-1}(t)))$ PROSEGUIRE DA QUI DA SLIDE 11 ANALISI2EX3.PDF, CREDO CI SIA UN ERRORE NEL PDF.
+
+\vspace{3mm}
+
+Casi notevoli (dove $R$ è una funzione razionale):
+\begin{itemize}
+    \item [1.] $\displaystyle{\int R(e^x)\,dx}$ $\Longrightarrow e^x=t \longleftrightarrow x=log\,t$ e $\displaystyle{dx=\frac{dx}{dt}dt}=\frac{dt}{t}$
+    \item [2.] DA VEDERE LA PROX VOLTA
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
 
 
 
