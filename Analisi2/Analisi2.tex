@@ -35,6 +35,8 @@
 \theoremstyle{definition}
 \newtheorem{example}{Ex}[section]
 
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollario}[theorem]
 
 
 %%%  INTESTAZIONE  %%%
@@ -407,6 +409,23 @@ Adesso osserviamo più da vicino $\mathcal{R}([a,b])$. Esso è strutturabile com
     Questo ragionamento porta alla evidente conclusione che quando calcolo un integrale prendo come positive le aree positive e come negative le aree sotto l'asse delle x.
 \end{remark}
 
+\begin{theorem}[Proprietà dell'integrale 7: linearità]
+    Siano $f_1$ e $f_2$ $\in\mathcal{R}([a,b])$. Siano $c_1$,$c_2$ $\in\mathbb{R}$. Allora $c_1f_1+c_2f_2\in\mathcal{R}([a,b])$ e si ha
+        \[\int_a^b(c_1f_1(x)+c_2f_2(x))\,dx=c_1\int_a^bf_1(x)\,dx+c_2\int_a^bf_2(x)\,dx\]
+
+    Dimostrazione sul Soardi a pagina 292 Teorema 10.4.1.
+\end{theorem}
+
+\begin{corollary}[Teorema di monotonia]
+    Siano $f,g\in\mathcal{R}([a,b])$. Se $f(x)\leq g(x)\;\forall\,x\in[a,b]$, allora $\displaystyle{\int_a^b f(x)\,dx\leq\int_a^b g(x)\,dx}$.
+    \begin{proof}[Dim.]
+        Si ha $g-f\in\mathcal{R}([a,b])$ per la linearità e quindi
+        \[\int_a^bg(x)\,dx-\int_a^bf(x)\,dx=\int_a^b(g(x)-f(x))\,dx\geq0\]
+    \end{proof}
+
+    Specifichiamo che se $f$ o $g$ sono 0 si ha che una funzione R-integrabile di segno costante allora l'integrale è monotono.
+\end{corollary}
+
 \begin{remark}[Relazioni tra moduli di integrali e integrali di moduli]
     Forte di quanto detto nella precedente osservazione posso dire che
     \[
@@ -675,11 +694,38 @@ Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo 
     Un altro esempio è $\displaystyle{F(x)=\int_1^{x^2}\frac{dt}{t}}=2log\left|x\right|$, che è una funzione definita in $\mathbb{R}\backslash\lbrace0\rbrace$ che ovviamente non è un intervallo. Il dominio di $F$ non comprende lo zero poichè in quel punto la funzione non è limitata. Se evitassi il caso $x=0$ comunque non sarebbe una funzione integrale, perchè come estremo superiore ho $x^2$, mentre dovrei avere per definizione solo $x$.
 \end{remark}
 
+\begin{remark}[Cosa è una funzione integrale?]
+    DA FARE
+\end{remark}
 
+\begin{remark}[Integrali impropri: premesse qualitative]
+    Per la monotonia dell'integrale si ha che presa una funzione R-integrabile e di segno costante allora l'integrale è monotono, indipendentemente dalla relazione d'ordine tra gli estremi.
 
+    Nel lavorare con gli integrali è sempre buona regola ricordare il loro significato geometrico.
+\end{remark}
 
+CONTINUARE FINENDO LA LEZIONE 6
 
+\newpage
+\section{Lezione 7 - 22/03/2021}
 
+\begin{remark}
+    Suppongo per esempio di avere le seguenti funzioni integrali:
+    \[F(x)=\int_1^x\frac{dt}{t^2} \qquad G(x)=\int_1^x\frac{dt}{t} \qquad H(x)=\int_1^x\frac{dt}{\sqrt{t}}\]
+
+    Tratto $F(x)$. Calcolando il suo valore per $x\rightarrow+\infty$ ho che $\displaystyle{F(x)=-\frac{1}{t}\bigg|_1^x=1-\frac{1}{x}}\underset{x\rightarrow+\infty}{\uparrow}1$, dove $\uparrow$ significa "tende monotonamente a".
+
+    Questo è un potente risultato: la R-integrabilità non è garantita per intervalli illimitati, ma posso ovviare al problema vedendo l'integrale, detto \textbf{improprio} o \textbf{generalizzato}, come limite di un integrale di Riemann. Si amplia quindi la classe delle funzioni integrabili, introducendo al suo interno tutte quelle funzioni che integrate su un intervallo illimitato convergono a un valore finito. Infatti grazie a questo ampliamento ho che $\displaystyle{\int_1^{+\infty}\frac{dt}{t^2}=1}$.
+
+    Riguardo a $G(x)$ ho che $G(x)=log\,t\bigg|_1^x=log\,x\underset{x\rightarrow+\infty}{\uparrow}+\infty$. Questa funzione non è integrabile in senso improprio perchè il valore dell'integrale diverge. Si può dire, interpretando il grafico di $\displaystyle{\frac{1}{t}}$, che questo accada perchè l'integranda non si "schiaccia" abbastanza velocemente sull'asse delle ascisse.
+\end{remark}
+
+\begin{definition}[Integrale improprio su intervalli non limitati]
+    Sia $f:I=[a,+\infty)\rightarrow\mathbb{R}$ tale che $f\in\mathcal{R}_{loc}(I)$. Diremo che $f$ è \textbf{integrabile in senso generalizzato (o improprio) su I} (oppure che $\int_a^bf(t)\,dt$ converge) se
+    \[\text{\textbf{esiste finito}} \underset{x\rightarrow+\infty}{lim}\int_a^xf(t)\,dt:=\int_a^{+\infty}f(t)\,dt\]    
+
+    Specifico che considerare la locale integrabilità invece della R-integrabilità rende determinante la presenza o l'esclusione di un estremo, perchè essere localmente integrabili vuol dire essere integrabili in un intorno del punto.
+\end{definition}
 
 
 \newpage
