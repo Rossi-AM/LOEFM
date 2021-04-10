@@ -717,7 +717,7 @@ CONTINUARE FINENDO LA LEZIONE 6
 
     Questo è un potente risultato: la R-integrabilità non è garantita per intervalli illimitati, ma posso ovviare al problema vedendo l'integrale, detto \textbf{improprio} o \textbf{generalizzato}, come limite di un integrale di Riemann. Si amplia quindi la classe delle funzioni integrabili, introducendo al suo interno tutte quelle funzioni che integrate su un intervallo illimitato convergono a un valore finito. Infatti grazie a questo ampliamento ho che $\displaystyle{\int_1^{+\infty}\frac{dt}{t^2}=1}$.
 
-    Riguardo a $G(x)$ ho che $G(x)=log\,t\bigg|_1^x=log\,x\underset{x\rightarrow+\infty}{\uparrow}+\infty$. Questa funzione non è integrabile in senso improprio perchè il valore dell'integrale diverge. Si può dire, interpretando il grafico di $\displaystyle{\frac{1}{t}}$, che questo accada perchè l'integranda non si "schiaccia" abbastanza velocemente sull'asse delle ascisse.
+    Riguardo a $G(x)$ ho che $G(x)=log\,t\bigg|_1^x=log\,x\underset{x\rightarrow+\infty}{\uparrow}+\infty$. Questa funzione non è integrabile in senso improprio perchè il valore dell'integrale diverge. Si può dire, interpretando il grafico di $\displaystyle{\frac{1}{t}}$, che questo accada perchè l'integranda non si "schiaccia" abbastanza velocemente sull'asse delle ascisse. In generale l'integrale improprio è finito quando una funzione generica si "schiaccia" abbastanza velocemente contro uno dei due assi. Ciò che conta è l'ordine di infinitesimo (se si schiaccia sulle ascisse) o di infinito (se si schiaccia sulle ordinate).
 \end{remark}
 
 \begin{definition}[Integrale improprio su intervalli non limitati]
@@ -726,6 +726,24 @@ CONTINUARE FINENDO LA LEZIONE 6
 
     Specifico che considerare la locale integrabilità invece della R-integrabilità rende determinante la presenza o l'esclusione di un estremo, perchè essere localmente integrabili vuol dire essere integrabili in un intorno del punto.
 \end{definition}
+
+\begin{remark}
+    Tratto invece $H(x)$ non su un intervallo illimitato, ma su $(0,1)$ (la funzione è però divergente su 0). Risulta che $\displaystyle{\int_1^x\frac{dt}{\sqrt(x)}=2\sqrt(x)-2 \underset{x\rightarrow 0^+}{\uparrow}-2}$ (dove il risultato è negativo poichè $a<b$).
+
+    Specifico inoltre che $H(x)$ ammetta integrale improprio su 0 ma non a $+\infty$.
+\end{remark}
+
+\begin{definition}[Integrale improprio di funzioni illimitate]
+    Sia $f:I=[a,b)\rightarrow\mathbb{R}$ tale che $f\in\mathcal{R}([a,x])\;\forall x\in[a,b)$. Diremo che $f$ è \textbf{integrabile in senso generalizzato (o improprio) su I} (oppure che $\int_a^b f(t)\,dt$ converge) se 
+    \[\text{\textbf{esiste finito}} \underset{x\rightarrow b^-}{lim}\int_a^x f(t)\,dt:=\int_a^b f(t)\,dt\]
+\end{definition}
+
+\begin{remark}[Note sulle funzioni precendenti e su notazioni]
+    $G(x)$ non è integrabile nemmeno su $(0,1)$, dove la funzione diverge. La letteratura spesso distingue i due integrali in prima e seconda specie. Questa divisione è però inutile poichè presa una $\frac{1}{x}$, se cambio intervallo da $(0,1)$ a $(1,+\infty)$ questa diventa biunivocamente e diffeomorfamente $\frac{1}{y}$.
+\end{remark}
+
+
+
 
 
 \newpage
