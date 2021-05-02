@@ -880,15 +880,41 @@ Infatti, per la legge di trasformazione dei differeziali, che verrà giustificat
 Casi notevoli (dove $R$ è una funzione razionale):
 \begin{itemize}
     \item [1.] $\displaystyle{\int R(e^x)\,dx}$ $\Longrightarrow e^x=t \longleftrightarrow x=log\,t$ e $\displaystyle{dx=\frac{dx}{dt}dt}=\frac{dt}{t}$
-    \item [2.] DA VEDERE LA PROX VOLTA
+    \item [2.] $\displaystyle{\int R(sin\,x,cos\,x)\,dx}$ $\displaystyle{\Longrightarrow tg\frac{x}{2} \longleftrightarrow sin\,x=\frac{2t}{1+t^2}, cos\,x=\frac{1-t^2}{1+t^2}}$ e $\displaystyle{dx=\frac{2}{1+t^2}dt}$ se $x\in(-\pi,+\pi)$.
+    \item [3.] $\displaystyle{\int R(sin^2x,cos^2x,sinxcosx,tgx)dx}$ $\displaystyle{\Longrightarrow tg\,x=t \longleftrightarrow sin^2x=\frac{t^2}{1+t^2}, cos^2x=\frac{1}{1+t^2}, sinxcosx=\frac{t}{t^2+1}}$ e $\displaystyle{dx=\frac{1}{1+t^2}dt}$ se $x\in(-\pi/2,+\pi/2)$.
+    Questi integrali possono essere risolti con la sostituzione "universale" $t=tg\frac{x}{2}$, ma con questa sostituzione più appropriata risultano più semplici.
+    \item [4.] $\displaystyle{\int R(x^{p_1/q_1},x^{p_2/q_2},...,x^{p_n/q_n})\,dx}$ con $p_1,q_1\in\mathbb{N}$ $\Longrightarrow x=t^q, q=m.c.m.(q_1,...,q_n)$ e $dx=qt^{q-1}dt$.
+    \item [5.] $\displaystyle{\int R\left(\sqrt[q]{\frac{Ax+B}{Cx+D}}\right)dx}$ con $AD-BC=0$ $\Longrightarrow \displaystyle{\frac{Ax+B}{Cx+D}=t^q} \longleftrightarrow x=\frac{Dt^q-B}{A-Ct^q}$ e $\displaystyle{dx=q\frac{(AD-BC)t^{q-1}}{(A-Ct^q)^2}dt}$
+    \item [6.] $\displaystyle{\int R(x,\sqrt{a^2-x^2})\,dx} \Longrightarrow x=asint$ con $t\in[-\pi/2,+\pi/2]$ e $dx=acost\,dt$
+    \item [7.] $\displaystyle{\int R(x, \sqrt{x^2-a^2})\,dx}$ $\Longrightarrow x=aCht$ con $t\in\mathbb{R}^+$ e $dx=aSht\,dt$
+    \item [8.] $\displaystyle{\int R(x,\sqrt{x^2+a^2})\,dx}$ $\Longrightarrow x=aSht$ con $t\in\mathbb{R}$ e $dx=aCht\,dt$
+    \item [9.] $\displaystyle{\int x^{2n+1}R(\sqrt{a^2-x^2})\,dx}$, $\displaystyle{\int x^{2n+1}R(\sqrt{x^2-a^2})\,dx}$,$\displaystyle{\int x^{2n+1}R(\sqrt{a^2+x^2})\,dx}$ $\Longrightarrow \sqrt{\pm a^2 \pm x^2}=t$, $t\in\mathbb{R}^+$.
 \end{itemize}
 
+\newpage
+\section{Integrali definiti}
 
+\begin{theorem}[TFCI]
+    Se $f$ continua a limitata in $[a,b]$ e $F$ è una primitiva di $f$ su $[a,b]$ allora $\int_a^b f(x)\,dx = F(b)-F(a)$.
+\end{theorem}
 
+\begin{theorem}[TFCI con integrale improprio]
+    Se $f$ è continua e limtiata in $[a,b)$, $F$ è una primitiva di $f$ su $[a,b)$ ed $\displaystyle{\exists \underset{x\rightarrow b^-}{lim}F(x)=F(b^-)}$, allora $\int_a^bf(x)\,dx=F(b^-)-F(a)$.
+\end{theorem}
 
+\begin{theorem}[Sostituzione per integrali definiti]
+    Siano $f:[a,b]\rightarrow\mathbb{R}$ e $\varphi:[c,d]\rightarrow[a,b]$ che siano $f\in\mathcal{C}([a,b])$ e $\varphi\in\mathcal{C}'([c,d])$ e $\varphi$ invertibile, allora vale
+    \[\int_a^bf(x)\,dx=\int_{\varphi^{-1}(a)}^{\varphi^{-1}(b)}f(\varphi(t))\varphi'(t)\,dt\]
+    Nota bene: posso anche trovare la primitiva con il cambio di variabile, tornare alla variabile di partenza e quindi calcolare il valore dell'integrale.
+\end{theorem}
 
-
-
+\begin{remark}[Integrali definiti con funzioni pari e dispari]
+    \hspace{1mm}
+    \begin{itemize}
+        \item Se $f$ è una funzione \underline{pari}, cioè $f(x)=f(-x)$, allora $\int_{-a}^af(x)\,dx = 2 \int_0^af(x)\,dx$.
+        \item Se $f$ è una funzione \underline{dispari}, cioè $f(x)=-f(x)$, allora $\int_{-a}^af(x)\,dx = 0$.
+    \end{itemize}
+\end{remark}
 
 
 
