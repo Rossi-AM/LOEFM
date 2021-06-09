@@ -8,6 +8,8 @@
 \usepackage{subcaption}
 \usepackage{verbatim}
 \usepackage{amsmath,amssymb}
+\usepackage{amstext}
+\usepackage{amsthm}
 \usepackage{steinmetz}
 \geometry{a4paper}
 
@@ -16,7 +18,6 @@
 
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
-\counterwithin{equation}{section}
 
 \title{Sbobine laboratorio di elettronica}
 \author{Lorenzo Ramella}
@@ -36,7 +37,7 @@
 
 \begin{abstract}
 
-Le lezioni del prof. Stefano Riboldi relative al laboratorio di elettronica del secondo anno, ``sbobinate''.
+Le lezioni del prof. Stefano Riboldi relative al laboratorio di elettronica del secondo anno, "sbobinate".
 
 \end{abstract}
 \tableofcontents
@@ -105,9 +106,11 @@ Questi generatori sono meno comuni dei generatori di tensione.
   \label{Schema_resistore}
 \end{figure}
 
-Il resistore o resistenza è il primo esempio di elemento \textit{passivo}, o \textit{di carico}, a cui è possibile collegare un generatore. È un dipolo, quindi posso definire ai suoi capi una differenza di potenziale $V_R$ ed una corrente $I_R$. Si noti, come schematizzato in figura \ref{Schema_resistore}, che il verso della corrente è discorde con il verso della tensione. Questa è la cosiddetta convenzione degli utilizzatori, opposta a quella dei generatori.
+Il \textit{resistore} (o \textit{resistenza}) è il primo esempio di elemento \textit{passivo}, o \textit{di carico}, a cui è possibile collegare un generatore. È un dipolo, quindi si può definire ai suoi capi una differenza di potenziale $V_R$ ed una corrente $I_R$. Si noti, come schematizzato in figura \ref{Schema_resistore}, che il verso della corrente è discorde con il verso della tensione. Questa è la cosiddetta convenzione degli utilizzatori, opposta a quella dei generatori.
 
-\textbf{Legge di Ohm:} all'interno di un resitore esiste una precisa relazione tra le grandezze $V_R$ e $I_R$:
+\vspace{3mm}
+
+\textbf{Legge di Ohm:} all'interno di un resistore esiste una precisa relazione tra le grandezze $V_R$ e $I_R$:
 
 \[\frac{V_R}{I_R} = \textit{ costante } = R [\Omega] = \frac{1}{G [\textrm S]}\]
 
@@ -133,9 +136,9 @@ P_R (t) = I_R^2 (t) \cdot R
 \label{Joule}
 \end{equation}
 
-\textbf{Nota importante:} dalla legge di Joule si evince che, facendo passare corrente in un resistore, questo dissipa energia, quindi si scalda\footnote{Lo stesso principio è alla base del funzionamento dei fusibili. Il fusibile è un dispositivo di sicurezza che funziona... fondendosi, disattivando il circuito quando l'intensità di corrente supera una certa soglia.}. In laboratorio è importante prestare la massima attenzione per evitare ustioni.
+\textbf{Nota importante:} dalla legge di Joule si evince che, facendo passare corrente in un resistore, questo dissipa energia, quindi si scalda. In laboratorio è importante prestare la massima attenzione per evitare ustioni.
 
-
+\newpage
 
 
 
@@ -146,15 +149,15 @@ P_R (t) = I_R^2 (t) \cdot R
 
 \subsection{Condensatori}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_condensatore}
+  \includegraphics[scale=0.65]{IM_condensatore}
   \caption{Schizzo di un condensatore}
   \label{Schema_condensatore}
 \end{figure}
 
-Un condensatore immagazzina al suo interno una carica $Q$, misurata in coulomb (C). Questa non è che l'integrale della corrente che attraversa il condensatore nel tempo.
+Un condensatore immagazzina al suo interno una carica $Q$, misurata in coulomb (C). Questa è l'integrale della corrente che attraversa il condensatore nel tempo.
 
 In un condensatore esiste una relazione tra la carica in esso immagazzinata e la differenza di potenziale ai suoi capi:
 
@@ -164,7 +167,7 @@ $C$ è la \textit{capacità}, e si misura in farad (F), ed è una costante posit
 
 \[I_C (t) = \frac{\textrm d Q_C (t)}{\textrm d t} = C \frac{\textrm d V_C (t)}{\textrm d t}\]
 
-Un condensatore è in grado di immagazzinare energia
+Un condensatore è in grado di immagazzinare un'energia
 
 \[E_C (t) = \frac{1}{2} Q_C (t) V_C (t) = \frac{1}{2} C V_C^2 (t)\]
 
@@ -182,7 +185,7 @@ Un condensatore è in grado di immagazzinare energia
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_induttore}
+  \includegraphics[scale=0.6]{IM_induttore}
   \caption{Schizzo di un induttore}
   \label{Schema_induttore}
 \end{figure}
@@ -201,6 +204,8 @@ Mentre nel condensatore era la corrente ad essere proporzionale alla derivata de
 
 L'induttore, pur essendo analogo al condensatore, ha dei comportamenti controintuitivi. Per esempio, cortocircuitando un condensatore si disperde tutta l'energia in esso immagazzinata, mentre per mantenere l'energia immagazzinata bisogna isolarlo. 
 
+\vspace{3mm}
+
 Nell'induttore l'energia immagazzinata dipende dalla corrente: affinché si mantenga l'energia immagazzinata in un induttore, quindi, serve che la derivata delle corrente rispetto al tempo sia nulla, ovvero che la differenza di potenziale ai due poli dell'induttore sia nulla. Quindi, per mantenere l'energia immagazzinata, bisogna cortocircuitare l'induttore.
 
 
@@ -217,7 +222,7 @@ Nell'induttore l'energia immagazzinata dipende dalla corrente: affinché si mant
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuito_RC}
-  \caption{Schizzo di un circuito RC (t<0)}
+  \caption{Schizzo di un circuito RC ($t<0$)}
   \label{Schema_circuito_RC}
 \end{figure}
 
@@ -229,26 +234,26 @@ Un circuito RC è un sistema a 4 gradi di libertà (2 tensioni e 2 correnti), es
   \item $V_R (t) = 0$ (legge di Ohm)
   \item $V_C (t) = \frac{q_0}{C} = v_0$
 \end{itemize}
-
+\newpage
 Chiudendo il circuito come illustrato in figura \ref{Schema_circuito_RC_chiuso} si ha che:
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuito_RC_chiuso}
-  \caption{Schizzo di un circuito RC (t>0)}
+  \caption{Schizzo di un circuito RC ($t>0$)}
   \label{Schema_circuito_RC_chiuso}
 \end{figure}
 
 \begin{itemize}
   \item $I_C (t) = - I_R (t)$ (dipoli in serie e frecce discordi)
   \item $V_C (t) = V_R (t)$ (dipoli in parallelo e frecce concordi)
-  \item $\frac{\textrm d V_C (t)}{\textrm d t} = \frac{I_C (t)}{C} = - \frac{I_R (t)}{C} = -\frac{V_R (t)}{C R} = -\frac{V_C (t)}{C R}$
+  \item $\frac{\textrm d V_C (t)}{\textrm d t} = \frac{I_C (t)}{C} = - \frac{I_R (t)}{C} = -\frac{V_R (t)}{CR} = -\frac{V_C (t)}{CR}$
   \item $V_C (t) = V_R (t) = v_0 \cdot e^{-t/(CR)}$
   \item $I_C (t) = -I_R (t) = \frac{v_0}{R} \cdot e^{-t/(CR)}$
 \end{itemize}
 
-Dopo aver notato il fatto che la quantità $CR$ ha la dimensione dei secondi, la si può anche riscrivere come $\tau = CR$
+Dopo aver notato il fatto che la quantità $CR$ ha la dimensione dei secondi, la si può anche riscrivere come $\tau = CR$.
 
 
 
@@ -267,7 +272,7 @@ Dopo aver notato il fatto che la quantità $CR$ ha la dimensione dei secondi, la
   \label{Schema_circuito_RL}
 \end{figure}
 
-Un circuito RL è un sistema sempre a 4 gradi di libertà (2 tensioni e 2 correnti). Nel caso schematizzato in figura \ref{Schema_circuito_RL}, per t<0 le condizioni al contorno sono:
+Un circuito RL è un sistema sempre a 4 gradi di libertà (2 tensioni e 2 correnti). Nel caso schematizzato in figura \ref{Schema_circuito_RL}, per $t<0$ le condizioni al contorno sono:
 
 \begin{itemize}
   \item $I_R (t) = 0$ (dipolo non connesso)
@@ -275,7 +280,7 @@ Un circuito RL è un sistema sempre a 4 gradi di libertà (2 tensioni e 2 corren
   \item $V_L (t) = 0$
   \item $I_L (t) = \frac{\phi _0}{L} = i_0$ (la corrente si mantiene perché l'induttore è in cortocircuito)
 \end{itemize}
-
+\newpage
 Chiudendo il circuito come illustrato in figura \ref{Schema_circuito_RL_chiuso} si ha che:
 
 \begin{figure}[h]
@@ -291,13 +296,11 @@ Chiudendo il circuito come illustrato in figura \ref{Schema_circuito_RL_chiuso} 
   \item $V_L (t) = V_R (t)$ (dipoli in parallelo e frecce concordi)
   \item $\frac{\textrm d I_L (t)}{\textrm d t} = \frac{V_L (t)}{L} = \frac{V_R (t)}{L} = -I_R (t) \frac{R}{L} = -I_L (t) \frac{R}{L}$
   \item $I_L (t) = -I_R (t) = i_0 \cdot e^{-t/\tau}$
-  \item $V_L (t) = V_R (t) = i_0 \cdot R \cdot
- e^{-t/\tau}$
+  \item $V_L (t) = V_R (t) = i_0 \cdot R \cdot e^{-t/\tau}$
 \end{itemize}
 
 Dove $\tau = L/R$.
 
-\clearpage
 
 
 
@@ -308,6 +311,7 @@ Dove $\tau = L/R$.
 
 
 
+\newpage
 
 \section{Leggi circuitali e concetti fondamentali}
 
@@ -318,34 +322,36 @@ Dato un circuito costituido da dipoli, definiamo:
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_kirchhoff_nodi}
+  \includegraphics[scale=0.4]{IM_kirchhoff_nodi}
   \caption{Schizzo di un circuito di dipoli. In verde i nodi}
   \label{Schema_nodi}
 \end{figure}
 
-\textit{nodi} i punti di contatto tra 3 o più dipoli (figura \ref{Schema_nodi});
+\textit{Nodi} i punti di contatto tra 3 o più dipoli (figura \ref{Schema_nodi});
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.5]{IM_kirchhoff_rami}
+  \includegraphics[scale=0.4]{IM_kirchhoff_rami}
   \caption{Schizzo di un circuito di dipoli. In rosso i rami}
   \label{Schema_rami}
 \end{figure}
 
-\textit{rami} i percorsi compresi tra due poli (figura \ref{Schema_rami});
+\textit{Rami} i percorsi compresi tra due poli (figura \ref{Schema_rami});
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.5]{IM_kirchhoff_maglie}
+  \includegraphics[scale=0.4]{IM_kirchhoff_maglie}
   \caption{Schizzo di un circuito di dipoli. In blu le maglie}
   \label{Schema_maglie}
 \end{figure}
 
-\textit{maglie} insiemi chiusi di rami (figura \ref{Schema_maglie});
-
+\textit{Maglie} insiemi chiusi di rami (figura \ref{Schema_maglie});
+\newpage
 Partendo da queste definizioni, introduciamo le due leggi di Kirchhoff:
+
+\vspace{3mm}
 
 \textbf{La legge delle correnti (KCL):} La somma algebrica delle correnti nei rami afferenti a ciascun nodo è nulla.
 
@@ -355,6 +361,8 @@ Partendo da queste definizioni, introduciamo le due leggi di Kirchhoff:
 \end{equation}
 
 In altre parole: a ciascun nodo, la somma delle correnti  entranti è pari alla somma delle correnti uscenti.
+
+\vspace{3mm}
 
 \textbf{La legge delle tensioni (KVL):} La somma algebrica delle tensioni sui rami di ciascuna maglia è nulla.
 
@@ -393,7 +401,9 @@ quindi
 
 \[R_{eq} = R_1 + R_2\]
 
-Se ho due o più resistenze collgate in serie, esse equivalgono ad un unico resistore la cui resistenza equivalente è pari alla somma delle singole resistenze.
+Se ho due o più resistenze collegate in serie, esse equivalgono ad un unico resistore la cui resistenza equivalente è pari alla somma delle singole resistenze.
+
+\vspace{3mm}
 
 Se si volesse ora trovare il valore di $V_{R1}$ basta pensare che
 
@@ -419,7 +429,9 @@ quindi
 
 \[R_{eq} = \frac{R_1 R_2}{R_1 + R_2} \quad \textrm{oppure} \quad \frac{1}{R_{eq}}=\left( \frac{1}{R_1}+ \frac{1}{R_2} \right)\]
 
-Se ho due o più resistenze collgate in parallelo, esse equivalgono ad un unico resistore la cui resistenza equivalente è pari alla somma armonica delle singole resistenze.
+Se ho due o più resistenze collegate in parallelo, esse equivalgono ad un unico resistore la cui resistenza equivalente è pari alla somma armonica delle singole resistenze.
+
+\vspace{3mm}
 
 Se si volesse ora trovare il valore di $I_{R1}$ basta pensare che
 
@@ -499,11 +511,13 @@ Con un discorso analogo a quello del caso precedente ricaviamo che
 
 Si immagini di prendere il dipolo rappresentato in figura \ref{Schema_Thevenin_Norton}. Come caratterizzarlo senza ``aprire'' la scatola?
 
+\vspace{1mm}
+
 Poiché le uniche due grandezze misurabili sono la tensione e la corrente, l'unico strumento che si ha a disposizione è la \textit{curva caratteristica} $I-V$:
-
 \[I_{OUT} = f_Y(V_{OUT}) \quad \textrm{oppure} \quad V_{OUT} = f_z(I_{OUT})\]
-
 Due dipoli sono \textit{equivalenti} se e solo se hanno la stessa curva caratteristica.
+
+\vspace{1mm}
 
 Se le relazioni sono lineari basta determinarne 2 punti. Come nell'esempio mostrato in figura \ref{Schema_Thevenin_Norton_bis}
 
@@ -523,6 +537,8 @@ Imponendo $I_{OUT} (0) = I'_{OUT} (0)$ e $V_{OUT} (0) = V'_{OUT} (0)$ si trovano
 
 Ne segue che i due circuiti (quando soddisfano queste due condizioni), pur essendo circuiti diversi, sono equivalenti.
 
+\vspace{1mm}
+
 Questo risultato ha un'importante conseguenza: ogni rete elettrica composta da resistori, generatori di tensione e corrente ha 2 equivalenti circuitali (ad eccezione dei generatori ideali).
 
 \clearpage
@@ -530,7 +546,7 @@ Questo risultato ha un'importante conseguenza: ogni rete elettrica composta da r
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_Thevenin_Norton_ter}
+  \includegraphics[scale=0.6]{IM_Thevenin_Norton_ter}
   \caption{Ogni rete elettrica ha 2 equivalenti circuitali}
   \label{Schema_Thevenin_Norton_ter}
 \end{figure}
@@ -538,14 +554,18 @@ Questo risultato ha un'importante conseguenza: ogni rete elettrica composta da r
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_Thevenin_Norton_quater}
-  \caption{Modelli equivalenti di una generica rete LTI}
+  \includegraphics[scale=0.65]{IM_Thevenin_Norton_quater}
+  \caption{Modelli equivalenti di una generica rete LTI (Linear Time-Invariant)}
   \label{Schema_Thevenin_Norton_quater}
 \end{figure}
 
 \textbf{Nota importante:} nella realtà del laboratorio i circuiti non sopportano tutto. Bisogna fare attenzione a come vengono fatti i collegamenti per evitare macelli.
 
-Se ci si aspetta che un circuito sia un generatore di tensione, sarà ragionevolmente sicuro misurare $V_{eq}$ (ma non $I_{eq}$). Viceversa, se ci si aspetta che sia un generatore di corrente, sarà ragionevolmente sicuro misurare $I_{eq}$ (ma non $V_{eq}$). Leggere sempre e comunque le istruzioni d'uso prima di fare qualunque cosa.
+\vspace{1mm}
+
+Se ci si aspetta che un circuito ignoto sia un generatore di tensione, sarà ragionevolmente sicuro misurare $V_{eq}$ (ma non $I_{eq}$). Viceversa, se ci si aspetta che sia un generatore di corrente, sarà ragionevolmente sicuro misurare $I_{eq}$ (ma non $V_{eq}$). Leggere sempre e comunque le istruzioni d'uso dei componenti prima di fare qualunque cosa.
+
+\vspace{1mm}
 
 Nella realtà, per determinare l'equivalenza di due circuiti, ci si muove all'inerno di un ristretto intervallo di parametri:
 
@@ -554,7 +574,7 @@ Nella realtà, per determinare l'equivalenza di due circuiti, ci si muove all'in
   \item per i generatori di corrente: $|V_{eq}|<V_{max}$
 \end{itemize}
 
-Esempio: il caricatore del cellulare (USB) è equivalente ad un generatore di tensione (reale), con differenza di potenziale in uscita pari a $V_{OUT} = +5$V e corrente in uscita $I_{OUT} < 1$A.
+\textit{Esempio}: il caricatore del cellulare (USB) è equivalente ad un generatore di tensione (reale), con differenza di potenziale in uscita pari a $V_{OUT} = +5\,$V e corrente in uscita $I_{OUT} < 1\,$A.
 
 %\clearpage
 
@@ -570,21 +590,25 @@ Esempio: il caricatore del cellulare (USB) è equivalente ad un generatore di te
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_impedenze}
-  \caption{Impedenze di sorgente e di cariche}
+  \includegraphics[scale=0.6]{IM_impedenze}
+  \caption{Impedenze di sorgente e di carico}
   \label{Schema_impedenze}
 \end{figure}
 
 Ad un generatore di tensione è possibile collegare carichi diversi. Il carico ``migliore'' che è possibile collegare al generatore di tensione è il carico cosiddetto ``ideale'' (non collegare), mentre il carico ``peggiore'', in questo senso, è il cortocircuito (collegare una resistenza nulla). Quest'ultimo carico è particolarmente problematico perché, facendo fluire liberamente la corrente ai due capi del generatore, ``impedisce'' al generatore di imporre una differenza di potenziale ai suoi due capi. Un generatore vero potrebbe rompersi.
 
+\vspace{3mm}
+
 Nel caso invece del generatore di corrente, il carico ideale è il cortocircuito, poiché permette alla corrente da questo generata di fluire liberamente, mentre il carico peggiore è una resistenza infinita (non collegare), perché la corrente generata non può andare da nessuna parte. 
+
+\vspace{3mm}
 
 Con l'espressione \textit{togliere il carico} si intende, per il generatore di tensione, scollegare; per il generatore di corrente, cortocircuitare.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_effetto_di_carico}
+  \includegraphics[scale=0.6]{IM_effetto_di_carico}
   \caption{Effetto di carico}
   \label{Schema_effetto_di_carico}
 \end{figure}
@@ -608,10 +632,10 @@ L'effetto di carico non sarebbe presente se non esistesse la resistenza $R_S$, o
 
 È possible tuttavia provare a limitare questo effetto entro dei limiti accettabili, cercando di ridurre i termini moltiplicativi $R_C/(R_C + R_S)$ e $R_S/(R_C + R_S)$.
 
+\vspace{1mm}
+
 Per limitare l’effetto di carico è quindi opportuno avere:
-
 \[R_C >> R_S \quad \textrm{per generatori di tensione}\]
-
 \[R_C << R_S \quad \textrm{per generatori di corrente}\]
 
 
@@ -633,24 +657,32 @@ Per limitare l’effetto di carico è quindi opportuno avere:
   \label{Schema_elementi_RLC}
 \end{figure}
 
-dove $s$ è una variabile complessa, e abbiamo ipotizzato che la corrente segua l'evoluzione $i(t,s) = e^{st}$ per la resistenza e per l'induttore e che la tensione segua l'evoluzione $v(t,s) = e^{st}$ per il condensatore.
+dove 
+\begin{itemize}
+  \item $s$ è una variabile complessa;
+  \item abbiamo ipotizzato che la corrente segua l'evoluzione $i(t,s) = e^{s \cdot t}$ per la resistenza e per l'induttore;
+  \item abbiamo ipotizzato che la tensione segua l'evoluzione $v(t,s) = e^{s \cdot t}$ per il condensatore.
+\end{itemize}
 
-Otteniamo così l'\textit{impedenza} Z, che si misura in ohm, e l'\textit{ammettenza} Y, che si misura in siemens. Queste due grandezza sono legate dalla relazione Z$=\textrm{Y}^{-1}$. Essendo tuttavia il paraetro $s$ complesso, anche le grandezze Z e Y sono complesse.
+Otteniamo così l'\textit{impedenza} $Z$, che si misura in ohm, e l'\textit{ammettenza} $Y$, che si misura in siemens. Queste due grandezza sono legate dalla relazione $Z=Y^{-1}$. Essendo tuttavia il parametro $s$ complesso, anche le grandezze $Z$ e $Y$ sono complesse.
+
+\vspace{1mm}
 
 D'ora in avanti, per evitare fraintendimenti con l'intensità di corrente, l'unità immaginaria verrà indicata con il simbolo $j$.
 
+\vspace{1mm}
+
 Ricordiamo la \textit{formula di Eulero}:
 
-\[e^{st}= e^{(\sigma + j \cdot 2\pi f)t}= e^{\sigma t}(\cos (2\pi f \cdot t) + j\sin (2\pi f \cdot t))\]
+\[e^{st}= e^{(\sigma + j \cdot 2\pi f)t}= e^{\sigma t}(\textrm{cos} (2\pi f \cdot t) + j\textrm{sin} (2\pi f \cdot t))\]
 
-Se $s = j\omega \Rightarrow e^{st} = \cos (\omega t) + j\sin (\omega t) \Rightarrow |e^{st}| = 1 \;\, \forall t$
+Se $s = j\omega \Rightarrow e^{st} = \textrm{cos} (\omega t) + j\textrm{sin} (\omega t) \Rightarrow |e^{st}| = 1 \;\, \forall t \in \mathbb{R}$
+
+\vspace{1mm}
 
 Definiamo la fase di un numero complesso come
-
 \[\measuredangle (a+jb) = \textrm{atan}\, (b/a)\]
-
 Abbiamo quindi che:
-
 \begin{itemize}
   \item $Z_R (j\omega) = R \Rightarrow |Z_R (j\omega)| = R$ e $\measuredangle (Z_R (j\omega)) = 0$
   \item $Z_L (j\omega) = j\omega L \Rightarrow |Z_L (j\omega)| = \omega L$ e $\measuredangle (Z_L (j\omega)) = \frac{\pi}{2}$
@@ -665,9 +697,22 @@ Abbiamo quindi che:
   \label{Schema_grafico_impedenze}
 \end{figure}
 
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{I sistemi lineari, tempo invarianti}
 
-Un sistema lineare è più complesso di un dipolo. Possiamo vederlo, per il momento, come un doppio dipolo:
+Un sistema lineare è più complesso di un dipolo. Possiamo vederlo, per il momento, come un doppio dipolo.
 
 \begin{figure}[h]
   \centering
@@ -679,13 +724,17 @@ Un sistema lineare è più complesso di un dipolo. Possiamo vederlo, per il mome
 
 Un doppio dipolo ha quattro gradi di libertà, due tensioni e due correnti. I segnali in ingresso e in uscita nel sistema possono essere sia tensioni che correnti. Il doppio dipolo schematizzato in figura \ref{Schema_doppio_dipolo} è un caso particolare, essendo i due poli raffigurati in basso equipotenziali (essendoci un collegamento diretto tra di loro). 
 
+\vspace{3mm}
+
 Ma cos'è un sistema lineare? Dato un sistema $f$, dotato di un ingresso (formato eventualmente anche da un certo numero di entrate elementari) ed un'uscita, questo è lineare se e solo se l'uscita è combinazione lineare delle uscite che il sistema avrebbe applicandogli i singoli ingressi elementari:
 
 \[f(C_1 \cdot IN_1 + C_2 \cdot IN_2) = C_1 \cdot f(IN_1) + C_2 \cdot f(IN_2)\]
 
 $f$ è un sistema tempo invariante se e solo se le sue proprietà non dipendono dal tempo.
 
-È detta funzione di trasferimento (FdT) la relazione (H), espressa nei domini trasformati di Laplace (s) o di Fourier (f, $\omega$), tra un ingresso e un’uscita di $f$.
+\vspace{3mm}
+
+È detta \textit{funzione di trasferimento} (FdT) la relazione ($H$), espressa nei domini trasformati di Laplace ($s$) o di Fourier ($f$, $\omega$), tra un ingresso e un’uscita di $f$.
 
 \begin{figure}[h]
   \centering
@@ -695,23 +744,29 @@ $f$ è un sistema tempo invariante se e solo se le sue proprietà non dipendono 
   \label{Schema_funzioni_trasferimento}
 \end{figure}
 
-Nel caso del primo circuito, la funzione di trasferimento H(s) è la relazione tra un'entrata di tensione e un uscita di corrente. la FdT è quindi l'ammettenza del condensatore.
+Nel caso del primo circuito, la funzione di trasferimento $H(s)$ è la relazione tra un'entrata di tensione e un uscita di corrente. La FdT è quindi l'ammettenza del condensatore.
 
-Nel caso del secondo circuito ho collegato al doppio dipolo un voltmetro ideale, a impedenza infinita, che misura la differenza di potenziale ai capi della resistenza $R_2$. La FdT H(s) è il rapporto di partiziobne tra la resistenza $R_1$ e la resistenza $R_2$.
+\vspace{1mm}
+
+Nel caso del secondo circuito è collegato al doppio dipolo un voltmetro ideale, a impedenza infinita, che misura la differenza di potenziale ai capi della resistenza $R_2$. La FdT $H(s)$ è il rapporto di partizione tra la resistenza $R_1$ e la resistenza $R_2$.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuito_complesso}
-  \caption{Un circuito complesso, modellizzato in 3 blocchi in cascata}
+  \caption{Un circuito complesso, modellizzato con 3 blocchi in cascata}
   \label{Schema_circuito_complesso}
 \end{figure}
 
 Il concetto di doppio dipolo e di FdT è importante per l'analisi di circuiti complessi. Un circuito è generalmente modellizzabile in blocchi, posti in cascata uno dopo l'altro. 
 
-In assenza di effetti di carico (o se le singole Funzioni di Trasferimento sono ricavate considerano le impedenze di sorgente e di carico), la FdT complessiva corrisponde al prodotto delle singole FdT.
+\vspace{1mm}
 
-È possibile definire le proprietà di questi sistemi anche nel dominio del tempo
+In assenza di effetti di carico (o se le singole Funzioni di Trasferimento sono ricavate considerando le impedenze di sorgente e di carico), la FdT complessiva corrisponde al prodotto delle singole FdT.
+
+\vspace{1mm}
+
+È possibile definire le proprietà di questi sistemi anche nel dominio del tempo:
 
 \begin{figure}[h]
   \centering
@@ -721,23 +776,24 @@ In assenza di effetti di carico (o se le singole Funzioni di Trasferimento sono 
   \label{Schema_doppio_dipolo_tempo}
 \end{figure}
 
-Carico il condensatore con un generatore di corrente che ha un andamento impulsivo, quindi la corrente emessa dal generatore ha valore 0 per ogni $t$ diverso da 0. Al tempo $t=0$ il generatore emette un impulso di corrente che carica il condensatore di una carica $q_0$ . 
+Si carichi il condensatore con un generatore di corrente che ha andamento impulsivo. La corrente emessa dal generatore è nulla per ogni $t$ diverso da 0 mentre, se $t=0$, il generatore emette un impulso di corrente che carica il condensatore di una carica $q_0$. 
 
-\[i_{IN} = \delta (t) \cdot (C \cdot v_0)\]
+\[i_{IN} = \delta (t) \cdot (C \cdot  v_0)\]
 
-\[v_{OUT} = v_0 \cdot e^{-t/(CR)}\]
+\[v_{OUT} = v_0 \cdot  e^{-t/(C/R)}\]
 
-il sistema è lineare, quindi immettendo in ingresso una corrente generica $\delta (t)$
+Il sistema è lineare, quindi immettendo in ingresso una corrente generica $\delta (t)$
 
 \[i_{IN} = \delta (t)\]
 
-\[v_{OUT} = (1 / C) * e^{-t/(CR)} = h(t)\]
+\[v_{OUT} = (1 / C) \cdot  e^{-t/(C/R)} = h(t)\]
 
 dove $h(t)$ è la risposta all'impulso $\delta(t)$ di un sistema lineare e tempo invariante.
 
+\clearpage
 Rappresentare la proprietà di un sistema LTI i termini di risposta all'impulso $h(t)$ o in termini di FdT $H(f)$ consente di rappresentare la risposta del sistema LTI per qualsiasi segnale in ingresso, posto che questo sia a sua volta rappresentabile sulla base di impulsi di Dirac o di funzioni armoniche:
 
-\[in(t) = \int_{-\inf}^{\inf} in(\xi) \cdot \delta (t - \xi) \cdot \textrm{d} \xi = \int_{-\inf}^{\inf} IN (f) \cdot e^{j \omega f t} \cdot \textrm d f\]
+\[in(t) = \int_{-\infty}^{\infty} in(\xi) \cdot \delta (t - \xi) \cdot \textrm{d} \xi = \int_{-\infty}^{\infty} IN (f) \cdot e^{j \omega f t} \cdot \textrm d f\]
 
 \begin{figure}[h]
   \centering
@@ -747,7 +803,7 @@ Rappresentare la proprietà di un sistema LTI i termini di risposta all'impulso 
   \label{Schema_trasformata_fourier}
 \end{figure}
 
-Definiamo la \textit{traformata di Fourier} ($\mathcal{F}$) e la sua \textit{anti-trasformata} ($\mathcal{F}^{-1}$)
+Definiamo la \textit{trasformata di Fourier} ($\mathcal{F}$) e la sua \textit{anti-trasformata} ($\mathcal{F}^{-1}$)
 
 \[IN (f) = \mathcal{F} (in(t)) = \int_{-\infty}^{\infty} in(t) \cdot e^{-j2\pi ft} \cdot \textrm d t\]
 
@@ -772,6 +828,8 @@ Consegue infine che:
 
 \section{Circuiti passivi con elementi RLC}
 
+Da questo capitolo apparirà il simbolo formato da tre linee di lunghezza decrescente. Questo rappresenta la messa a massa o GND. Questo funge da generico punto di riferimento per la misura delle differenze di potenziale. È utile quando si lavora con il simulatore circuitale per potere indicare con facilità l'equipotenzialità di parti del circuito graficamente molto distanti. 
+
 \subsection{Circuiti RC e RL}
 
 L'analisi nel dominio della frequenza sarà la più semplice e diretta, applicando i concetti di partitore di tensione e di corrente alle impedenze.
@@ -784,8 +842,7 @@ L'analisi nel dominio della frequenza sarà la più semplice e diretta, applican
   \label{Schema_impedenze_bis}
 \end{figure}
 
-Cominciamo con il circuito RC (figura \ref{Schema_circuito_RC_passivo}):
-
+Cominciamo con il circuito RC in figura \ref{Schema_circuito_RC_passivo}.
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -795,21 +852,13 @@ Cominciamo con il circuito RC (figura \ref{Schema_circuito_RC_passivo}):
 \end{figure}
 
 Generalizzando alle impedenze quanto visto per le resistenze:
-
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
-
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
 da cui 
-
 \[H(s) = \frac{V_{OUT} (s)}{V_{IN} (s)} = \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
-
 sostituendo adesso alle impedenze le loro espressioni esplicite:
-
 \[H(s) = \frac{1/sC}{1/sC + R} = \frac{1}{1 + sRC}\]
-
 e, per $s = j\omega$, 
-
 \[H(s) = \frac{1}{1 + j \omega RC} \quad \quad |H(s)| = \frac{1}{\sqrt{1 + \omega ^2 \cdot R^2 \cdot C^2}} \quad \quad \measuredangle (H(j \omega)) = \textrm{atan}\, (- \omega RC)\]
-
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -827,19 +876,13 @@ Concentrandoci ora sul circuito CR (figura \ref{Schema_circuito_CR_passivo}):
   \caption{Circuito CR}
   \label{Schema_circuito_CR_passivo}
 \end{figure}
-
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
-
+si ha
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
 da cui 
-
 \[H(s) = \frac{V_{OUT} (s)}{V_{IN} (s)} = \frac{Z_C(s)}{Z_C(s) + Z_R(s)}\]
-
 sostituendo adesso alle impedenze le loro espressioni esplicite:
-
 \[H(s) = \frac{R}{R + 1/sC} = \frac{sRC}{1 + sRC}\]
-
 e, per $s = j\omega$, 
-
 \[H(s) = \frac{j \omega RC}{1 + j \omega RC} \quad \quad |H(s)| = \frac{\omega RC}{\sqrt{1 + \omega ^2 \cdot R^2 \cdot C^2}} \quad \quad \measuredangle (H(j \omega)) = \textrm{atan}\, \left(\frac{1}{\omega RC}\right)\]
 
 \begin{figure}[h]
@@ -860,18 +903,13 @@ Analogamente si procede per le induttanze. Con il circuito RL (figura \ref{Schem
   \label{Schema_circuito_RL_passivo}
 \end{figure}
 
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_L(s)}{Z_L(s) + Z_R(s)}\]
-
+si ha
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_L(s)}{Z_L(s) + Z_R(s)}\]
 da cui 
-
 \[H(s) = \frac{V_{OUT} (s)}{V_{IN} (s)} = \frac{Z_L(s)}{Z_L(s) + Z_R(s)}\]
-
 sostituendo adesso alle impedenze le loro espressioni esplicite:
-
 \[H(s) = \frac{sL}{sL + R} = \frac{sL/R}{1 + sL/R}\]
-
 e, per $s = j\omega$, 
-
 \[H(s) = \frac{j \omega L/R}{1 + j \omega L/R} \quad \quad |H(s)| = \frac{\omega L/R}{\sqrt{1 + \omega ^2 \cdot L^2 / R^2}} \quad \quad \measuredangle (H(j \omega)) = \textrm{atan}\, \left(\frac{R}{\omega L} \right)\]
 
 \begin{figure}[h]
@@ -881,29 +919,25 @@ e, per $s = j\omega$,
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_RL_passivo_grafici}
 \end{figure}
-
+\clearpage
 Concentrandoci ora sul circuito LR (figura \ref{Schema_circuito_LR_passivo}):
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_LR_passivo}
+  \includegraphics[scale=0.55]{IM_circuito_LR_passivo}
   \caption{Circuito LR}
   \label{Schema_circuito_LR_passivo}
 \end{figure}
 
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_R(s)}{Z_L(s) + Z_R(s)}\]
-
+si ha
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_R(s)}{Z_L(s) + Z_R(s)}\]
 da cui 
-
 \[H(s) = \frac{V_{OUT} (s)}{V_{IN} (s)} = \frac{Z_R(s)}{Z_L(s) + Z_R(s)}\]
 
 sostituendo adesso alle impedenze le loro espressioni esplicite:
-
 \[H(s) = \frac{R}{R + sL} = \frac{1}{1 + sL/R}\]
-
 e, per $s = j\omega$, 
-
 \[H(s) = \frac{1}{1 + j \omega L/R} \quad \quad |H(s)| = \frac{1}{\sqrt{1 + \omega ^2 \cdot L^2 / R^2}} \quad \quad \measuredangle (H(j \omega)) = \textrm{atan}\, \left(-\frac{\omega L}{ R}\right)\]
 
 \begin{figure}[h]
@@ -914,7 +948,7 @@ e, per $s = j\omega$,
   \label{Schema_circuito_LR_passivo_grafici}
 \end{figure}
 
-
+\clearpage
 
 
 
@@ -927,17 +961,17 @@ e, per $s = j\omega$,
 
 \subsection{Circuiti risonanti serie}
 
-Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_serie_LC}:
+Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_serie_LC}.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_LC}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_LC}
   \caption{Circuito risonante serie LC}
   \label{Schema_circuito_risonante_serie_LC}
 \end{figure}
 
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_C(s)}{Z_L(s) + Z_C(s)}\]
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_C(s)}{Z_L(s) + Z_C(s)}\]
 
 da cui
 
@@ -954,22 +988,23 @@ e, per $s = j\omega$,
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_LC_grafici}
+  \includegraphics[scale=0.55]{IM_circuito_risonante_serie_LC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_serie_LC_grafici}
 \end{figure}
 
+\clearpage
 Concentrandoci ora sul circuito CL mostrato in figura \ref{Schema_circuito_risonante_serie_CL}:
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_CL}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_CL}
   \caption{Circuito risonante serie CL}
   \label{Schema_circuito_risonante_serie_CL}
 \end{figure}
 
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_L(s)}{Z_L(s) + Z_C(s)}\]
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_L(s)}{Z_L(s) + Z_C(s)}\]
 
 da cui
 
@@ -986,25 +1021,23 @@ e, per $s = j\omega$,
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_CL_grafici}
+  \includegraphics[scale=0.55]{IM_circuito_risonante_serie_CL_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_serie_CL_grafici}
 \end{figure}
 
+\clearpage
 Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_risonante_serie_RLC}:
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_RLC}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_RLC}
   \caption{Circuito risonante serie RLC}
   \label{Schema_circuito_risonante_serie_RLC}
 \end{figure}
-
-\[V_{OUT}(s) = V_{IN}(s) * \frac{Z_C(s)}{Z_R(s) + Z_L(s) + Z_C(s)}\]
-
+\[V_{OUT}(s) = V_{IN}(s) \cdot \frac{Z_C(s)}{Z_R(s) + Z_L(s) + Z_C(s)}\]
 da cui
-
 \[H(s) = \frac{V_{OUT} (s)}{V_{IN} (s)} = \frac{Z_C(s)}{Z_R(s) + Z_L(s) + Z_C(s)}\]
 
 sostituendo adesso alle impedenze le loro espressioni esplicite:
@@ -1019,18 +1052,17 @@ e, per $s = j\omega$,
 
 Per $R \geq 2 \cdot \sqrt{\frac{L}{C}}$ non ci sono effetti di risonanza.
 
-Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effetti risonanti / dissipativi:
-
-\[Q = \frac{\omega _R}{\Delta \omega _{-3dB}} = \frac{1}{R} \cdot \sqrt{\frac{L}{C}}\]
-
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_serie_RLC_grafici}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_RLC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_serie_RLC_grafici}
 \end{figure}
 
+Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effetti risonanti / dissipativi:
+
+\[Q = \frac{\omega _R}{\Delta \omega _{-3dB}} = \frac{1}{R} \cdot \sqrt{\frac{L}{C}}\]
 
 
 
@@ -1042,7 +1074,7 @@ Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effet
 
 
 
-
+\clearpage
 \subsection{Circuiti risonanti parallelo}
 
 Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_parallelo_LC}:
@@ -1050,12 +1082,12 @@ Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_rison
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_parallelo_LC}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_parallelo_LC}
   \caption{Circuito risonante parallelo LC}
   \label{Schema_circuito_risonante_parallelo_LC}
 \end{figure}
 
-\[V_{OUT}(s) = I_{IN}(s) * (Z_C(s) // Z_L (s))\]
+\[V_{OUT}(s) = I_{IN}(s) \cdot (Z_C(s) // Z_L (s))\]
 
 da cui
 
@@ -1072,7 +1104,7 @@ e, per $s = j\omega$,
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_parallelo_LC_grafici}
+  \includegraphics[scale=0.55]{IM_circuito_risonante_parallelo_LC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_parallelo_LC_grafici}
 \end{figure}
@@ -1082,12 +1114,12 @@ Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_riso
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_parallelo_RLC}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_parallelo_RLC}
   \caption{Circuito risonante parallelo RLC}
   \label{Schema_circuito_risonante_parallelo_RLC}
 \end{figure}
 
-\[V_{OUT}(s) = I_{IN}(s) * (Z_C(s) // Z_L (s) // Z_R (s))\]
+\[V_{OUT}(s) = I_{IN}(s) \cdot (Z_C(s) // Z_L (s) // Z_R (s))\]
 
 da cui
 
@@ -1105,17 +1137,18 @@ e, per $s = j\omega$,
 
 Per $R \geq \frac{1}{2} \cdot \sqrt{\frac{L}{C}}$ non ci sono effetti di risonanza.
 
-Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effetti risonanti / dissipativi:
-
-\[Q = \frac{\omega _R}{\Delta \omega _{-3dB}} = R \cdot \sqrt{\frac{C}{L}}\]
-
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_parallelo_RLC_grafici}
+  \includegraphics[scale=0.55]{IM_circuito_risonante_parallelo_RLC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_parallelo_RLC_grafici}
 \end{figure}
+
+Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effetti risonanti / dissipativi, e in questo caso vale:
+
+\[Q = \frac{\omega _R}{\Delta \omega _{-3dB}} = R \cdot \sqrt{\frac{C}{L}}\]
+
 
 \clearpage
 
@@ -1140,13 +1173,20 @@ Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effet
   \label{Schema_amplificatore_operazionale}
 \end{figure}
 
-Un amplificatore operazionale è un dispositivo ad almeno 5 terminali (anche se molto spesso ne hanno in numero maggiore). Questi 5 terminali sono così suddivisi:
-due ingressi, tipicamente di tensione (esistono anche degli amplificatori operazionali detti ``current mode'' che hanno un ingresso di tensione e un ingresso di corrente);
-un'uscita di tensione; due terminali di alimentazione.
+Un amplificatore operazionale è un dispositivo ad almeno 5 terminali (anche se molto spesso ne ha un numero maggiore). Questi 5 terminali sono così suddivisi:
+\begin{itemize}
+  \item Due ingressi, tipicamente di tensione (esistono anche degli amplificatori operazionali detti ``current mode'' che hanno un ingresso di tensione e un ingresso di corrente);
+  \item un'uscita di tensione;
+  \item  due terminali di alimentazione.
+\end{itemize}
 
-È un dispositivo attivo. Un dispositivo attivo è un dispositivo che trasferisce potenza dai terminali di alimentazione all'uscita (una popolare definizione sbagliata di dispositivo attivo è quella di un dispositivo in cui l'uscita, in tensione, è maggiore degli ingressi applicati. Per accertarne la falsità è sufficiente pensare ad un circuito risonante che ha in ingresso un segnale alla frequenza di risonanza).
+\vspace{3mm}
 
-Un amplificatore operazionale ha due terminali di alimentazione: un terminale di alimentazione positiva e uno di alimentazione negativa (dove per positività e negatività non si intende che uno dà e l'altro assorbe, ma che uno dei due ``alimenta'' più dell'altro ed è importante evitare di confondere i due terminali per evitare di danneggiare circuiti reali).
+È un dispositivo attivo. Un dispositivo attivo è un dispositivo che trasferisce potenza dai terminali di alimentazione all'uscita. Una popolare definizione sbagliata di dispositivo attivo è quella di un dispositivo in cui l'uscita, in tensione, è maggiore degli ingressi applicati. Per accertarne la falsità è sufficiente pensare ad un circuito risonante che ha in ingresso un segnale alla frequenza di risonanza.
+
+\vspace{3mm}
+
+Un amplificatore operazionale ha due terminali di alimentazione: un terminale di alimentazione positiva e uno di alimentazione negativa (dove per positività e negatività non si intende che uno dà e l'altro assorbe, ma che uno dei due ``alimenta'' più dell'altro). È importante evitare di confondere i due terminali per evitare di danneggiare circuiti reali.
 
 \begin{figure}[h]
   \centering
@@ -1160,10 +1200,10 @@ Un amplificatore operazionale ideale, ovvero la più semplice modellizzazione po
 
 \begin{itemize}
   \item Ingressi di tensione a impedenza infinita (non c'è passaggio di corrente)
-  \item Uscirta di tensione a impedenza nulla (generatore di tensione ideale)
+  \item Uscita di tensione a impedenza nulla (generatore di tensione ideale)
   \item Alimentazione con differenza di potenziale infinita
   \item Modellizzabile con un sistema lineare:
-  \[V_{OUT} = f(V_{IN+} - V_{IN-}) = f(\Delta V_{IN}) = A_0 * \Delta V_{IN} \quad (A_0 \textrm{ cost.} \rightarrow \infty)\]
+  \[V_{OUT} = f(V_{IN+} - V_{IN-}) = f(\Delta V_{IN}) = A_0 \cdot \Delta V_{IN} \quad (A_0 \textrm{ cost.} \rightarrow \infty)\]
   \item Per valori finiti di $V_{OUT}$:
   \[\Delta V_{IN} = V_{OUT}/A_0 \rightarrow 0V \Rightarrow V_{IN+} \approx V_{IN-}\]
 \end{itemize}
@@ -1173,27 +1213,27 @@ Un modello è valido quando riesce ad prevedere correttamente il comportamento d
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_modello}
+  \includegraphics[scale=0.55]{IM_amplificatore_operazionale_modello}
   \caption{L'invalidità del modello}
   \label{Schema_amplificatore_operazionale_modello}
 \end{figure}
 
-No. Cambiando il potenziale di riferimento non cambio la differenza di potenziale tra i due ingressi, quindi il potenziale in uscita resta invariato. Ma questo, come visibile dai conti in figura \ref{Schema_amplificatore_operazionale_modello}, è un paradosso.
+No. Cambiando il potenziale di riferimento $V_R$ non cambio la differenza di potenziale tra i due ingressi, quindi il potenziale in uscita resta invariato. Ma questo, come visibile dai conti in figura \ref{Schema_amplificatore_operazionale_modello}, è un paradosso.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_modello_bis}
+  \includegraphics[scale=0.55]{IM_amplificatore_operazionale_modello_bis}
   \caption{Un modello alternativo}
   \label{Schema_amplificatore_operazionale_modello_bis}
 \end{figure}
 
-Il modello altrenativo schematizzato in figura \ref{Schema_amplificatore_operazionale_modello_bis}, invece, resta valido al variare del potenziale di riferimento, ma non è realistico in quanto prevede un ulteriore terminale che l'amplificatore operazionale non ha.
+Il modello alternativo schematizzato in figura \ref{Schema_amplificatore_operazionale_modello_bis}, invece, resta valido al variare del potenziale di riferimento, ma non è realistico in quanto prevede un ulteriore terminale che l'amplificatore operazionale non ha.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_meno_ideale}
+  \includegraphics[scale=0.6]{IM_amplificatore_operazionale_meno_ideale}
   \caption{Un amplificatore operazionale meno ideale}
   \label{Schema_amplificatore_operazionale_meno_ideale}
 \end{figure}
@@ -1204,36 +1244,37 @@ Allontanandoci dal caso ideale e avvicinandosi a quello reale:
   \item Guadagno finito: $A_0 >> 1$ (es. $10^4$ - $10^6$)
   \item Correnti all'ingresso non nulle ma trascurabili (di diversi ordini di grandezza più piccole rispetto alle altre correnti in gioco)
   \item Alimentazione con differenza di potenziale finita:
-  \[\Delta V_{MIN} \leq V_{CC} + V_{EE} \leq \Delta V_{MAX} \quad \textrm{con} \Delta V_{MIN} > 0\]
+  \[\Delta V_{MIN} \leq V_{CC} + V_{EE} \leq \Delta V_{MAX} \quad \textrm{con} \; \Delta V_{MIN} > 0\]
   \item Potenziale in uscita limitato dalle alimentazioni:
   \[-V_{EE} + \Delta V_{EE} \leq V_{OUT} \leq + V_{CC} - \Delta V_{CC}\]
-  con $\Delta V_{CC}$ e $\Delta V_{EE}$ compresi tra 0 e qualche Volt a seconda del tipo di Op. Amp.
+  con $\Delta V_{CC}$ e $\Delta V_{EE}$ compresi tra 0 e qualche Volt a seconda del tipo di Op. Amp. (Operational Amplifier)
   \item $V_{IN+} \approx V_{IN-}$, ma solo in certe condizioni
 \end{itemize}
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_grafico}
+  \includegraphics[scale=0.55]{IM_amplificatore_operazionale_grafico}
   \caption{Grafico della tensione in uscita in funzione della differenza di potenziale tra gli ingressi}
   \label{Schema_amplificatore_operazionale_grafico}
 \end{figure}
 
 Quando accade che $V_{IN+} \approx V_{IN-}$? Guardando il grafico in figura \ref{Schema_amplificatore_operazionale_grafico}, si evince che $\Delta x = \Delta y / A_0$: essendo $A_0$ molto grande ($10^4$ - $10^6$), la differenza di potenziale $\Delta x$ sarà piccola relativamente a $\Delta y$ e $V_{IN+} \approx V_{IN-}$ sarà verificata. Questo è vero fintantoché l'uscita non è in saturazione, ovvero dipende dagli ingressi. 
+
+\vspace{2mm}
+
 Quando l'uscita è in saturazione, essa è determinata dall'alimentazione e non dagli ingressi, e non varrà più la relazione sopra descritta; in questo caso è evidentemente possibile aumentare la differenza di potenziale $\Delta x$ fino all'ordine di grandezza di $\Delta y$ senza alcun effetto su quest'ultima.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_carta_e_penna}
+  \includegraphics[scale=0.45]{IM_amplificatore_operazionale_carta_e_penna}
   \caption{Modello di amplificatore operazionale ``carta e penna''}
   \label{Schema_amplificatore_operazionale_carta_e_penna}
 \end{figure}
-
 Un modello ``carta e penna'' di un amplificatore operazionale può essere come quello riportato in figura \ref{Schema_amplificatore_operazionale_carta_e_penna} e onestamente non troppo diverso dai primi schizzi visti in questa sezione.
 
 Questo modello ha le seguenti caratteristiche: 
-
 \begin{itemize}
   \item Potenziale in uscita limitato dalle alimentazioni:
   \[-V_{EE} \leq V_{OUT} \leq + V_{CC}\]
@@ -1245,11 +1286,18 @@ Questo modello ha le seguenti caratteristiche:
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_amplificatore_operazionale_reale}
-  \caption{Modello di amplificatore operazionale più realistico, che funziona sempre , ma è anche più complicato...}
+  \includegraphics[scale=0.57]{IM_amplificatore_operazionale_reale}
+  \caption{Modello di Op. Amp. più realistico, che funziona sempre, ma è anche più complicato...}
   \label{Schema_amplificatore_operazionale_reale}
 \end{figure}
 
+
+
+
+
+
+
+\clearpage
 \subsection{Circuiti di amplificazione invertenti e non invertenti}
 
 \begin{figure}[h]
@@ -1262,7 +1310,7 @@ Questo modello ha le seguenti caratteristiche:
 
 La configurazione circuitale invertente, schematizzata in figura \ref{Schema_circuito_invertente}, è una configurazione basilare. È un doppio dipolo con ingresso e uscita in tensione. 
 
-Supponendo i due ingressi equipotenziali, $V_+ = V_- = 0 V$. Si applica ora la legge di Ohm:
+Supponendo i due ingressi equipotenziali, $V_+ = V_- = 0\, V$. Si applica ora la legge di Ohm:
 
 \[I_{R1} = \frac{V_{R1}}{R_1} = \frac{V_{IN}}{R_1}\]
 
@@ -1276,16 +1324,17 @@ ma, supponendo $I_{+} \approx I_{-} \approx 0$,
 
 Applicando ancora la legge di Ohm
 
-\[V_{R2} = I_{R2} * R_2\]
+\[V_{R2} = I_{R2} \cdot R_2\]
 
 Ora, per la seconda legge di Kirchhoff (\ref{KVL})
 
-\[V_{OUT} = V_- - V_{R2} = - V_{R2} = - I_{R2} * R_2 = - I_{R1} * R_{2} = - V_{IN} * \frac{R_{2}}{R_{1}}\]
+\[V_{OUT} = V_- - V_{R2} = - V_{R2} = - I_{R2} \cdot R_2 = - I_{R1} \cdot R_{2} = - V_{IN} \cdot \frac{R_{2}}{R_{1}}\]
 
 da cui 
 
 \[\frac{V_{OUT}}{V_{IN}} = - \frac{R_2}{R_1} = - \frac{Z_2}{Z_1}\]
 
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1310,11 +1359,11 @@ e supponendo $I_{+} \approx I_{-} \approx 0$
 
 Applicando ancora la legge di Ohm
 
-\[V_{R2} = I_{R2} * R_2\]
+\[V_{R2} = I_{R2} \cdot R_2\]
 
 Ora, per la seconda legge di Kirchhoff (\ref{KVL})
 
-\[V_{OUT} = V_{R1} + V_{R2} = V_{IN} + V_{IN} * \frac{R_2}{R_1}\]
+\[V_{OUT} = V_{R1} + V_{R2} = V_{IN} + V_{IN} \cdot \frac{R_2}{R_1}\]
 
 da cui 
 
@@ -1322,6 +1371,7 @@ da cui
 
 Si noti che il rapporto $V_{OUT}/V_{IN}$ deve essere sempre maggiore di 1. Questa configurazione può solo amplificare.
 
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1332,12 +1382,19 @@ Si noti che il rapporto $V_{OUT}/V_{IN}$ deve essere sempre maggiore di 1. Quest
 
 La configurazione circuitale non invertente a buffer, schematizzata in figura \ref{Schema_circuito_non_invertente_buffer}, è una configurazione non invertente con $R_2 = 0$ e $R_1 \rightarrow \infty$.
 
+\vspace{1mm}
+
 Non serve partire dalla formula generale ricavata in precedenza, analizzando con le leggi di Kirchhoff e ricordando che gli ingressi sono equipotenziali si ha che:
 
 \[V_- = V_+ = V_{IN} = V_{OUT}\]
 
 ovvero i segnali in ingresso e in uscita sono uguali. L'utilità di questo circuito è quella di essere un lettore ``ideale'' di tensione, avendo un'alta impedenza in ingresso, e di essere un generatore ``ideale'' di tensione avendo bassa impedenza in uscita. Il circuito permette quindi di ``riproporre'' un segnale in tensione in entrata ad un'impedenza più bassa.
 
+\vspace{3mm}
+
+\textbf{Suggerimento pratico:} alcuni Op. Amp. presenti in laboratorio potrebbero essere rotti (il segnale di allarme è quando un circuito ben fatto non produce i risultati attesi). Un modo per verificare il corretto funzionamento dell'amplificatore operazionale è usarlo per costruire un circuito a buffer, che è facilmente realizzabile e dovrebbe riproporre in uscita la stessa tensione che ha in entrata. Se anche il buffer sembra avere problemi, la soluzione più saggia è sostituire l'Op. Amp.
+
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1346,24 +1403,27 @@ ovvero i segnali in ingresso e in uscita sono uguali. L'utilità di questo circu
   \label{Schema_circuito_sommatore_invertente}
 \end{figure}
 
-Il circuito raffigurato in figura \ref{Schema_circuito_sommatore_invertente} è un circuito con più ingressi. È possibile analizzarlo, per il principio di sovrapposizione, ``spegnendo'' un ingresso ed analizzando l'effetto dell'altro, spegnendo quindi il secondo e analizzando il primo e sommare quanto trovato.
+Il circuito raffigurato in figura \ref{Schema_circuito_sommatore_invertente} è un circuito con più ingressi. È possibile analizzarlo usando il principio di sovrapposizione. Si ``spegne'' un ingresso e si analizza l'effetto dell'altro, quindi si spegne il secondo e si analizza il primo. Infine si somma quanto trovato.
 
-Notiamo che, spegnendo l'ingresso 1, la tensione ai capi della resistenza $R_{11}$ è pari a $V_{R11} = V_- - 0$. Ma, essendo gli ingressi equipotenziali, $V_+ = V_- = 0 V$ e $V_{R11} = 0$. Dunque, spegnendo l'ingresso 1, non scorre corrente attraverso $R_{11}$ e il circuito si riduce ad un semplice invertente:
+\vspace{3mm}
 
-\[V_{OUT2} = - V_{IN2} \frac{R_2}{R_12}\]
+Notiamo che, spegnendo l'ingresso 1, la tensione ai capi della resistenza $R_{11}$ è pari a $V_{R11} = V_- - 0$. Ma, essendo gli ingressi equipotenziali, $V_+ = V_- = 0 \, V$ e $V_{R11} = 0$. Dunque, spegnendo l'ingresso 1, non scorre corrente attraverso $R_{11}$ e il circuito si riduce ad un semplice invertente:
+
+\[V_{OUT2} = - V_{IN2} \frac{R_2}{R_{12}}\]
 
 Analogamente, spegnendo l'ingresso 2, si ha che
 
-\[V_{OUT1} = - V_{IN1} \frac{R_2}{R_11}\]
+\[V_{OUT1} = - V_{IN1} \frac{R_2}{R_{11}}\]
 
 e infine
 
-\[V_{OUT} = V_{OUT1} + V_{OUT2} = - V_{IN1} \frac{R_2}{R_11} - V_{IN2} \frac{R_2}{R_12} = - R_2 * \left( \frac{V_{IN1}}{R_{11}} + \frac{V_{IN2}}{R_{12}} \right)\]
+\[V_{OUT} = V_{OUT1} + V_{OUT2} = - V_{IN1} \frac{R_2}{R_{11}} - V_{IN2} \frac{R_2}{R_{12}} = - R_2 \cdot \left( \frac{V_{IN1}}{R_{11}} + \frac{V_{IN2}}{R_{12}} \right)\]
 
 facilmente generalizzabile a 
 
-\[V_{OUT} = - R_2 * \left( \frac{V_{IN1}}{R_{11}} + \frac{V_{IN2}}{R_{12}} + \frac{V_{IN3}}{R_{13}} + ... \right)\]
+\[V_{OUT} = - R_2 \cdot \left( \frac{V_{IN1}}{R_{11}} + \frac{V_{IN2}}{R_{12}} + \frac{V_{IN3}}{R_{13}} + ... \right)\]
 
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1374,21 +1434,21 @@ facilmente generalizzabile a
 
 Analogamente si risolve il circuito sottrattore (figura \ref{Schema_circuito_sottrattore}). Spegnendo $V_{IN2}$ ci si ricollega ad un normale invertente
 
-\[V_{OUT1} = - V_{IN1} * \frac{R_2}{R_1}\]
+\[V_{OUT1} = - V_{IN1} \cdot \frac{R_2}{R_1}\]
 
 Spegnendo però $V_{IN1}$, le cose sono meno semplici. La configurazione è non invertente, ma la tensione non è direttamente applicata all'ingresso, ma attraverso un partitore di tensione. Il potenziale $V_+$ sarà:
 
-\[V_+ = V_{IN2} * \frac{R_4}{R_3 + R_4}\]
+\[V_+ = V_{IN2} \cdot \frac{R_4}{R_3 + R_4}\]
 
-adesso la configurazione si è ridotta ad un normale non invertente, per cui
+adesso la configurazione si è ridotta ad un semplice non invertente, per cui
 
-\[V_{OUT2} = V_+ + V_+ * \frac{R_2}{R_1} = V_+ * \frac{R_2 + R_1}{R_1} = V_{IN2} * \frac{R_4}{R_3 + R_4} * \frac{R_2 + R_1}{R_1}\]
+\[V_{OUT2} = V_+ + V_+ \cdot \frac{R_2}{R_1} = V_+ \cdot \frac{R_2 + R_1}{R_1} = V_{IN2} \cdot \frac{R_4}{R_3 + R_4} \cdot \frac{R_2 + R_1}{R_1}\]
 
-\[V_{OUT} = - V_{IN1} * \frac{R_2}{R_1} + V_{IN2} * \frac{R_4}{R_3 + R_4} * \frac{R_2 + R_1}{R_1}\]
+\[V_{OUT} = - V_{IN1} \cdot \frac{R_2}{R_1} + V_{IN2} \cdot \frac{R_4}{R_3 + R_4} \cdot \frac{R_2 + R_1}{R_1}\]
 
 caso particolare, se $R_4 / R_3 = R_2 / R_1$,
 
-\[V_{OUT} = (V_{IN2} - V_{IN1}) * \frac{R_2}{R_1}\]
+\[V_{OUT} = (V_{IN2} - V_{IN1}) \cdot \frac{R_2}{R_1}\]
 
 La tensione in uscita è proporzionale alla differenza tra i due ingressi.
 
@@ -1400,14 +1460,18 @@ La tensione in uscita è proporzionale alla differenza tra i due ingressi.
 
 
 
-
+\clearpage
 \subsection{Filtri attivi in frequenza}
 
-Mentre i filtri passivi attenuano selettivamente il segnale in opportune bande, i filtri attivi possono eventualmente amplificarlo. prelevando l'energia richiesta dagli ingressi di alimentazione dell'amplificatore operazionale. L'ampiezza del segnale in uscita è quindi limitata dai livelli di alimentazione.
+Mentre i filtri passivi attenuano selettivamente il segnale in opportune bande, i filtri attivi possono eventualmente amplificarlo, prelevando l'energia richiesta dagli ingressi di alimentazione dell'amplificatore operazionale. L'ampiezza del segnale in uscita è quindi limitata dai livelli di alimentazione.
+
+\vspace{3mm}
 
 Partiamo dal circuito RC serie schematizzato in figura \ref{Schema_circuito_RC_passivo} visto in precedenza. Si tratta di un filtro passa basso, perché ``lascia passare'' il segnale al di sotto di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
 
-Ricordando che
+\vspace{1mm}
+
+Ricordando che per questo circuito
 
 \[H(s) = \frac{1/sC}{1/sC + R}\]
 
@@ -1426,6 +1490,8 @@ analogamente
 \[\max(|Z_{OUT}|) = (R + Z_S)\]
 
 dove $Z_S$ è l'impedenza di sorgente.
+
+\vspace{3mm}
 
 Vediamo adesso l'equivalente attivo di questo circuito, il filtro passa basso RC attivo (figura \ref{Schema_filtro_passa_basso_RC_attivo})
 
@@ -1449,6 +1515,8 @@ In questo caso
 
 Notiamo che, mentre la funzione di trasferimento è rimasta invariata, l'impedenza in uscita è adesso nulla, in quanto l'uscita è attaccata direttamente all'uscita dell'amplificatore operazionale a impedenza 0.
 
+\vspace{3mm}
+
 Esiste un'altra configurazione passa basso RC attiva (figura \ref{Schema_filtro_passa_basso_RC_attivo_bis}), che sfrutta più ``seriamente'' l'amplificatore operazionale (nel circuito precedente era utilizzato come buffer). Collegando in retroazione gli elementi in parallelo $R_2$ e $C$, possiamo calcolare la funzione di trasferimento ricordando quanto fatto per il circuito invertente (si prende l'opposto dell'impedenza in retroazione e si divide per l'impedenza in ingresso):
 
 \begin{figure}[h]
@@ -1467,6 +1535,7 @@ Esiste un'altra configurazione passa basso RC attiva (figura \ref{Schema_filtro_
 
 in figura \ref{Schema_filtro_passa_basso_RC_attivo_grafici}, il grafico relativo a questo circuito.
 
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1483,12 +1552,13 @@ Nel circuito il cui comportamento è schematizzato dal grafico in figura \ref{Sc
 
 \[T_{LP} = \frac{1}{\omega _{LP}} = C_2 R_2 = 100 \mu \textrm s\]
 
+\clearpage
 Rimuovendo la resistenza $R_2$, il circuito diventa un filtro integratore (figura \ref{Schema_filtro_integratore})
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_integratore}
+  \includegraphics[scale=0.6]{IM_filtro_integratore}
   \caption{Filtro integratore}
   \label{Schema_filtro_integratore}
 \end{figure}
@@ -1508,7 +1578,7 @@ moltiplicare per $s^{-1}$ equivale ad integrare nel dominio del tempo
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_integratore_grafici}
+  \includegraphics[scale=0.6]{IM_filtro_integratore_grafici}
   \caption{Grafico del filtro integratore}
   \label{Schema_filtro_integratore_grafici}
 \end{figure}
@@ -1517,6 +1587,7 @@ moltiplicare per $s^{-1}$ equivale ad integrare nel dominio del tempo
 
 Il circuito è detto integratore perché il segnale in uscita è pari all'integrale del segnale in ingresso.
 
+\clearpage
 Passiamo al circuito CR serie schematizzato in figura \ref{Schema_circuito_CR_passivo} visto in precedenza. Si tratta di un filtro passa alto, perché ``lascia passare'' il segnale al di sopra di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
 
 Ricordando che
