@@ -1590,6 +1590,8 @@ Il circuito è detto integratore perché il segnale in uscita è pari all'integr
 \clearpage
 Passiamo al circuito CR serie schematizzato in figura \ref{Schema_circuito_CR_passivo} visto in precedenza. Si tratta di un filtro passa alto, perché ``lascia passare'' il segnale al di sopra di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
 
+\vspace{3mm}
+
 Ricordando che
 
 \[H(s) = \frac{R}{1/sC + R}\]
@@ -1625,13 +1627,13 @@ In questo caso
 \[|Z_{OUT}| \approx R // (1/sC)\]
 
 \[\max(|Z_{OUT}|) = R\]
-
+\clearpage
 Esiste un'altra configurazione passa alto CR attiva (figura \ref{Schema_filtro_passa_alto_CR_attivo_bis})
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_passa_alto_CR_attivo_bis}
+  \includegraphics[scale=0.5]{IM_filtro_passa_alto_CR_attivo_bis}
   \caption{Un'altro filtro passa alto CR attivo}
   \label{Schema_filtro_passa_alto_CR_attivo_bis}
 \end{figure}
@@ -1649,7 +1651,7 @@ in figura \ref{Schema_filtro_passa_alto_CR_attivo_grafici}, il grafico relativo 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_passa_alto_CR_attivo_grafici}
+  \includegraphics[scale=0.6]{IM_filtro_passa_alto_CR_attivo_grafici}
   \caption{Il grafico relativo al secondo filtro passa alto CR attivo}
   \label{Schema_filtro_passa_alto_CR_attivo_grafici}
 \end{figure}
@@ -1657,17 +1659,16 @@ in figura \ref{Schema_filtro_passa_alto_CR_attivo_grafici}, il grafico relativo 
 \[H(j \omega) = - \frac{j \omega R_2 C}{1 + j \omega R_1 C} \quad |H(j \omega)| = \frac{\omega C R_2}{\sqrt{1 + \omega ^2 R^2_1 C^2}}\]
 
 Nel circuito il cui comportamento è schematizzato dal grafico in figura \ref{Schema_filtro_passa_alto_CR_attivo_grafici}, sono state fatte le seguenti scelte progettuali
-
-\[\frac{R_2}{R_1} = 3\]
-
-\[T_{HP} = \frac{1}{\omega _{HP}} = C_1 R_1 = 3 m \textrm s\]
-
+\begin{align*}
+\frac{R_2}{R_1} = 3 && T_{HP} = \frac{1}{\omega _{HP}} = C_1 R_1 = 3 m \textrm s
+\end{align*}  
+\clearpage
 Rimuovendo la resistenza $R_1$, il circuito diventa un filtro derivatore (figura \ref{Schema_filtro_derivatore})
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_derivatore}
+  \includegraphics[scale=0.55]{IM_filtro_derivatore}
   \caption{Filtro derivatore}
   \label{Schema_filtro_derivatore}
 \end{figure}
@@ -1681,7 +1682,7 @@ moltiplicare per $s$ equivale a derivare nel dominio del tempo
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_derivatore_grafici}
+  \includegraphics[scale=0.6]{IM_filtro_derivatore_grafici}
   \caption{Grafico del filtro derivatore}
   \label{Schema_filtro_derivatore_grafici}
 \end{figure}
@@ -1690,6 +1691,8 @@ moltiplicare per $s$ equivale a derivare nel dominio del tempo
 
 il segnale in uscita è la derivata del segnale in ingresso.
 
+
+\clearpage
 Introduciamo ora il filtro passa banda attivo (figura \ref{Schema_filtro_passa_banda_attivo}). Questa configurazione è particolarmente semplice: i due blocchi passa alto e passa basso visti in precedenza sono posti in cascata.
 
 \begin{figure}[h]
@@ -1703,14 +1706,12 @@ Introduciamo ora il filtro passa banda attivo (figura \ref{Schema_filtro_passa_b
 \[|H(j \omega)| = \frac{R_3 / R_4 \cdot \omega C_1 R_2}{\sqrt{1 + \omega ^2 R^2_1 C^2_1} \cdot \sqrt{1 + \omega ^2 R^2_2 C^2_2}}\]
 
 Scelte progettuali:
-
-\[R_3 / R_4 = 3\]
-
-\[R_1 = R_2\]
-
-\[T_{LP} = \frac{1}{\omega _{LP}} = C_2 R_2 = 100 \mu \textrm s\]
-
-\[T_{HP} = \frac{1}{\omega _{HP}} = C_1 R_1 = 3 m \textrm s\]
+\begin{align*}
+  R_3 / R_4 = 3 && R_1 = R_2 
+\end{align*}
+\begin{align*}
+  T_{LP} = \frac{1}{\omega _{LP}} = C_2 R_2 = 100 \mu \textrm s && T_{HP} = \frac{1}{\omega _{HP}} = C_1 R_1 = 3 m \textrm s
+\end{align*}
 
 In pratica, è opportuno che $\omega _{LP} > \omega _{HP}$ (e quindi $T_{HP} > T_{LP}$).
 
@@ -1721,7 +1722,7 @@ In pratica, è opportuno che $\omega _{LP} > \omega _{HP}$ (e quindi $T_{HP} > T
   \caption{Grafici relativi al filtro passa banda attivo}
   \label{Schema_filtro_passa_banda_attivo_grafici}
 \end{figure}
-
+\clearpage
 Esiste anche un'altra configurazione passa banda attiva (figura \ref{Schema_filtro_passa_banda_attivo_bis})
 
 \begin{figure}[h]
@@ -1755,7 +1756,7 @@ In pratica, è opportuno che $R_1 C_1 > R_2 C_2$.
 
 \subsection{Circuiti risonanti attivi}
 
-Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}. 
+Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}. Il curioso simbolo con cui viene rappresentata $R4$ è un potenziometro. In laboratorio questi sono dispositivi a tre terminali, che permettono ruotando una rotella di modificare la resistenza tra il terminale centrale e i laterali, mantenendo però la loro somma costante. Si tratta di un resistore personalizzabile, per farla semplice.
 
 \begin{figure}[h]
   \centering
@@ -1765,7 +1766,7 @@ Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{S
   \label{Schema_circuito_risonante_serie_attivo}
 \end{figure}
 
-Si nota immediatamente che non ci sono segnali in ingresso al circuito. Questo produce autonomamente il segnale $V_{OUT}$ in uscita. Il circuito può idealmente essere suddiviso in due parti:
+Continuando a parlare del circuito, si nota immediatamente che non ci sono segnali in ingresso al circuito. Ciò vuol dire che il circuito produce autonomamente il segnale $V_{OUT}$ in uscita. Il circuito può idealmente essere suddiviso in due parti:
 
 \begin{figure}[h]
   \centering
@@ -1797,6 +1798,8 @@ per $\omega = \omega _R = 1/\sqrt{LC}$
 \[V_+ = V_{OUT} \cdot \frac{R_2}{R_2 + R_1}\]
 
 Il segnale in uscita è quindi idealmente sinusoidale, di frequenza determinata dai valori degli elementi risonanti L e C. L'ampiezza può essere eventualmente limitata alle tensioni di alimentazione.
+
+\vspace{1mm}
 
 Intorno alla frequenza di risonanza ($\omega \approx \omega _R$) possiamo quindi fare un'analisi semplificata del circuito:
 
@@ -1856,6 +1859,8 @@ Passiamo ora all'equivalente parallelo di questo circuito, mostrato in figura \r
 
 Come per il circuito serie non ci sono segnali in ingresso al circuito; questo produce autonomamente il segnale $V_{OUT}$ in uscita che è, idealmente, sinusoidale. La frequenza del segnale dipende dai valori degli elementi risonanti $L$ e $C$.
 
+\vspace{1mm}
+
 Anche questo circuito può essere diviso in due parti:
 
 \begin{figure}[h]
@@ -1865,7 +1870,7 @@ Anche questo circuito può essere diviso in due parti:
   \caption{Prima sezione del circuito}
   \label{Schema_circuito_risonante_parallelo_attivo_1}
 \end{figure}
-
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -1887,20 +1892,22 @@ Calcoliamo l'impedenza equivalente al circuito in figura \ref{Schema_circuito_ri
  \[R_{EQ} = \frac{V_{EQ}}{I_{EQ}} = - \frac{R_4 \cdot R_2}{R_3}\]
  
 L'impedenza equivalente è negativa! La corrente scorre in senso opposto alla tensione.
- 
+
+\vspace{1mm}
+
 Il circuito si riduce dunque a quanto mostrato in figura \ref{Schema_circuito_risonante_parallelo_attivo_3}.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_risonante_parallelo_attivo_3}
+  \includegraphics[scale=0.6]{IM_circuito_risonante_parallelo_attivo_3}
   \caption{Filtro RLC passivo parallelo}
   \label{Schema_circuito_risonante_parallelo_attivo_3}
 \end{figure}
 
 \[Z_{EQ} = (sL + R_1) // (1/sC) // R_{EQ}\]
 
-\[Z_{EQ} = \frac{R_{EQ} \cdot (sL + R_1}{s^2 LCR_{EQ} + s \cdot (CR_1 R_{EQ} + L) + R_1 +R_{EQ}}\]
+\[Z_{EQ} = \frac{R_{EQ} \cdot (sL + R_1)}{s^2 LCR_{EQ} + s \cdot (CR_1 R_{EQ} + L) + R_1 +R_{EQ}}\]
 
 Se si sceglie $R_{EQ} = - \frac{L}{CR_1}$
 
@@ -1935,16 +1942,16 @@ la frequenza di risonanza (sempre con $R_{EQ} = - \frac{L}{CR_1}$), ricordando c
 \end{figure}
 
 %da completare ma in realtà sticazzi
-
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_giratore}
+  \includegraphics[scale=0.5]{IM_circuito_giratore}
   \caption{Circuito giratore}
   \label{Schema_circuito_giratore}
 \end{figure}
 
-Il circuito giratore, schematizzato in figura \ref{Schema_circuito_giratore}, permette di “emulare” un induttore a partire da un condensatore. Spesso usato nei circuiti integrati, dove gli induttori fisici non sono disponibili.
+Il circuito giratore, schematizzato in figura \ref{Schema_circuito_giratore}, permette di “emulare” un induttore a partire da un condensatore. Viene spesso usato nei circuiti integrati, dove gli induttori fisici non sono disponibili.
 
 \[I_C = \frac{V_{EQ}}{R_2 + 1/sC} = \frac{V_{EQ} \cdot sC}{1 + sCR_2}\]
 
@@ -1959,7 +1966,7 @@ Il circuito giratore, schematizzato in figura \ref{Schema_circuito_giratore}, pe
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_giratore_grafico}
+  \includegraphics[scale=0.55]{IM_circuito_giratore_grafico}
   \caption{Grafico del circuito giratore}
   \label{Schema_circuito_giratore_grafico}
 \end{figure}
@@ -1991,16 +1998,22 @@ Il circuito giratore, schematizzato in figura \ref{Schema_circuito_giratore}, pe
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_diodo_p_n}
+  \includegraphics[scale=0.55]{IM_diodo_p_n}
   \caption{Diodo a giunzione p-n in silicio, con simbolo circuitale e grafico della tensione}
   \label{Schema_diodo_p_n}
 \end{figure}
 
-Un diodo è una giunzione formata da due pezzi di uno stesso materiale (in questo caso silicio) contatto tra di loro, ``drogati'' in maniera diversa (di solito Boro e Fosforo). Questi drogaggi portano uno ad una eccedenza di elettroni e l'altro ad una carenza di elettroni.
+Un diodo è una giunzione formata da due pezzi di uno stesso materiale (in questo caso silicio) contatto tra di loro, ``drogati'' in maniera diversa (di solito Boro e Fosforo). Questi drogaggi portano il primo ad una eccedenza di elettroni e il secondo ad una carenza di elettroni.
+
+\vspace{3mm}
 
 Il diodo è un dipolo non lineare e ha quindi un anodo e un catodo. Ai capi del diodo possiamo misurare una differenza di potenziale, come indicato dalla freccia in figura \ref{Schema_diodo_p_n}, e usiamo la convenzione degli utilizzatori. 
 
+\vspace{3mm}
+
 La corrente che passa attraverso il diodo varia in funzione della tensione come mostrato in figura. Per tensioni positive, questa è nulla o quasi fino al raggiungimento di una tensione detta \textit{di soglia} ($V_{TH}$), superata la quale la crescita diviene apprezzabile.
+
+\vspace{1mm}
 
 È possibile modellizzare questo comportamento con la formula:
 
@@ -2009,13 +2022,17 @@ I = I_S \cdot \left( e^{\frac{V}{\alpha V_T}} - 1 \right)
 \label{Eq_diodo}
 \end{equation}
 
-$I_S$ è detta \textit{corrente di saturazione inversa}, e nella formula è moltiplicata dal termine tra parentesi. Questo termine è pari a $-1$ sommato all'esponenziale di una frazione che ha: 
+$I_S$ è detta \textit{corrente di saturazione inversa}, e nella formula è moltiplicata dal termine tra parentesi. Questo termine è pari a $-1$ sommato all'esponenziale di una frazione che ha
 per numeratore la tensione;
-per denominatore il prodotto tra una costante numerica $\alpha$ (di valore compreso tra 1 e 2) ed una quantità detta \textit{tensione termica} (che vale $V_T = \frac{kT}{q}$ dove $k$ è la costante di Boltzmann, $T$ la temperatura, $q$ la carica dell'elettrone; a temperatura ambiene vale circa $25$ mV).
+per denominatore il prodotto tra una costante numerica $\alpha$ (di valore compreso tra 1 e 2) ed una quantità detta \textit{tensione termica} (che vale $V_T = \frac{kT}{q}$ dove $k$ è la costante di Boltzmann\footnote{$k_B=1,380649 \cdot 10^{-23} \, JK^{-1}$}, $T$ la temperatura, $q$ la carica dell'elettrone; a temperatura ambiene vale circa $25$ mV).
+
+\vspace{1mm}
 
 Il fattore $-1$ in sottrazione serve per fare sì che la corrente sia nulla a tensione nulla.
 
-Per tensioni negative, la corrente è (quasi) uniformemente pari alla corrente di saturazione (che è inaspettatamente l'inverso della corrente di saturazoine inversa).
+Per tensioni negative, la corrente è (quasi) uniformemente pari alla corrente di saturazione (che è inaspettatamente l'inverso della corrente di saturazione inversa).
+
+\vspace{3mm}
 
 Esiste un fenomeno, detto \textit{rottura della giunzione}, che non è modellizzato dall'equazione e che avviene quando la tensione negativa cresce troppo. Quando questo accade, la corrente cessa di seguire l'asintoto della corrente di saturazione e scende pericolosamente. 
 
@@ -2039,12 +2056,14 @@ Dove $V_L$ è la tensione generata dal generatore e $V_D$ è la (ignota) tension
 
 In particolare vediamo che solamente da $R$ dipende il coefficiente angolare della retta.
 
+\vspace{3mm}
+
 Cimentiamoci ora nel calcolo della resistenza equivalente (figura \ref{Schema_diodo_resistenza_equivalente}).
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_diodo_resistenza_equivalente}
+  \includegraphics[scale=0.6]{IM_diodo_resistenza_equivalente}
   \caption{Calcolo della resistenza equivalente}
   \label{Schema_diodo_resistenza_equivalente}
 \end{figure}
@@ -2057,7 +2076,11 @@ Non è un'impresa semplice: una resistenza ha un comportamento lineare, mentre i
 
 Dove $I$ è la corrente nel punto di lavoro del circuito attorno al quale ci muoviamo.
 
+\vspace{1mm}
+
 Si nota che, al decrescere di $V$, $R_{EQ}$ cresce. Per valori di $V$ più piccoli di $0$ la resistenza è tanto grande che si può considerare, per fini pratici, infinita ($R_{EQ} \rightarrow \infty$).
+
+\vspace{1mm}
 
 In figura \ref{Schema_diodo_modelli}, alcuni semplici modelli di diodo, pensati per poter modellizzare il loro comportamento a ``grande segnale''.
 
@@ -2091,7 +2114,11 @@ Un diodo Zener, rispetto ad un classico diodo, dissipa più efficientemente il c
 
 In figura \ref{Schema_diodo_Schottky} è raffigurato un diodo Schottky.
 
+\vspace{1mm}
+
 A differenza di un diodo classico con giunzione in silicio (silicio-silicio), lo Schottky ha una giunzione in metallo-silicio. Rispetto ad un diodo classico, ha minore tensione di soglia, usualmente inferiore a $0.4 V$, maggior velocita’ di commutazione tra gli stati (ON – OFF) e tensione di rottura usualmente minore rispetto ad un diodo p-n.
+
+\vspace{3mm}
 
 Ora, dato un diodo ignoto, come determinarne, sperimentalmente, la curva caratteristica?
 
@@ -2103,15 +2130,19 @@ Ora, dato un diodo ignoto, come determinarne, sperimentalmente, la curva caratte
   \label{Schema_diodo_misura}
 \end{figure}
 
-Ci sono due metodi: il primo consiste nell'utilizzare un generatore di tensione e collegarlo ai capi del diodo (vedi figura \ref{Schema_diodo_misura}). La tensione generata sarà quindi uguale alla tensione ai capi del diodo, e sarà sufficiente misurare la corrente per poter conoscere la funzione $f$
+Ci sono due metodi. Il primo consiste nell'utilizzare un generatore di tensione e collegarlo ai capi del diodo (vedi figura \ref{Schema_diodo_misura}). La tensione generata sarà quindi uguale alla tensione ai capi del diodo, e sarà sufficiente misurare la corrente per poter conoscere la funzione $f$
 
 \[I = f(V)\]
 
-In alternativa è possibile usare un generatore di corrente e misurare la tensione ai capi del diodo (sempre figura \ref{Schema_diodo_misura}), misurando così la fuinzione $f^{-1}$
+In alternativa è possibile usare un generatore di corrente e misurare la tensione ai capi del diodo (sempre figura \ref{Schema_diodo_misura}), misurando così la funzione $f^{-1}$
 
 \[V = f^{-1}(I)\]
 
-i due metodi sono, teoricamente, equivalenti. In laboratorio, essendo presenti solamente generatori di tensione \footnote{si può “simulare” un generatore di corrente (solo in continua e con poca precisione) variando opportunamente il limite di corrente erogabile da un alimentatore di tensione, ma non ne vale la pena}, sarà necessario ricorrere al primo. La corrente deve quindi essere misurata con un amperometro in serie, tuttavia sappiamo che questi stumenti, per forza di cose, provocano una caduta di tensione potenzialmente significativa per effetto dell’impedenza interna $R_{EQ1}$ che non è nota a priori (talvolta dipende dall’entità della corrente da misurare). 
+I due metodi sono, teoricamente, equivalenti. 
+
+\vspace{1mm}
+
+In laboratorio, essendo presenti solamente generatori di tensione\footnote{si può “simulare” un generatore di corrente (solo in continua e con poca precisione) variando opportunamente il limite di corrente erogabile da un alimentatore di tensione, ma non ne vale la pena}, sarà necessario ricorrere al primo. La corrente deve quindi essere misurata con un amperometro in serie, tuttavia sappiamo che questi stumenti, per forza di cose, provocano una caduta di tensione potenzialmente significativa per effetto dell’impedenza interna $R_{EQ1}$ che non è nota a priori (talvolta dipende dall’entità della corrente da misurare). 
 
 \begin{figure}[h]
   \centering
@@ -2121,18 +2152,13 @@ i due metodi sono, teoricamente, equivalenti. In laboratorio, essendo presenti s
   \label{Schema_diodo_misura_bis}
 \end{figure}
 
-è quindi opportuno misurare direttamente la differenza di potenziale ai capi del diodo con un voltmetro (figura \ref{Schema_diodo_misura_bis}) usando così due strumenti.
+È quindi opportuno misurare direttamente la differenza di potenziale ai capi del diodo con un voltmetro (figura \ref{Schema_diodo_misura_bis}) usando così due strumenti.
 
-In alternativa, più semplicemente, si può utilizzare un amplificatore operazionale in configurazione di amplificatore invertente, per realizzare un generatore di corrente equivalente controllato in 
+\vspace{3mm}
+
+In alternativa, più semplicemente, si può utilizzare un amplificatore operazionale in configurazione di amplificatore invertente (figura \ref{Schema_diodo_misura_ter}), per realizzare un generatore di corrente equivalente controllato in 
 tensione. Basta quindi poi usare un voltmetro per misurare, indirettamente, la differenza di potenziale ai capi del diodo.
 
-\begin{figure}[h]
-  \centering
-  %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_diodo_misura_ter}
-  \caption{Circuito per determinare la curva caratteristica del diodo con amplificatore operazionale}
-  \label{Schema_diodo_misura_ter}
-\end{figure}
 
 \[I_{R1} = \frac{V_G}{R_1}\]
 
@@ -2145,6 +2171,15 @@ tensione. Basta quindi poi usare un voltmetro per misurare, indirettamente, la d
 \[V_D = f^{-1} (I_D)\]
 
 ricordando sempre che $V_O$ è limitato dalle alimentazioni.
+
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.55]{IM_diodo_misura_ter}
+  \caption{Circuito per determinare la curva caratteristica del diodo con amplificatore operazionale}
+  \label{Schema_diodo_misura_ter}
+\end{figure}
+
 
 \clearpage
 
@@ -2167,7 +2202,7 @@ Vediamo adesso qualche interessante circuito con diodi
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_rettificatore_half_wave}
+  \includegraphics[scale=0.6]{IM_rettificatore_half_wave}
   \caption{Rettificatore ``half wave'' a 1 diodo}
   \label{Schema_rettificatore_half_wave}
 \end{figure}
@@ -2175,7 +2210,7 @@ Vediamo adesso qualche interessante circuito con diodi
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_rettificatore_half_wave_2}
+  \includegraphics[scale=0.6]{IM_rettificatore_half_wave_2}
   \caption{Rettificatore ``half wave'' a 2 diodi}
   \label{Schema_rettificatore_half_wave_2}
 \end{figure}
@@ -2183,7 +2218,7 @@ Vediamo adesso qualche interessante circuito con diodi
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_rettificatore_full_wave}
+  \includegraphics[scale=0.6]{IM_rettificatore_full_wave}
   \caption{Rettificatore ``full wave'' a 4 diodi}
   \label{Schema_rettificatore_full_wave}
 \end{figure}
@@ -2191,14 +2226,14 @@ Vediamo adesso qualche interessante circuito con diodi
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_rettificatore_half_wave_c}
+  \includegraphics[scale=0.6]{IM_rettificatore_half_wave_c}
   \caption{Rettificatore ``half wave'' a 1 diodo e 1 condensatore}
   \label{Schema_rettificatore_half_wave_c}
 \end{figure}
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_rettificatore_full_wave_c}
+  \includegraphics[scale=0.6]{IM_rettificatore_full_wave_c}
   \caption{Rettificatore ``full wave'' con condensatore}
   \label{Schema_rettificatore_full_wave_c}
 \end{figure}
@@ -2215,11 +2250,11 @@ Vediamo adesso qualche interessante circuito con diodi
 
 Il circuito in figura \ref{Schema_rettificatore_ideale} è un rettificatore ideale. Procediamo con l'analisi:
 
-\[I_{R1} = -\frac{V_{OUT}}{R_1} \quad I_D = I_{R1}\]
-
-supponendo $V_{IN} < 0$:
-
-ipotizziamo $V_O$ non in saturazione, quindi
+\[I_{R1} = -\frac{V_{OUT}}{R_1} \quad\quad I_D = I_{R1}\]
+\begin{enumerate}
+\item Supponendo $V_{IN} < 0$:
+\begin{itemize}
+  \item [$\square$] Ipotizziamo $V_O$ non in saturazione, quindi
 
 \[V_{IN} \approx V_{OUT}\]
 
@@ -2235,17 +2270,22 @@ il diodo è acceso (ON)
 
 $V_O$ non è in saturazione.
 
-ipotizziamo ora $V_O$ in saturazione, quindi
+\item [$\square$] Ipotizziamo ora $V_O$ in saturazione, quindi
 
-\[\textrm{Se } V_O = +V_{CC} \textrm{ il diodo è spento } I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = -V_{EE}\]
+\vspace{2mm}
 
-\[\textrm{Se } V_O = -V_{EE} \textrm{ il diodo è acceso } V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
+Se $V_O = +V_{CC}$ il diodo è spento
+\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = -V_{EE}\]
+
+Se  $V_O = -V_{EE}$ il diodo è acceso
+\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
 
 Le due affermazioni sono paradossali: se $V_O = +V_{CC}$ allora $V_O = -V_{EE}$, ma se $V_O = -V_{EE}$ allora $V_O = +V_{CC}$. Ne segue che l'amplificatore non può essere in saturazione se $V_{IN} < 0$.
+\end{itemize}
 
-Analizziamo ora per $V_{IN} > 0$
-
-ipotizziamo $V_O$ non in saturazione, quindi
+\item Analizziamo ora per $V_{IN} > 0$.
+\begin{itemize}
+\item [$\square$] Ipotizziamo $V_O$ non in saturazione, quindi
 
 \[V_{IN} \approx V_{OUT}\]
 
@@ -2253,13 +2293,20 @@ ipotizziamo $V_O$ non in saturazione, quindi
 
 ma ciò è impossibile, perché la differenza di potenziale ai capi del diodo è positiva. Ne segue che $V_O$ non può essere non in saturazione.
 
-ipotizziamo ora $V_O$ in saturazione, quindi
+\item [$\square$] Ipotizziamo ora $V_O$ in saturazione, quindi
 
-\[\textrm{Se } V_O = +V_{CC} \textrm{ il diodo è spento } I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = +V_{CC}\]
+\vspace{2mm}
 
-\[\textrm{Se } V_O = -V_{EE} \textrm{ il diodo è acceso } V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
+Se $V_O = +V_{CC}$il diodo è spento 
+\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = +V_{CC}\]
+
+Se $V_O = -V_{EE}$ il diodo è acceso 
+\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
 
 La seconda affermazione è autocontraddittoria, quindi è impossibile. Ne segue che se $V_{IN} > 0$ $V_O$ è in saturazione e $V_O = +V_{CC}$.
+
+\end{itemize}
+\end{enumerate}
 
 \vspace{5mm}
 
@@ -2291,7 +2338,15 @@ Riassumendo, se $V_{IN} > 0$, $V_O$ è in saturazione e $V_{OUT} = 0$; se $V_{IN
 
 Analizziamo ora alcuni interessanti circuiti che è possibile realizzare sfruttando l'azione combinata degli amplificatori operazionali e dei diodi: i circuiti astabili (e altri circuiti affini). Un primo esempio di circuito astabile è raffigurato in figura \ref{Schema_circuito_astabile}. 
 
-Si noti che, da questo momento in poi, considerato che il funzionamento di molti circuiti dipende dai valori degli elementi costruttivi, la teoria generale non verrà più presentata al prescindere di un circuito esemplare che sicuramente funziona. In laboratorio è saggio creare circuiti con pezzi il più possibile vicini a quelli indicati negli esempi, per evitare di trovarsi impossibilitati ad osservare il comportamento tipico di un circuito, altrimenti ben assemblato, a causa di un pezzo anomalo. In breve, copiate le figure.
+\vspace{3mm}
+
+Si noti che, da questo momento in poi, considerato che il funzionamento di molti circuiti dipende dai valori degli elementi costruttivi, la teoria generale non verrà più presentata al prescindere di un circuito esemplare che sicuramente funziona. 
+
+\vspace{1mm}
+
+In laboratorio è saggio creare circuiti con pezzi il più possibile vicini a quelli indicati negli esempi, per evitare di trovarsi impossibilitati ad osservare il comportamento tipico di un circuito, altrimenti ben assemblato, a causa di un pezzo anomalo. In breve, copiate le figure.
+
+\vspace{3mm}
 
 Procediamo con l'analisi, supponendo inzialmente $R_4 = R_5$
 
@@ -2306,37 +2361,38 @@ ipotizziamo che inizialmente l'uscita $V_{OUT2}$ sia in saturazione e che sia po
 \[V_{OUT2} = + V_{CC} = + 10 \textrm V\]
 
 ne segue che $V_{OUT1}$ decresce linearmente nel tempo.
-
 \[V_X = V_{OUT1} \frac{R_2}{R_1 + R_2} + V_{OUT2} \frac{R_1}{R_1 + R_2} = 0.9 \cdot V_{OUT1} + 0.1 \cdot V_{OUT2} = 0.9 \cdot V_{OUT1} + 1 \textrm V\]
 
 da cui segue che anche $V_X$ decresce linearmente nel tempo. Si giungerà quindi, ad un certo punto, ad un valore di $V_X$ negativo. Nel momento in cui questo accade $V_{OUT2}$ diventa immediatamente\footnote{chiaramente la transizione da uno stato di saturazione positivo ad uno negativo non può essere istantanea. Per immediata intendiamo di natura temporale molto più piccola dei periodi di oscillazione introdotti poco più avanti, tale quindi da poter essere considerata istantanea} negativo
 
 \[V_{OUT2} = - V_{EE} = - 10 \textrm V\]
 
-Le correnti $I_{R3}$ e $I_C$ cambiano verso. $V_{OUT1}$ e $V_X$ crescono ora linearmente nel tempo. Quando $V_X$ diventa positiva, 
+Le correnti $I_{R3}$ e $I_C$ cambiano verso. $V_{OUT1}$ e $V_X$ crescono ora linearmente nel tempo. 
 
+Quando $V_X$ diventa positiva, 
 \[V_{OUT2} = + V_{CC} = + 10 \textrm V\]
 
-ritornando al punto di partenza. Il ciclo continua indefinitamente. In particolare $V_{OUT2}$ commuta periodicamente tra i valori $+V_{CC}$ e $-V_{EE}$, ed è quindi un'\textit{onda quadra}. Il segnale $V_{OUT1}$, invece, varia linearmente, crescendo quando $V_{OUT2}$ è negativo e decerescendo quando $V_{OUT2}$ è positivo (\textit{onda triangolare}). I limiti del segnale $V_{OUT1}$ si calcolano semplicemente imponendo $V_X = 0$
-
-\[0 = V_X = V_{OUT1} \frac{R_2}{R_1 + R_2} + V_{OUT2} \frac{R_1}{R_1 + R_2} = 0.9 \cdot V_{OUT1} + 0.1 \cdot V_{OUT2} = 0.9 \cdot V_{OUT1} \pm 1 \textrm V\]
-
+ritornando al punto di partenza. Il ciclo continua indefinitamente. In particolare $V_{OUT2}$ commuta periodicamente tra i valori $+V_{CC}$ e $-V_{EE}$, ed è quindi un'\textit{onda quadra}. Il segnale $V_{OUT1}$, invece, varia linearmente, crescendo quando $V_{OUT2}$ è negativo e decrescendo quando $V_{OUT2}$ è positivo (\textit{onda triangolare}). I limiti del segnale $V_{OUT1}$ si calcolano semplicemente imponendo $V_X = 0$
+\[0 = V_X = V_{OUT1} \cdot \frac{R_2}{R_1 + R_2} + V_{OUT2} \cdot \frac{R_1}{R_1 + R_2} = 0.9 \cdot V_{OUT1} + 0.1 \cdot V_{OUT2} = 0.9 \cdot V_{OUT1} \pm 1 \textrm V\]
 \[V_{OUT1} = \pm 1.11 \textrm V\]
 
-Il periodo del segnale ad onda quadra corrisponde al tempo necessario perchè il condensatore $C$ inverta la sua carica:
+Il periodo del segnale ad onda quadra corrisponde al tempo necessario affinché il condensatore $C$ inverta la sua carica
 
 \[\Delta T = C \frac{\Delta V}{I_{R3}} = 1u \frac{2 \cdot 1.11 \textrm V}{2m \textrm A} = 1.11 m \textrm s\]
 
-si noti che questo è l'unico valore del segnale che dipende da $I_{R3}$ (e quindi da $R_3$). Ne segue che, agendo su $R_3$, si può cambiare la frequenza del segnale in uscita.
+Si noti che questo è l'unico valore del segnale che dipende da $I_{R3}$ (e quindi da $R_3$). Ne segue che, agendo su $R_3$, si può cambiare la frequenza del segnale in uscita.
+
+\vspace{3mm}
 
 Se adesso si modifica il valore del primo potenziometro di modo che $R_4 \neq R_5$, il potenziale $V_Z$ (così come il potenziale $V_Y$) non è più nullo. La corrente $I_{R3}$ non ha più valori uguali in modulo e si crea un’asimmetria tra i processi di carica e scarica del condensatore. Il circuito rimarrà quindi più tempo nello stato $V_{OUT2} = + V_{CC}$ e meno tempo nello stato $V_{OUT2} = - V_{EE}$ o viceversa.
 
-Se siamo disposti a rinunciare a questa interessantissima feature, possiamo semplificare il circuito e proporne una versione che usa un solo amplificatore operazionale (figura \ref{Schema_circuito_astabile_bis})
+\clearpage
+Se siamo disposti a rinunciare a questa interessantissima feature, possiamo semplificare il circuito e proporne una versione che usa un solo amplificatore operazionale (figura \ref{Schema_circuito_astabile_bis}).
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_astabile_bis}
+  \includegraphics[scale=0.48]{IM_circuito_astabile_bis}
   \caption{Circuito astabile con 1 Amplificatore Operazionale}
   \label{Schema_circuito_astabile_bis}
 \end{figure}
@@ -2367,9 +2423,15 @@ Le correnti $I_{R3}$ e $I_C$ cambiano verso. $V_Y$ ora decresce esponenzialmente
 
 Il ciclo continua indefinitamente.
 
+\vspace{3mm}
+
 Variando ora $R_3$ è possibile modificare, analogamente a quanto visto nel circuito precedente, la frequenza del segnale in uscita. Non è più possibile, come accennato in precedenza, creare un segnale asimmetrico.
 
+\vspace{3mm}
+
 Aggiungendo a questo circuito un diodo in parallelo al condensatore è possibile ottenere un circuito monostabile (figura \ref{Schema_circuito_monostabile})
+
+\clearpage
 
 \begin{figure}[h]
   \centering
@@ -2379,9 +2441,19 @@ Aggiungendo a questo circuito un diodo in parallelo al condensatore è possibile
   \label{Schema_circuito_monostabile}
 \end{figure}
 
-Procediamo con l'analisi: per $V_Y < V_{TH} (\approx 0.6 \textrm V)$ il comportamento del circuito sarà quindi identico a quello del precedente in quanto il diodo, non conducendo corrente, non altererà il funzionmento del circuito. Il circuito potrà quindi liberamente commutare dallo stato $V_{OUT} = - V_{EE}$ allo stato $V_{OUT} = + V_{CC}$. Una volta raggiunto lo stato $V_{OUT} = + V_{CC}$, $V_X$ passa immediatamente al valore di $1$V, ma il potenziale $V_Y$ è impossibilitato a superare il valore $V_{TH} \approx 0.6$ dalla presenza del diodo. 
+Procediamo con l'analisi.
 
-Il circuito raggiunge quindi uno stato stabile, non presente nei precedenti circuiti astabili (come intuibile dai nomi stessi). Una volta portato nello stato instabile, il circuito tornerà nello stato stabile in un tempo caratteristico determinato dai suoi componenti. Per ``spingere” il circuito monostabile fuori dallo stato stabile occorre intervenire dall’esterno (come fornendo una spinta impulsiva), attraverso diversi possibili circuiti. Nell'esempio in figura \ref{Schema_circuito_monostabile_bis} si usa un sistema di tre componenti.
+\vspace{1mm}
+
+Per $V_Y < V_{TH} (\approx 0.6 \textrm V)$ il comportamento del circuito sarà quindi identico a quello del precedente in quanto il diodo, non conducendo corrente, non altererà il funzionmento del circuito. Il circuito potrà quindi liberamente commutare dallo stato $V_{OUT} = - V_{EE}$ allo stato $V_{OUT} = + V_{CC}$. Una volta raggiunto lo stato $V_{OUT} = + V_{CC}$, $V_X$ passa immediatamente al valore di $1$V, ma il potenziale $V_Y$ è impossibilitato a superare il valore $V_{TH} \approx 0.6$ dalla presenza del diodo. 
+
+\vspace{3mm}
+
+Il circuito raggiunge quindi uno stato stabile, non presente nei precedenti circuiti astabili (come intuibile dai nomi stessi). Una volta portato nello stato instabile, il circuito tornerà nello stato stabile in un tempo caratteristico determinato dai suoi componenti. 
+
+\vspace{3mm}
+
+Per ``spingere” il circuito monostabile fuori dallo stato stabile occorre intervenire dall’esterno (come fornendo una spinta impulsiva), attraverso diversi possibili circuiti. Nell'esempio in figura \ref{Schema_circuito_monostabile_bis} si usa un sistema di tre componenti.
 
 \begin{figure}[h]
   \centering
@@ -2417,7 +2489,7 @@ Non si tratta di generatori (occorre fornire loro potenza in ingresso).
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_dispositivo_attivo_base}
+  \includegraphics[scale=0.6]{IM_dispositivo_attivo_base}
   \caption{Schema di un dispositivo attivo}
   \label{Schema_dispositivo_attivo_base}
 \end{figure}
@@ -2427,14 +2499,18 @@ Non si tratta di generatori (occorre fornire loro potenza in ingresso).
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{Triode_vacuum_tube}
+  \includegraphics[scale=0.35]{Triode_vacuum_tube}
   \caption{Schizzo di una valvola termoionica}
   \label{Triode_vacuum_tube}
 \end{figure}
 
 Le valvole termoioniche (figura \ref{Triode_vacuum_tube}) sono dispositivi simili a lampadine, in quanto costituite da ampolle di vetro sigillate al cui interno è presente il vuoto. Al loro interno scorrono filamenti elettrodi metallici accessibili anche all'esterno. Se il potenziale dell’anodo è superiore a quello del catodo, gli elettroni emessi dal catodo sono accelerati verso l’anodo dal campo elettrico e così si crea una corrente (da anodo a catodo). Se il potenziale dell’anodo è inferiore a quello del catodo non scorre invece corrente.
 
+\vspace{3mm}
+
 Il terminale aggiuntivo ``griglia'' serve a controllare il flusso di elettroni: quando il potenziale dell’anodo è superiore a quello del catodo, se la griglia viene posta a potenziale minore rispetto a quest'ultimo gli elettroni emessi dal catodo ne sono progressivamente sempre più ``respinti'', fino ad azzerare la corrente tra anodo e catodo. 
+
+\vspace{3mm}
 
 In presenza di flusso di corrente tra anodo e catodo, piccole variazioni del potenziale applicato alla griglia possono determinare grandi variazioni di potenziale tra anodo e catodo (amplificazione).
 
@@ -2448,23 +2524,33 @@ In presenza di flusso di corrente tra anodo e catodo, piccole variazioni del pot
 
 Un BJT (figura \ref{Schema_BJT}) è un transistor, ovvero un dispositivo attivo che funziona tramite l'uso di semiconduttori. Il BJT possiede gli stessi elementi P ed N di un diodo, ma ha due giunzioni a formare una ``struttura'' PNP (ma è possibile anche una struttura NPN).
 
+\vspace{3mm}
+
 I transistor sono più pratici delle valvole termoioniche, in quanto notevolmente più compatti. Il BJT è stato in particolare il primo di questi dispositivi commercialmente disponiblile su larga scala, ma il suo utilizzo è oggi sempre meno comuine perché più costoso di un MOS.
  
+\vspace{3mm}
+
 Una debole corrente di base (segnale di controllo) fa scorrere una corrente $\beta$ (simbolo standard del guadagno in corrente) volte maggiore (da 5 a 300 circa) tra collettore ed emettitore (NPN) o tra emettitore e collettore (PNP). In un BJT NPN ``acceso'' si avrà una corrente base-emettitore $V_{BE} \approx 0.6$V (giunzione P-N).
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_JFET}
+  \includegraphics[scale=0.6]{IM_JFET}
   \caption{Schema di un JFET (Junction Field Effect Transistor) con simbolo circuitale}
   \label{Schema_JFET}
 \end{figure}
 
 Il JFET (figura \ref{Schema_JFET}) è un transistor che, a differenza del BJT, è regolato in tensione. È costituito da una giunzione P-N, tipicamente speculare: un canale N è realizzato all'interno del gate P (o viceversa), diviso quindi in due parti collegate tra di loro (equipotenziali). Modulando la differenza di potenziale tra gate e source è possibile ``restringere'' la zona di canale (ovvero la sezione di canale dove esistono elettroni liberi se il canale è N o un surplus di lacune elettroniche se il canale è P) e regolare il passaggio di corrente. 
 
+\vspace{3mm}
+
 Ne esistono versioni ad arricchimento (canale chiuso per $V_{GS} = 0$, che si può aprire modulando $V_{GS}$) e a svuotamento (canale aperto per $V_{GS} = 0$, che si può restringere modulando $V_{GS}$).
 
+\vspace{3mm}
+
 Nel caso di un JFET a canale N a svuotamento, ad esempio, la corrente è massima per $V_{GS} = 0$ e si annulla per  $V_{GS} = - V_{PinchOff}$.
+
+\vspace{3mm}
 
 È un dispositivo relativamente costoso da produrre, ma trova ancora utilizzo in quanto a basso rumore e quindi più indicato per le applicazioni più ``delicate''.
 
@@ -2480,12 +2566,14 @@ Nel caso di un JFET a canale N a svuotamento, ad esempio, la corrente è massima
 
 Il MOS è un transistor di facile realizzazione, in quanto il semiconduttore deve essere lavorato solo da un lato, agendo sulla superficie. Un solo pezzo di materiale semiconduttore può quindi essere usato per realizzare numerosissimi MOS affiancati. È quindi possibile realizzare un circuito integrato formato da milioni di transistor MOS ad un costo contenuto.
 
+\vspace{3mm}
+
 Simile al JFET, a modulare il flusso di corrente attraverso la regione di canale è presente questa volta una sorta di ``condensatore'', ovvero uno strato di ossido che separa uno strato di metallo (il gate) dal semiconduttore. A seconda del materiale semiconduttore utilizzato si parla di P-MOS o di N-MOS.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_simboli}
+  \includegraphics[width=0.4\linewidth,height=0.2\textheight]{IM_MOS_simboli}
   \caption{Simboli circuitali dei MOS}
   \label{Schema_MOS_simboli}
 \end{figure}
@@ -2502,15 +2590,19 @@ Il MOS è un dispositivo a 4 terminali: i tre ``classici'' (Gate, Source, Drain)
 
 Negli N-MOS (figura \ref{Schema_MOS_bis}) si intende $V_D > V_S$. Nella maggior parte dei dispositivi MOS, Drain e Source sono interscambiabili, ma è bene decidere a priori quale è il Drain e quale è il Source per evitare confusione (eccezion fatta per i dispositivi discreti dove il Body è già collegato al Source, nei quali questa decisione è già stata presa in fase di manifattura). 
 
+\vspace{3mm}
+
 Per creare il canale, formato da elettroni liberi negli N-MOS, si deve aumentare la differenza di potenziale $V_{GS}/V_{GB}$. Fintantoché $V_{GS} < V_{TH}$ gli elettroni accumulati ``bilanciano'' le lacune presenti naturalmente nel substrato di tipo P, ma non si ha ancora un canale. Superata la soglia gli elettroni liberi accumulati sono in numero tale da creare effettivamente un canale, dove poi scorrerà corrente se $V_D > V_S$. La tensione di soglia può variare, ma è tipicamente compresa tra gli 0,5 V e i 5 V.
 
-In regime di funzionamento, ovvero superata la tensione di soglia, il canale così creato si comporta come una resistenza, ovvero la relazione tra $I$ e $V_{DS}$ è lineare. Tuttavia, per valori di $V_D$ molto grandi, si riscontra che la corrente tende a crescere meno che linearmente. È un fenomeno la cui trattazione è complessa, ma si può provare a darne una descrizione qualitativa: gli elettroni tendono a stare vicino al Gate quando la tensione tra Gate e Body è positiva, ma su questo fenomeno agiscono anche i potenziali di Source e Drain; se il potenziale di Drain è alto (ricordiamo che il potenziale di Drain è sempre più grande del potenziale di Source), il Gate ha meno influenza sugli elettroni che stanno da quel lato e il canale si restringe.
+\vspace{3mm}
 
+In regime di funzionamento, ovvero superata la tensione di soglia, il canale così creato si comporta come una resistenza, ovvero la relazione tra $I$ e $V_{DS}$ è lineare. Tuttavia, per valori di $V_D$ molto grandi, si riscontra che la corrente tende a crescere meno che linearmente. È un fenomeno la cui trattazione è complessa, ma si può provare a darne una descrizione qualitativa: gli elettroni tendono a stare vicino al Gate quando la tensione tra Gate e Body è positiva, ma su questo fenomeno agiscono anche i potenziali di Source e Drain; se il potenziale di Drain è alto (ricordiamo che il potenziale di Drain è sempre più grande del potenziale di Source), il Gate ha meno influenza sugli elettroni che stanno da quel lato e il canale si restringe.
+\clearpage 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_MOS_ter}
-  \caption{MOS in funzoine (si noti il canale più stretto nei pressi del Drain)}
+  \caption{MOS in funzione (si noti il canale più stretto nei pressi del Drain)}
   \label{Schema_MOS_ter}
 \end{figure}
 
@@ -2522,9 +2614,9 @@ In regime di funzionamento, ovvero superata la tensione di soglia, il canale cos
   \label{Schema_MOS_Funzionamento}
 \end{figure}
 
-Equazioni di funzoinamento
+Equazioni di funzionamento:
 
-\[V_{GD} = V_G - V_D = V_G - V_S + V_S - V_D = V_{GS} - V_{DS} \quad \textrm {KVL}\]
+\[V_{GD} = V_G - V_D = V_G - V_S + V_S - V_D = V_{GS} - V_{DS} \quad \textrm {(KVL)}\]
 
 \[V_{GD} > V_{TH} \quad \textrm{per creare canale dal lato Drain} \quad V_{DS} < V{GS} - V_{TH}\]
 
@@ -2532,13 +2624,21 @@ Se $V_{DS} < V{GS} - V_{TH}$ il MOS è in zona triodo/lineare, ovvero si comport
 
 \[I_{LIN} = \frac{\mu _n C_{ox}}{2} \cdot \frac{W}{L} \cdot (2V_{DS} \cdot (V_{GS} - V_{TH}) - V_{DS}^2)\]
 
-dove $\mu _n$ è la mobilità relativa degli elettroni nel materiale semiconduttore, $C_{ox}$ è la capacità, per elemento di superficie, del ``condensatore'' metallo-ossido-semiconduttore, $W$ è la larghezza (width) del canale e $L$ la sua lunghezza (length). Si può vedere che (al netto del termine perturbativo $V_{DS}^2$, che possiamo trascurare in quanto termine del secondo ordine nell'ipotesi in cui $V_{DS}$ sia piccolo rispetto a $V_{GS} - V_{TH}$) la corrente dipende linearmente da $V_{DS}$. 
+dove $\mu _n$ è la mobilità relativa degli elettroni nel materiale semiconduttore, $C_{ox}$ è la capacità, per elemento di superficie, del ``condensatore'' metallo-ossido-semiconduttore, $W$ è la larghezza (width) del canale e $L$ la sua lunghezza (length). 
+
+\vspace{1mm}
+
+Si può vedere che (al netto del termine perturbativo $V_{DS}^2$, che possiamo trascurare in quanto termine del secondo ordine nell'ipotesi in cui $V_{DS}$ sia piccolo rispetto a $V_{GS} - V_{TH}$) la corrente dipende linearmente da $V_{DS}$. 
+
+\vspace{3mm}
 
 Se $V_{DS} > V{GS} - V_{TH}$ non c'è più canale di Drain: il MOS è in zona di saturazione
 
 \[I_{SAT} = \frac{\mu _n C_{ox}}{2} \cdot \frac{W}{L} \cdot (V_{GS} - V_{TH})^2\]
 
 dove si vede che la corrente non dipende più da $V_{DS}$. La corrente è saturata ad un valore massimo.
+
+\vspace{3mm}
 
 La matematica ci dice inoltre che, per ogni $V_{GS} > V_{TH}$, $I_{SAT} > I_{LIN}$. Inoltre, se (e solo se) $V_{GD} = V_{TH}$, $I_{SAT} = I_{LIN}$ (conclusione sensata, al raccordo dei due stati la corrente calcolata è la stessa per entrambe le equazioni).
 
@@ -2549,28 +2649,33 @@ La matematica ci dice inoltre che, per ogni $V_{GS} > V_{TH}$, $I_{SAT} > I_{LIN
   \caption{Grafico della corrente che scorre nel MOS al variare di $V_{DS}$. Si noti evidenziato il punto di raccordo tra la regione di triodo e la regione di saturazione}
   \label{Schema_MOS_grafici}
 \end{figure}
+\clearpage
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_Effetto_Early}
+  \includegraphics[scale=0.85]{IM_Effetto_Early}
   \caption{Grafico dell'effetto Early. La pendenza effettiva delle rette è stata grandemente accentuata}
   \label{Schema_Effetto_Early}
 \end{figure}
 
 In zona di saturazione si riscontra tuttavia sperimentalmente che la corrente $I$ è comunque debolmente dipendente da $V_{DS}$. Questo effetto (detto \textit{effetto Early}) è dovuto all'``arretramento'' del canale verso il Source al crescere del potenziale di Drain. Ogni dispositivi è caratterizzato da un proprio potenziale $-V_A$ (tensione di Early), che rappresenta il punto di intersezione tra tutte le rette della regione di saturazione. Tipicamente questa tensione può essare tra le decine e le centinaia di volt.
 
+\vspace{3mm}
+
 Per i P-MOS il funzionamento è del tutto analogo, serve solo ripensare quanto detto in precedenza per gli elettroni con le lacune elettroniche. Imposto che $V_D < V_S$, e che di conseguenza la tensione di soglia $V_{TH}$ sarà negativa, le formule per la corrente sono le stesse.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_IGBT}
+  \includegraphics[scale=0.65]{IM_IGBT}
   \caption{Schema di un IGBT (Insulated Gate Bipolar Transistor) con simbolo circuitale}
   \label{Schema_IGBT}
 \end{figure}
 
 IL dispositivo IGBT (figura \ref{Schema_IGBT}) è la combinazione di due dispositivi: un MOS e un BJT. Combinando il meglio di entrambi, offre la semplicità di un controllo in tensione tipica di un MOS con la capacità di corrente tipica di un BJT. Non è disponibile nei circuiti integrati, ma è particolarmente indicato per applicazioni di potenza ($> 1 K$W).
+
+\vspace{3mm}
 
 Per determinare la curva caratteristica di un MOS, si può usare il circuito in figura \ref{Schema_determinazione_MOS}
 
@@ -2595,7 +2700,7 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_determinazione_MOS_bis}
+  \includegraphics[scale=0.6]{IM_determinazione_MOS_bis}
   \caption{Circuito alternativo per determinare la curva caratteristica di un MOS}
   \label{Schema_determinazione_MOS_bis}
 \end{figure}
@@ -2603,19 +2708,15 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_grafici_bis}
+  \includegraphics[scale=0.6]{IM_MOS_grafici_bis}
   \caption{Curve caratteristiche del MOS}
   \label{Schema_MOS_grafici_bis}
 \end{figure}
 
-
-
-
-
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_equivalente_saturazione}
+  \includegraphics[scale=0.6]{IM_MOS_equivalente_saturazione}
   \caption{Circuito equivalente ad un MOS in zona di saturazione}
   \label{Schema_MOS_equivalente_saturazione}
 \end{figure}
@@ -2623,7 +2724,7 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_equivalente_saturazione_bis}
+  \includegraphics[scale=0.6]{IM_MOS_equivalente_saturazione_bis}
   \caption{Circuito equivalente ad un MOS in zona di saturazione per piccolo segnale}
   \label{Schema_MOS_equivalente_saturazione_bis}
 \end{figure}
@@ -2631,7 +2732,7 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_equivalente_lineare}
+  \includegraphics[scale=0.6]{IM_MOS_equivalente_lineare}
   \caption{Circuito equivalente ad un MOS in zona lineare}
   \label{Schema_MOS_equivalente_lineare}
 \end{figure}
@@ -2639,35 +2740,41 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_MOS_equivalente_lineare_bis}
+  \includegraphics[scale=0.6]{IM_MOS_equivalente_lineare_bis}
   \caption{Circuito equivalente ad un MOS in zona lineare per piccolo segnale}
   \label{Schema_MOS_equivalente_lineare_bis}
 \end{figure}
-
 \clearpage
-
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_inverter}
+  \includegraphics[scale=0.6]{IM_inverter}
   \caption{Circuito con carico resistivo}
   \label{Schema_inverter}
 \end{figure}
 
-Si consideri adesso il circuito in figura \ref{Schema_inverter}, e in particolare alla relazione tra $V_{IN}$ e $V_{OUT}$. Per $V_{IN}$ piccolo il MOS è spento, in quanto il potenziale di Gate è insufficiente perché si formi il canale e ci sia il relativo passaggio di corrente. Senza passaggio di corrente, per la legge di Ohm non c'è differenza di potenziale ai capi della resistenza, e $V_{OUT} = + V_{CC}$. Se $V_{IN}$ è sufficientemente alta, invece, il MOS è acceso e la corrente vi scorre liberamente all'interno. $V_{OUT}$ è equipotenziale (o quasi) con la terra. $V_{OUT} \approx 0$.
+Si consideri adesso il circuito in figura \ref{Schema_inverter}, e in particolare alla relazione tra $V_{IN}$ e $V_{OUT}$. 
+
+\vspace{1mm}
+
+Per $V_{IN}$ piccolo il MOS è spento, in quanto il potenziale di Gate è insufficiente perché si formi il canale e ci sia il relativo passaggio di corrente. Senza passaggio di corrente, per la legge di Ohm non c'è differenza di potenziale ai capi della resistenza, e $V_{OUT} = + V_{CC}$. 
+
+\vspace{1mm}
+
+Se $V_{IN}$ è sufficientemente alta, invece, il MOS è acceso e la corrente vi scorre liberamente all'interno. $V_{OUT}$ è equipotenziale (o quasi) con la terra. $V_{OUT} \approx 0$.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_inverter_bis}
+  \includegraphics[scale=0.58]{IM_inverter_bis}
   \caption{Relazione ingresso uscita}
   \label{Schema_inverter_bis}
 \end{figure}
-
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_inverter_ter}
+  \includegraphics[scale=0.58]{IM_inverter_ter}
   \caption{Zone di funzionamento}
   \label{Schema_inverter_ter}
 \end{figure}
@@ -2675,18 +2782,20 @@ Si consideri adesso il circuito in figura \ref{Schema_inverter}, e in particolar
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_inverter_quater}
+  \includegraphics[scale=0.58]{IM_inverter_quater}
   \caption{“Guadagno” del circuito}
   \label{Schema_inverter_quater}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_inverter_penta}
+  \includegraphics[scale=0.58]{IM_inverter_penta}
   \caption{Dissipazione di potenza}
   \label{Schema_inverter_penta}
 \end{figure}
+
+\clearpage
 
 Questo circuito rappresenta un'ottima occasione per iniziare a discutere di circuiti digitali e della loro differenza dai circuiti analogici. In ambito analogico i segnali sono continui (dominio e codominio), come lo è ad esempio il segnale elettrico prodotto da un microfono. In ambito digitale i segnali sono discreti (dominio e codominio) o ``sequenze quantizzate'', esprimibili con combinazioni di variabili elementari (bit) a due stati (``0/1'', ``alto/basso'', ecc.). A livello macroscopico, però, il mondo è continuo in tempo e ampiezza. In un dispositivo digitale, quindi, i segnali ``portano informazione'' soltanto in predeterminati istanti di tempo e l’informazione elementare (bit) è associata ed estrapolabile dal valore del segnale di tensione (o di corrente).
 
