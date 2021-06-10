@@ -2797,7 +2797,17 @@ Se $V_{IN}$ è sufficientemente alta, invece, il MOS è acceso e la corrente vi 
 
 \clearpage
 
-Questo circuito rappresenta un'ottima occasione per iniziare a discutere di circuiti digitali e della loro differenza dai circuiti analogici. In ambito analogico i segnali sono continui (dominio e codominio), come lo è ad esempio il segnale elettrico prodotto da un microfono. In ambito digitale i segnali sono discreti (dominio e codominio) o ``sequenze quantizzate'', esprimibili con combinazioni di variabili elementari (bit) a due stati (``0/1'', ``alto/basso'', ecc.). A livello macroscopico, però, il mondo è continuo in tempo e ampiezza. In un dispositivo digitale, quindi, i segnali ``portano informazione'' soltanto in predeterminati istanti di tempo e l’informazione elementare (bit) è associata ed estrapolabile dal valore del segnale di tensione (o di corrente).
+Questo circuito rappresenta un'ottima occasione per iniziare a discutere di circuiti digitali e della loro differenza dai circuiti analogici. 
+
+\vspace{3mm}
+
+In ambito analogico i segnali sono continui (dominio e codominio), come lo è ad esempio il segnale elettrico prodotto da un microfono. In ambito digitale i segnali sono discreti (dominio e codominio) o ``sequenze quantizzate'', esprimibili con combinazioni di variabili elementari (bit) a due stati (``0/1'', ``alto/basso'', ecc.). A livello macroscopico, però, il mondo è continuo in tempo e ampiezza. 
+
+\vspace{3mm}
+
+In un dispositivo digitale, quindi, i segnali ``portano informazione'' soltanto in predeterminati istanti di tempo e l’informazione elementare (bit) è associata ed estrapolabile dal valore del segnale di tensione (o di corrente).
+
+\vspace{1mm}
 
 Di solito si associa il valore 1 ad un voltaggio positivo, e il valore 0 ad un voltaggio piccolo o nullo. Questa informazione rende il circuito sopra descritto preziosissimo: questo circuito restituisce un segnale 1 quando prende in input un segnale 0 e viceversa. Con questo circuito è possibile realizzare un circuito invertitore (figura \ref{Schema_inverter_esa}, da non confondere con il circuito in configurazione invertente), che si rivelerà molto utile nel capitolo successivo.
 
@@ -2809,14 +2819,7 @@ Di solito si associa il valore 1 ad un voltaggio positivo, e il valore 0 ad un v
   \label{Schema_inverter_esa}
 \end{figure}
 
-Sostituendo il carico resistivo (passivo) con un dispositivo attivo complementare (MOS a canale P) la dissipazione di potenza è nulla in entrambi gli stati (alto e basso) essendo uno tra i due MOS sempre spento ()Sostituendo il carico resistivo (passivo)
-con un dispositivo attivo complementare 
-(MOS a canale P) la dissipazione di potenza è nulla 
-in entrambi gli stati (alto e basso) essendo 
-uno tra i due MOS sempre spento
-• Questa logica è detta CMOS (Complementary MOS)
-• In logica CMOS la relazione ingresso/uscita è 
-solitamente resa simmetrica (figura \ref{Schema_CMOS}). Questa logica è detta CMOS (Complementary MOS). In logica CMOS la relazione ingresso/uscita è solitamente resa simmetrica.
+Sostituendo il carico resistivo (passivo) con un dispositivo attivo complementare (MOS a canale P) la dissipazione di potenza è nulla in entrambi gli stati (alto e basso) essendo uno tra i due MOS sempre spento. Questa logica è detta CMOS (Complementary MOS). In logica CMOS la relazione ingresso/uscita è solitamente resa simmetrica (figura \ref{Schema_CMOS}).
 
 \begin{figure}[h]
   \centering
@@ -2850,17 +2853,21 @@ solitamente resa simmetrica (figura \ref{Schema_CMOS}). Questa logica è detta C
 
 \section{Nozioni di base di elettronica digitale}
 
-Inizia adesso la parte interessante del corso
+Inizia adesso la parte interessante del corso.
 
 \subsection{Algebra Booleana}
 
-Ricordiamo che, in algebra, si definisce \textit{operazione} una funzione che, dati due elementi di un insieme $S$, restituisce come risultato un elemento di $S$. La combinazione di $S$ con una o più operazioni si definisce sistema algebrico.
+Ricordiamo che in algebra si definisce \textit{operazione} una funzione che, dati due elementi di un insieme $S$, restituisce come risultato un elemento di $S$. La combinazione di $S$ con una o più operazioni si definisce sistema algebrico.
 
 L'algebra di Boole studia quei sistemi algebrici identificati nel seguente modo:
 
 \[(S, +, *, !, 0, 1)\]
 
-Dove $S$ è l'insieme su cui sono definite le operazioni, $+$ è l'operazione di OR, $*$ è l'operazione di AND, $!$ è l'operazione di NOT, 0 è l'elemento neutro di $+$ e 1 l'elemento neutro di $*$. In particolare, nell'algebra Booleana a due elementi (algebra di commutazione), $S = \{0, 1\}$. Le variabili 1 e 0 vengono chiamate anche, rispettivamente, \textit{vero} e \textit{falso}.
+Dove $S$ è l'insieme su cui sono definite le operazioni, $+$ è l'operazione di OR, $*$ è l'operazione di AND, $!$ è l'operazione di NOT, 0 è l'elemento neutro di $+$ e 1 l'elemento neutro di $*$. 
+
+\vspace{1mm}
+
+In particolare, nell'algebra Booleana a due elementi (algebra di commutazione), $S = \{0, 1\}$. Le variabili 1 e 0 vengono chiamate anche, rispettivamente, \textit{vero} e \textit{falso}.
 
 \begin{table}[h]
   \centering
@@ -2900,13 +2907,15 @@ Dove $S$ è l'insieme su cui sono definite le operazioni, $+$ è l'operazione di
 
 L'operazione AND restituisce vero se entrambi gli input sono veri, e falso in tutti gli altri casi. L'operazione OR restituisce invece vero se almeno uno dei due input è vero, e falso se sono entrambi falsi. L'operazione NOT è invece un'operazione particolare, che accetta un solo input, e restituisce vero se questo è falso e falso se questo è vero. Questi comportamenti sono descritti in tabella \ref{Tabella_operazioni}.
 
+\vspace{3mm}
+
 Il comportamento delle funzioni logiche viene spesso descritto con l'ausilio delle \textit{tabelle della verità} (esempio in tabella \ref{Tabella_verita}). Queste permettono di determinare il valore di verità della funzione conoscendo il valore di verità dei suoi ingressi.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{| c | c | c | c |}
   \hline
-  A & B & C & f(A, B, C) \\ \hline
+  $A$ & $B$ & $C$ & $f(A, B, C)$ \\ \hline
   0 & 0 & 0 & 0 \\ \hline
   0 & 0 & 1 & 1 \\ \hline
   0 & 1 & 0 & 0 \\ \hline
@@ -2927,6 +2936,8 @@ Si definisce \textit{coppia letterale} una coppia (variabile, valore) che è ver
 \[(A,0) := A'\]
 
 dove con $A'$ si intende $A$ negato ($!A$), ovvero quel valore che è vero quando $A$ è falso e viceversa.
+
+\vspace{3mm}
 
 Abbiamo già detto che 0 è l'elemento neutro dell'operazione OR e che 1 è l'elemento neutro dell'operazione AND.
 
@@ -2952,7 +2963,7 @@ associativa,
 
 \[A + (B + C) = (A + B) + C \quad \quad A * (B * C) = (A * B) * C\]
 
-distributiva\footnote{la proprietà distributiva dell'operazione AND non dovrebbe essere sorprendente, considerando che non è diversa dall'operazione di moltiplicazione; più sorprendente potrebbe essere invece che valga per l'operazione OR. Conviene forse pensare in termini logici piuttosto che matematici: la prima proposizoine è falsa se e solo se A è falso e almeno uno tra B e C è falso; la seconda invece è falsa se e solo se almeno uno tra $A + B$ e $A + C$ è falso; ma se A fosse vero entrambi $A + B$ e $A + C$ sarebbero veri, quindi $A$ è falso; la seconda si riduce dunque ad un'operazione di AND tra $B$ e $C$, che è falsa se e solo se non sono entrambi veri.}.
+distributiva\footnote{la proprietà distributiva dell'operazione AND non dovrebbe essere sorprendente, considerando che non è diversa dall'operazione di moltiplicazione; più sorprendente potrebbe essere invece che valga per l'operazione OR. Conviene forse pensare in termini logici piuttosto che matematici: la prima proposizione è falsa se e solo se $A$ è falso e almeno uno tra $B$ e $C$ è falso; la seconda invece è falsa se e solo se almeno uno tra $A + B$ e $A + C$ è falso; ma se A fosse vero entrambi $A + B$ e $A + C$ sarebbero veri, quindi $A$ è falso; la seconda si riduce dunque ad un'operazione di AND tra $B$ e $C$, che è falsa se e solo se non sono entrambi veri.}.
 
 \[A * (B + C) = A * B + A * C \quad \quad A + (B * C) = (A + B) * (A + C)\]
 
