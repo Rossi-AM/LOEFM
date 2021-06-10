@@ -11,6 +11,7 @@
 \usepackage{amstext}
 \usepackage{amsthm}
 \usepackage{steinmetz}
+\usepackage{eurosym}
 \geometry{a4paper}
 
 \usepackage[french,italian]{babel}
@@ -2985,7 +2986,11 @@ se $B = A'$ (ricordando le operazioni con gli inversi)
 
 Dalle leggi di De Morgan si evince il principio di dualità: è possibile trasformare ogni identità in una identità duale scambiando tra loro le operazioni AND e OR o scambiando tra loro gli elementi 0 e 1.
 
-Ogni funzoine logica combinatoria può essere espressa tramite l'uso dei tre operatori: AND, OR, NOT.
+\vspace{3mm}
+
+Ogni funzione logica combinatoria può essere espressa tramite l'uso dei tre operatori: AND, OR, NOT.
+
+\vspace{3mm}
 
 Prendiamo la tabella della verità \ref{Tabella_verita}. Possiamo esprimere la funzione $f(A, B, C)$ come prodotto di somme di $A$, $B$, $C$ e delle loro negazioni nel seguente modo:
 
@@ -2999,9 +3004,11 @@ dove la somma $A + B + C$ è falsa se e solo se tutti i suoi addendi sono falsi,
 
 se uno degli addendi è falso, ci troviamo in una delle righe della tabella che ha valore falso, e la funzione restituisce falso (A * 0 = 0). Se nessuno degli addendi è falso, non ci troviamo in nessuna delle righe a valore 0 e la funzione è vera.
 
-Possiamo anche esprimere $f$ come somma dei prodotti di $A$, $B$, $C$ e delle loro negazioni:
+\vspace{3mm}
 
-l'ultima riga della tabella ci dice che $f$ è vera se $A$, $B$, $C$ sono tutti veri. Possiamo quindi scrivere $f$ come
+Possiamo anche esprimere $f$ come somma dei prodotti di $A$, $B$, $C$ e delle loro negazioni.
+
+L'ultima riga della tabella ci dice che $f$ è vera se $A$, $B$, $C$ sono tutti veri. Possiamo quindi scrivere $f$ come
 
 \[f(A, B, C) = ABC + h(A, B, C)\]
 
@@ -3028,7 +3035,9 @@ Partendo da entrambe queste espressioni di $f$ si può semplificare e arrivare a
 
 \subsection{Porte logiche}
 
-Si definisce \textit{famiglia logica} un insieme di dispositivi logici tra loro compatibili. La compatibilità riguarda principalmente la corrispondenza tra i livelli logici (‘0’ e ‘1’) e i corrispondendi livelli elettrici dei segnali in ingresso e in uscita al dispositivo. Tipicamente un segnale a bassa tensione corrisponde al livello logico 0 e un segnale ad alta tensione a 1; ciò che cambia tra una famiglia logica e un'altra è quindi cosa si intende per alta tensione e bassa tensione.
+Si definisce \textit{famiglia logica} un insieme di dispositivi logici tra loro compatibili. La compatibilità riguarda principalmente la corrispondenza tra i livelli logici (‘0’ e ‘1’) e i corrispondenti livelli elettrici dei segnali in ingresso e in uscita al dispositivo. Tipicamente un segnale a bassa tensione corrisponde al livello logico 0 e un segnale ad alta tensione a 1; ciò che cambia tra una famiglia logica e un'altra è quindi cosa si intende per alta tensione e bassa tensione\footnote{Convenzionalmente si intende per "alto" un voltaggio $\leq 5 \, V$ e per "basso" uno prossimo allo zero. In laboratorio però più il circuito diventa grosso più ci si discosta dai valori "teorici" a causa di cadute di potenziale dovute da partitori di tensione. Ma non c'è da preoccuparsi, perchè sui datasheet delle singole porte logiche è riportato cosa la porta interpreta come "alto" o "basso" in funzione di $V_{CC}$ ($3,15 \,V$ sono considerati "1" da un NAND di Texas Instruments con $V_{CC}=4,5\,V$, ad esempio)}.
+
+\vspace{1mm}
 
 Ecco i simboli circuitali e le tabelle della verità per le principali porte logiche:
 
@@ -3093,13 +3102,25 @@ Ecco i simboli circuitali e le tabelle della verità per le principali porte log
 
 Concentriamoci un momento sulla porta NAND:
 
-Se i due ingressi sono identici, la porta si riduce ad un invertitore (NAND(A, A) = NOT(A)).
+\vspace{1mm}
 
-Se adesso invertiamo la porta NAND, otteniamo una porta AND (NOT(NAND(A, B)) = AND(A, B)).
+\begin{itemize}
+  \item Se i due ingressi sono identici, la porta si riduce ad un invertitore (NAND(A, A) = NOT(A)).
+  \item Se adesso invertiamo la porta NAND, otteniamo una porta AND 
+  \begin{center}
+    (NOT(NAND(A, B)) = AND(A, B)).
+  \end{center}
+  \item Se adesso invertiamo gli ingressi alla porta NAND, otteniamo una porta OR 
+  \begin{center}
+    (NAND(A', B') = NOT(AND(A', B')) = NOT(NOT(OR(A, B))) = OR(A, B)).
+  \end{center}
+\end{itemize}
 
-Se adesso invertiamo gli ingressi alla porta NAND, otteniamo una porta OR (NAND(A', B') = NOT(AND(A', B')) = NOT(NOT(OR(A, B))) = OR(A, B)).
+È quindi possibile realizzare qualsiasi funzione logica combinatoria anche utilizzando esclusivamente porte NAND. 
 
-È quindi possibile realizzare qualsiasi funzione logica combinatoria anche utilizzando esclusivamente porte NAND. La porta NAND possiede quindi la proprietà di completezza funzionale: ogni altra funzione logica (AND, OR etc.) può essere implementata utilizzando solamente porte NAND (figura \ref{NAND_allpowerful}).
+\vspace{1mm}
+
+La porta NAND possiede quindi la proprietà di \textit{completezza funzionale}: ogni altra funzione logica (AND, OR etc.) può essere implementata utilizzando solamente porte NAND (figura \ref{NAND_allpowerful}).
 
 \begin{figure}[h]
   \centering
@@ -3108,7 +3129,7 @@ Se adesso invertiamo gli ingressi alla porta NAND, otteniamo una porta OR (NAND(
   \caption{Le principali funzioni logiche realizzate con la porta NAND}
   \label{NAND_allpowerful}
 \end{figure}
-
+\clearpage
 Lo stesso principio vale per la porta NOR (figura \ref{NOR_allpowerful}).
 
 \begin{figure}[h]
@@ -3133,7 +3154,9 @@ Lo stesso principio vale per la porta NOR (figura \ref{NOR_allpowerful}).
 
 \subsection{Aritmetica binaria}
 
-Una variabile booleana (un bit) è in grado di rappresentare due cose diverse: 0 e 1. Questa quantità di informazione è quasi sempre insufficiente nelle applicazioni quotidiane dei dispositivi digitali, ma è possibile risolvere questo problema affiancando un grande numero di bit.
+Una variabile booleana (un bit) è in grado di rappresentare solo e solamente due cose diverse (più formalmente \textit{stati}): 0 e 1. Questa quantità di informazione è quasi sempre insufficiente nelle applicazioni quotidiane dei dispositivi digitali, ma è possibile risolvere questo problema affiancando un grande numero di bit.
+
+\vspace{1mm}
 
 Con $B$ bit è possibile rappresentare fino a $2^B$ cose diverse. La funzione esponenziale ci dice che, con un numero limitato di bit, è possibile codificare un enorme numero di cose diverse
 
@@ -3145,17 +3168,45 @@ Possiamo usare i bit per codificare i numeri interi in codice binario. La codifi
 
 \[N = \sum^{B - 1}_{b = 0} A_b \cdot 2^b\]
 
-Dove $A_b$ è una cifra binaria (cioè un bit). Alcuni esempi:
+Dove $A_b$ è una cifra binaria (cioè un bit). Alcuni esempi (utili a capire come si "conta" in binario):
 
 \[ [00000000]_b = 0_d\]
+
+\[[00000001]_b = 1_d\]
+
+\[[00000010]_b = 2_d\]
+
+\[[00000011]_b = 3_d\]
+
+\[[00000100]_b = 4_d\]
 
 \[ [00010001]_b = 17_d\]
 
 \[ [11111111]_b = 255_d\]
 
-Volendo includere nella codifica anche i numeri negativi, la scelta più diffusa è la rappresentazione in complemento a 2, in cui si utilizzano metà dei codici per i numeri non negativi: da $[0000]_b$ a $[0111]_b$ e metà per i numeri negativi: da $[1000]_b$ a $[1111]_b$. La codifica si basa sul concetto di ``circolarità modulo $2^B$'':
+Volendo includere nella codifica anche i numeri negativi, la scelta più diffusa è la \textit{rappresentazione in complemento a 2}, in cui si utilizzano metà dei codici per i numeri non negativi: da $[0000]_b$ a $[0111]_b$ e metà per i numeri negativi: da $[1000]_b$ a $[1111]_b$. La codifica si basa sul concetto di ``circolarità modulo $2^B$''.
 
-i numeri non negativi inziano per 0 e si comportano normalmente. Il più grande dei numeri non negativi inizia per 0, mentre ogni altra cifra della sua rappresentazoine binaria vale 1. Se aggiungessimo 1 a questo numero otterremmo un numero che inizia per 1 mentre ogni altra cifra della sua rappresentazoine binaria vale 0. Assegnamo a questo numero il ruolo di più piccolo dei numeri negativi. Continuando a sommare, raggiungiamo un numero la cui rappresentazione binaria è formata solamente da 1. Questo è il più grande dei numeri negativi e, in quanto tale, è pari a $-1$. Sommando adesso a $-1$ il numero 1, otterremmo un numero la cui rappresentazione binaria è formata unicamente da 0, (in quanto il bit $B+1$ che dovrebbe assumere il valore 1 non è disponibile lavorando con $B$ bit) cioè 0. Abbiamo così creato un ``circuito'' di $2^B$ numeri all'interno del quale l'operazione di somma è ben definita, ovvero non è possibile ottenere un numero al di fuori del circuito sommando due numeri interni al circuito. Inoltre, ricordando che il bit $B + 1$ non è disponibile, non c'è virtualmente differenza tra un numero $N$ all'interno del circuito e $N + 2^B$.
+\vspace{3mm}
+
+I numeri non negativi inziano per 0 e si comportano normalmente. Il più grande dei numeri non negativi inizia per 0, mentre ogni altra cifra della sua rappresentazoine binaria vale 1. Se aggiungessimo 1 a questo numero otterremmo un numero che inizia per 1 mentre ogni altra cifra della sua rappresentazione binaria vale 0. 
+
+\vspace{3mm}
+
+Assegniamo a questo numero il ruolo di più piccolo dei numeri negativi. 
+
+\vspace{1mm}
+
+Continuando a sommare, raggiungiamo un numero la cui rappresentazione binaria è formata solamente da 1. Questo è il più grande dei numeri negativi e, in quanto tale, è pari a $-1$. 
+
+\vspace{1mm}
+
+Sommando adesso a $-1$ il numero 1, otterremmo un numero la cui rappresentazione binaria è formata unicamente da 0, (in quanto il bit $B+1$ che dovrebbe assumere il valore 1 non è disponibile lavorando con $B$ bit) cioè 0. 
+
+\vspace{3mm}
+
+Abbiamo così creato un ``circuito'' di $2^B$ numeri all'interno del quale l'operazione di somma è ben definita, ovvero non è possibile ottenere un numero al di fuori del circuito sommando due numeri interni al circuito. Inoltre, ricordando che il bit $B + 1$ non è disponibile, non c'è virtualmente differenza tra un numero $N$ all'interno del circuito e $N + 2^B$.
+
+\vspace{1mm}
 
 Con $B = 4$
 
@@ -3187,7 +3238,9 @@ Con $B = 4$ si rappresentano quindi 8 numeri non negativi e 8 negativi:
 
 \[7_d = [0111]_b\quad \quad -8_d = [1000]_b\]
 
-Con questa codifica circolare l'operazione di somma tra numeri interi diventa una semplice operazione di somma tra numeri positivi. Bisogna solo fare attenzione all'eventualità di un overflow: sommando due addendi concordi in segno è possibile ottenere un numero discorde in segno dai due addendi, ottenendo di fatto un risultato senza senso (il risultato sensato uscirebbe dal circuito). Con 4 bit, per esempio, sommando $7_d$ e $1_d$ ($[0111]_b$ e $[0001]_b$) si otterrebbe $8_d$, che non è un numero presente nel circuito. L'operazione di somma restituisce invece $-8_d$ ($[1000]_b$). 
+Con questa codifica circolare l'operazione di somma tra numeri interi diventa una semplice operazione di somma tra numeri positivi. Bisogna solo fare attenzione all'eventualità di un overflow: sommando due addendi concordi è possibile ottenere un numero discorde in segno dai due addendi, ottenendo di fatto un risultato senza senso (il risultato sensato uscirebbe dal circuito). Con 4 bit, per esempio, sommando $7_d$ e $1_d$ ($[0111]_b$ e $[0001]_b$) si otterrebbe $8_d$, che non è un numero presente nel circuito. L'operazione di somma restituisce invece $-8_d$ ($[1000]_b$). 
+
+\vspace{3mm}
 
 Ma come trasformare un numero positivo nel suo opposto negativo? Si nota facilmente che, negando un numero positivo $N$ (cioè trasformando ogni cifra binaria nella sua negazione), si ottiene un numero negativo pari a $-N -1$ (proprietà dimostrabile, ma questo esula dallo scopo di questo corso). L'opposto di un numero positivo si ottiene quindi aggiungendo 1 alla sua negazione
 
@@ -3224,27 +3277,39 @@ Il \textit{sommatore a B bit} (figura \ref{sommatore_B_bit}) è un circuito che 
   \label{grafici_sommatori}
 \end{figure}
 
-Esistono diversi modi per realizzare un sommatore a $B$ bit. Il primo metodo è quello della sintesi diretta (figura \label{grafici_sommatori}, in alto a destra): ognuna delle $B+1$ funzioni logiche rappresentanti le uscite può essere scritta in forma canonica (ad esempio come somma di prodotti) a partire dalle $2^2B$ combinazioni degli ingressi. In questo modo servirebbero circa:
+Esistono diversi modi per realizzare un sommatore a $B$ bit. Il primo metodo è quello della \textit{sintesi diretta} (figura \ref{grafici_sommatori}, in alto a destra nel grafico): ognuna delle $B+1$ funzioni logiche rappresentanti le uscite può essere scritta in forma canonica (ad esempio come somma di prodotti) a partire dalle $2^{2B}$ combinazioni degli ingressi. 
 
+\vspace{1mm}
+
+In questo modo servirebbero circa:
 \begin{itemize}
   \item $2B$ invertitori
   \item $2^{2B}$ porte AND
   \item $2^{2B}$ porte OR
 \end{itemize}
 
-Il tempo richiesto per il calcolo non dipenderebbe da B, ma l’implementazione è fattibile solo per $B$ piccolo. Esistono implementazioni più semplici di questo sommatore, anche se meno performanti. Il meno costoso, anche se meno efficiente, è il ripple carry adder.
+Il tempo richiesto per il calcolo non dipenderebbe da B, ma l’implementazione è fattibile solo per $B$ piccolo. Esistono implementazioni più semplici di questo sommatore, anche se meno performanti. Il meno costoso, anche se meno efficiente, è il \textit{ripple carry adder} (figura \ref{ripple_carry_adder}).
+\clearpage
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.7]{IM_ripple_carry_adder}
+  \caption{Ripple carry adder}
+  \label{ripple_carry_adder}
+\end{figure}
 
-Immaginiamo di sommare due numeri binari in colonna:
+Immaginiamo di sommare due numeri binari in colonna.
 
-Iniziando dalla cifra meno significativa, possiamo eseguire l'operazoine di somma con un semplice confronto:
+\vspace{1mm}
 
-Se entrambi i numeri sono 0, la loro somma è 0;
+Iniziando dalla cifra meno significativa, possiamo eseguire l'operazione di somma con un semplice confronto:
+\begin{itemize}
+  \item [\textendash] Se entrambi i numeri sono 0, la loro somma è 0;
+  \item [\textendash] Se uno dei due numeri è 0 e l'altro è 1, la loro somma è 1;
+  \item [\textendash] Se entrambi i numeri sono 1, la loro somma è 0 e riporto (il carry, appunto) 1.
+\end{itemize}
 
-Se uno dei due numeri è 0 e l'altro è 1, la loro somma è 1;
-
-Se entrambi i numeri sono 1, la loro somma è 0 e riporto (il carry, appunto) 1.
-
-L'operazione di somma per il bit meno significativo è quindi una funzone logica a 2 variabili booleane che restituisce in output 2 valori booleani (tabella \ref{Tabella_half_adder}). È possibile creare un circuito che implementi questa funzione usando uno XOR per la somma e un AND per il riporto, e prende il nome di \textit{half-adder}.
+L'operazione di somma per il bit meno significativo è quindi una funzione logica a 2 variabili booleane che restituisce in output 2 valori booleani (tabella \ref{Tabella_half_adder}). È possibile creare un circuito che implementi questa funzione usando uno XOR per la somma e un AND per il riporto, e prende il nome di \textit{half-adder}.
 
 \begin{table}[h]
   \centering
@@ -3261,14 +3326,12 @@ L'operazione di somma per il bit meno significativo è quindi una funzone logica
 \end{table}
 
 A questo punto si passa alla prossima cifra significativa. La somma adesso deve tenere in considerazione un eventuale riporto (oltre agli addendi). L'operazione di somma diventa quindi una funzione logica a 3 variabili booleane che restituisce in output 2 valori booleani (tabella \ref{Tabella_full_adder}) tale che:
-
-Se tutti gli ingressi sono 0, la somma è 0 e il riporto è 0;
-
-Se un ingresso è 1 e gli altri sono 0, la somma è 1 e il riporto è 0;
-
-Se un ingresso è 0 e gli altri sono 1, la somma è 0 e il riporto è 1;
-
-Se tutti gli ingressi sono 1, la somma è 1 e il riporto è 1.
+\begin{itemize}
+  \item [\textendash] Se tutti gli ingressi sono 0, la somma è 0 e il riporto è 0;
+  \item [\textendash] Se un ingresso è 1 e gli altri sono 0, la somma è 1 e il riporto è 0;
+  \item [\textendash] Se un ingresso è 0 e gli altri sono 1, la somma è 0 e il riporto è 1;
+  \item [\textendash] Se tutti gli ingressi sono 1, la somma è 1 e il riporto è 1.
+\end{itemize}
 
 \begin{table}[h]
   \centering
@@ -3288,19 +3351,13 @@ Se tutti gli ingressi sono 1, la somma è 1 e il riporto è 1.
   \label{Tabella_full_adder}
 \end{table}
 
-il circuito che implementa questa funzione è detto \textit{full-adder}. È possibile adesso, iterando questa funzione logica, sommare due numeri binari di qualunque dimensione. Il ripple carry adder (figura \ref{ripple_carry_adder}) altro non è che un sommatore a $B$ bit formato da $B$ full-adder, collegati in modo tale che l'uscita C$_{out}$ di ognuno sia collegata all'ingresso C$_{in}$ del successivo.
+Il circuito che implementa questa funzione è detto \textit{full-adder}. È possibile adesso, iterando questa funzione logica, sommare due numeri binari di qualunque dimensione. Il ripple carry adder (figura \ref{ripple_carry_adder}) altro non è che un sommatore a $B$ bit formato da $B$ full-adder, collegati in modo tale che l'uscita C$_{out}$ di ognuno sia collegata all'ingresso C$_{in}$ del successivo.
 
-\clearpage
-
-\begin{figure}[h]
-  \centering
-  %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_ripple_carry_adder}
-  \caption{Ripple carry adder}
-  \label{ripple_carry_adder}
-\end{figure}
+\vspace{3mm}
 
 Si potrebbe usare un half-adder in prima posizione, ma in realtà il primo ingresso C$_0$ è utile per l'operazione di sottrazione, dove bisogna aggiungere 1 al termine dell'operazione di negazione per completare la conversione.
+
+\vspace{3mm}
 
 Come implementare un full-adder con porte logiche? La funzione logica, partendo dalla tabella della verità, può essere scritta come
 
@@ -3308,13 +3365,12 @@ Come implementare un full-adder con porte logiche? La funzione logica, partendo 
 \[= A_1 \, XOR \, (A_2 \, XOR \, C_i) = A_1 \, XOR \, A_2 \, XOR \, C_i\]
 
 \[C_{out} = A_1' A_2 C_i + A_1 A_2' C_i + A_1 A_2 C_i' + A_1 A_2 C_i = A_1' A_2 C_i + A_1 A_2' C_i + A_1 A_2 C_i' + A_1 A_2 C_i + A_1 A_2 C_i + A_1 A_2 C_i\]
-
 \[= (A_1 + A_1')A_2 C_i + A_1(A_2 + A_2')C_i + A_1 A_2 (C_i + C_i') = A_2 C_i + A_1 C_i + A_1 A_2\]
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_full_adder}
+  \includegraphics[scale=0.6]{IM_full_adder}
   \caption{Full adder}
   \label{full_adder}
 \end{figure}
@@ -3322,23 +3378,27 @@ Come implementare un full-adder con porte logiche? La funzione logica, partendo 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_full_adder_bis}
+  \includegraphics[scale=0.6]{IM_full_adder_bis}
   \caption{Full adder più economico}
   \label{full_adder_bis}
 \end{figure}
 
-Un'implementazione potrebbe essere come raffigurata in figura \ref{full_adder}. Si possono risparmiare porte logiche ricordando che 
+Un'implementazione potrebbe essere come raffigurata in figura \ref{full_adder}. Si possono però risparmiare porte logiche ricordando che 
 
 \[C_{out} = A_2 C_i + A_1 C_i + A_1 A_2 = A_2 C_i + A_1 (C_i + A_2) =  A_2 C_i + A_1 (C_i * A_2 + C_i \, XOR \, A_2)\] 
 \[= A_2 C_i + A_1 C_i A_2 + A_1 (C_i \, XOR \, A_2) = A_2 C_i + A_1 (C_i \, XOR \, A_2)\]
 
 dove lo XOR viene già implementato nella funzione di somma. In questo modo servono solo un OR e due AND, oltre a quanto già presente per la funzione di somma (figura \ref{full_adder_bis}).
 
-\clearpage
+\vspace{3mm}
 
-Introduciamo adesso una distinzione tra logica combinatoria e logica sequenziale.
+Introduciamo adesso una distinzione tra \textit{logica combinatoria} e \textit{logica sequenziale}.
+
+\vspace{3mm}
 
 Il valore di una funzione logica combinatoria dipende solo dal valore degli ingressi al tempo corrente. Il valore di una funzione logica sequenziale, invece, dipende non solo dal valore degli ingressi al tempo corrente ma anche dal valore degli ingressi al tempo passato. In altre parole, la funzione logica sequenziale possiede una serie di stati, modificabili dagli ingressi, il cui valore al tempo corrente influisce sul valore della funzione.
+
+\vspace{3mm}
 
 La memoria a 1 bit (figura \ref{memoria_1_bit}) è un esempio di logica sequenziale. Si tratta di un circuito bistabile, ovvero che possiede due stati stabili di funzionamento ($Q = 0 / Q = 1$), dotato di due ingressi e un'uscita. Il primo ingresso contiene il dato da memorizzare, il secondo ingresso dice al circuito quando aggiornare il suo stato con il dato ricevuto dal primo ingresso, l'uscita restituisce il dato memorizzato.
 
@@ -3349,7 +3409,7 @@ La memoria a 1 bit (figura \ref{memoria_1_bit}) è un esempio di logica sequenzi
   \caption{Memoria a 1 bit}
   \label{memoria_1_bit}
 \end{figure}
-
+\clearpage
 La memoria a singola cella (figura \ref{memoria_1_cella}) a $B$ bit, è formata da $B + 1$ ingressi e da $B$ uscite. È formata da $B$ memorie a 1 bit, che condividono lo stesso ingresso di ``aggiornamento''. Esistono tipicamente memorie a 8, 16, 32, 64, 128 bit; con la possibile aggiunta di bit di ridondanza (tipicamente uno solo) per il controllo degli errori.
 
 \begin{figure}[h]
@@ -3360,7 +3420,7 @@ La memoria a singola cella (figura \ref{memoria_1_cella}) a $B$ bit, è formata 
   \label{memoria_1_cella}
 \end{figure}
 
-La memoria a più celle (figura \ref{memoria_piu_celle}) è formata da $B_I$ memeorie a una cella da $B_D$ bit ciascuna. Per accedere ad una specifica cella di memoria serve conoscerne l'indirizzo. Esistono memorie con poche celle, ad esempio $N = 256$ e $B_I = 8$ linee di indirizzo, fino a centinaia di milioni di celle e molte decine di linee di indirizzo.
+La memoria a più celle (figura \ref{memoria_piu_celle}) è formata da $B_I$ memorie a una cella da $B_D$ bit ciascuna. Per accedere ad una specifica cella di memoria serve conoscerne l'indirizzo. Esistono memorie con poche celle, ad esempio $N = 256$ e $B_I = 8$ linee di indirizzo, fino a centinaia di milioni di celle e molte decine di linee di indirizzo.
 
 \begin{figure}[h]
   \centering
@@ -3369,11 +3429,11 @@ La memoria a più celle (figura \ref{memoria_piu_celle}) è formata da $B_I$ mem
   \caption{Memoria a più celle}
   \label{memoria_piu_celle}
 \end{figure}
-
+Altri esempi di memorie (figure \ref{flip_flop_NOR}, \ref{flip_flop_NAND}):
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_flip_flop_NOR}
+  \includegraphics[scale=0.5]{IM_flip_flop_NOR}
   \caption{Memoria statica a 1 bit con porte NOR}
   \label{flip_flop_NOR}
 \end{figure}
@@ -3381,25 +3441,17 @@ La memoria a più celle (figura \ref{memoria_piu_celle}) è formata da $B_I$ mem
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_flip_flop_NAND}
+  \includegraphics[scale=0.5]{IM_flip_flop_NAND}
   \caption{Memoria statica a 1 bit con porte NAND}
   \label{flip_flop_NAND}
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-  %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_discreta_vs_integrata}
-  \caption{Implementazione discreta e integrata di un circuito}
-  \label{discreta_vs_integrata}
-\end{figure}
-
-Il Field Programmable Gate Array o FPGA (figura \ref{FPGA}) è un “ASIC riconfigurabile” per applicazioni di elettronica digitale: unisce alcuni vantaggi dei circuiti integrati (minore potenza consumata, maggiore velocità di esecuzione) con i vantaggi dell’implementazione a discreti (ridotti tempi di sviluppo, bassi costi fissi di produzione e test).Il principale svantaggio è il non trascurabile costo variabile di produzione (da $\approx € 10$ a $\approx € 1-2$k per pezzo). Furono sviluppati anche i FPAA (Field Programmable Analog Array), con minor fortuna.
+Il Field Programmable Gate Array o FPGA (figura \ref{FPGA}) è un “ASIC riconfigurabile” per applicazioni di elettronica digitale: unisce alcuni vantaggi dei circuiti integrati (minore potenza consumata, maggiore velocità di esecuzione) con i vantaggi dell’implementazione a discreti (ridotti tempi di sviluppo, bassi costi fissi di produzione e test). Il principale svantaggio è il non trascurabile costo variabile di produzione (da $\approx$ 10 Euro a $\approx$ 1-2 kEuro per pezzo). Furono sviluppati anche i FPAA (Field Programmable Analog Array), con minor fortuna.
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_FPGA}
+  \includegraphics[scale=0.4]{IM_FPGA}
   \caption{FPGA}
   \label{FPGA}
 \end{figure}
@@ -3407,15 +3459,26 @@ Il Field Programmable Gate Array o FPGA (figura \ref{FPGA}) è un “ASIC riconf
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_FPGA_struttura}
-  \caption{struttura interna di un FPGA}
+  \includegraphics[scale=0.48]{IM_FPGA_struttura}
+  \caption{Struttura interna di un FPGA}
   \label{FPGA_struttura}
 \end{figure}
 
 Negli ultimi anni negli FPGA di medio-alto livello sono stati introdotti elementi “dedicati” (simil ASIC) per funzionalità quali memoria, DSP, CPU, ecc. 
 Esistono anche dispositivi più complessi che implementano una sezione di logica FPGA e uno o più CORE ARM (ad esempio Xilinx ZYNQ). 
+
+\vspace{1mm}
+
 In termini di porte logiche equivalenti (che non esistono fisicamente in un FPGA) la complessità dei dispositivi varia da un migliaio a diverse centinaia di migliaia.
 Inoltre, mentre in un processore semplice (CPU a singolo “core”) le funzionalità sono specificate “via software” ed eseguite in sequenza su un “hardware” prederminato, in un FPGA le funzionalità sono specificate “via hardware” e finchè le risorse a disposizione lo permettono, possono essere eseguite in parallelo.
+
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.5]{IM_discreta_vs_integrata}
+  \caption{Implementazione discreta e integrata di un circuito}
+  \label{discreta_vs_integrata}
+\end{figure}
 
 \clearpage
 
