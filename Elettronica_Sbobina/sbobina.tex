@@ -1371,7 +1371,7 @@ La \textit{configurazione circuitale non invertente}, schematizzata in figura \r
 
 \vspace{1mm}
 
-Supponendo i due ingressi equipotenziali, $V_+ = V_- = V_{IN}$. Per la seconda legge di Kirchhoff (\ref{KVL}):
+Supponendo i due ingressi equipotenziali, $V_+ = V_- = V_{IN}$, per la seconda legge di Kirchhoff (\ref{KVL}) si ha:
 
 \[V_{R1} = V_- = V_{IN}\]
 
@@ -1406,7 +1406,7 @@ Si noti che il rapporto $V_{OUT}/V_{IN}$ deve essere sempre maggiore di 1. Quest
   \label{Schema_circuito_non_invertente_buffer}
 \end{figure}
 
-La configurazione circuitale non invertente a buffer, schematizzata in figura \ref{Schema_circuito_non_invertente_buffer}, è una configurazione non invertente con $R_2 = 0$ e $R_1 \rightarrow \infty$.
+La \textit{configurazione circuitale non invertente a buffer}, schematizzata in figura \ref{Schema_circuito_non_invertente_buffer}, è una configurazione non invertente con $R_2 = 0$ e $R_1 \rightarrow \infty$.
 
 \vspace{1mm}
 
@@ -1429,9 +1429,9 @@ ovvero i segnali in ingresso e in uscita sono uguali. L'utilità di questo circu
   \label{Schema_circuito_sommatore_invertente}
 \end{figure}
 
-Il circuito raffigurato in figura \ref{Schema_circuito_sommatore_invertente} è un circuito con più ingressi. È possibile analizzarlo usando il principio di sovrapposizione. Si ``spegne'' un ingresso e si analizza l'effetto dell'altro, quindi si spegne il secondo e si analizza il primo. Infine si somma quanto trovato.
+Il circuito raffigurato in figura \ref{Schema_circuito_sommatore_invertente} è un circuito con più ingressi. Si tratta di un \textit{circuito sommatore invertente}. È possibile analizzarlo usando il principio di sovrapposizione. Si ``spegne'' un ingresso e si analizza l'effetto dell'altro, quindi si spegne il secondo e si analizza il primo. Infine si somma quanto trovato.
 
-\vspace{3mm}
+\vspace{2mm}
 
 Notiamo che, spegnendo l'ingresso 1, la tensione ai capi della resistenza $R_{11}$ è pari a $V_{R11} = V_- - 0$. Ma, essendo gli ingressi equipotenziali, $V_+ = V_- = 0 \, V$ e $V_{R11} = 0$. Dunque, spegnendo l'ingresso 1, non scorre corrente attraverso $R_{11}$ e il circuito si riduce ad un semplice invertente:
 
@@ -1458,7 +1458,7 @@ facilmente generalizzabile a
   \label{Schema_circuito_sottrattore}
 \end{figure}
 
-Analogamente si risolve il circuito sottrattore (figura \ref{Schema_circuito_sottrattore}). Spegnendo $V_{IN2}$ ci si ricollega ad un normale invertente
+Analogamente si risolve il \textit{circuito sottrattore} (figura \ref{Schema_circuito_sottrattore}). Spegnendo $V_{IN2}$ ci si ricollega ad un normale invertente
 
 \[V_{OUT1} = - V_{IN1} \cdot \frac{R_2}{R_1}\]
 
@@ -1493,9 +1493,15 @@ Mentre i filtri passivi attenuano selettivamente il segnale in opportune bande, 
 
 \vspace{3mm}
 
-Partiamo dal circuito RC serie schematizzato in figura \ref{Schema_circuito_RC_passivo} visto in precedenza. Si tratta di un filtro passa basso, perché ``lascia passare'' il segnale al di sotto di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
+Partiamo dal circuito RC serie schematizzato in figura \ref{Schema_circuito_RC_passivo_bis} (già visto in precedenza). Si tratta di un filtro passa basso, perché ``lascia passare'' il segnale al di sotto di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
 
-\vspace{1mm}
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.6]{IM_circuito_RC_passivo}
+  \caption{Circuito RC}
+  \label{Schema_circuito_RC_passivo_bis}
+\end{figure}
 
 Ricordando che per questo circuito
 
@@ -1517,9 +1523,9 @@ analogamente
 
 dove $Z_S$ è l'impedenza di sorgente.
 
-\vspace{3mm}
+\clearpage
 
-Vediamo adesso l'equivalente attivo di questo circuito, il filtro passa basso RC attivo (figura \ref{Schema_filtro_passa_basso_RC_attivo})
+Vediamo adesso l'equivalente attivo di questo circuito, il \textit{filtro passa basso RC attivo} (figura \ref{Schema_filtro_passa_basso_RC_attivo})
 
 \begin{figure}[h]
   \centering
@@ -1541,31 +1547,28 @@ In questo caso
 
 Notiamo che, mentre la funzione di trasferimento è rimasta invariata, l'impedenza in uscita è adesso nulla, in quanto l'uscita è attaccata direttamente all'uscita dell'amplificatore operazionale a impedenza 0.
 
-\vspace{3mm}
+\clearpage
 
-Esiste un'altra configurazione passa basso RC attiva (figura \ref{Schema_filtro_passa_basso_RC_attivo_bis}), che sfrutta più ``seriamente'' l'amplificatore operazionale (nel circuito precedente era utilizzato come buffer). Collegando in retroazione gli elementi in parallelo $R_2$ e $C$, possiamo calcolare la funzione di trasferimento ricordando quanto fatto per il circuito invertente (si prende l'opposto dell'impedenza in retroazione e si divide per l'impedenza in ingresso):
+Esiste un'altra configurazione \textit{passa basso RC attiva} (figura \ref{Schema_filtro_passa_basso_RC_attivo_bis}), che sfrutta più ``seriamente'' l'amplificatore operazionale (nel circuito precedente era utilizzato come buffer). Collegando in retroazione gli elementi in parallelo $R_2$ e $C$, possiamo calcolare la funzione di trasferimento ricordando quanto fatto per il circuito invertente (si prende l'opposto dell'impedenza in retroazione e si divide per l'impedenza in ingresso):
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_passa_basso_RC_attivo_bis}
+  \includegraphics[scale=0.5]{IM_filtro_passa_basso_RC_attivo_bis}
   \caption{Un'altro filtro passa basso RC attivo}
   \label{Schema_filtro_passa_basso_RC_attivo_bis}
 \end{figure}
 
 \[H(s) = - \frac{1/sC // R_2}{R_1} = -  \frac{R_2}{R_1 (1 + sR_2 C)} \quad H(j \omega) = - \frac{R_2}{R_1 (1 + j \omega R_2 C)}\]
 
-\[|Z_{IN}| \approx R_1\]
-
-\[|Z_{OUT}| \approx 0\]
+\[|Z_{IN}| \approx R_1 \;\;\;\;\;\;\;\; |Z_{OUT}| \approx 0\]
 
 in figura \ref{Schema_filtro_passa_basso_RC_attivo_grafici}, il grafico relativo a questo circuito.
 
-\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_passa_basso_RC_attivo_grafici}
+  \includegraphics[scale=0.6]{IM_filtro_passa_basso_RC_attivo_grafici}
   \caption{Il grafico relativo al secondo filtro passa basso RC attivo}
   \label{Schema_filtro_passa_basso_RC_attivo_grafici}
 \end{figure}
@@ -1574,12 +1577,10 @@ in figura \ref{Schema_filtro_passa_basso_RC_attivo_grafici}, il grafico relativo
 
 Nel circuito il cui comportamento è schematizzato dal grafico in figura \ref{Schema_filtro_passa_basso_RC_attivo_grafici}, sono state fatte le seguenti scelte progettuali
 
-\[\frac{R_2}{R_1} = 3\]
-
-\[T_{LP} = \frac{1}{\omega _{LP}} = C_2 R_2 = 100 \mu \textrm s\]
+\[\frac{R_2}{R_1} = 3 \;\;\;\;\;\;\;\;\;T_{LP} = \frac{1}{\omega _{LP}} = C_2 R_2 = 100 \mu \textrm s\]
 
 \clearpage
-Rimuovendo la resistenza $R_2$, il circuito diventa un filtro integratore (figura \ref{Schema_filtro_integratore})
+Rimuovendo la resistenza $R_2$, il circuito diventa un \textit{filtro integratore} (figura \ref{Schema_filtro_integratore}).
 
 \begin{figure}[h]
   \centering
