@@ -889,7 +889,7 @@ e, per $s = j\omega$,
   \label{Schema_circuito_RC_passivo_grafici}
 \end{figure}
 \clearpage
-Concentrandoci ora sul circuito CR (\textit{Filtro passa alto CR attivo}) in figura \ref{Schema_circuito_CR_passivo}:
+Concentrandoci ora sul circuito CR (\textit{Filtro passa alto CR passivo}) in figura \ref{Schema_circuito_CR_passivo}:
 
 \begin{figure}[h]
   \centering
@@ -1615,9 +1615,15 @@ moltiplicare per $s^{-1}$ equivale ad integrare nel dominio del tempo
 Il circuito è detto integratore perché il segnale in uscita è pari all'integrale del segnale in ingresso.
 
 \clearpage
-Passiamo al circuito CR serie schematizzato in figura \ref{Schema_circuito_CR_passivo} visto in precedenza. Si tratta di un filtro passa alto, perché ``lascia passare'' il segnale al di sopra di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
+Passiamo al circuito CR serie schematizzato in figura \ref{Schema_circuito_CR_passivo_bis}, che abbiamo già visto in precedenza. Come già sappiamo, tratta di un filtro passa alto, perché ``lascia passare'' il segnale al di sopra di una certa frequenza detta ``di taglio'', ed è un circuito passivo.
 
-\vspace{3mm}
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.6]{IM_circuito_CR_passivo}
+  \caption{Circuito CR}
+  \label{Schema_circuito_CR_passivo_bis}
+\end{figure}
 
 Ricordando che
 
@@ -1625,22 +1631,18 @@ Ricordando che
 
 si ha che l'impedenza in ingresso è
 
-\[|Z_{IN}|=|1/sC + (R // Z_L)|\]
-
-\[\min(|Z_{IN}|) = 0\]
+\[|Z_{IN}|=|1/sC + (R // Z_L)| \;\;\;\;\;\;\;\; \min(|Z_{IN}|) = 0\]
 
 analogamente
 
-\[|Z_{OUT}|= R // (1/sC + Z_S)\]
-
-\[\max(|Z_{OUT}|) = R\]
-
-Si può pensare, anche di questo circuito, una versione attiva (figura \ref{Schema_filtro_passa_alto_CR_attivo})
+\[|Z_{OUT}|= R // (1/sC + Z_S) \;\;\;\;\;\;\;\; \max(|Z_{OUT}|) = R\]
+\clearpage
+Si può pensare, anche di questo circuito, una versione attiva, rappresentata in figura \ref{Schema_filtro_passa_alto_CR_attivo} (\textit{Filtro passa alto CR attivo}).
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_filtro_passa_alto_CR_attivo}
+  \includegraphics[scale=0.6]{IM_filtro_passa_alto_CR_attivo}
   \caption{Filtro passa alto CR attivo}
   \label{Schema_filtro_passa_alto_CR_attivo}
 \end{figure}
@@ -1673,7 +1675,7 @@ Esiste un'altra configurazione passa alto CR attiva (figura \ref{Schema_filtro_p
 
 \[|Z_{OUT}| \approx 0\]
 
-in figura \ref{Schema_filtro_passa_alto_CR_attivo_grafici}, il grafico relativo a questo circuito.
+In figura \ref{Schema_filtro_passa_alto_CR_attivo_grafici}, il grafico relativo a questo circuito.
 
 \begin{figure}[h]
   \centering
@@ -1690,7 +1692,8 @@ Nel circuito il cui comportamento è schematizzato dal grafico in figura \ref{Sc
 \frac{R_2}{R_1} = 3 && T_{HP} = \frac{1}{\omega _{HP}} = C_1 R_1 = 3 m \textrm s
 \end{align*}  
 \clearpage
-Rimuovendo la resistenza $R_1$, il circuito diventa un filtro derivatore (figura \ref{Schema_filtro_derivatore})
+
+Rimuovendo la resistenza $R_1$, il circuito diventa un \textit{filtro derivatore} (figura \ref{Schema_filtro_derivatore}).
 
 \begin{figure}[h]
   \centering
@@ -1720,7 +1723,7 @@ il segnale in uscita è la derivata del segnale in ingresso.
 
 
 \clearpage
-Introduciamo ora il filtro passa banda attivo (figura \ref{Schema_filtro_passa_banda_attivo}). Questa configurazione è particolarmente semplice: i due blocchi passa alto e passa basso visti in precedenza sono posti in cascata.
+Introduciamo ora il \textit{filtro passa banda attivo} (figura \ref{Schema_filtro_passa_banda_attivo}). Questa configurazione è particolarmente semplice: i due blocchi passa alto e passa basso visti in precedenza sono posti in cascata.
 
 \begin{figure}[h]
   \centering
@@ -1783,7 +1786,7 @@ In pratica, è opportuno che $R_1 C_1 > R_2 C_2$.
 
 \subsection{Circuiti risonanti attivi}
 
-Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}. Il curioso simbolo con cui viene rappresentata $R4$ è un potenziometro. In laboratorio questi sono dispositivi a tre terminali, che permettono ruotando una rotella di modificare la resistenza tra il terminale centrale e i laterali, mantenendo però la loro somma costante. Si tratta di un resistore personalizzabile, per farla semplice.
+Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}, un \textit{circuito risonante serie attivo}. Il curioso simbolo con cui viene rappresentata $R4$ è un potenziometro. In laboratorio questi sono dispositivi a tre terminali, che permettono ruotando una rotella di modificare la resistenza tra il terminale centrale e i laterali, mantenendo però la loro somma costante. Si tratta di un resistore personalizzabile, per farla semplice.
 
 \begin{figure}[h]
   \centering
@@ -1793,7 +1796,7 @@ Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{S
   \label{Schema_circuito_risonante_serie_attivo}
 \end{figure}
 
-Continuando a parlare del circuito, si nota immediatamente che non ci sono segnali in ingresso al circuito. Ciò vuol dire che il circuito produce autonomamente il segnale $V_{OUT}$ in uscita. Il circuito può idealmente essere suddiviso in due parti:
+Continuando a parlare del circuito, si nota immediatamente che non ci sono segnali in ingresso. Ciò vuol dire che il circuito produce autonomamente il segnale $V_{OUT}$ in uscita. Il circuito può idealmente essere suddiviso in due parti:
 
 \begin{figure}[h]
   \centering
@@ -1820,7 +1823,7 @@ La seconda parte è un filtro RLC passivo, che ha in ingresso $V_{OUT}$ e in usc
 
 \[V_+ = V_{OUT} \cdot \frac{R_2}{R_2 + R_1 + j \omega L - j/\omega C}\]
 
-per $\omega = \omega _R = 1/\sqrt{LC}$
+per $\omega = \omega _R = 1/\sqrt{LC} \Rightarrow \omega L = 1/\omega C$
 
 \[V_+ = V_{OUT} \cdot \frac{R_2}{R_2 + R_1}\]
 
@@ -1870,11 +1873,11 @@ Intorno alla frequenza di risonanza ($\omega \approx \omega _R$) possiamo quindi
   \label{Schema_confronto_attivi_passivi}
 \end{figure}
 
-Il pulsante visto all'inizio serve solamente a perturbare inizialmente il sistema, essendo $V_{OUT} (t) = 0$ un lecito comportamento del circuito (in realtà purtroppo la presenza del rumore nei circuiti reali non consente mai di avere rigorosamente l'uscita identicamente nulla).
+Il pulsante visto all'inizio serve solo a perturbare inizialmente il sistema, essendo $V_{OUT} (t) = 0$ un lecito comportamento del circuito (in realtà, purtroppo, la presenza del rumore nei circuiti reali non consente mai di avere rigorosamente l'uscita identicamente nulla).
 
 \clearpage
 
-Passiamo ora all'equivalente parallelo di questo circuito, mostrato in figura \ref{Schema_circuito_risonante_parallelo_attivo}.
+Passiamo ora all'equivalente parallelo di questo circuito, mostrato in figura \ref{Schema_circuito_risonante_parallelo_attivo} (\textit{circuito risonante parallelo attivo}).
 
 \begin{figure}[h]
   \centering
@@ -1940,7 +1943,7 @@ Se si sceglie $R_{EQ} = - \frac{L}{CR_1}$
 
 \[Z_{EQ} = \frac{sL + R_1}{s^2 LC + 1 - C R_1^2/L}\]
 
-la frequenza di risonanza (sempre con $R_{EQ} = - \frac{L}{CR_1}$), ricordando che $s = j\omega$, è
+La frequenza di risonanza (sempre con $R_{EQ} = - \frac{L}{CR_1}$), ricordando che $s = j\omega$, è
 
 \[\omega_R = \sqrt{\frac{1 - C R_1^2/L}{LC}}\]
 
@@ -1978,7 +1981,7 @@ la frequenza di risonanza (sempre con $R_{EQ} = - \frac{L}{CR_1}$), ricordando c
   \label{Schema_circuito_giratore}
 \end{figure}
 
-Il circuito giratore, schematizzato in figura \ref{Schema_circuito_giratore}, permette di “emulare” un induttore a partire da un condensatore. Viene spesso usato nei circuiti integrati, dove gli induttori fisici non sono disponibili.
+Il \textit{circuito giratore}, schematizzato in figura \ref{Schema_circuito_giratore}, permette di “emulare” un induttore a partire da un condensatore. Viene spesso usato nei circuiti integrati, dove gli induttori fisici non sono disponibili.
 
 \[I_C = \frac{V_{EQ}}{R_2 + 1/sC} = \frac{V_{EQ} \cdot sC}{1 + sCR_2}\]
 
