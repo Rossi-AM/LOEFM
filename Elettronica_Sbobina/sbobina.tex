@@ -11,7 +11,8 @@
 \usepackage{amstext}
 \usepackage{amsthm}
 \usepackage{steinmetz}
-\usepackage{eurosym}
+\usepackage{stackrel}
+\usepackage{mathtools}
 \geometry{a4paper}
 
 \usepackage[french,italian]{babel}
@@ -20,8 +21,8 @@
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 
-\title{Sbobine laboratorio di elettronica}
-\author{Lorenzo Ramella}
+\title{Dispensa del laboratorio di elettronica (LOEFM)}
+\author{Lorenzo Ramella, Alessandro Matteo Rossi, Marco Tambini}
 \date{AA 2020-2021}
 
 \begin{document}
@@ -59,14 +60,18 @@ Le lezioni del prof. Stefano Riboldi relative al laboratorio di elettronica del 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_generatori_tensione}
+  \includegraphics[scale=0.6]{IM_generatori_tensione}
   \caption{Schizzo di un generatore ideale di tensione}
   \label{Schema_generatori_tensione}
 \end{figure}
 
 Un \textit{generatore ideale di tensione} è un dipolo a due terminali il quale matematicamente definisce una relazione tra i potenziali ai due capi del generatore, ovvero impone la differenza di potenziale ad un valore fisso. 
 
-In un dipolo è possibile definire 1 differenza di potenziale $V$ e una corrente $I$. In un generatore di tensione la prima è imposta dal generatore stesso, mentre la seconda dipende dal circuito esterno. Nel caso schematizzato in figura \ref{Schema_generatori_tensione}, essendo il circuito aperto, $I_G = 0$.
+\vspace{1mm}
+
+In un dipolo è possibile definire una differenza di potenziale $V$ e una corrente $I$. In un generatore di tensione la prima è imposta dal generatore stesso, mentre la seconda dipende dal circuito esterno. Nel caso schematizzato in figura \ref{Schema_generatori_tensione}, essendo il circuito aperto, $I_G = 0$.
+
+\vspace{1mm}
 
 La potenza generata è pari a 
 
@@ -77,7 +82,7 @@ Si noti che, usando la convenzione dei generatori, la potenza è \textit{generat
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_generatori_corrente}
+  \includegraphics[scale=0.6]{IM_generatori_corrente}
   \caption{Schizzo di un generatore ideale di corrente}
   \label{Schema_generatori_corrente}
 \end{figure}
@@ -90,7 +95,7 @@ La potenza generata, con la convenzione dei generatori, è sempre
 
 Questi generatori sono meno comuni dei generatori di tensione.
 
-
+\clearpage
 
 
 
@@ -288,7 +293,7 @@ Chiudendo il circuito come illustrato in figura \ref{Schema_circuito_RL_chiuso} 
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuito_RL_chiuso}
-  \caption{Schizzo di un circuito RL (t>0)}
+  \caption{Schizzo di un circuito RL ($t>0$)}
   \label{Schema_circuito_RL_chiuso}
 \end{figure}
 
@@ -338,7 +343,7 @@ Dato un circuito costituido da dipoli, definiamo:
   \label{Schema_rami}
 \end{figure}
 
-\textit{Rami} i percorsi compresi tra due poli (figura \ref{Schema_rami});
+\textit{Rami} i percorsi compresi tra due nodi (figura \ref{Schema_rami});
 
 \begin{figure}[h]
   \centering
@@ -350,7 +355,7 @@ Dato un circuito costituido da dipoli, definiamo:
 
 \textit{Maglie} insiemi chiusi di rami (figura \ref{Schema_maglie});
 \newpage
-Partendo da queste definizioni, introduciamo le due leggi di Kirchhoff:
+Partendo da queste definizioni, introduciamo le due \textit{leggi di Kirchhoff}:
 
 \vspace{3mm}
 
@@ -386,7 +391,7 @@ In altre parole: la somma algebrica delle differenze di potenziale su ogni perco
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuiti_partitori}
-  \caption{Schizzo di un sistema di due dipoli in serie}
+  \caption{Schizzo di un sistema di due dipoli in serie (partitore di tensione)}
   \label{Schema_dipoli_serie}
 \end{figure}
 
@@ -414,7 +419,7 @@ Se si volesse ora trovare il valore di $V_{R1}$ basta pensare che
   \centering
   %\captionsetup{justification=centering,margin=2cm}
   \includegraphics[scale=0.7]{IM_circuiti_partitori_bis}
-  \caption{Schizzo di un sistema di due dipoli in parallelo}
+  \caption{Schizzo di un sistema di due dipoli in parallelo (partitore di corrente)}
   \label{Schema_dipoli_parallelo}
 \end{figure}
 
@@ -431,6 +436,12 @@ quindi
 \[R_{eq} = \frac{R_1 R_2}{R_1 + R_2} \quad \textrm{oppure} \quad \frac{1}{R_{eq}}=\left( \frac{1}{R_1}+ \frac{1}{R_2} \right)\]
 
 Se ho due o più resistenze collegate in parallelo, esse equivalgono ad un unico resistore la cui resistenza equivalente è pari alla somma armonica delle singole resistenze.
+
+\vspace{3mm}
+
+\textbf{Nota importante:} d'ora in avanti si userà il simbolo $//$ per indicare la somma armonica tra due o più quantità.
+
+\[\displaystyle{\left(\frac{1}{R_1}+\frac{1}{R_2}\right)^{-1}:= R_1//R_2}\]
 
 \vspace{3mm}
 
@@ -515,7 +526,7 @@ Si immagini di prendere il dipolo rappresentato in figura \ref{Schema_Thevenin_N
 \vspace{1mm}
 
 Poiché le uniche due grandezze misurabili sono la tensione e la corrente, l'unico strumento che si ha a disposizione è la \textit{curva caratteristica} $I-V$:
-\[I_{OUT} = f_Y(V_{OUT}) \quad \textrm{oppure} \quad V_{OUT} = f_z(I_{OUT})\]
+\[I_{OUT} = f_Y(V_{OUT}) \quad \textrm{oppure} \quad V_{OUT} = f_Z(I_{OUT})\]
 Due dipoli sono \textit{equivalenti} se e solo se hanno la stessa curva caratteristica.
 
 \vspace{1mm}
@@ -577,7 +588,7 @@ Nella realtà, per determinare l'equivalenza di due circuiti, ci si muove all'in
 
 \textit{Esempio}: il caricatore del cellulare (USB) è equivalente ad un generatore di tensione (reale), con differenza di potenziale in uscita pari a $V_{OUT} = +5\,$V e corrente in uscita $I_{OUT} < 1\,$A.
 
-%\clearpage
+\clearpage
 
 
 
@@ -596,7 +607,7 @@ Nella realtà, per determinare l'equivalenza di due circuiti, ci si muove all'in
   \label{Schema_impedenze}
 \end{figure}
 
-Ad un generatore di tensione è possibile collegare carichi diversi. Il carico ``migliore'' che è possibile collegare al generatore di tensione è il carico cosiddetto ``ideale'' (non collegare), mentre il carico ``peggiore'', in questo senso, è il cortocircuito (collegare una resistenza nulla). Quest'ultimo carico è particolarmente problematico perché, facendo fluire liberamente la corrente ai due capi del generatore, ``impedisce'' al generatore di imporre una differenza di potenziale ai suoi due capi. Un generatore vero potrebbe rompersi.
+Ad un generatore di tensione è possibile collegare carichi diversi. Il carico ``migliore'' che è possibile collegare al generatore di tensione è il carico cosiddetto ``ideale'' (non collegare, cioè avere una resistenza infinita), mentre il carico ``peggiore'', in questo senso, è il cortocircuito (collegare una resistenza nulla). Quest'ultimo carico è particolarmente problematico perché, facendo fluire liberamente la corrente ai due capi del generatore, ``impedisce'' al generatore di imporre una differenza di potenziale ai suoi due capi. Un generatore vero potrebbe rompersi.
 
 \vspace{3mm}
 
@@ -620,7 +631,7 @@ Con l'espressione \textit{effetto di carico} si intende l'effetto per il quale, 
 \item di tensione, la tensione effettiva $V_{OUT}$ generata è minore, in modulo, rispetto al valore $V_S$ idealmente prodotto dal generatore
 \item di corrente, la corrente effettiva $I_{OUT}$ generata è minore, in modulo, rispetto al valore $I_S$ idealmente prodotto dal generatore
 \end{itemize}
-
+\clearpage
 L'effetto di carico non sarebbe presente se non esistesse la resistenza $R_S$, ovvero se ci trovassimo in presenza di un \textit{generatore ideale}. Purtroppo questi generatori non esistono.
 
 \begin{figure}[h]
@@ -690,6 +701,8 @@ Abbiamo quindi che:
   \item $Z_C (j\omega) = 1/(j\omega C) \Rightarrow |Z_C (j\omega)| = 1/(\omega C)$ e $\measuredangle (Z_C (j\omega)) = -\frac{\pi}{2}$
 \end{itemize}
 
+In queste formule è possibile apprezzare la dualità tra condensatore e induttore.
+
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -727,7 +740,7 @@ Un doppio dipolo ha quattro gradi di libertà, due tensioni e due correnti. I se
 
 \vspace{3mm}
 
-Ma cos'è un sistema lineare? Dato un sistema $f$, dotato di un ingresso (formato eventualmente anche da un certo numero di entrate elementari) ed un'uscita, questo è lineare se e solo se l'uscita è combinazione lineare delle uscite che il sistema avrebbe applicandogli i singoli ingressi elementari:
+Ma cos'è un \textit{sistema lineare}? Dato un sistema $f$, dotato di un ingresso (formato eventualmente anche da un certo numero di entrate elementari) ed un'uscita, questo è lineare se e solo se l'uscita è combinazione lineare delle uscite che il sistema avrebbe applicandogli i singoli ingressi elementari:
 
 \[f(C_1 \cdot IN_1 + C_2 \cdot IN_2) = C_1 \cdot f(IN_1) + C_2 \cdot f(IN_2)\]
 
@@ -745,7 +758,7 @@ $f$ è un sistema tempo invariante se e solo se le sue proprietà non dipendono 
   \label{Schema_funzioni_trasferimento}
 \end{figure}
 
-Nel caso del primo circuito, la funzione di trasferimento $H(s)$ è la relazione tra un'entrata di tensione e un uscita di corrente. La FdT è quindi l'ammettenza del condensatore.
+Nel caso del primo circuito, la funzione di trasferimento $H(s)$ è la relazione tra un'entrata di tensione e un'uscita di corrente. La FdT è quindi l'ammettenza del condensatore.
 
 \vspace{1mm}
 
@@ -767,7 +780,7 @@ In assenza di effetti di carico (o se le singole Funzioni di Trasferimento sono 
 
 \vspace{1mm}
 
-È possibile definire le proprietà di questi sistemi anche nel dominio del tempo:
+È possibile definire le proprietà di questi sistemi anche nel dominio del tempo.
 
 \begin{figure}[h]
   \centering
@@ -777,22 +790,22 @@ In assenza di effetti di carico (o se le singole Funzioni di Trasferimento sono 
   \label{Schema_doppio_dipolo_tempo}
 \end{figure}
 
-Si carichi il condensatore con un generatore di corrente che ha andamento impulsivo. La corrente emessa dal generatore è nulla per ogni $t$ diverso da 0 mentre, se $t=0$, il generatore emette un impulso di corrente che carica il condensatore di una carica $q_0$. 
+Carichiamo il condensatore con un generatore di corrente che ha andamento impulsivo. La corrente emessa dal generatore è nulla per ogni $t$ diverso da 0 mentre, se $t=0$, il generatore emette un impulso di corrente che carica il condensatore di una carica $q_0$. 
 
 \[i_{IN} = \delta (t) \cdot (C \cdot  v_0)\]
 
-\[v_{OUT} = v_0 \cdot  e^{-t/(C/R)}\]
+\[v_{OUT} = v_0 \cdot  e^{-t/(CR)}\]
 
 Il sistema è lineare, quindi immettendo in ingresso una corrente generica $\delta (t)$
 
 \[i_{IN} = \delta (t)\]
 
-\[v_{OUT} = (1 / C) \cdot  e^{-t/(C/R)} = h(t)\]
+\[v_{OUT} = (1 / C) \cdot  e^{-t/(CR)} = h(t)\]
 
 dove $h(t)$ è la risposta all'impulso $\delta(t)$ di un sistema lineare e tempo invariante.
 
 \clearpage
-Rappresentare la proprietà di un sistema LTI i termini di risposta all'impulso $h(t)$ o in termini di FdT $H(f)$ consente di rappresentare la risposta del sistema LTI per qualsiasi segnale in ingresso, posto che questo sia a sua volta rappresentabile sulla base di impulsi di Dirac o di funzioni armoniche:
+Rappresentare la proprietà di un sistema LTI i termini di risposta all'impulso $h(t)$ o in termini di FdT $H(f)$ consente di rappresentare la risposta del sistema LTI (Linear Time-Invariant) per qualsiasi segnale in ingresso, posto che questo sia a sua volta rappresentabile sulla base di impulsi di Dirac o di funzioni armoniche:
 
 \[in(t) = \int_{-\infty}^{\infty} in(\xi) \cdot \delta (t - \xi) \cdot \textrm{d} \xi = \int_{-\infty}^{\infty} IN (f) \cdot e^{j \omega f t} \cdot \textrm d f\]
 
@@ -812,7 +825,7 @@ Definiamo la \textit{trasformata di Fourier} ($\mathcal{F}$) e la sua \textit{an
 
 Consegue infine che:
 
-\[h(t) \xrightarrow{\mathcal{F}} H(f) \xrightarrow{\mathcal{F}^{-1}} h(t)\]
+\[h(t) \underset{\mathcal{F}^{-1}}{\overset{\mathcal{F}}{\rightleftarrows}} H(f)\]
 
 \clearpage
 
@@ -2379,7 +2392,7 @@ ritornando al punto di partenza. Il ciclo continua indefinitamente. In particola
 
 Il periodo del segnale ad onda quadra corrisponde al tempo necessario affinché il condensatore $C$ inverta la sua carica
 
-\[\Delta T = C \frac{\Delta V}{I_{R3}} = 1u \frac{2 \cdot 1.11 \textrm V}{2m \textrm A} = 1.11 m \textrm s\]
+\[\Delta T = C \frac{\Delta V}{I_{R3}} = 1\mu \textrm{F} \,\frac{2 \cdot 1.11 \textrm V}{2m \textrm A} = 1.11 m \textrm s\]
 
 Si noti che questo è l'unico valore del segnale che dipende da $I_{R3}$ (e quindi da $R_3$). Ne segue che, agendo su $R_3$, si può cambiare la frequenza del segnale in uscita.
 
@@ -2531,7 +2544,7 @@ I transistor sono più pratici delle valvole termoioniche, in quanto notevolment
  
 \vspace{3mm}
 
-Una debole corrente di base (segnale di controllo) fa scorrere una corrente $\beta$ (simbolo standard del guadagno in corrente) volte maggiore (da 5 a 300 circa) tra collettore ed emettitore (NPN) o tra emettitore e collettore (PNP). In un BJT NPN ``acceso'' si avrà una corrente base-emettitore $V_{BE} \approx 0.6$V (giunzione P-N).
+Una debole corrente di base (segnale di controllo) fa scorrere una corrente $\beta$ (simbolo standard del guadagno in corrente) volte maggiore (da 5 a 300 circa) tra collettore ed emettitore (NPN) o tra emettitore e collettore (PNP). In un BJT NPN ``acceso'' si avrà una differenza di potenziale base-emettitore $V_{BE} \approx 0.6$V (giunzione P-N).
 
 \begin{figure}[h]
   \centering
@@ -3035,7 +3048,7 @@ Partendo da entrambe queste espressioni di $f$ si può semplificare e arrivare a
 
 \subsection{Porte logiche}
 
-Si definisce \textit{famiglia logica} un insieme di dispositivi logici tra loro compatibili. La compatibilità riguarda principalmente la corrispondenza tra i livelli logici (‘0’ e ‘1’) e i corrispondenti livelli elettrici dei segnali in ingresso e in uscita al dispositivo. Tipicamente un segnale a bassa tensione corrisponde al livello logico 0 e un segnale ad alta tensione a 1; ciò che cambia tra una famiglia logica e un'altra è quindi cosa si intende per alta tensione e bassa tensione\footnote{Convenzionalmente si intende per "alto" un voltaggio $\leq 5 \, V$ e per "basso" uno prossimo allo zero. In laboratorio però più il circuito diventa grosso più ci si discosta dai valori "teorici" a causa di cadute di potenziale dovute da partitori di tensione. Ma non c'è da preoccuparsi, perchè sui datasheet delle singole porte logiche è riportato cosa la porta interpreta come "alto" o "basso" in funzione di $V_{CC}$ ($3,15 \,V$ sono considerati "1" da un NAND di Texas Instruments con $V_{CC}=4,5\,V$, ad esempio)}.
+Si definisce \textit{famiglia logica} un insieme di dispositivi logici tra loro compatibili. La compatibilità riguarda principalmente la corrispondenza tra i livelli logici (‘0’ e ‘1’) e i corrispondenti livelli elettrici dei segnali in ingresso e in uscita al dispositivo. Tipicamente un segnale a bassa tensione corrisponde al livello logico 0 e un segnale ad alta tensione a 1; ciò che cambia tra una famiglia logica e un'altra è quindi cosa si intende per alta tensione e bassa tensione\footnote{Per le porte logiche disponibili in laboratorio si intende per "alto" un voltaggio $\approx 5 \, \text{V}$ e per "basso" uno prossimo allo zero. Può capitare che un gate non restituisca un'uscita pari a esattamente a 5 V, ma un valore più basso. Ma non c'è da preoccuparsi, perchè sui datasheet delle singole porte logiche è riportato cosa la porta interpreta come "alto" o "basso" in funzione di $V_{CC}$ ($3,15 \,V$ sono considerati "1" da un NAND di Texas Instruments con $V_{CC}=4,5\,V$, ad esempio).}.
 
 \vspace{1mm}
 
