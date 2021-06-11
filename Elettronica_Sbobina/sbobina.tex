@@ -163,7 +163,7 @@ P_R (t) = I_R^2 (t) \cdot R
   \label{Schema_condensatore}
 \end{figure}
 
-Un condensatore immagazzina al suo interno una carica $Q$, misurata in coulomb (C). Questa è l'integrale della corrente che attraversa il condensatore nel tempo.
+Un \textit{condensatore} immagazzina al suo interno una carica $Q$, misurata in coulomb (C). Questa è l'integrale della corrente che attraversa il condensatore nel tempo.
 
 In un condensatore esiste una relazione tra la carica in esso immagazzinata e la differenza di potenziale ai suoi capi:
 
@@ -196,7 +196,7 @@ Un condensatore è in grado di immagazzinare un'energia
   \label{Schema_induttore}
 \end{figure}
 
-L'induttore, meno diffuso del condensatore, ne è l'elemento duale. Detto $\Phi$ il flusso del campo magnetico, misurato in weber (Wb), si ha che 
+L'\textit{induttore}, meno diffuso del condensatore, ne è l'\textit{elemento duale}. Detto $\Phi$ il flusso del campo magnetico, misurato in weber (Wb), si ha che 
 
 \[\frac{\Phi _L (t)}{I_L (t)} = \textit{ costante positiva } = L \]
 
@@ -232,7 +232,7 @@ Nell'induttore l'energia immagazzinata dipende dalla corrente: affinché si mant
   \label{Schema_circuito_RC}
 \end{figure}
 
-Un circuito RC è un sistema a 4 gradi di libertà (2 tensioni e 2 correnti), essendo costituito da 2 dipoli. Nel caso schematizzato in figura \ref{Schema_circuito_RC}, per t<0 le condizioni al contorno sono:
+Un \textit{circuito RC} è un sistema a 4 gradi di libertà (2 tensioni e 2 correnti), essendo costituito da 2 dipoli. Nel caso schematizzato in figura \ref{Schema_circuito_RC}, per t<0 le condizioni al contorno sono:
 
 \begin{itemize}
   \item $I_R (t) = 0$ (dipolo non connesso)
@@ -278,7 +278,7 @@ Dopo aver notato il fatto che la quantità $CR$ ha la dimensione dei secondi, la
   \label{Schema_circuito_RL}
 \end{figure}
 
-Un circuito RL è un sistema sempre a 4 gradi di libertà (2 tensioni e 2 correnti). Nel caso schematizzato in figura \ref{Schema_circuito_RL}, per $t<0$ le condizioni al contorno sono:
+Un \textit{circuito RL} è un sistema sempre a 4 gradi di libertà (2 tensioni e 2 correnti). Nel caso schematizzato in figura \ref{Schema_circuito_RL}, per $t<0$ le condizioni al contorno sono:
 
 \begin{itemize}
   \item $I_R (t) = 0$ (dipolo non connesso)
@@ -470,7 +470,7 @@ Se si volesse ora trovare il valore di $I_{R1}$ basta pensare che
   \label{Schema_generatore_reale_tensione}
 \end{figure}
 
-In un generatore reale, si distingue la differenza di potenziale ai capi del generatore $V_G$ dalla differenza di potenziale ai capi del sistema a cui il generatore è collegato:
+In un \textit{generatore reale}, si distingue la differenza di potenziale ai capi del generatore $V_G$ dalla differenza di potenziale ai capi del sistema a cui il generatore è collegato:
 
 \[V_{OUT} = V_G - V_R\]
 
@@ -842,7 +842,15 @@ Consegue infine che:
 
 \section{Circuiti passivi con elementi RLC}
 
-Da questo capitolo apparirà il simbolo formato da tre linee di lunghezza decrescente. Questo rappresenta la messa a massa o GND. Questo funge da generico punto di riferimento per la misura delle differenze di potenziale. È utile quando si lavora con il simulatore circuitale per potere indicare con facilità l'equipotenzialità di parti del circuito graficamente molto distanti. 
+Da questo capitolo apparirà il simbolo formato da tre linee di lunghezza decrescente (figura \ref{GND}). Questo rappresenta la messa a massa o GND. Questo funge da generico punto di riferimento per la misura delle differenze di potenziale. È utile quando si lavora con il simulatore circuitale per potere indicare con facilità l'equipotenzialità di parti del circuito graficamente molto distanti. 
+
+\begin{figure}[h]
+  \centering
+  %\captionsetup{justification=centering,margin=2cm}
+  \includegraphics[scale=0.1]{IM_GND.png}
+  \caption{Rappresentazione grafica del GND}
+  \label{GND}
+\end{figure}
 
 \subsection{Circuiti RC e RL}
 
@@ -855,12 +863,12 @@ L'analisi nel dominio della frequenza sarà la più semplice e diretta, applican
   \caption{Le impedenze}
   \label{Schema_impedenze_bis}
 \end{figure}
-
-Cominciamo con il circuito RC in figura \ref{Schema_circuito_RC_passivo}.
+\clearpage
+Cominciamo con il circuito RC (\textit{Filtro passa basso RC passivo}) in figura \ref{Schema_circuito_RC_passivo}.
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_RC_passivo}
+  \includegraphics[scale=0.6]{IM_circuito_RC_passivo}
   \caption{Circuito RC}
   \label{Schema_circuito_RC_passivo}
 \end{figure}
@@ -876,17 +884,17 @@ e, per $s = j\omega$,
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_RC_passivo_grafici}
+  \includegraphics[scale=0.6]{IM_circuito_RC_passivo_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_RC_passivo_grafici}
 \end{figure}
-
-Concentrandoci ora sul circuito CR (figura \ref{Schema_circuito_CR_passivo}):
+\clearpage
+Concentrandoci ora sul circuito CR (\textit{Filtro passa alto CR attivo}) in figura \ref{Schema_circuito_CR_passivo}:
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_CR_passivo}
+  \includegraphics[scale=0.6]{IM_circuito_CR_passivo}
   \caption{Circuito CR}
   \label{Schema_circuito_CR_passivo}
 \end{figure}
@@ -906,13 +914,13 @@ e, per $s = j\omega$,
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_CR_passivo_grafici}
 \end{figure}
-
-Analogamente si procede per le induttanze. Con il circuito RL (figura \ref{Schema_circuito_RL_passivo}):
+\clearpage
+Analogamente si procede per le induttanze. Con il circuito RL in figura \ref{Schema_circuito_RL_passivo} (\textit{Filtro passa alto RL passivo}):
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_RL_passivo}
+  \includegraphics[scale=0.6]{IM_circuito_RL_passivo}
   \caption{Circuito RL}
   \label{Schema_circuito_RL_passivo}
 \end{figure}
@@ -929,12 +937,12 @@ e, per $s = j\omega$,
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_circuito_RL_passivo_grafici}
+  \includegraphics[scale=0.6]{IM_circuito_RL_passivo_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_RL_passivo_grafici}
 \end{figure}
 \clearpage
-Concentrandoci ora sul circuito LR (figura \ref{Schema_circuito_LR_passivo}):
+Concentrandoci ora sul circuito LR in figura \ref{Schema_circuito_LR_passivo} (\textit{Filtro passa basso RL passivo}):
 
 \begin{figure}[h]
   \centering
@@ -975,7 +983,7 @@ e, per $s = j\omega$,
 
 \subsection{Circuiti risonanti serie}
 
-Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_serie_LC}.
+Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_serie_LC} (\textit{Filtro risonante serie LC passivo}).
 
 \begin{figure}[h]
   \centering
@@ -1008,7 +1016,7 @@ e, per $s = j\omega$,
 \end{figure}
 
 \clearpage
-Concentrandoci ora sul circuito CL mostrato in figura \ref{Schema_circuito_risonante_serie_CL}:
+Concentrandoci ora sul circuito CL mostrato in figura \ref{Schema_circuito_risonante_serie_CL} (\textit{Filtro risonante serie CL passivo}):
 
 \begin{figure}[h]
   \centering
@@ -1041,12 +1049,12 @@ e, per $s = j\omega$,
 \end{figure}
 
 \clearpage
-Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_risonante_serie_RLC}:
+Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_risonante_serie_RLC} (\textit{Filtro risonante serie RLC passivo}):
 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_RLC}
+  \includegraphics[scale=0.48]{IM_circuito_risonante_serie_RLC}
   \caption{Circuito risonante serie RLC}
   \label{Schema_circuito_risonante_serie_RLC}
 \end{figure}
@@ -1069,7 +1077,7 @@ Per $R \geq 2 \cdot \sqrt{\frac{L}{C}}$ non ci sono effetti di risonanza.
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.5]{IM_circuito_risonante_serie_RLC_grafici}
+  \includegraphics[scale=0.48]{IM_circuito_risonante_serie_RLC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_serie_RLC_grafici}
 \end{figure}
@@ -1091,7 +1099,7 @@ Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effet
 \clearpage
 \subsection{Circuiti risonanti parallelo}
 
-Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_parallelo_LC}:
+Concentrandoci ora sul circuito LC mostrato in figura \ref{Schema_circuito_risonante_parallelo_LC} (\textit{Filtro risonante parallelo LC passivo}):
 
 \begin{figure}[h]
   \centering
@@ -1122,8 +1130,8 @@ e, per $s = j\omega$,
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_parallelo_LC_grafici}
 \end{figure}
-
-Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_risonante_parallelo_RLC}:
+\clearpage
+Concentrandoci ora sul circuito RLC mostrato in figura \ref{Schema_circuito_risonante_parallelo_RLC} (\textit{Filtro risonante parallelo RLC passivo}):
 
 \begin{figure}[h]
   \centering
@@ -1154,7 +1162,7 @@ Per $R \geq \frac{1}{2} \cdot \sqrt{\frac{L}{C}}$ non ci sono effetti di risonan
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.55]{IM_circuito_risonante_parallelo_RLC_grafici}
+  \includegraphics[scale=0.5]{IM_circuito_risonante_parallelo_RLC_grafici}
   \caption{La funzione di trasferimento al variare della pulsazione}
   \label{Schema_circuito_risonante_parallelo_RLC_grafici}
 \end{figure}
@@ -1187,7 +1195,7 @@ Il fattore di merito (o qualità) $Q$ esprime la relativa prevalenza degli effet
   \label{Schema_amplificatore_operazionale}
 \end{figure}
 
-Un amplificatore operazionale è un dispositivo ad almeno 5 terminali (anche se molto spesso ne ha un numero maggiore). Questi 5 terminali sono così suddivisi:
+Un \textit{amplificatore operazionale} è un dispositivo ad almeno 5 terminali (anche se molto spesso ne ha un numero maggiore). Questi 5 terminali sono così suddivisi:
 \begin{itemize}
   \item Due ingressi, tipicamente di tensione (esistono anche degli amplificatori operazionali detti ``current mode'' che hanno un ingresso di tensione e un ingresso di corrente);
   \item un'uscita di tensione;
@@ -1196,7 +1204,7 @@ Un amplificatore operazionale è un dispositivo ad almeno 5 terminali (anche se 
 
 \vspace{3mm}
 
-È un dispositivo attivo. Un dispositivo attivo è un dispositivo che trasferisce potenza dai terminali di alimentazione all'uscita. Una popolare definizione sbagliata di dispositivo attivo è quella di un dispositivo in cui l'uscita, in tensione, è maggiore degli ingressi applicati. Per accertarne la falsità è sufficiente pensare ad un circuito risonante che ha in ingresso un segnale alla frequenza di risonanza.
+È un dispositivo attivo. Un \textit{dispositivo attivo} è un dispositivo che trasferisce potenza dai terminali di alimentazione all'uscita. Una popolare definizione sbagliata di dispositivo attivo è quella di un dispositivo in cui l'uscita, in tensione, è maggiore degli ingressi applicati. Per accertarne la falsità è sufficiente pensare ad un circuito risonante che ha in ingresso un segnale alla frequenza di risonanza.
 
 \vspace{3mm}
 
@@ -1322,9 +1330,11 @@ Questo modello ha le seguenti caratteristiche:
   \label{Schema_circuito_invertente}
 \end{figure}
 
-La configurazione circuitale invertente, schematizzata in figura \ref{Schema_circuito_invertente}, è una configurazione basilare. È un doppio dipolo con ingresso e uscita in tensione. 
+La \textit{configurazione circuitale invertente}, schematizzata in figura \ref{Schema_circuito_invertente}, è una configurazione basilare. È un doppio dipolo con ingresso e uscita in tensione. 
 
-Supponendo i due ingressi equipotenziali, $V_+ = V_- = 0\, V$. Si applica ora la legge di Ohm:
+\vspace{1mm}
+
+Supponendo i due ingressi equipotenziali, $V_+ = V_- = 0\, \textrm{V}$. Si applica ora la legge di Ohm:
 
 \[I_{R1} = \frac{V_{R1}}{R_1} = \frac{V_{IN}}{R_1}\]
 
@@ -1357,7 +1367,9 @@ da cui
   \label{Schema_circuito_non_invertente}
 \end{figure}
 
-La configurazione circuitale non invertente, schematizzata in figura \ref{Schema_circuito_non_invertente}, è analoga a quella invertente, salvo una modifica: lo spostamento dell'ingresso di tensione.
+La \textit{configurazione circuitale non invertente}, schematizzata in figura \ref{Schema_circuito_non_invertente}, è analoga a quella invertente, salvo una modifica: lo spostamento dell'ingresso di tensione.
+
+\vspace{1mm}
 
 Supponendo i due ingressi equipotenziali, $V_+ = V_- = V_{IN}$. Per la seconda legge di Kirchhoff (\ref{KVL}):
 
