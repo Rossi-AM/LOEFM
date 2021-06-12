@@ -1786,7 +1786,7 @@ In pratica, è opportuno che $R_1 C_1 > R_2 C_2$.
 
 \subsection{Circuiti risonanti attivi}
 
-Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}, un \textit{circuito risonante serie attivo}. Il curioso simbolo con cui viene rappresentata $R4$ è un potenziometro. In laboratorio questi sono dispositivi a tre terminali, che permettono ruotando una rotella di modificare la resistenza tra il terminale centrale e i laterali, mantenendo però la loro somma costante. Si tratta di un resistore personalizzabile, per farla semplice.
+Iniziamo a parlare di circuiti risonanti attivi con il circuito in figura \ref{Schema_circuito_risonante_serie_attivo}, un \textit{circuito risonante serie attivo}. Il simbolo con cui viene rappresentata $R_4$ è un potenziometro. In laboratorio questi sono dispositivi a tre terminali, che permettono ruotando una apposita vite di modificare la resistenza tra il terminale centrale e i laterali, mantenendo però la loro somma costante. Si tratta di un resistore regolabile, per farla semplice.
 
 \begin{figure}[h]
   \centering
@@ -2033,7 +2033,7 @@ Il \textit{circuito giratore}, schematizzato in figura \ref{Schema_circuito_gira
   \label{Schema_diodo_p_n}
 \end{figure}
 
-Un diodo è una giunzione formata da due pezzi di uno stesso materiale (in questo caso silicio) contatto tra di loro, ``drogati'' in maniera diversa (di solito Boro e Fosforo). Questi drogaggi portano il primo ad una eccedenza di elettroni e il secondo ad una carenza di elettroni.
+Un \textit{diodo} è una giunzione formata da due pezzi di uno stesso materiale (in questo caso silicio) contatto tra di loro, ``drogati'' in maniera diversa (di solito Boro e Fosforo). Questi drogaggi portano il primo ad una eccedenza di elettroni e il secondo ad una carenza di elettroni.
 
 \vspace{3mm}
 
@@ -2082,9 +2082,9 @@ L'analisi circuitale permette di studiare il comportamento qualitativo del circu
 
 \[I = \frac {V_L - V_D}{R} = \frac {V_L}{R} - \frac {V_D}{R}\]
 
-Dove $V_L$ è la tensione generata dal generatore e $V_D$ è la (ignota) tensione ai capi del diodo. Al variare di $V_D$ tra $0$ e $V_L$ si ha che la corrente segue una retta a coefficiente negativo, detta \textit{retta di carico}. L'intersezione tra la retta di carico e la curva esponenziale vista precedentemente ci danno la tensione ai capi e la corrente che scorre attraverso il diodo, ovvero il punto di lavoro del circuito.
+Dove $V_L$ è la tensione generata dal generatore e $V_D$ è la (ignota) tensione ai capi del diodo. Al variare di $V_D$ tra $0$ e $V_L$ si ha che la corrente segue una retta a coefficiente negativo, detta \textit{retta di carico}. L'intersezione tra la retta di carico e la curva esponenziale vista precedentemente ci danno la tensione ai capi e la corrente che scorre attraverso il diodo, ovvero il \textit{punto di lavoro del circuito}.
 
-In particolare vediamo che solamente da $R$ dipende il coefficiente angolare della retta.
+In particolare vediamo che il coefficiente angolare della retta dipende solamente da $R$.
 
 \vspace{3mm}
 
@@ -2121,7 +2121,7 @@ In figura \ref{Schema_diodo_modelli}, alcuni semplici modelli di diodo, pensati 
   \caption{Alcuni modelli semplici, per ``grande segnale''}
   \label{Schema_diodo_modelli}
 \end{figure}
-
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -2132,7 +2132,9 @@ In figura \ref{Schema_diodo_modelli}, alcuni semplici modelli di diodo, pensati 
 
 In figura \ref{Schema_diodo_Zener} è raffigurato un diodo Zener.
 
-Un diodo Zener, rispetto ad un classico diodo, dissipa più efficientemente il calore generato in condizione di “rottura di giunzione” e può pertanto operare costantemente in tale modalità. Ha inoltre specifici profili di drogaggio che consentono di controllare più precisamente la condizioni di rottura di giunzione ($V_Z$, $I_Z$, dove $Z$ sta per Zener), anche al variare della temperatura, e mantiene “costante” la differenza di potenziale ai suoi capi, anche al variare della corrente che lo attraversa.
+\vspace{1mm}
+
+Un \textit{diodo Zener}, rispetto ad un classico diodo, dissipa più efficientemente il calore generato in condizione di “rottura di giunzione” e può pertanto operare costantemente in tale modalità. Ha inoltre specifici profili di drogaggio che consentono di controllare più precisamente la condizioni di rottura di giunzione ($V_Z$, $I_Z$, dove $Z$ sta per Zener), anche al variare della temperatura, e mantiene “costante” la differenza di potenziale ai suoi capi, anche al variare della corrente che lo attraversa.
 
 \begin{figure}[h]
   \centering
@@ -2146,9 +2148,9 @@ In figura \ref{Schema_diodo_Schottky} è raffigurato un diodo Schottky.
 
 \vspace{1mm}
 
-A differenza di un diodo classico con giunzione in silicio (silicio-silicio), lo Schottky ha una giunzione in metallo-silicio. Rispetto ad un diodo classico, ha minore tensione di soglia, usualmente inferiore a $0.4 V$, maggior velocita’ di commutazione tra gli stati (ON – OFF) e tensione di rottura usualmente minore rispetto ad un diodo p-n.
+A differenza di un diodo classico con giunzione in silicio (silicio-silicio), lo Schottky ha una giunzione in metallo-silicio. Rispetto ad un diodo classico, ha minore tensione di soglia, usualmente inferiore a $0.4\, \textrm{V}$, maggior velocita’ di commutazione tra gli stati (ON – OFF) e tensione di rottura usualmente minore rispetto ad un diodo p-n.
 
-\vspace{3mm}
+\clearpage
 
 Ora, dato un diodo ignoto, come determinarne, sperimentalmente, la curva caratteristica?
 
@@ -2172,7 +2174,7 @@ I due metodi sono, teoricamente, equivalenti.
 
 \vspace{1mm}
 
-In laboratorio, essendo presenti solamente generatori di tensione\footnote{si può “simulare” un generatore di corrente (solo in continua e con poca precisione) variando opportunamente il limite di corrente erogabile da un alimentatore di tensione, ma non ne vale la pena}, sarà necessario ricorrere al primo. La corrente deve quindi essere misurata con un amperometro in serie, tuttavia sappiamo che questi stumenti, per forza di cose, provocano una caduta di tensione potenzialmente significativa per effetto dell’impedenza interna $R_{EQ1}$ che non è nota a priori (talvolta dipende dall’entità della corrente da misurare). 
+In laboratorio, essendo presenti solamente generatori di tensione\footnote{si può “simulare” un generatore di corrente (solo in continua e con poca precisione) variando opportunamente il limite di corrente erogabile da un alimentatore di tensione, ma non ne vale la pena.}, sarà necessario ricorrere al primo. La corrente deve quindi essere misurata con un amperometro in serie, tuttavia sappiamo che questi stumenti, per forza di cose, provocano una caduta di tensione potenzialmente significativa per effetto dell’impedenza interna $R_{EQ1}$ che non è nota a priori (talvolta dipende dall’entità della corrente da misurare). 
 
 \begin{figure}[h]
   \centering
@@ -2227,7 +2229,7 @@ ricordando sempre che $V_O$ è limitato dalle alimentazioni.
 
 \subsection{Rettificatori}
 
-Vediamo adesso qualche interessante circuito con diodi
+Vediamo adesso qualche interessante circuito con diodi.
 
 \begin{figure}[h]
   \centering
@@ -2278,7 +2280,7 @@ Vediamo adesso qualche interessante circuito con diodi
   \label{Schema_rettificatore_ideale}
 \end{figure}
 
-Il circuito in figura \ref{Schema_rettificatore_ideale} è un rettificatore ideale. Procediamo con l'analisi:
+Il circuito in figura \ref{Schema_rettificatore_ideale} è un \textit{rettificatore ideale}. Procediamo con l'analisi:
 
 \[I_{R1} = -\frac{V_{OUT}}{R_1} \quad\quad I_D = I_{R1}\]
 \begin{enumerate}
@@ -2292,7 +2294,7 @@ Il circuito in figura \ref{Schema_rettificatore_ideale} è un rettificatore idea
 
 \[I_D > 0\]
 
-il diodo è acceso (ON)
+quindi il diodo è acceso (ON)
 
 \[V_D = g(I_D) \approx V_{TH} \approx 0.6\]
 
@@ -2305,10 +2307,10 @@ $V_O$ non è in saturazione.
 \vspace{2mm}
 
 Se $V_O = +V_{CC}$ il diodo è spento
-\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = -V_{EE}\]
+\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \;\;\;\;\;\; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = -V_{EE}\]
 
 Se  $V_O = -V_{EE}$ il diodo è acceso
-\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
+\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \;\;\;\;\;\; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
 
 Le due affermazioni sono paradossali: se $V_O = +V_{CC}$ allora $V_O = -V_{EE}$, ma se $V_O = -V_{EE}$ allora $V_O = +V_{CC}$. Ne segue che l'amplificatore non può essere in saturazione se $V_{IN} < 0$.
 \end{itemize}
@@ -2327,11 +2329,11 @@ ma ciò è impossibile, perché la differenza di potenziale ai capi del diodo è
 
 \vspace{2mm}
 
-Se $V_O = +V_{CC}$il diodo è spento 
-\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \; \; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = +V_{CC}\]
+Se $V_O = +V_{CC}$ il diodo è spento 
+\[ I_D = 0 = I_{R1} \Rightarrow V_{OUT} = 0 \;\;\;\;\;\; V_O = A_O \cdot (V_+ - V_-) = A_O \cdot V_{IN} = +V_{CC}\]
 
 Se $V_O = -V_{EE}$ il diodo è acceso 
-\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \; \; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
+\[V_{OUT} = V_O + V_{TH} = -V_{EE} + 0.6 \;\;\;\;\;\; V_O = A_O \cdot (V_{IN} + V_{EE} - 0.6) = +V_{CC}\]
 
 La seconda affermazione è autocontraddittoria, quindi è impossibile. Ne segue che se $V_{IN} > 0$ $V_O$ è in saturazione e $V_O = +V_{CC}$.
 
@@ -2366,7 +2368,7 @@ Riassumendo, se $V_{IN} > 0$, $V_O$ è in saturazione e $V_{OUT} = 0$; se $V_{IN
   \label{Schema_circuito_astabile}
 \end{figure}
 
-Analizziamo ora alcuni interessanti circuiti che è possibile realizzare sfruttando l'azione combinata degli amplificatori operazionali e dei diodi: i circuiti astabili (e altri circuiti affini). Un primo esempio di circuito astabile è raffigurato in figura \ref{Schema_circuito_astabile}. 
+Analizziamo ora alcuni interessanti circuiti che è possibile realizzare sfruttando l'azione combinata degli amplificatori operazionali e dei diodi: i circuiti astabili (e altri circuiti affini). Un primo esempio di \textit{circuito astabile} è raffigurato in figura \ref{Schema_circuito_astabile}. 
 
 \vspace{3mm}
 
@@ -2471,11 +2473,11 @@ Aggiungendo a questo circuito un diodo in parallelo al condensatore è possibile
   \label{Schema_circuito_monostabile}
 \end{figure}
 
-Procediamo con l'analisi.
+Procediamo con l'analisi del \textit{circuito monostabile}.
 
 \vspace{1mm}
 
-Per $V_Y < V_{TH} (\approx 0.6 \textrm V)$ il comportamento del circuito sarà quindi identico a quello del precedente in quanto il diodo, non conducendo corrente, non altererà il funzionmento del circuito. Il circuito potrà quindi liberamente commutare dallo stato $V_{OUT} = - V_{EE}$ allo stato $V_{OUT} = + V_{CC}$. Una volta raggiunto lo stato $V_{OUT} = + V_{CC}$, $V_X$ passa immediatamente al valore di $1$V, ma il potenziale $V_Y$ è impossibilitato a superare il valore $V_{TH} \approx 0.6$ dalla presenza del diodo. 
+Per $V_Y < V_{TH} (\approx 0.6 \textrm V)$ il comportamento del circuito sarà quindi identico a quello del precedente in quanto il diodo, non conducendo corrente, non altererà il funzionamento del circuito. Il circuito potrà quindi liberamente commutare dallo stato $V_{OUT} = - V_{EE}$ allo stato $V_{OUT} = + V_{CC}$. Una volta raggiunto lo stato $V_{OUT} = + V_{CC}$, $V_X$ passa immediatamente al valore di $1$V, ma il potenziale $V_Y$ è impossibilitato a superare il valore $V_{TH} \approx 0.6$ dalla presenza del diodo. 
 
 \vspace{3mm}
 
@@ -2556,7 +2558,7 @@ Un BJT (figura \ref{Schema_BJT}) è un transistor, ovvero un dispositivo attivo 
 
 \vspace{3mm}
 
-I transistor sono più pratici delle valvole termoioniche, in quanto notevolmente più compatti. Il BJT è stato in particolare il primo di questi dispositivi commercialmente disponiblile su larga scala, ma il suo utilizzo è oggi sempre meno comuine perché più costoso di un MOS.
+I transistor sono più pratici delle valvole termoioniche, in quanto notevolmente più compatti. Il BJT è stato in particolare il primo di questi dispositivi commercialmente disponiblile su larga scala, ma il suo utilizzo è oggi sempre meno comune perché più costoso di un MOS.
  
 \vspace{3mm}
 
@@ -2648,9 +2650,9 @@ Equazioni di funzionamento:
 
 \[V_{GD} = V_G - V_D = V_G - V_S + V_S - V_D = V_{GS} - V_{DS} \quad \textrm {(KVL)}\]
 
-\[V_{GD} > V_{TH} \quad \textrm{per creare canale dal lato Drain} \quad V_{DS} < V{GS} - V_{TH}\]
+\[V_{GD} > V_{TH} \quad \textrm{per creare canale dal lato Drain} \quad V_{DS} < V_{GS} - V_{TH}\]
 
-Se $V_{DS} < V{GS} - V_{TH}$ il MOS è in zona triodo/lineare, ovvero si comporta come una resistenza
+Se $V_{DS} < V_{GS} - V_{TH}$ il MOS è in zona triodo/lineare, ovvero si comporta come una resistenza
 
 \[I_{LIN} = \frac{\mu _n C_{ox}}{2} \cdot \frac{W}{L} \cdot (2V_{DS} \cdot (V_{GS} - V_{TH}) - V_{DS}^2)\]
 
@@ -2662,7 +2664,7 @@ Si può vedere che (al netto del termine perturbativo $V_{DS}^2$, che possiamo t
 
 \vspace{3mm}
 
-Se $V_{DS} > V{GS} - V_{TH}$ non c'è più canale di Drain: il MOS è in zona di saturazione
+Se $V_{DS} > V_{GS} - V_{TH}$ non c'è più canale di Drain: il MOS è in zona di saturazione
 
 \[I_{SAT} = \frac{\mu _n C_{ox}}{2} \cdot \frac{W}{L} \cdot (V_{GS} - V_{TH})^2\]
 
