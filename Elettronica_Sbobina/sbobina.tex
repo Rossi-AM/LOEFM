@@ -2080,11 +2080,11 @@ Proviamo adesso a creare un primo semplice circuito con i diodi, come quello raf
 
 L'analisi circuitale permette di studiare il comportamento qualitativo del circuito e di tracciare il grafico in figura. La corrente che scorre attraverso il diodo segue il comportamento:
 
-\[I = \frac {V_L - V_D}{R} = \frac {V_L}{R} - \frac {V_D}{R}\]
+\[I = \frac {V_I - V_D}{R_L} = \frac {V_I}{R_L} - \frac {V_D}{R_L}\]
 
-Dove $V_L$ è la tensione generata dal generatore e $V_D$ è la (ignota) tensione ai capi del diodo. Al variare di $V_D$ tra $0$ e $V_L$ si ha che la corrente segue una retta a coefficiente negativo, detta \textit{retta di carico}. L'intersezione tra la retta di carico e la curva esponenziale vista precedentemente ci danno la tensione ai capi e la corrente che scorre attraverso il diodo, ovvero il \textit{punto di lavoro del circuito}.
+Dove $V_I$ è la tensione generata dal generatore e $V_D$ è la (ignota) tensione ai capi del diodo. Al variare di $V_D$ tra $0$ e $V_I$ si ha che la corrente segue una retta a coefficiente negativo, detta \textit{retta di carico}. L'intersezione tra la retta di carico e la curva esponenziale vista precedentemente ci danno la tensione ai capi e la corrente che scorre attraverso il diodo, ovvero il \textit{punto di lavoro del circuito}.
 
-In particolare vediamo che il coefficiente angolare della retta dipende solamente da $R$.
+In particolare vediamo che il coefficiente angolare della retta dipende solamente da $R_L$.
 
 \vspace{3mm}
 
@@ -2705,7 +2705,7 @@ Per i P-MOS il funzionamento è del tutto analogo (sono duali agli N-MOS), serve
   \label{Schema_IGBT}
 \end{figure}
 
-IL dispositivo IGBT (figura \ref{Schema_IGBT}) è la combinazione di due dispositivi: un MOS e un BJT. Combinando il meglio di entrambi, offre la semplicità di un controllo in tensione tipica di un MOS con la capacità di corrente tipica di un BJT. Non è disponibile nei circuiti integrati, ma è particolarmente indicato per applicazioni di potenza ($> 1 K$W).
+Il dispositivo IGBT (figura \ref{Schema_IGBT}) è la combinazione di due dispositivi: un MOS e un BJT. Combinando il meglio di entrambi, offre la semplicità di un controllo in tensione tipica di un MOS con la capacità di corrente tipica di un BJT. Non è disponibile nei circuiti integrati, ma è particolarmente indicato per applicazioni di potenza ($> 1 \,\textrm{KW}$).
 
 \vspace{3mm}
 
@@ -2719,13 +2719,11 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
   \label{Schema_determinazione_MOS}
 \end{figure}
 
-È un circuito molto semplice, ma richiede due strumenti di misura (1 amperometro e 1 voltmetro). D'altro canto, il circuito in figura \ref{Schema_determinazione_MOS_bis} richiede una sola misura di tensione (non perturbativa). Il condensatore può servire per stabilizzare il circuito, nel caso di amplificatore operazionale reale.
+È un circuito molto semplice, ma richiede due strumenti di misura (1 amperometro e 1 voltmetro). D'altro canto, il circuito in figura \ref{Schema_determinazione_MOS_bis} richiede una sola misura di tensione (non perturbativa). In questo ultimo circuito il condensatore può servire per stabilizzare il circuito, nel caso di amplificatore operazionale reale. Qui sotto è presente una rapida analisi delle quantità coinvolte nel circuito in figura \ref{Schema_determinazione_MOS_bis}.
 
 \[V_S = 0\]
 
-\[V_{GS} \approx V_{G(GS)}\]
-
-\[V_{DS} \approx V_{G(DS)}\]
+\[V_{GS} \approx V_{G(GS)} \;\;\;\;\;\;\;\; V_{DS} \approx V_{G(DS)}\]
 
 \[I_D = \frac{V_{OUT} - V_D}{R}\]
 \clearpage
@@ -2839,9 +2837,9 @@ In ambito analogico i segnali sono continui (dominio e codominio), come lo è ad
 
 In un dispositivo digitale, quindi, i segnali ``portano informazione'' soltanto in predeterminati istanti di tempo e l’informazione elementare (bit) è associata ed estrapolabile dal valore del segnale di tensione (o di corrente).
 
-\vspace{1mm}
+\vspace{3mm}
 
-Di solito si associa il valore 1 ad un voltaggio positivo, e il valore 0 ad un voltaggio piccolo o nullo. Questa informazione rende il circuito sopra descritto preziosissimo: questo circuito restituisce un segnale 1 quando prende in input un segnale 0 e viceversa. Con questo circuito è possibile realizzare un circuito invertitore (figura \ref{Schema_inverter_esa}, da non confondere con il circuito in configurazione invertente), che si rivelerà molto utile nel capitolo successivo.
+Di solito si associa il valore 1 ad un voltaggio positivo, e il valore 0 ad un voltaggio piccolo o nullo. Questa informazione rende il circuito sopra descritto preziosissimo: questo circuito restituisce un segnale 1 quando prende in input un segnale 0 e viceversa. Con questo circuito è possibile realizzare un \textit{circuito invertitore} (figura \ref{Schema_inverter_esa}, da non confondere con il circuito in configurazione invertente), che si rivelerà molto utile nel capitolo successivo.
 
 \begin{figure}[h]
   \centering
