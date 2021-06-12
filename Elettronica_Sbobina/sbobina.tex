@@ -2672,7 +2672,7 @@ dove si vede che la corrente non dipende più da $V_{DS}$. La corrente è satura
 
 \vspace{3mm}
 
-La matematica ci dice inoltre che, per ogni $V_{GS} > V_{TH}$, $I_{SAT} > I_{LIN}$. Inoltre, se (e solo se) $V_{GD} = V_{TH}$, $I_{SAT} = I_{LIN}$ (conclusione sensata, al raccordo dei due stati la corrente calcolata è la stessa per entrambe le equazioni).
+La matematica ci dice inoltre che, per ogni $V_{GS} > V_{TH}$, $I_{SAT} > I_{LIN}$. Inoltre, $I_{SAT} = I_{LIN}$ se (e solo se) $V_{GD} = V_{TH}$ (conclusione sensata, al raccordo dei due stati la corrente calcolata è la stessa per entrambe le equazioni).
 
 \begin{figure}[h]
   \centering
@@ -2695,12 +2695,12 @@ In zona di saturazione si riscontra tuttavia sperimentalmente che la corrente $I
 
 \vspace{3mm}
 
-Per i P-MOS il funzionamento è del tutto analogo, serve solo ripensare quanto detto in precedenza per gli elettroni con le lacune elettroniche. Imposto che $V_D < V_S$, e che di conseguenza la tensione di soglia $V_{TH}$ sarà negativa, le formule per la corrente sono le stesse.
-
+Per i P-MOS il funzionamento è del tutto analogo (sono duali agli N-MOS), serve solo ripensare quanto detto in precedenza per gli elettroni con le lacune elettroniche. Imposto che $V_D < V_S$, e che di conseguenza la tensione di soglia $V_{TH}$ sarà negativa, le formule per la corrente sono le stesse.
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.65]{IM_IGBT}
+  \includegraphics[scale=0.6]{IM_IGBT}
   \caption{Schema di un IGBT (Insulated Gate Bipolar Transistor) con simbolo circuitale}
   \label{Schema_IGBT}
 \end{figure}
@@ -2714,7 +2714,7 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{IM_determinazione_MOS}
+  \includegraphics[scale=0.55]{IM_determinazione_MOS}
   \caption{Circuito per determinare la curva caratteristica di un MOS}
   \label{Schema_determinazione_MOS}
 \end{figure}
@@ -2728,11 +2728,11 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \[V_{DS} \approx V_{G(DS)}\]
 
 \[I_D = \frac{V_{OUT} - V_D}{R}\]
-
+\clearpage
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_determinazione_MOS_bis}
+  \includegraphics[scale=0.55]{IM_determinazione_MOS_bis}
   \caption{Circuito alternativo per determinare la curva caratteristica di un MOS}
   \label{Schema_determinazione_MOS_bis}
 \end{figure}
@@ -2740,15 +2740,15 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_MOS_grafici_bis}
+  \includegraphics[scale=0.55]{IM_MOS_grafici_bis}
   \caption{Curve caratteristiche del MOS}
   \label{Schema_MOS_grafici_bis}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_MOS_equivalente_saturazione}
+  \includegraphics[scale=0.55]{IM_MOS_equivalente_saturazione}
   \caption{Circuito equivalente ad un MOS in zona di saturazione}
   \label{Schema_MOS_equivalente_saturazione}
 \end{figure}
@@ -2756,7 +2756,7 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_MOS_equivalente_saturazione_bis}
+  \includegraphics[scale=0.55]{IM_MOS_equivalente_saturazione_bis}
   \caption{Circuito equivalente ad un MOS in zona di saturazione per piccolo segnale}
   \label{Schema_MOS_equivalente_saturazione_bis}
 \end{figure}
@@ -2764,15 +2764,15 @@ Per determinare la curva caratteristica di un MOS, si può usare il circuito in 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_MOS_equivalente_lineare}
+  \includegraphics[scale=0.55]{IM_MOS_equivalente_lineare}
   \caption{Circuito equivalente ad un MOS in zona lineare}
   \label{Schema_MOS_equivalente_lineare}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.6]{IM_MOS_equivalente_lineare_bis}
+  \includegraphics[scale=0.55]{IM_MOS_equivalente_lineare_bis}
   \caption{Circuito equivalente ad un MOS in zona lineare per piccolo segnale}
   \label{Schema_MOS_equivalente_lineare_bis}
 \end{figure}
