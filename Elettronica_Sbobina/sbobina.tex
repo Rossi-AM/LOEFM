@@ -2969,39 +2969,39 @@ dove con $A'$ si intende $A$ negato ($!A$), ovvero quel valore che è vero quand
 
 \vspace{3mm}
 
-Abbiamo già detto che 0 è l'elemento neutro dell'operazione OR e che 1 è l'elemento neutro dell'operazione AND.
+Abbiamo già detto che 0 è l'\textit{elemento neutro} dell'operazione OR e che 1 è l'elemento neutro dell'operazione AND.
 
 \[A + 0 = A \quad \quad A * 1 = A\]
 
-Si verifica facilmente che 0 è l'elemento assorbente dell'operazione AND e che 1 è l'elemento assorbente dell'operazione OR.
+Si verifica facilmente che 0 è l'\textit{elemento assorbente} dell'operazione AND e che 1 è l'elemento assorbente dell'operazione OR.
 
 \[A + 1 = 1 \quad \quad A * 0 = 0\]
 
-Si verifica facilmente anche che entrambe le operazioni hanno la proprietà dell'``idempotenza'', ovvero la proprietà per cui se i due termini in ingresso hanno lo stesso valore di verità, il termine in uscita avrà lo stesso valore di verità.
+Si verifica facilmente anche che entrambe le operazioni hanno la \textit{proprietà dell'idempotenza}, ovvero la proprietà per cui se i due termini in ingresso hanno lo stesso valore di verità, il termine in uscita avrà lo stesso valore di verità.
 
 \[A + A = A \quad \quad A * A = A\]
 
-Così come si verifica facilmente che l'operazione di OR di una variabile con il suo inverso è sempre vera, e viceversa l'operazione di AND è sempre falsa.
+Così come si verifica facilmente che l'operazione di OR di una variabile con il suo \textit{inverso} è sempre vera, e viceversa l'operazione di AND è sempre falsa.
 
 \[A + A' = 1 \quad \quad A * A' = 0\]
 
-Le due operazioni godono inoltre della proprietà commutativa,
+Le due operazioni godono inoltre della \textit{proprietà commutativa},
 
 \[A + B = B+ A \quad \quad A * B = B * A\]
 
-associativa,
+\textit{associativa},
 
 \[A + (B + C) = (A + B) + C \quad \quad A * (B * C) = (A * B) * C\]
 
-distributiva\footnote{la proprietà distributiva dell'operazione AND non dovrebbe essere sorprendente, considerando che non è diversa dall'operazione di moltiplicazione; più sorprendente potrebbe essere invece che valga per l'operazione OR. Conviene forse pensare in termini logici piuttosto che matematici: la prima proposizione è falsa se e solo se $A$ è falso e almeno uno tra $B$ e $C$ è falso; la seconda invece è falsa se e solo se almeno uno tra $A + B$ e $A + C$ è falso; ma se A fosse vero entrambi $A + B$ e $A + C$ sarebbero veri, quindi $A$ è falso; la seconda si riduce dunque ad un'operazione di AND tra $B$ e $C$, che è falsa se e solo se non sono entrambi veri.}.
+\textit{distributiva}\footnote{la proprietà distributiva dell'operazione AND non dovrebbe essere sorprendente, considerando che non è diversa dall'operazione di moltiplicazione; più sorprendente potrebbe essere invece che valga per l'operazione OR. Conviene forse pensare in termini logici piuttosto che matematici: la prima proposizione è falsa se e solo se $A$ è falso e almeno uno tra $B$ e $C$ è falso; la seconda invece è falsa se e solo se almeno uno tra $A + B$ e $A + C$ è falso; ma se A fosse vero entrambi $A + B$ e $A + C$ sarebbero veri, quindi $A$ è falso; la seconda si riduce dunque ad un'operazione di AND tra $B$ e $C$, che è falsa se e solo se non sono entrambi veri.}.
 
 \[A * (B + C) = A * B + A * C \quad \quad A + (B * C) = (A + B) * (A + C)\]
 
-Abbiamo parlato precedentemente del concetto di elemento assorbente, ed entrambi i valori di vero o falso sono elemento assorbente di una delle due operazioni (ed elemento neutro dell'altra). Ne segue che, preso un qualunque elemento $B$, applicando ad esso le operazioni di AND ed OR con una stessa variabile $A$ il risultato sarà $A$:
+Abbiamo parlato precedentemente del concetto di \textit{elemento assorbente}, ed entrambi i valori di vero o falso sono elemento assorbente di una delle due operazioni (ed elemento neutro dell'altra). Ne segue che, preso un qualunque elemento $B$, applicando ad esso le operazioni di AND ed OR con una stessa variabile $A$ il risultato sarà $A$:
 
 \[A + (A * B) = A \quad \quad A * (A + B) = A\]
 
-Enunciamo adesso le leggi di De Morgan (letto Morgàn)
+Enunciamo adesso le \textit{leggi di De Morgan} (letto Morgàn)
 
 \[(A + B)' = A' * B' \quad \quad (A * B)' = A' + B'\]
 
@@ -3013,7 +3013,7 @@ se $B = A'$ (ricordando le operazioni con gli inversi)
 
 \[(A + A')' = 1' = 0 = A' * A \quad \quad (A * A')' = 0' = 1 = A' + A\]
 
-Dalle leggi di De Morgan si evince il principio di dualità: è possibile trasformare ogni identità in una identità duale scambiando tra loro le operazioni AND e OR o scambiando tra loro gli elementi 0 e 1.
+Dalle leggi di De Morgan si evince il \textit{principio di dualità}: è possibile trasformare ogni identità in una identità duale scambiando tra loro le operazioni AND e OR o scambiando tra loro gli elementi 0 e 1.
 
 \vspace{3mm}
 
@@ -3317,7 +3317,7 @@ In questo modo servirebbero circa:
   \item $2^{2B}$ porte OR
 \end{itemize}
 
-Il tempo richiesto per il calcolo non dipenderebbe da B, ma l’implementazione è fattibile solo per $B$ piccolo. Esistono implementazioni più semplici di questo sommatore, anche se meno performanti. Il meno costoso, anche se meno efficiente, è il \textit{ripple carry adder} (figura \ref{ripple_carry_adder}).
+Il tempo richiesto per il calcolo non dipenderebbe da B, ma l’implementazione è fattibile solo per $B$ piccolo. Esistono implementazioni più semplici di questo sommatore, anche se meno performanti. Il meno costoso, anche se meno efficiente, è il \textit{ripple carry adder} (figura \ref{ripple_carry_adder}, rappresentato dal marker in basso a sinistra nel grafico in figura \ref{grafici_sommatori}).
 \clearpage
 \begin{figure}[h]
   \centering
@@ -3390,7 +3390,7 @@ Si potrebbe usare un half-adder in prima posizione, ma in realtà il primo ingre
 
 Come implementare un full-adder con porte logiche? La funzione logica, partendo dalla tabella della verità, può essere scritta come
 
-\[S = A_1' A_2' C_i + A_1' A_2 C_i' + A_1 A_2' C_i' + A_1 A_2 C_i = A_1' (A_2 \, XOR \, C_i) + A_1 (A_2 \, XOR \, C_i)\]
+\[S = A_1' A_2' C_i + A_1' A_2 C_i' + A_1 A_2' C_i' + A_1 A_2 C_i = A_1' (A_2 \, XOR \, C_i) + A_1 (A_2 \, XOR \, C_i)'\]
 \[= A_1 \, XOR \, (A_2 \, XOR \, C_i) = A_1 \, XOR \, A_2 \, XOR \, C_i\]
 
 \[C_{out} = A_1' A_2 C_i + A_1 A_2' C_i + A_1 A_2 C_i' + A_1 A_2 C_i = A_1' A_2 C_i + A_1 A_2' C_i + A_1 A_2 C_i' + A_1 A_2 C_i + A_1 A_2 C_i + A_1 A_2 C_i\]
@@ -3439,7 +3439,7 @@ La memoria a 1 bit (figura \ref{memoria_1_bit}) è un esempio di logica sequenzi
   \label{memoria_1_bit}
 \end{figure}
 \clearpage
-La memoria a singola cella (figura \ref{memoria_1_cella}) a $B$ bit, è formata da $B + 1$ ingressi e da $B$ uscite. È formata da $B$ memorie a 1 bit, che condividono lo stesso ingresso di ``aggiornamento''. Esistono tipicamente memorie a 8, 16, 32, 64, 128 bit; con la possibile aggiunta di bit di ridondanza (tipicamente uno solo) per il controllo degli errori.
+La \textit{memoria a singola cella} (figura \ref{memoria_1_cella}) a $B$ bit, è formata da $B + 1$ ingressi e da $B$ uscite. È formata da $B$ memorie a 1 bit, che condividono lo stesso ingresso di ``aggiornamento''. Esistono tipicamente memorie a 8, 16, 32, 64, 128 bit; con la possibile aggiunta di bit di ridondanza (tipicamente uno solo) per il controllo degli errori.
 
 \begin{figure}[h]
   \centering
@@ -3449,7 +3449,7 @@ La memoria a singola cella (figura \ref{memoria_1_cella}) a $B$ bit, è formata 
   \label{memoria_1_cella}
 \end{figure}
 
-La memoria a più celle (figura \ref{memoria_piu_celle}) è formata da $B_I$ memorie a una cella da $B_D$ bit ciascuna. Per accedere ad una specifica cella di memoria serve conoscerne l'indirizzo. Esistono memorie con poche celle, ad esempio $N = 256$ e $B_I = 8$ linee di indirizzo, fino a centinaia di milioni di celle e molte decine di linee di indirizzo.
+La \textit{memoria a più celle} (figura \ref{memoria_piu_celle}) è formata da $B_I$ memorie a una cella da $B_D$ bit ciascuna. Per accedere ad una specifica cella di memoria serve conoscerne l'indirizzo. Esistono memorie con poche celle, ad esempio $N = 256$ e $B_I = 8$ linee di indirizzo, fino a centinaia di milioni di celle e molte decine di linee di indirizzo.
 
 \begin{figure}[h]
   \centering
