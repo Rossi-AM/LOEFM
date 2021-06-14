@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{amsmath,amssymb}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{steinmetz}
+\usepackage{stackrel}
+\usepackage{mathtools}
+\geometry{a4paper}
+
+\usepackage[english]{babel}
+\frenchspacing
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\title{Ale's report}
+\author{Alessandro Matteo Rossi}
+\date{data}
+
+\begin{document}
+\maketitle
+
+
+
+
+\tableofcontents
+
+\clearpage
+
+\section{Decoder}
+
+After the inputs have been processed (added or subtracted), it is needed a conversion from binary number to its decimal form. Considering that this 16-bit calculator allows operations the user to insert numbers within the range (INSERIRE IL RANGE CAZZO), the operative boundary of this calculator is (INSERIRE). You can reach these limits by adding two -INF or by adding two +SUP together.
+
+\vspace{3mm}
+
+The largest number that can be shown as result is around $\pm$INSERIER (+INSERIER or -INSERIER, to be exact), both positive and negative. So the decoding circuit needs to have 6 led displays for the digits and one extra display for the sign.
+
+\vspace{3mm}
+
+We decided to operate the binary-decimal conversion with the so called "double dabble" circuit, that will be explained later in the report. Nevertheless this was not the main problem. The double-dabble converts positive numbers perfectly, but not negative ones. The major issue was to adapt this circuit to work with both positive and negative numbers. 
+
+\subsection{About the number sign}
+
+The number sign has to be taken into account before converting the number into its decimal form. The number is a 16-bit binary, as already said, and it has one extra bit for the sign. 
+
+
+\subsection{Double dabble}
+
+\section{Real calculator}
+
+\end{document}
