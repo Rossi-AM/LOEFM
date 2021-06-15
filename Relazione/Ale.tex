@@ -36,7 +36,7 @@
 \clearpage
 \section{Processing}
 
-After the two numbers have been inserted by the user they reach the processing section of the circuit. In this phase the numbers get summed or subtracted, depending on the user's choice. In figure \ref{Processing_Total} the processing section of the circuit, highlighted in green.
+After the two numbers have been inserted by the user, they reach the processing section of the circuit. In this phase the numbers get summed or subtracted, depending on the user's choice. In figure \ref{Processing_Total} the processing section of the circuit, highlighted in green. The arrows with their captions will be explained later in this section.
 
 \begin{figure}[h]
   \centering
@@ -45,11 +45,11 @@ After the two numbers have been inserted by the user they reach the processing s
   \label{Processing_Total}
 \end{figure}
 
-The processing is split in two subphases:
-\begin{itemize}
-  \item During the first subphase the second number, memorized in the flip-flop memory (left side of figure \ref{Processing_Total}) gets inverted if the user picked the subtraction operation, otherwise it does not get modified.
-  \item The algebrical sum happens in the top right side of the circuit.
-\end{itemize}
+The processing phase is split in two subphases:
+\begin{enumerate}
+  \item During the first subphase the second number, memorized in the flip-flop memory (left side of figure \ref{Processing_Total}), gets inverted if the user picked the subtraction operation, otherwise it is not get modified.
+  \item Then the algebraic sum happens in the top right side of the circuit.
+\end{enumerate}
 
 Regarding the first point, the first mandatory step is to invert the number. We remember that the opposite of a binary number $A$ is
 \begin{equation}
@@ -80,7 +80,7 @@ This sum is performed by a \textit{ripple carry adder} (shown in figure \ref{RCA
 
 The ripple carry adder (shortened in RCA) is an $B$-bit adder circuit composed of $B$ full adders. 
 
-A single full adder is a 3 input bits adder, with a 2-bit output. Its inputs are a number $A$, a number $B$ and a carry-over produced in a previous operation, whereas the outputs are a result $S$ and a carry-over $C_{out}$. Its table of truth is figure \ref{FullAdder}, where the input carry-over is $C_{in}$ and the output one is $C_{out}$.
+A single full adder is a 3 input bits adder, with a 2-bit output. Its inputs are a number $A$, a number $B$ and a carry-over produced in a previous operation, whereas the outputs are a result $S$ and a carry-over $C_{out}$. Its truth table is figure \ref{FullAdder}, where the input carry-over is $C_{in}$ and the output one is $C_{out}$.
 
 \begin{table}[h]
   \centering
@@ -142,7 +142,7 @@ This part of the circuit (represented in figure \ref{Converter}) uses full-adder
 
 This 16th bit reaches every B input of all the full adders, and also the XOR gates, that compare the result of the single full adders with the 16th bit. The sign bit is true (or 1) when the number is negative and 0 otherwise. This allows the full adders to sum 1, following the formula above, if the processing output is negative, whereas if it is positive the number just stays the same.
 
-After this, the XOR gates, which table of truth is 
+After this, the XOR gates, which truth table is 
 \begin{center}
 \begin{tabular}{||c|c||c||}
     \hline
@@ -220,7 +220,7 @@ It is mandatory to add 3 because during the conversion the weight of the 4 bits 
   \end{table}
 
 
-The goal of the "Shift and add 3" component, programmed using the customizable logic of the simulator, is to operate this shift or addition depending on the 4 inputs given. Its table of truth is figure \ref{Add3Table}.
+The goal of the "Shift and add 3" component, programmed using the customizable logic of the simulator, is to operate this shift or addition depending on the 4 inputs given. Its truth table is figure \ref{Add3Table}.
 
 \begin{table}[h]
   \centering
@@ -241,7 +241,7 @@ The goal of the "Shift and add 3" component, programmed using the customizable l
     \hline
   \end{tabular}
     \label{Add3Table}
-    \caption{"Shift and add 3" table of truth}
+    \caption{"Shift and add 3" truth table}
   \end{table}
 
 It is clear, thanks to this figure, that when the number is greater than four it gets added three to it. The "shift" part can be seen in figure \ref{DoubleDabble}. If we consider the input A0 of a single Add3 component, when can see that its output, S0, is the input A1 for the next component.
