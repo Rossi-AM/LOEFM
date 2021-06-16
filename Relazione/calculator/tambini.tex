@@ -56,7 +56,9 @@ Once 1 and 0 are defined, we need to define the operations that can be performed
 
 When we talk about a logic gate, we are talking about a circuit that can take a certain number of inputs and give a single output, depending on the input received; the output needs to be readable by another logic gate of the same family.
 
-The main logic gates are the following:
+\vspace{3mm}
+
+The main logic gates are the following, represented with their circuital symbol in figure \ref{LogicGates}.
 
 \begin{figure}[h]
 
@@ -112,60 +114,68 @@ The main logic gates are the following:
         \caption{XNOR gate}
         \label{XNOR}
     \end{subfigure}
-\label{Logic_Gates}
+
 \caption{Image of the main logic gates used in digital electronics}
+\label{LogicGates}
 \end{figure}
 
 
-\subsection{N-mos}
+\subsection{NMOS}
 
-To crete the logic gate we need to first know how to use a MOSFET. In our case we used only N-MOS. 
+In order to create these logic gates, we need to know how to use a MOSFET. For this project we used NMOS transistors only.
 
 \vspace{3mm}
 
-The N-MOS is a transistor that get in input a gate voltage, a drain voltage, a source voltage and a body voltage; in most cases the source and the body are internally connected since the body needs to be at the lowest voltage and the source is usually at mass.
+The NMOS is a transistor that gets as input a gate voltage, a drain voltage, a source voltage and a body voltage; in most cases the source and the body are internally connected, since the body needs to be at the lowest voltage and the source is usually earthed.
 
-When a positive voltage is aplied between the drain and source a deplition layer block the passage of current is formed and there is no passage of current. 
-If we then start aplying a positive voltage between gate and body the electron will start "balancing" the gaps in the P substrate but there will still be no passage of current. 
+\vspace{3mm}
 
-After $V_{GS}$ surpass a threshold voltage the current will start to flow from drain to source. At the start the ratio between the current and $V_{DS}$ is linear but, when $V_{DS}$ is big enough, the ratio stop to grow and become almost linear as seen in Immage %number of immage
+When a positive voltage is applied between the drain and source, a deplition layer block the passage of current is formed and there is no passage of current. 
+If we then start applying a positive voltage between gate and body, the electrons will start "balancing" the gaps in the P substrate, but there will still be no current flow.
+
+\vspace{3mm}
+
+After $V_{GS}$ (the potential difference among gate and source) surpasseses a certain threshold voltage, the current will start to flow from drain to source. At the beginning of this flow, the ratio between the current and $V_{DS}$ (the potential difference among drain and source) is linear but, when $V_{DS}$ becomes big enough, the ratio stops its growth and becomes almost linear as seen in figure %number of immage
 and we find ourself in the region of saturation.
 
 \vspace{3mm}
 
-We didn't really need to differentiate in linear section and saturation section of the N-MOS since what we will check is the voltage at the drain of the N-MOS for our gate.
-The threshold voltage vary between transistor and usually go from $0.5V$ to $5V$. 
-The transistor we used is the $IRF822$ and we found in lag that the threshold voltage is approssimatively %nV
+We didn't really need to differentiate in linear section and saturation section of the NMOS since what we will check is the voltage at the drain of the NMOS for our gate. The threshold voltage is different for every transistor, and usually is within the range $0.5\,\textrm{V} - 5\,\textrm{V}$. The transistor we used is the $IRF822$, and we found in lag that the threshold voltage is approssimatively %nV
 , we decided to use $5V$ for $V_{GS}$ to make, as we will see later, input and output aproximativaly the same.
 
 
 
 \subsection{NOT gate}
 
-The easiest gate to realizeis the not gate; we remember that he NOT gate negate the input and so work with a single input.
+The easiest logic gate to realize is the NOT gate; we remember that the NOT gate negates the input, and so it works with a single input. We need a high enough resistance and one NMOS (as represented in figure \ref{NOT_NMOS}) to realize it.
 
-To realize it we need a resistance high enough and the N-MOS as seen in Immage% number of immage
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{IM_NOT_NMOS.JPG}
+    \caption{NOT logic gate realized using a NMOS and a resistor}
+    \label{NOT_NMOS}
+\end{figure}
 
-%immage of the NOT gate
-
-\vspace{3mm} %to remove after the immage is added
-
-When the input is 0 the N-MOS will not let the current flow and, thanks to ohm first law, we know that the voltage drop on the extreme of the resistance should be 0 getting the same voltage of the alimentation. 
-
-The output readed  will be around $5V$ so we got a 1
-
-When the input is 1 the N-MOS will let the current flow and offer a small resistance; since there is a much bigger resistance before the N-MOS almost all the voltage drop will happen on the former and the voltage on the drain will be almost zero.
-
-The output readed will be around $0V$ so we got a 0
+When the input is 0, the NMOS will not let the current flow and, thanks to Ohm First Law, we know that the voltage drop across the resistor should be 0, so we get the same supply voltage. The read output will be around $5\,\textrm{V}$, so we get a 1 output.
 
 \vspace{3mm}
 
-with this configuration we find out that, with high frequencies, the signal will not be properly negated and will instead be like in Immage% number of immage Inverter N-MOS a carico resistivo
+When the input is 1, the NMOS will let the current flow with a small resistance value; since there is a higher resistance before the NMOS, almost all the voltage drop will happen on the previous one, and the drain will be almost zero. The read output will be around $0\,\textrm{V}$, so we get a 0 output.
+
+\vspace{3mm}
+
+With this configuration the signal will not be properly negated for high frequencies, and it will be like in figure \ref{ResistiveInverter}
+instead
 and instead pass almost all the time in a 0 state. 
 
-A solution we could use is a combination of N-MOS and P-MOS but, since our calculator sholdn't have to work at such frequencies, we dismised this problem.
+A possible solution consists of a combination of NMOS and PMOS but, since our calculator does not have to work at such frequencies, we dismissed this problem.
 
-\vspace{3mm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.6]{IM_inverter_esa.PNG}
+    \caption{Inverter NMOS circuit with a resistive load}
+    \label{ResistiveInverter}
+\end{figure}
 
 For the immage of the NOT gate and some result we got in lab check the end of the report at %number of appendix chapter subsection not gate
 
@@ -173,21 +183,26 @@ For the immage of the NOT gate and some result we got in lab check the end of th
 
 \subsection{NOR gate}
 
-Once we ralized the NOT gate we proceeded to realize the NOR gate since, as we will talk later in %number of paragraph "other gate"
-, the NOR and the NAND gate are both functionally complete.
+Once we created the NOT gate, we proceeded to realize the NOR gate since, as we will explain later in Section \ref{OtherGates}, the NOR and the NAND gate are both functional complete.
 
-The NOR gate is composed, as seen in Immage% number of immage
-, by two NOT gate shortcircuited at the output.
+The NOR gate is composed, as seen in figure \ref{NOR_NMOS}, by two NOT gates short-circuited at their output.
 
-%immage of the NOR gate
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{IM_NOR_NMOS.JPG}
+    \caption{NOR logic gate realized using two short-circuited NOT gates}
+    \label{NOR_NMOS}
+\end{figure}
 
-\vspace{3mm} %to remove after the immage is added
+When both inputs are 0, the two NMOS will not let any current pass and, just like in the NOT gate, the output will be 1.
 
-When both output are 0 the two N-MOS will not let any current pass and; just like in the NOT gate, the output will be 1.
+\vspace{1mm}
 
-When one or both the input are 1 the N-MOS will let the current flow and there will be a voltage drop at the extreme of the resistance; just like in the NOT gate the output will be 0.
+When one or both the inputs are 1 the NMOS will let the current flow and there will be a voltage drop across the resistor. So the output will be 0.
 
-The role of the short circuit is to make sure that doesn't matter which of the input is positive since the current will surely pass throught the "open" N-MOS.
+\vspace{1mm}
+
+The role of the short circuit is to ensure that whether an input is positive, the current will pass throught the "open" NMOS.
 
 \vspace{3mm}
 
@@ -195,16 +210,24 @@ For the immage of the NOR gate and some result we got in lab check the end of th
 
 \subsection{NAND gate}
 
-Like we said for the NOR gate the NAND gate is also functionally complete but has the advantage of not needing the shortcircuit and one of the resistances needed by the NOR gate making it slightly cheaper than the NOR gate. 
+Like we said for the NOR gate, the NAND gate is also functional complete. But it can be created without the shortcircuit and without one of the resistors needed by the NOR gate, so it is slightly cheaper. 
 
-To create it we put in series first the resistance and after the two N-MOS joining the source of the first and the drain of the second as seen in Immage%number of immage
-.
+\vspace{3mm}
 
-\vspace{3mm} %as always to remove after the immage is added
+The NAND gate is realized by a series resistor followed by two NMOS, where the source of the first is plugged in the drain of the second, as seen in figure \ref{NAND_NMOS}.
 
-In case both input are 1 the current will be able to flow and, the output will be 0
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{IM_NAND_NMOS.JPG}
+    \caption{NAND gate realized with one resistor and two NMOS transistors}
+    \label{NAND_NMOS}
+\end{figure}
 
-When even one of the input is 0 one of the N-MOS will be "closed" and, since the current cannot pass, the output will be 1.
+Whether both inputs are 1, the current will be able to flow and the output will be 0.
+
+\vspace{1mm}
+
+When one of the inputs is 0, one of the NMOS will be "closed" and, since the current cannot pass, the output will be 1.
 
 \vspace{3mm}
 
@@ -212,42 +235,66 @@ For the immage of the NAND gate and some result we got in lab check the end of t
 
 
 
-\subsection{Other gate}
+\subsection{Other logic gates} \label{OtherGates}
 
-The propriety of the NOR and NAND gate of being functionally complete means that all the other logic gate can be recreated by that one. 
+Being functional complete means that a single logic can be the only component in a circuit, and that circuit will be equivalent to every other logic gate. NAND and NOR gates have this property. We could have created the NOT gate with the circuit shown in figure \ref{} in Appendix, instead of using a customized one. %number of immage about functional completness of NAND and NOR in appendix 
 
-Since we already created the NOT gate we don't really care about how it's done but in case check Immage %number of immage about functional completness of NAND and NOR in appendix 
-in %subchapter of appendix with the immage above
-. 
+\clearpage
 
-The gate needed for the calculator are: 
+The only gates needed for the calculator are shown in figure \ref{UsefulGates}, and they are: 
 
 \begin{itemize}
-\item The AND gate mady by the NAND gate where the output is negated by a NOT as see in in Immage % number of immage AND
-\item The OR gate made by the NOR gate where the output is negated by a NOT as seen in Immage % number of immage OR
-\item The XOR gate made by four NAND gate put in the configuration of Immage % number of immage XOR
+\item The AND gate, made by the NAND gate, where the output is negated by a NOT.
+\item The OR gate, made by the NOR gate, where the output is negated by a NOT.
+\item The XOR gate, made by four NAND gates.
 \end{itemize}
 
-%immage of the NNAND, NNOR and XOR gate 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[h]{\textwidth}
+        \centering
+        \includegraphics[scale=.3]{IM_AND_LOGIC.JPG}
+        \caption{AND gate built using a negated NAND gate}
+    \end{subfigure}
+    \vspace{2mm}
+    \begin{subfigure}[h]{\textwidth}
+        \centering
+        \includegraphics[scale=.3]{IM_OR_LOGIC.JPG}
+        \caption{OR gate built using a negated NOR gate}       
+    \end{subfigure}
+    \vspace{2mm}
+    \begin{subfigure}[h]{\textwidth}
+        \centering
+        \includegraphics[scale=.3]{IM_XOR_LOGIC.JPG}
+        \caption{XOR gate built using a four NAND gates}          
+    \end{subfigure}
+    \caption{The logic gates used in the calculator}
+    \label{UsefulGates}
+\end{figure}
 
 \subsection{Bistable circuit}
 
-For the 16-bit calculator of wich we will talk in section %section of the simulated calculator
-we also needed to be able to store information. 
+For the 16-bit calculator, that will be discussed in section \ref{SimulatedCalculator}, we also needed to be able to store information.
 
-For a circuit to be ablo to work as a memory it need to be able to get an input and keep it even after it has ended. Since the memory should be both modificable and readable it need a second input to clear it and should be ablo to give an output.
+\vspace{1mm}
+
+This means that we need a component that will work as memory. It has to be able to get an input and keep it saved as long as necessary, even if the input signal has already expired. Since the memory has to be both writable and readable, it needs a second input line to clear it.
 
 \vspace{3mm}
 
-The circuit that correspond to the memory that we need is the bistable circuit also known as flip-flop.
-The flip-flop can be created by both NOR gate and NAND gate but, since the NAND gate are less expensive, we decided to use those in our project with the knowledge that the input should be negated for it to work.
+The circuit that corresponds to the memory we need is the bistable circuit, also known as flip-flop (shown in figure \ref{FlipFlop}).
 
-We report in Table 1 and Immage %number of the immage of the flip flop
-the flip flop we created and his truth table.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{IM_FlipFlop}
+    \caption{The circuit used to create a flip-flop memory unit}
+    \label{FlipFlop}   
+\end{figure}
 
-%immage of the flip flop
+The flip-flop can be created by both NOR gates and NAND gates but, since the NAND gate are cheaper, we decided to use those. This meant that the input has to be negated in order to work properly. Flip flop truth table can be found in table \ref{FlipFlopTT}.
 
-\begin{table}[h!]
+
+\begin{table}[h]
 \centering
 \begin{tabular}{ | c | c  c  c | c  c |}
 \hline
@@ -265,82 +312,100 @@ the flip flop we created and his truth table.
  \ 8 & 1 & 1 & 1 & 1 & 0 \\ 
 \hline
 \end{tabular}
-\caption{Truth table of the flip-flop. As seen the line 1 and 2 are not ideal for the storage of memory. 3, 4, 5 and 6 are condition where one input is given. 7 and 8 are condition where data is stored.}
-\label{table:1}
+\caption{Flip flop truth table. Please note that the first two rows are not ideal for the storage of memory, as $Q$ and $Q'$ have the same value. Rows 3, 4, 5 and 6 represent the moment when an input is give, whereas 7 and 8 is when data is stored.}
+\label{FlipFlopTT}
 \end{table}
 
 
+\clearpage
 
-
-\section{16-bit calculator}
+\section{16-bit calculator} \label{SimulatedCalculator}
 
 
 
 \subsection{Input with 16-bit}
 
-One of the problem that arise when we want to use more memory space is an increase in complexity; this one make the circuit more expensive and also take space that could be used for other pourpose. 
+Our goal is to create a 16-bit calculator. A calculator that could receive 16 bits as input and that produces 17 output bits (the 17th is the sign bit).
 
-While in a small scale we could use a 2-bit priority encoder for our project on the simulator we wanted to create a calculator tht could operate with 16 bit in input and give an output just as big, excluding sign bit; to do that a priority encoder would be inpractical and unnecessarely more complex.
-Another problem that would araise in that of the phisical input since  priority encoder would require as many input as the number of decimal number we want.
+One of the problems that arise when we want to use such a big memory space is the increasement in complexity; this makes the circuit more expensive and also takes a lot of physical space, that could be used for other purposes. In a small scale we could use a 2-bit priority encoder, but for our project it would be unpractical and unnecessarily harder.
 
 \vspace{3mm}
 
-To solve both problem we decided to use a keyboard to take the input throught some button intead of the levers we used in the laboratory, since this method could solve both the problem with the number of input and the problem of the complexity of the decoder.
+Another problem regarding the priority encoder, it that this componentthat would araise in that of the phisical input since  priority encoder would require as many input as the number of decimal number we want. %NON HO CAPITO MA SO COME RIFORMULARE
+
+\vspace{3mm}
+
+To solve both problems we decided to use a keyboard. It takes the input through some buttons, instead of the levers we used in the laboratory. This method solved both the problem with the number of inputs and the problem of the complexity of the decoder.
 
 
 
 \subsection{Keyboard}
 
-The keyboard part connect a point at high voltage to the rest of the circuits; the button we used where: the number form 0 to 9, the operation $+$ the operation $-$ the $=$ sign to get the result and a clear button that reset the circuit.
+The keyboard part connects a point at high voltage to the rest of the circuits. It is composed by: 
 
-%immage of the keyboard
+\begin{itemize}
+    \item 10 buttons for the digits from 0 to 9;
+    \item An addition button labeled $+$;
+    \item A subtraction button labeled $-$;
+    \item A button to have the result displayed, labeled $=$;
+    \item A clear button that resets the entire circuit.
+\end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{IM_Keyboard}
+    \caption{Picture of the simulated circuited keyboard}
+    \label{Keybaord}
+\end{figure}
 
+\clearpage
 
 \subsection{4-bit encoder}
-The first part of our encoder is a 4-bit encoder without priority. 
+The first part of our encoder is a 4-bit encoder, without priority. 
 
-%immage of the 4 bit encoder
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.35]{IM_4BitEncoder.JPG}
+    \caption{}
+    \label{encoder}
+\end{figure}
 
-As you can see in Immage %number of the immage
-this part can be subdivided in 3 part
+As you can see in figure \ref{encoder} this part can be split in three different sections:
 
-\vspace{3mm}
+\begin{itemize}
+    \item The red part is a 4-bit encoder without priority. As we were saying in the paragraph above, the advantage of using a keyboard is that we will, under normal condition, only get 1 input at a time making a priority encoder useless. The encoder works by checking, with an OR gate, which bits the inserted number activates.
+    
+    \vspace{1mm}
 
-The red part is a 4-bit encoder without priority. As we were saying in the paragraph above, the advantage of using a keyboard is that we will, under normal condition, % where a child named Lorenzo Ramella is not pressign all the button simultaneously
- only get 1 input at a time making the usage of the encoder without priority more advantageous. 
+    For example, if we press the button "6" the binary input will be $0110$, so only the second and the third bit will be activated.
 
-The encoder works by checking with a OR if a number to wich the bit correspond is inputted. 
-For example if we press the button 6 only the second and third bit will output a high voltage since the first and fourth input are not connected.
+    \item The green part is an OR gate connected to all the input lines, in order to check whether a button corresponding to a number is pressed. This choice has been made because if 0 were pressed, it should not result in any binary input but it would be read as the number "10". 
 
-\vspace{3mm}
-
-The green part is a OR connected to all the number input to check when a button corresponding to a number is pressed since, if 0 was pressed, it would not result in any binary input but should still be readed like in the number 10. 
-
-\vspace{3mm}
-
-The blue part is a small "flash memory" that is deleted when the input isnt pressed anymore. 
-
-This part, whose work will be discussed in the next part, is a simple "security" method to make sure that the input of the button arrive correctly to the next memory. 
-This part could be eliminated if all the tempistic are correct but we prefered keeping it to make sure no would problem arise.
-
+    \item The blue part is a small "flash memory", which gets cleared when the input button is no longer pressed. 
+            
+        This part, whose task will be discussed in the next subsection, is a simple "security" method useful to ensure that the inputs arrive correctly to the next memory. This part could be removed if the circuit timing was perfect, but we preferred to keep it to ensure no problem would arise.    
+\end{itemize}
 
 
 \subsection{Memory and successive inputs}
 
-This is the part that make possible to get subsequent input and it's formed by two memories and two adders. 
+This part allows the circuit to receive that make possible to get consecutive inputs, and it is composed by two memories and two full adders. 
 
-in this part the input is stored and, after a new input is pressed, the stored number will be multiplied by 10 and then added to the new input. doing this we can abtain all number up till the memory limit.
+In this section the input gets stored and, after a new button is pressed, the stored number is multiplied by 10 and then added to the new input. By doing this we can obtain every number within the memory limit.
 
-It's important to understand that this part work by using the concepts of rising edge, where there is a transition from low to high of the input, and falling edge, where the input changes from high to low. Using this concept make possible to divide the action corresponding to a sigle input in two part.
+It is important to point out that this part works by using the concepts of "rising edge", where the input passes from a low state to a high one, and "falling edge", where the input changes from high to low. Using this concept it is possible to process a single input in two phases.
 
-%immage of the converter part
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.55]{IM_Converter.PNG}
+    \caption{}
+    \label{Converter}
+\end{figure}
 
 
 \subsubsection{Rising edge}
 
-When the first button is pressed the ciurcuit is in a state of rising edge. 
-Right after a button is pressed the line that go to the NAND of the second memory, highlighted in yellow Immage %number of immage
+When the first button is pressed the circuit is in a state of rising edge. Right after a button is pressed the line that go to the NAND of the second memory, highlighted in yellow Immage %number of immage
 , switch to low preventing the NAND to let any signal pass from the first to the second memory.
 
 The second line that change is the one under the first memory (highlighted in green) that also turn off; this is the line that is responsible of the clearing of the memory and, when it switch from high to low, it reset the memory.
