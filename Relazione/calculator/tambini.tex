@@ -3,10 +3,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{verbatim}
 \usepackage{amsmath,amssymb}
 \usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{steinmetz}
+\usepackage{stackrel}
+\usepackage{mathtools}
 \newcommand{\angstrom}{\text{\normalfont\AA}}
 
 \geometry{a4paper}
@@ -14,7 +20,7 @@
 \usepackage[english]{babel}
 \frenchspacing
 
-\title{report: adder and subtractor}
+\title{Report: adder and subtractor}
 \author{Lorenzo Ramella, Alessandro Matteo Rossi, Marco Tambini}
 \date{\today}
 
@@ -25,34 +31,90 @@
 
 \section{Basics concepts}
 
-To be able to realize calculation a circuit need to be able to do logic operation, in parrticular in digital electronics we usually use boolean algebra. 
+To make calculations, a circuit needs to be able to perform logical operations. In particular, we usually use boolean algebra in digital electronics. 
 
 \vspace{3mm}
 
-To be able to create a circuit that is able to work with boolean algebra we first need to define The various component.
-The number 0 and 1 have to be proprieties of an electric circuit that can be "moved"; the easiest of this proprieties to use is the voltage so we can assign the number 0 to a low voltage and the number 1 to a high voltage. 
+To be able to create a circuit like this, first of all, we need to define the various components.
+The number 0 and 1 have to be properties of an electric circuit that can be "moved"; the easiest waof this proprieties to use is the voltage so we can assign the number 0 to a low voltage and the number 1 to a high voltage. 
 
 \vspace{3mm}
 
-For example if we define $0V$ as low, negative or 0 and $5V$ as high positive or 1 we can define a threshold voltage is exactly in the middle so that voltge under $2.5 V$ will be considered 0 and voltage above will be considered 1.
+For example, if we define $0\,\textrm{V}$ as low, negative or 0 and $5\,\textrm{V}$ as high, positive or 1, we can define a threshold voltage exactly in the middle, so that any voltage under $2.5\,\textrm{V}$ will be considered 0, and any voltage above it will be considered 1.
 
 \vspace{3mm}
 
-Once 1 and 0 are defined we need to define the operation:
+Once 1 and 0 are defined, we need to define the operations that can be performed:
 
 \begin{itemize}
-\item $"!"$ is the negation and can be represented by a NOT gate.
-\item $"+"$ is the addition and can be represented by a OR gate.
-\item $"*"$ is the multiplication and can he represented by an AND gate.
+\item $"!"$ is the negation, and it can be represented by a NOT gate.
+\item $"+"$ is the addition, and it can be represented by a OR gate.
+\item $"*"$ is the multiplication, and it can be represented by an AND gate.
 \end{itemize}
 
-\section{Logic gate}
+\section{Logic gates}
 
-When we tal about a logic gate we are talking about a circuit that can take a certain number of input and give a single output depending on the input readed; the output needs to be readable by another logic gate of the same family.
+When we talk about a logic gate, we are talking about a circuit that can take a certain number of inputs and give a single output, depending on the input received; the output needs to be readable by another logic gate of the same family.
 
-The main logic gate are the following:
+The main logic gates are the following:
 
-%immage from SBOBBINA about the logic gate
+\begin{figure}[h]
+
+    \centering
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_NOT.PNG}
+        \caption{NOT gate}
+        \label{NOT}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_AND.PNG}
+        \caption{AND gate}
+        \label{AND}        
+    \end{subfigure}
+    
+    \centering
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_OR.PNG}
+        \caption{OR gate}
+        \label{OR}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_XOR.PNG}
+        \caption{XOR gate}
+        \label{XOR}        
+    \end{subfigure}
+    
+    \centering
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_NAND.PNG}
+        \caption{NAND gate}
+        \label{NAND}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_NOR.PNG}
+        \caption{NOR gate}
+        \label{NOR}        
+    \end{subfigure}
+    
+    \centering
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IM_XNOR.PNG}
+        \caption{XNOR gate}
+        \label{XNOR}
+    \end{subfigure}
+\label{Logic_Gates}
+\caption{Image of the main logic gates used in digital electronics}
+\end{figure}
 
 
 \subsection{N-mos}
