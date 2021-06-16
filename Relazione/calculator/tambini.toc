@@ -1,0 +1,21 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Basics concepts}{1}{}%
+\contentsline {section}{\numberline {2}Logic gate}{2}{}%
+\contentsline {subsection}{\numberline {2.1}N-mos}{2}{}%
+\contentsline {subsection}{\numberline {2.2}NOT gate}{2}{}%
+\contentsline {subsection}{\numberline {2.3}NOR gate}{3}{}%
+\contentsline {subsection}{\numberline {2.4}NAND gate}{3}{}%
+\contentsline {subsection}{\numberline {2.5}Other gate}{3}{}%
+\contentsline {subsection}{\numberline {2.6}Bistable circuit}{4}{}%
+\contentsline {section}{\numberline {3}16-bit calculator}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Input with 16-bit}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Keyboard}{5}{}%
+\contentsline {subsection}{\numberline {3.3}4-bit encoder}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Memory and successive inputs}{5}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Rising edge}{5}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Falling edge}{6}{}%
+\contentsline {subsubsection}{\numberline {3.4.3}Multiplication}{6}{}%
+\contentsline {subsubsection}{\numberline {3.4.4}Adder}{7}{}%
+\contentsline {subsection}{\numberline {3.5}Sign bit}{7}{}%
+\contentsline {subsection}{\numberline {3.6}Memory}{7}{}%
+\contentsline {subsection}{\numberline {3.7}Clear}{7}{}%
