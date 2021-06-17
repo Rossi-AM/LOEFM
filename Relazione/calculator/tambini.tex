@@ -390,21 +390,23 @@ As you can see in figure \ref{encoder} this part can be split in three different
 
     For example, if we press the button "6" the binary input will be $0110$, so only the second and the third bit will be activated.
 
-    \item The green part is an OR gate connected to all the input lines, in order to check whether a button corresponding to a number is pressed. This choice has been made because if 0 was pressed, it should not result in any binary input, but it would be read as the number $10$. 
+    \item The green part is an OR gate connected to all the input lines, in order to check whether a button corresponding to a number is pressed. This choice has been made because if 0 was pressed, it would not result in any binary input, but it would be needed to multiply the previous number by $10$. 
 
     \item The blue part is a small "flash memory", which gets cleared when the input button is no longer pressed. 
             
-        This part, whose task will be discussed in the next subsection, is a simple "security" method useful to ensure that the inputs arrive correctly to the next memory. This part could be removed if the circuit timing was perfect, but we preferred to keep it to ensure no problem would arise.    
+        This part, whose functioning relies on the concept of bistable circuit, is a simple "security" method, useful to ensure that the inputs arrive correctly to the next memory. This part could be removed if the circuit timing was perfect, but we preferred to keep it to ensure no problem would arise.    
 \end{itemize}
 
 
 \subsection{Memory and successive inputs}
 
-This part allows the circuit to receive that make possible to get consecutive inputs, and it is composed by two memories and two full adders. 
+This part allows the circuit to receive consecutive inputs, and it is composed by two memories and two full adders. 
+
+\vspace{3mm}
 
 In this section the input gets stored and, after a new button is pressed, the stored number is multiplied by 10 and then added to the new input. By doing this we can obtain every number within the memory limit.
-
-It is important to point out that this part works by using the concepts of "rising edge", where the input passes from a low state to a high one, and "falling edge", where the input changes from high to low. Using this concept it is possible to process a single input in two phases.
+\clearpage
+It is important to point out that this part works by using the concepts of "rising edge", where the input passes from a low state to a high one, and "falling edge", where the input changes from high to low. This concept makes possible to process a single input in two phases.
 
 \begin{figure}[h]
     \centering
@@ -416,56 +418,66 @@ It is important to point out that this part works by using the concepts of "risi
 
 \subsubsection{Rising edge}
 
-When the first button is pressed, the circuit is in a state of "rising edge". In this moment the first memory horizontal wire, that goes to all the NANDs of the second memory (highlighted in yellow in figure \ref{Converter}), switches to low to prevent the NAND from letting any signal pass from the first to the second memory.
-
-\vspace{1mm}
-
-The second wire involved is the horizontal one under the first memory (highlighted in green), that also turns off; this line is responsible for clearing the memory when it switches from high to low.
-
-\vspace{1mm}
-
-After a little while, the last wire that changes is the one on top of the first memory, that allows a new input to be memorized in the cleared memory.
+When the first button is pressed, the circuit is in a state of "rising edge". In this moment, the horizontal wire that goes to all the NANDs of the second memory (highlighted in yellow in figure \ref{Converter}), switches to low to prevent the NANDs from letting any signal pass from the first to the second memory.
 
 \vspace{3mm}
 
-It's important to note that, during the data storage, the reset button is in a low state, since it cleared the memory right before the storage of new data.
-
-\vspace{1mm}
-%non ho capito un cazzo di fino al prossimo vspace
-This statement don't pose problem when the input is 0 since we find ourself in the case 5 or 6 of the flip-flop truth table (table \ref{FlipFlopTT}) and, as you can see, the output is 0. 
-
-The problem arise when the input data is 1 since we find ourself in case 1 or 2 where the two input are 0; as we can see in the truth table both output are set at 1.
-
-After one of the two input switch from low to high the flip-flop return in a normal state; what we want is to go from the state above to the state 4 of the table of truth; this mean that, as long as the first line to return to high is the one for the reset, we see no problem.
+The second wire involved is the horizontal one under the first memory (highlighted in green), that also turns off. This wire is responsible for clearing the memory. This happens when this wire switches from high to low.
 
 \vspace{3mm}
 
-The problem we just described has been solved in the simulated calculator by using the delay given from the logic gates. In reality, this could be a problem since this relies on physical properties that could depend from temperature, making this kind of timing, whether applied to a real circuit, not as precise as in the simulator.
+After a little while, the last wire that changes its state is the one on top of the first memory. This allows a new input to be memorized in the cleared memory.
 
-\vspace{1mm}
+\vspace{3mm}
 
-The timing problem also includes the fact that the operation on the second memory should be done before the one on the first memory. In our circuit the first memory delay is performed by the clearing part on the low left side of the first memory. % non si capisce bene
+It is important to note that, during the data storage, the reset wire (the horizontal one at the bottom of the green box) is in a low state, since it cleared the memory right before the storage of new data.
 
-\vspace{1mm}
+\vspace{3mm}
 
-Another possible solution could be using an external clock to define when the action should be performed but, in order to keep our simulated circuit as easy as possible, we decided to simply address the problem in this report.
+This last fact does not cause any trouble when the input is 0, since we are in the case 5 or 6 of the flip-flop truth table (table \ref{FlipFlopTT}) and, as you can see, the output is 0. 
+
+\vspace{3mm}
+
+The problem arises when the input data is 1, since we are in case 1 or 2 of the flip-flop truth table, where the two inputs are 0. As we can see in the truth table, in this case, both outputs are set at 1.
+
+\vspace{3mm}
+
+After one of the two inputs switches from low to high, the flip-flop returns in a normal state (state 3-6). But, to store a bit "1", we need to go from states 1 or 2, to state 4 of the truth table. In other words, as long as the clear line is the first one switching from low to high, we easily pass from state 1-2 to state 4.
+
+\vspace{3mm}
+
+Note that, it is not possible to reach state 3 in the case explained before, because state 1-2 "NewQ" becomes state 4 "OldQ" while state 3 "OldQ" is 0.
+
+\vspace{3mm}
+
+The problem we have just described has been solved in the simulated calculator by using the delay given from the logic gates. In reality, this could be a problem since this relies on physical properties that could depend from temperature, making this kind of timing, whether applied to a real circuit, not as precise as in the simulator.
+
+\vspace{3mm}
+
+The timing problem also includes the fact that the operation on the second memory should be done before the one on the first memory. In our circuit, this delay is performed by the "clearing part" (the XOR gate on bottom left corner of the green box). 
+
+\vspace{3mm}
+
+Another possible solution could be using an external clock to define when the action should be performed. But, in order to keep our simulated circuit as easy as possible, we decided to simply address the problem in this report.
 
 
 
 
 \subsubsection{Falling edge}
 
-After the button is released the circuit finds itself in falling edge phase.
+After the the number button is released the circuit is in the "falling edge" phase.
 
 \vspace{3mm}
 
-The process is similar to the previous one: the first wire to change this time is the one below the second memory. Its task is the memory reset, like the one in the first memory. After this, the wire on top of the second memory change its state to allow the last one (CHE SAREBBE?) to store information coming from the first memory.
+The process is similar to the previous one. The first wire to change its state is the horizontal one below the second memory, this time. Its task is the memory reset, like the one in the first memory. After this, the horizontal wire on top of the second memory changes its state, to allow the second memory to store information coming from the first.
+
+\vspace{3mm}
 
 The last connection that switches is, as before, the horizontal one on top of the first memory. It switches from high to low and prevents any further memory modification.
 
 \vspace{3mm}
 
-The problem described at the end of the rising edge is, in fact, a problem that begins during the rising edge and ends at the falling edge. Since the first memory works during the rising edge phase, and the second one works during the falling edge phase, the second memory will suffer the same problem, and so it will have the same possible solution explained before.
+The problem described at the end of the rising edge is, in fact, a problem that begins with the rising edge and ends during the falling edge. Since the first memory works during the rising edge phase, and the second one works during the falling edge phase, the second memory will suffer the same problem, and so it will have the same possible solutions explained before.
 
 
 \subsubsection{Multiplication}
@@ -489,13 +501,13 @@ To do this operation we simply let the input go to the second and fourth entranc
 
 \subsubsection{Adder}
 
-The first adder, highlighted in blue, has the duty of adding the previous number, multiplied by 10, to the new number in input. This second adder works between the rising edge and the falling edge. 
+The first full adder, highlighted in blue, has the duty of adding the previous number, multiplied by 10, to the new number in input. This full adder works between the rising edge and the falling edge. 
 
 
 
 \subsection{Sign bit}
 
-To do the subtraction we could have used the full subtractor, but we decided to use the addition between positive and negative number in binary. To do the subtraction we needed a way to read whether the second number was positive or negative. As visible in figure \ref{SignBit} we simply used a flip-flop. From the top:
+To do the subtraction we could have used the full subtractor, but we decided to use the addition between positive and negative numbers in binary. To perform the subtraction we needed a way to read whether the second number was positive or negative . As visible in figure \ref{SignBit} we simply used a flip-flop. From the top (coming from the left side):
 \begin{itemize}
     \item The first horizontal line is the input $+$;
     \item The second is $-$;
