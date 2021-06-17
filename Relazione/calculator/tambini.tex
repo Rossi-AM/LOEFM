@@ -480,28 +480,38 @@ The last connection that switches is, as before, the horizontal one on top of th
 The problem described at the end of the rising edge is, in fact, a problem that begins with the rising edge and ends during the falling edge. Since the first memory works during the rising edge phase, and the second one works during the falling edge phase, the second memory will suffer the same problem, and so it will have the same possible solutions explained before.
 
 
-\subsubsection{Multiplication}
+\subsubsection{Full adders}
 
-The full adders work between the falling edge and the rising edge.
-
-\vspace{3mm}
-
-The second full adder, highlighted in red, is the one responsible of multiplying 10 to the previous number and, as already said, it works among falling edge and rising edge.
+This circuit works with two full adders.
 
 \vspace{3mm}
 
-To do a multiplication in binary you need to shift the number as much as the bit of the multiplier and add all the result. For example let's take $6 \cdot 10$, writing it in binary we obtain 
-$0110 \cdot 1010$. if we subdivide the multiplication if $0110 \cdot 1000$ and $0110 \cdot 0010$ we can simply shift the number. 
-after this we add the two result $101000 + 001010 = 110010$ and the result that we obtain corresponds with 60 in decimal form. %riformulare
+During a calculation, the full adders do not work at the same time. The first full adder, highlighted in blue lets the inserted digit head towards the first memory highlighted in green. Then, this digit passes through the second memory (yellow), during the falling edge phase, and gets multiplied by 10 from the red full adder. This multiplied digit is not used unless a new digit is inserted by the user.
 
 \vspace{3mm}
 
-To do this operation we simply let the input go to the second and fourth entrance of the adder and take in output the result multiplied by 10. Since the multiplier is 10 we can see that the first bit of the result will always be low and that the first three number of the result don't need any addition so we can directly take result without passing by a full adder. %eh?
+If a new number button is pressed, this new value gets summed to the previous data, already multiplied by 10, and stored in the green memory. The sum of the two number is performed by the blue full adder.
+
+\vspace{3mm}
+
+If a third digit is inserted, the process repeats again.
+
+\vspace{3mm}
+
+We specify that, in order to multiply two binary numbers, you need to subdivide the operation in different phases. The second factor is split into numbers with a single "1" bit, and the first factor is multiplied to every single division. Then the results are summed up. The multiplication is a classical multiplication among real numbers. 
+
+\vspace{3mm}
+
+For example let's take $6 \cdot 10$, which is $0110 \cdot 1010$ in binary form. If we subdivide the multiplication in $0110 \cdot 1000$ and $0110 \cdot 0010$, we can simply add up all these results. The result is $110000 + 001100 = 111100$ which corresponds with 60 in decimal form. We specify that the multiplication by 10 is seen as a multiplication by 8 summed to a multiplication by 2.
+
+\vspace{3mm}
+
+Moreover, we can notice that after multipling by 10, the first bit is always set to 0. The second and the third bits depend only from the first and second bit of the original number, because they are only affected by the multiplication by 2 (0010) and not by the multiplication by 8 (1000). 
+
+From the fourth bit the addition performed by the red full adder is needed because these binary digits are influnced by the 10x multiplication. %rivedere sta parte perchè ci sto capendo poco io che la sto scrivendo, che cazzo
 
 
-\subsubsection{Adder}
 
-The first full adder, highlighted in blue, has the duty of adding the previous number, multiplied by 10, to the new number in input. This full adder works between the rising edge and the falling edge. 
 
 
 
@@ -521,14 +531,14 @@ To do the subtraction we could have used the full subtractor, but we decided to 
     \label{SignBit}
 \end{figure}
 
-
+\clearpage
 \subsection{Memory}
 The final part of the input is the two memories in figure \ref{Memories}.
 
 \begin{figure}[h]
     \centering  
     \includegraphics[scale=.4]{IM_Memories.PNG}
-    \caption{Final part of the input section, composed by two memories, one for each number that needs storage}
+    \caption{Final part of the input section, composed of two memories, one for each number that needs storage}
     \label{Memories}
 \end{figure}
 
