@@ -29,8 +29,11 @@
 
 \tableofcontents
 
+\clearpage
+
 \section{Basics concepts}
 
+\subsection{Boolean algebra}
 To make calculations, a circuit needs to be able to perform logical operations. In particular, we usually use boolean algebra in digital electronics. 
 
 \vspace{3mm}
@@ -51,6 +54,61 @@ Once 1 and 0 are defined, we need to define the operations that can be performed
 \item $"+"$ is the addition, and it can be represented by an OR gate.
 \item $"*"$ is the multiplication, and it can be represented by an AND gate.
 \end{itemize}
+
+
+
+\subsection{Classical operations in boolean algebra}
+
+\subsubsection{Addition}
+
+In order to sum up two binary numbers, we perform a classical column sum, keeping track of the carry-overs.
+
+
+
+\subsubsection{Subtraction}
+
+Subtracting two binary numbers is slightly more difficult. We point out that, if we consider a binary number $A$, its opposite is
+\[-A=NOT(A)+1\]
+
+This means that a subtraction can be performed by summing up a first number $X_1$ and the opposite of the second number $-X_2$. 
+
+\vspace{3mm}
+
+In our project we will use a ripple carry adder, that will be presented in section \ref{RCA_Section}. This component is able to sum $X_1$ with the opposite of $X_2$ and then it will add "1". This is possible thanks to the commutative property.
+
+\vspace{3mm}
+
+Now let's perform a subtraction among $6$ and $3$, which respectively correspond to $0110$ and $0011$. First of all we do
+\[0110+NOT(0011) = 0110 + 1100 = (1)0010\]
+
+We leave the last carry-over, if present like in this case, because inputs and output must have the same amount of binary digits.
+
+Then we add "1"
+
+\[(1)0010+1=(1)0011 = 0011\]
+  
+And this is equal to 3 in decimal form
+
+
+
+\subsubsection{Multiplication}
+
+In order to multiply two binary numbers, you need to subdivide the operation in different phases. The second factor has to be split into numbers with a single "1" bit, and the first factor is multiplied to every single division. Then the results are summed up. The multiplication is a classical multiplication among real numbers. 
+
+\vspace{3mm}
+
+For example let's take $6 \cdot 10$, which is $0110 \cdot 1010$ in binary form. If we subdivide the multiplication in $0110 \cdot 1000$ and $0110 \cdot 0010$, we can simply add up all these results. The result is $110000 + 001100 = 111100$ which corresponds with 60 in decimal form. We specify that the multiplication by 10 is seen as a multiplication by 8 summed to a multiplication by 2.
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Logic gates}
 
@@ -119,6 +177,11 @@ The main logic gates are the following, represented with their circuital symbol 
 \label{LogicGates}
 \end{figure}
 
+
+
+
+\clearpage
+
 \subsection{N-MOS}
 
 In order to create these logic gates, we need to know how to use a MOSFET. For this project we used N-MOS transistors only.
@@ -149,11 +212,13 @@ We do not need to distinguish linear section and saturation section, as we will 
 . We decided to use $5\,\textrm{V}$ for $V_{GS}$ to make input and output approximately the same, as we will see later.
 
 
+\clearpage
+
 
 \subsection{NOT gate}
 
 The easiest logic gate to realize is the NOT gate. We remember that the NOT gate negates the only input it receives. We need a high enough resistance and one N-MOS (as represented in figure \ref{NOT_N-MOS}) to realize it.
-\clearpage
+
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.3]{IM_NOT_NMOS.JPG}
@@ -180,7 +245,7 @@ A possible solution consists of a combination of N-MOS and P-MOS but, since our 
     \label{ResistiveInverter}
 \end{figure}
 
-For the immage of the NOT gate and some result we got in lab check the end of the report at %number of appendix chapter subsection not gate
+For the picture of the NOT gate realized in laboratory check figure \ref{NOT_LAB} in Appendix.
 
 
 \clearpage
@@ -211,11 +276,13 @@ The role of the short circuit is ensuring that whether an input is positive, the
 
 \vspace{3mm}
 
-For the immage of the NOR gate and some result we got in lab check the end of the report at %number of appendix chapter subsection nor gate
+For the picture of the NOR gate realized in laboratory check figure \ref{NOR_LAB} in Appendix.
+
+
 
 \subsection{NAND gate}
 
-As we said for the NOR gate, the NAND gate is also functional complete. But it can be created without the shortcircuit and without one of the resistors needed by the NOR gate, so it is slightly cheaper. 
+As we said for the NOR gate, the NAND gate is also functional complete. But it can be created without the shortcircuit needed by the NOR gate, so it is slightly cheaper. 
 
 \vspace{3mm}
 
@@ -238,7 +305,7 @@ When one of the inputs is 0, one of the N-MOS will be "closed" and, since the cu
 
 \vspace{3mm}
 
-For the immage of the NAND gate and some result we got in lab check the end of the report at %number of appendix chapter subsection nand gate
+For the picture of the NAND gate realized in laboratory check figure \ref{NAND_LAB} in Appendix.
 
 
 
@@ -325,10 +392,121 @@ The flip-flop can be created by both NOR gates and NAND gates but, since the NAN
 \end{table}
 
 
-\section{Processing}
 
-When the two numbers have been inserted by the user, they reach the processing section of the circuit. In this phase the numbers get summed or subtracted, depending on the user's choice. In figure \ref{Processing_Total} the processing section of the circuit, highlighted in green. The arrows with their captions will be explained later in this section.
 
+
+\clearpage
+
+
+
+
+
+
+
+
+\section{Processing components}
+
+In order to create a calculator that could perform additions and subtractions, we needed to have a component able to sum (or subtract) two binary numbers.
+
+\subsection{Half adder}
+
+The easiest component that can do this task is the half adder. It is a small circuit with 2 inputs and two outputs, and it is capable of summing up two binary digits. The input are the two digits, and the outputs are the sum $S$, performed by a XOR gate (which truth table is in figure \ref{XOR}), and the carry-over $C$, calculated by an AND gate (which truth table is in figure \ref{AND}).
+
+\vspace{3mm}
+
+Half adder truth table can be found in table \ref{HalfAdderTT}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c || c | c |}
+  \hline
+  A$_1$ & A$_2$ & S & C \\ \hline
+  0 & 0 & 0 & 0 \\ \hline
+  1 & 0 & 1 & 0 \\ \hline
+  0 & 1 & 1 & 0 \\ \hline
+  1 & 1 & 0 & 1 \\ \hline
+  \end{tabular}
+  \caption{Half adder truth table, where $A_1$ and $A_2$ are the input bits, $S$ is the result, and $C$ the carry-over}
+  \label{HalfAdderTT}
+\end{table}
+
+The major issue with this component is not being useful during a sum of two binary numbers. We specify that a sum of two binary numbers is a classical column sum. For this reason the half adder is not the best choice, because it cannot track the carry-over of the sum performed on the previous bit, if present.
+
+\subsection{Full adder}
+
+If we want to sum two positive n-bit binary numbers, we need to keep track of the carry-overs. The right component for this duty is a full-adder, whose truth table can be found in table \ref{FullAdderTT}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c || c | c |}
+  \hline
+  A$_1$ & A$_2$ & C$_{in}$ & S & C$_{out}$ \\ \hline
+  0 & 0 & 0 & 0 & 0 \\ \hline
+  0 & 1 & 0 & 1 & 0 \\ \hline
+  1 & 0 & 0 & 1 & 0 \\ \hline
+  1 & 1 & 0 & 0 & 1 \\ \hline
+  0 & 0 & 1 & 1 & 0 \\ \hline
+  0 & 1 & 1 & 0 & 1 \\ \hline
+  1 & 0 & 1 & 0 & 1 \\ \hline
+  1 & 1 & 1 & 1 & 1 \\ \hline
+  \end{tabular}
+  \caption{Full adder truth table. It is possible to see the third input that the half adder does not have, the carry-over of the previous column sum}
+  \label{FullAdderTT}
+\end{table}
+
+The most efficient way to realize a full adder is shown in figure \ref{FullAdderCircuit}. It requires only 5 logic gates.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{IM_full_adder_bis}
+  \caption{Most efficient way to create a full adder, by using two XOR gates, two AND gates and one OR gate}
+  \label{FullAdderCircuit}
+\end{figure}
+
+\subsection{Ripple carry adder} \label{RCA_Section}
+
+If we align a series of full adders we obtain a ripple carry adder (shortened in RCA).
+
+\vspace{3mm}
+
+This circuit is useful because it can perform not only sums among positive numbers, but also algebraic sums. We point out that in our circuit only the second addend could be negative.
+
+\vspace{3mm}
+
+This happens because, in our circuit, both numbers are considered positive, but the user can pick the subtraction operation, which makes the second addend negative. It is not possible to modify the sign of the first number.
+
+\vspace{3mm}
+
+
+
+
+
+
+
+
+\begin{table}
+  
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.43]{SC_Processing_Total.JPG}
@@ -583,14 +761,6 @@ If a third digit is inserted, the process repeats again.
 
 \vspace{3mm}
 
-We specify that, in order to multiply two binary numbers, you need to subdivide the operation in different phases. The second factor is split into numbers with a single "1" bit, and the first factor is multiplied to every single division. Then the results are summed up. The multiplication is a classical multiplication among real numbers. 
-
-\vspace{3mm}
-
-For example let's take $6 \cdot 10$, which is $0110 \cdot 1010$ in binary form. If we subdivide the multiplication in $0110 \cdot 1000$ and $0110 \cdot 0010$, we can simply add up all these results. The result is $110000 + 001100 = 111100$ which corresponds with 60 in decimal form. We specify that the multiplication by 10 is seen as a multiplication by 8 summed to a multiplication by 2.
-
-\vspace{3mm}
-
 Moreover, we can notice that after multipling by 10, the first bit is always set to 0. The second and the third bits depend only from the first and second bit of the original number, because they are only affected by the multiplication by 2 (0010) and not by the multiplication by 8 (1000). 
 
 From the fourth bit the addition performed by the red full adder is needed because these binary digits are influnced by the 10x multiplication. %rivedere sta parte perchè ci sto capendo poco io che la sto scrivendo, che cazzo
@@ -812,5 +982,27 @@ After all this process the number is divided into 4 bit groups that enter the 7-
     \caption{NOR gate is functional complete, every other logic gate can be a circuit made of NORs only}
     \label{NOR_allpowerful}
 \end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.08]{IM_NOT_LAB.jpg}
+  \caption{NOT gate realized in laboratory}
+  \label{NOT_LAB}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.08]{IM_NOR_LAB.jpg}
+  \caption{NOR gate realized in laboratory}
+  \label{NOR_LAB}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.08]{IM_NAND_LAB.jpg}
+  \caption{NAND gate realized in laboratory}
+  \label{NAND_LAB}
+\end{figure}
+
 
 \end{document}
