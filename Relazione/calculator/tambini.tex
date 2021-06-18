@@ -339,6 +339,22 @@ The easiest component that can do this task is the half adder. It is a small cir
 
 Half adder truth table can be found in table \ref{HalfAdderTT}.
 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c || c | c |}
+  \hline
+  A$_1$ & A$_2$ & S & C \\ \hline
+  0 & 0 & 0 & 0 \\ \hline
+  1 & 0 & 1 & 0 \\ \hline
+  0 & 1 & 1 & 0 \\ \hline
+  1 & 1 & 0 & 1 \\ \hline
+  \end{tabular}
+  \caption{Half adder truth table, where $A$ and $B$ CONTINUO DA QUI}
+  \label{HalfAdderTT}
+\end{table}
+
+
+
 
 
 The major issue with this component is not being useful during a sum of two binary numbers. We specify that a sum of two binary numbers is a classical column sum. For this reason the half adder is not the best choice, because it cannot track the carry-over of the sum performed on the previous bit, if present.
