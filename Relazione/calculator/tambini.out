@@ -1,0 +1,41 @@
+\BOOKMARK [1][-]{section.1}{Basics concepts}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Boolean algebra}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Classical operations in boolean algebra}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Addition and subtraction}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Multiplication}{subsection.1.2}% 5
+\BOOKMARK [1][-]{section.2}{Logic gates}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{N-MOS}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.2}{NOT gate}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{NOR gate}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.4}{NAND gate}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.5}{Other logic gates}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.6}{Bistable circuit}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Encoder}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Simple encoder}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Priority encoder}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Processing}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Half adder and full adder}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Ripple carry adder}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Decoder}{}% 19
+\BOOKMARK [1][-]{section.6}{Real calculator \(3-bit\)}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{The blueprint}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Breadboard 1}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.3}{Breadboard 2}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.4}{Breadboard 3}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.5}{The complete project}{section.6}% 25
+\BOOKMARK [1][-]{section.7}{16-bit calculator}{}% 26
+\BOOKMARK [2][-]{subsection.7.1}{Input with 16-bit}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.2}{Keyboard}{section.7}% 28
+\BOOKMARK [2][-]{subsection.7.3}{4-bit encoder}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.4}{Memory and successive inputs}{section.7}% 30
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Rising edge}{subsection.7.4}% 31
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Falling edge}{subsection.7.4}% 32
+\BOOKMARK [3][-]{subsubsection.7.4.3}{Ripple carry adders}{subsection.7.4}% 33
+\BOOKMARK [2][-]{subsection.7.5}{Sign bit}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.6}{Memory}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.7}{Clear}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.8}{Processing}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.9}{Decoder}{section.7}% 38
+\BOOKMARK [3][-]{subsubsection.7.9.1}{About the number sign}{subsection.7.9}% 39
+\BOOKMARK [3][-]{subsubsection.7.9.2}{Double dabble}{subsection.7.9}% 40
+\BOOKMARK [1][-]{section.8}{Appendix}{}% 41

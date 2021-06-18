@@ -14,21 +14,38 @@
 \usepackage{stackrel}
 \usepackage{mathtools}
 \newcommand{\angstrom}{\text{\normalfont\AA}}
+\usepackage{hyperref}
+
 
 \geometry{a4paper}
 
 \usepackage[english]{babel}
 \frenchspacing
 
-\title{Report: adder and subtractor}
+\hypersetup{
+  colorlinks=true,
+  linkcolor = black,
+}
+
+
+\title{Electronics laboratory report - calculator}
 \author{Lorenzo Ramella, Alessandro Matteo Rossi, Marco Tambini}
-\date{\today}
+\date{June 10, 2021}
+
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  E DA SCRIVERE
+  The goal of this project is creating a calculator able to perform addition and subtractions by using logic gates.
+
+\vspace{3mm}
+
+  We created two different circuits: a 3-bit real calculator created in laboratory, and a 16-bit simulated calculator, to show how it is possible to solve the issue of the increasing complexity due to the size growth. Most of the used circuits have been both simulated and created in laboratory.
+
+\vspace{3mm}
+
+  The circuital simulator used is "circuitjs1". %scusaci stef ma siamo poveri, tu c'hai lo smartwatch e lo flexavi l'ultima volta in lab
 \end{abstract}
 \clearpage
 \tableofcontents
@@ -210,8 +227,7 @@ After $V_{GS}$ (the potential difference among gate and source) overcomes a cert
 
 \vspace{3mm}
 
-We do not need to distinguish linear section and saturation section, as we will check only the voltage at the drain of the N-MOS for our gate. The threshold voltage is different for every transistor, and it usually is within the range $0.5\,\textrm{V} - 5\,\textrm{V}$. The transistor we used is the $IRF822$, whose threshold voltage has been measured in lab, and it is approximately %nV
-. We decided to use $5\,\textrm{V}$ for $V_{GS}$ to make input and output approximately the same, as we will see later.
+We do not need to distinguish linear section and saturation section, as we will check only the voltage at the drain of the N-MOS for our gate. The threshold voltage is different for every transistor, and it usually is within the range $0.5\,\textrm{V} - 5\,\textrm{V}$. The transistor we used is the $IRF822$, whose threshold voltage has been measured in lab, and it is approximately $3 \,\textrm{V}$ (calculated from a laboratory measure with no statistical analysis done, but backed up by the values reported on the datasheet). We decided to use $5\,\textrm{V}$ for $V_{GS}$ to make input and output approximately the same, as we will see later.
 
 
 \clearpage
@@ -393,10 +409,10 @@ The flip-flop can be created by both NOR gates and NAND gates but, since the NAN
 \label{FlipFlopTT}
 \end{table}
 
-
+\clearpage
 \section{Encoder}
 
-While calculators work using binary numbers, this kind of numeration is unfamiliar and difficult to use for most humans. This is why it is worth to develop an encoder, a circuit to convert decimal inputs in binary numbers.
+While calculators work using binary numbers, this kind of numeration is unfamiliar and difficult to use for most humans. This is why it is worth to develop an encoder, a circuit that converts decimal inputs in binary numbers.
 
 \subsection{Simple encoder}
 
@@ -408,28 +424,28 @@ While calculators work using binary numbers, this kind of numeration is unfamili
   \label{simple_encoder}
 \end{figure}
 
-A simple encoder is the simplest possible design for an encoder. There are $2^n$ input lines, and $n$ OR gates. When one of the inputs lines gets high voltage, the high voltage activates the OR gates corresponding to its binary representation.
+A simple encoder is the easiest possible design for an encoder. There are $2^n$ input lines, and $n$ OR gates. When one of the input lines gets high voltage, it activates the OR gates corresponding to its binary representation.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{| c | c | c | c || c | c |}
   \hline
-  I$_0$ & I$_1$ & I$_2$ & I$_3$ & O$_0$ & O$_1$ \\ \hline
+  I$_0$ & I$_1$ & I$_2$ & I$_3$ & O$_1$ & O$_0$ \\ \hline
   0 & 0 & 0 & 0 & 0 & 0 \\ \hline
   1 & 0 & 0 & 0 & 0 & 0 \\ \hline
-  0 & 1 & 0 & 0 & 1 & 0 \\ \hline
-  0 & 0 & 1 & 0 & 0 & 1 \\ \hline
+  0 & 1 & 0 & 0 & 0 & 1 \\ \hline
+  0 & 0 & 1 & 0 & 1 & 0 \\ \hline
   0 & 0 & 0 & 1 & 1 & 1 \\ \hline
   \end{tabular}
-  \caption{Table of truth for the 2-bit simple encoder}
+  \caption{Truth table for the 2-bit simple encoder}
   \label{Table_simple_encoder}
 \end{table}
 
-This circuit implementation is very simple, but it does not return a correct result if more than one input line is high. In such cases, is advisable to use a priority encoder.
+This circuit implementation is very simple, but it does not return a correct result if more than one input line is high. In such cases, it is advisable to use a priority encoder.
 
 \clearpage
 
-\subsection{Priority encoder}
+\subsection{Priority encoder} \label{PriorityEncoderSection}
 
 \begin{figure}[h]
   \centering
@@ -439,16 +455,18 @@ This circuit implementation is very simple, but it does not return a correct res
   \label{priority_encoder}
 \end{figure}
 
-A priority encoder is similar to a simple encoder, but it works even if more lines are high at the same time, giving priority to the highest number. It achieves this results using AND gates: the OR gate inputs are now not directly connected to the input lines, but instead are connected to an AND gate. The AND gate recieves as inputs the corresponding input line and the negation of any input line which:
+A priority encoder is similar to a simple encoder, but it works even if more lines are high at the same time, giving priority to the highest number. It achieves this results by using AND gates: the OR gate inputs are no longer directly connected to the input lines, but they need to be "checked" by an AND gate. The AND gate receives as inputs the corresponding input line and the negation of any input line which:
 
 \begin{itemize}
-\item has an higher value of the first input line;
+\item has an value higher than the first input line;
 \item its binary representation is 0 in that position.
 \end{itemize}
 
-This way, each input line not only activates the OR gates corresponding to its binary representation, but also de-activates the ``wrong'' OR gates that a lower value input line could be activating.
+This way, each input line not only activates the OR gates corresponding to its binary representation, but also de-activates the ``wrong'' OR gates that a lower value input line could activate.
 
-An example of how this works is provided in Figure \ref{priority_encoder}: when $I(2)$ is low, the AND gate has the same value of $I(1)$, and the circuit works like a simple encoder; when $I(2)$ is high, the AND gate is always low, no matter the value of $I(1)$.
+\vspace{3mm}
+
+An example of how this works is provided in figure \ref{priority_encoder}. When $I(2)$ is low, the AND gate has the same value of $I(1)$, and the circuit works like a simple encoder; when $I(2)$ is high, the AND gate is always low, no matter the value of $I(1)$.
 
 \begin{table}[h]
   \centering
@@ -460,7 +478,7 @@ An example of how this works is provided in Figure \ref{priority_encoder}: when 
   x & x & 1 & 0 & 0 & 1 \\ \hline
   x & x & x & 1 & 1 & 1 \\ \hline
   \end{tabular}
-  \caption{Table of truth for the 2-bit priority encoder}
+  \caption{Truth table for the 2-bit priority encoder}
   \label{Table_priority_encoder}
 \end{table}
 
@@ -574,7 +592,7 @@ We can list its working steps:
   \end{enumerate}
 \end{enumerate}
 
-\section{Decoder}
+\section{Decoder} \label{DecoderSection}
 
 The decoder is a device complementary to the encoder, as it ``translates'' a binary input into a more readable decimal output.
 
@@ -592,13 +610,13 @@ Each output line is connected to an AND gate. Each AND is connected to every sin
   \centering
   \begin{tabular}{| c | c || c | c | c | c |}
   \hline
-  I$_0$ & I$_1$ & O$_0$ & O$_1$ & O$_2$ & O$_3$ \\ \hline
+  I$_1$ & I$_0$ & O$_0$ & O$_1$ & O$_2$ & O$_3$ \\ \hline
   0 & 0 & 1 & 0 & 0 & 0 \\ \hline
-  1 & 0 & 0 & 1 & 0 & 0 \\ \hline
-  0 & 1 & 0 & 0 & 1 & 0 \\ \hline
+  0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+  1 & 0 & 0 & 0 & 1 & 0 \\ \hline
   1 & 1 & 0 & 0 & 0 & 1 \\ \hline
   \end{tabular}
-  \caption{Table of truth for the 2-bit decoder}
+  \caption{Truth table for the 2-bit decoder}
   \label{Table_basic_decoder}
 \end{table}
 
@@ -613,18 +631,23 @@ Now that the 3 key parts of a basic calculator have been introduced, we can try 
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
-  \includegraphics[scale=0.7]{real_calculator_blueprint}
+  \includegraphics[scale=0.8]{real_calculator_blueprint}
   \caption{Here's the blueprint of our calculator}
   \label{real_calculator_blueprint}
 \end{figure}
 
-In Figure \ref{real_calculator_blueprint} is shown the blueprint of our calculator. It receives 2 2-bit numbers as inputs, encodes them in binary, then adds them using a 2-bit ripple carry adder. A decoder then converts the result in decimal and displays it.
+In Figure \ref{real_calculator_blueprint} is showcased the blueprint of our calculator. It receives 2 2-bit numbers as inputs, encodes them in binary and then adds them up using a 2-bit ripple carry adder. A decoder then converts the result in decimal and displays it.
 
-\vspace{5mm}
+\vspace{3mm}
 
-There is also an additional input line for the purpose of subtraction. When this input line is low, the 3 XOR gates can be ignored as they return the input line which is not the subtraction line.
+There is also an additional input line useful to perform the subtraction. When this input line is low, the 3 XOR gates can be ignored as they return the unchanged input.
+
+\vspace{3mm}
 
 When the subtraction line is high, however, those gates return the opposite of said input lines. This is very important, as the first 2 XOR gates have the specific purpose of converting the second input into its opposite.
+%MARCO E ALESSANDRO RITENGONO CHE QUESTA PARTE SULLA SOTTRAZIONE RIDONDI MOLTO. E' GIA' SPIEGATA NEL RIPPLE CARRY ADDER. MANTIENINE, SE PROPRIO PROPRIO, UNA VERSIONE MOLTO RIDOTTA, CHE COMUNQUE E' GRADEVOLE AL PALATO ^ω^ <-- Marco forced me to do this smile (questa parte, come quella sull'orologio del Riboldi, VA MANTENUTA ANCHE NELLA VERSIONE DEFINITIVA COME COMMENTO)
+
+\vspace{3mm}
 
 Effectively, when the subtraction line is high, we are adding two signed 3-bit numbers, a negative number and a positive number. To do that, we would need a 3-bit ripple carry adder, but:
 
@@ -647,10 +670,10 @@ As for the decoder, both in our blueprint and in lab we are going to use a pre-m
 
 The calculator has been assembled using 3 different breadboards. The first breadboard handles the input part and the encoding process.
 
-\vspace{5mm}
+\vspace{3mm}
 
-The input part is achieved using a ``keyboard'', which is a series of 6 switches built into a compact board. 
-
+The input part is created using a ``keyboard'', which is a series of 6 switches built into a compact board. 
+%keyboard o switch table?
 \begin{figure}[h]
   \centering
   %\captionsetup{justification=centering,margin=2cm}
@@ -659,21 +682,27 @@ The input part is achieved using a ``keyboard'', which is a series of 6 switches
   \label{breadboard1_bis}
 \end{figure}
 
-One side of each switch is directly connected to earth, while the other one is connected to the power supply through a resistor ($\approx 30-50 \; k \Omega$). 
+One side of each switch is grounded, while the other one is connected to the power supply through a resistor ($\approx 30-50 \; k \Omega$). 
 
-When the switch is open, there is no current flow through the resistor and therefore no voltage difference at the ends of the resistor. Any high impedance input device can then be connected to the second end of the resistor to read a high voltage.
+\vspace{3mm}
+
+When the switch is open, there is no current flow through the resistor and therefore no voltage difference across the resistor. Any high impedance input device can then be connected to the second end of the resistor to read a high voltage.
+
+\vspace{3mm}
 
 When the switch is closed, the current is free to flow through the resistor down to earth. The second end of the resistor is at the same voltage as the ground, and the input device reads a low voltage.
 
-\vspace{5mm}
+\vspace{3mm}
 
-This device allows us to conveniently manipulate 6 different input lines. We are going to use the switches 1, 2 and 3 to write the first input; and the switches 4, 5 and 6 to write the second (4 being 1, 5 being 2 and 6 being 3). To write 0, the user just needs to leave all the switches open.
+This device allows us to conveniently manipulate 6 different input lines. We are going to use the switches 1, 2 and 3 to write the first input, and the switches 4, 5 and 6 to write the second (4 being 1, 5 being 2 and 6 being 3). To write 0, the user just needs to leave all the switches open.
 
-\vspace{5mm}
+\vspace{3mm}
 
-The rest of the first breadboard is dedicated to the encoding process. The process works exactly as described in section 3.2, with the right part of the board dedicated to the encoding of the first input and the left part dedicated to the second.
+The rest of the first breadboard is dedicated to the encoding process. The process works exactly as described in section \ref{PriorityEncoderSection}, with the right part of the board dedicated to the encoding of the first input and the left part dedicated to the second.
 
-We are not going into the details of the wiring. We will just mention that the white wires are being used to connect the gates with the power supply, and the black and brown wires are being used to connect the gates with earth.
+\vspace{3mm}
+
+We are not going into the details of the wiring. We will just mention that the white wires are used to connect the gates to the power supply, and the black and brown wires are used to connect the gates to earth.
 
 \begin{figure}[h]
   \centering
@@ -685,7 +714,7 @@ We are not going into the details of the wiring. We will just mention that the w
 
 \subsection{Breadboard 2}
 
-The second breadboard handles the calculation process. It is a 2-bit ripple carry adder, composed of 2 full adders. The first full adder is on the left side of the board and the second adder is on the right side. The process works exactly as described in section 4. 
+The second breadboard handles the calculation process. It is a 2-bit ripple carry adder, composed of 2 full adders. The first full adder is on the left side of the board and the second adder is on the right side. The process works exactly as described in section \ref{RCA_Section}. 
 
 \begin{figure}[h]
   \centering
@@ -699,7 +728,7 @@ The second breadboard handles the calculation process. It is a 2-bit ripple carr
 
 \subsection{Breadboard 3}
 
-The second breadboard handles the decoding process and houses everything that could not fit into the previous 2 breadboards. 
+The third breadboard handles the decoding process and houses everything that could not fit into the previous 2 breadboards. 
 
 \begin{figure}[h]
   \centering
@@ -711,17 +740,21 @@ The second breadboard handles the decoding process and houses everything that co
 
 The breadboard houses the 3 XOR gates necessary to enable the subtraction process. Those gates are connected to both the previous breadboards.
 
-\vspace{5mm}
+\vspace{3mm}
 
-The decoder works in a similar way to what is described in section 5. The only key difference is that it works using negative logic: a 1 output is low in voltage an a 0 output is high in voltage. 
+The decoder works in a similar way to what is described in section \ref{DecoderSection}. The only key difference is that it works using negative logic: a 1 output is low in voltage an a 0 output is high in voltage. 
 
-To read more easily our output, we connected the 10 outputs to 10 LEDs. The decoded number corresponds to the least bright LED. The yellow LED corresponds to the number 0, and the value of the others can be deduced counting up going counterclockwise. The 8 and 9 LEDs are there for diagnostic purposes; ideally, they should never turn off.
+\vspace{3mm}
 
-\vspace{5mm}
+To read our output more easily, we connected the 10 outputs to 10 LEDs. The decoded number corresponds to the least bright LED. The yellow LED corresponds to the number 0, and the value of the others can be deduced counting up going counterclockwise. The 8 and 9 LEDs are there for diagnostic purposes. Ideally, they should never turn off.
 
-There is also a switch, the purpose of which is to enable the operation of subtraction. While, in our simulator, the ``subtraction line'' and everything connected to it was found at low voltage when not connected to any power supply, in reality an isolated subtraction line finds itself at high voltage. 
+\vspace{3mm}
 
-To enable the addition/subtraction selection, then, we connected this line to earth through a switch: when the switch is open, the subtraction line is at ground potential and the calculator does the addition process. When the switch is closed, the subtraction line is isolated (high voltage) and the calculator does the subtraction process.
+There is also a switch, whose purpose is to enable the operation of subtraction. While in our simulator the ``subtraction line'', and everything connected to it, was at low voltage when not connected to any power supply, in reality an isolated subtraction line finds itself at high voltage. 
+
+\vspace{3mm}
+
+To enable the addition/subtraction selection, then, we connected this line to earth through a switch. When the switch is open, the subtraction line is at ground potential and the calculator does the addition process. When the switch is closed, the subtraction line is isolated (high voltage) and the calculator does the subtraction process.
 
 \clearpage
 
@@ -735,7 +768,7 @@ To enable the addition/subtraction selection, then, we connected this line to ea
   \label{calculator}
 \end{figure}
 
-After assembling the circuit, we then verified its table of truth (Table \ref{Table_calculator}).
+After assembling the circuit, we then verified its truth table (Table \ref{Table_calculator}).
 
 \begin{table}[h]
   \centering
@@ -751,7 +784,7 @@ After assembling the circuit, we then verified its table of truth (Table \ref{Ta
   2 & 1 & 0 & 3 & 2 & 3 & 0 & 5 & 2 & 1 & 1 & 1 & 2 & 3 & 1 & 7 \\ \hline
   3 & 1 & 0 & 4 & 3 & 3 & 0 & 6 & 3 & 1 & 1 & 2 & 3 & 3 & 1 & 0 \\ \hline
   \end{tabular}
-  \caption{Table of truth for the 3-bit calculator}
+  \caption{Truth table for the 3-bit calculator, where sub$=$0 means addition and sub$=$1 means subtraction}
   \label{Table_calculator}
 \end{table}
 
@@ -1188,4 +1221,7 @@ After all this process the number is divided into 4 bit groups that enter the 7-
 \end{figure}
 
 
+
+
+ 
 \end{document}
