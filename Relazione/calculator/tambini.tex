@@ -481,117 +481,28 @@ In figure \ref{RCA_SMALL} you can see a ripple carry adder with a 3-bit input (w
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=.4]{IM_RCA_SMALL.PNG}
+  \includegraphics[scale=.65]{IM_RCA_SMALL.PNG}
   \caption{3-bit ripple carry adder}
   \label{RCA_SMALL}
 \end{figure}
 
-
-
-
-
-
-\begin{table}
-  
-\end{table}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\clearpage
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.43]{SC_Processing_Total.JPG}
-  \caption{Picture the circuit processing part (highlighted in green)}
-  \label{Processing_Total}
-\end{figure}
-
-The processing phase is split in two subphases:
+We can list its working steps:
 \begin{enumerate}
-  \item During the first subphase the second number, memorized in the flip-flop memory (left side of figure \ref{Processing_Total}), gets inverted if the user picked the subtraction operation, otherwise it is not get modified.
-  \item Then the algebraic sum happens in the top right side of the circuit.
-\end{enumerate}
-
-Regarding the first point, the first mandatory step is to invert the number. We remember that the opposite of a binary number $A$ is
-\begin{equation}
--A=NOT(A)+1
-\label{Law}
-\end{equation}
-and we also remember that in the Boolean Algebra factors can commute during a sum.
-
-So, first of all, we perform the NOT operation in figure \ref{Processing1} thanks to XOR gates. They compare the sign of the second number with the bits, one at a time, and if the sign is negative (the sign line in figure \ref{Processing1}, highlighted in red) they invert the bit. Otherwise nothing happens.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.35]{SC_Processing1.JPG}
-  \caption{Picture of the inverting part, with the sign wire highlighted in red}
-  \label{Processing1}
-\end{figure}
-
-Regarding the second point, this is not only where a unit gets added to the second number (equation \ref{Law}) but also where the algebrical sum between the two inputs happens.
-
-This sum is performed by a \textit{ripple carry adder} (shown in figure \ref{RCA} in green), which is composed by a series of full adders, highlighted in blue. The sign wire keeps being red.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.43]{SC_Processing2.JPG}
-  \caption{Picture of the ripple carry adder part, with the sign wire highlighted in red and the full adders highlighted in blue}
-  \label{RCA}
-\end{figure}
-
-The ripple carry adder (shortened in RCA) is an $B$-bit adder circuit composed of $B$ full adders. 
-
-A single full adder is a 3 input bits adder, with a 2-bit output. Its inputs are a number $A$, a number $B$ and a carry-over produced in a previous operation, whereas the outputs are a result $S$ and a carry-over $C_{out}$. Its truth table is figure \ref{FullAdder}, where the input carry-over is $C_{in}$ and the output one is $C_{out}$.
-
-\begin{table}[h]
-  \centering
-  \begin{tabular}{|| c | c | c || c | c ||}
-  \hline
-  A$_1$ & A$_2$ & C$_{in}$ & S & C$_{out}$ \\ \hline
-  0 & 0 & 0 & 0 & 0 \\ \hline
-  0 & 1 & 0 & 1 & 0 \\ \hline
-  1 & 0 & 0 & 1 & 0 \\ \hline
-  1 & 1 & 0 & 0 & 1 \\ \hline
-  0 & 0 & 1 & 1 & 0 \\ \hline
-  0 & 1 & 1 & 0 & 1 \\ \hline
-  1 & 0 & 1 & 0 & 1 \\ \hline
-  1 & 1 & 1 & 1 & 1 \\ \hline
-  \end{tabular}
-  \label{FullAdder}
-\end{table}
-
-By aligning $B$ full adders is possible to sum (or subtract) two $B$-bit numbers. Considering that, as already mentioned, if the number is negative it is needed to invert the number and sum 1, the ripple carry adder allows the circuit to:
-\begin{itemize}
-  \item Sum two numbers if they are both positive, with no action performed from the inverting part of the processing circuit.
-  \item Subtract one number from another by inverting the second number, as already explained, and summing 1 as the first $C_{in}$ of the first full adder of the RCA.
-\end{itemize}
+  \item The digits of the first number (blue wires, one per digit) enter the full adders.
+  \item The digits of the second number (green) get compared to the sign bit (red) by two XOR gates. They will exit these gates on the lime wire, and they will enter the full adders too. If the second number is negative, the red wire will be on, and the digits will be inverted, following the rule on how to obtain the opposite of a binary number.
+  \item Considering that the opposite of a binary number is $-A=NOT(A)+1$, the "1" is added in the first full adder as a $C_{in}$.
+  \item The sum is performed and the result goes to a decoder. The XOR gate on the right side of the image compares the sign bit with the carry-over of the last sum performed (orange). 
   
-In conclusion, the output moves to the decoding part of the circuit, that will allow the circuit to show the result on displays. Moreover, a XOR gate checks the relation among the sign bit and the carry-over of the last full adder. This happens because the sign of the final result depends on the relation among the modules of the two numbers, and if the first one is bigger than the other, the result will be surely positive, otherwise negative.
+    \vspace{3mm}
 
-
-
-
-
-\clearpage
-
-
-
-
+    Let's consider the possible cases of this last XOR gate:
+  \begin{enumerate}
+    \item If the sign bit is 0 and the carry-over of the last full adder is 0, this means we are summing two positive numbers, which result is positive, as confirmed by the XOR.
+    \item If the sign bit is 0 and the carry-over of the last full adder is 1, this means we are experiencing a memory overflow. The result goes beyond the range the calculator can handle.
+    \item If the sign bit is 1 and the carry-over of the last full adder is 0, this means we are subtracting two numbers, and the second has a greater module. So the result is negative.
+    \item If the sign bit is 1 and the carry-over of the last full adder is 1, this means we are subtracting two numbers, and the first has a greater module. So the result is positive.
+  \end{enumerate}
+\end{enumerate}
 
 
 
@@ -670,7 +581,7 @@ As you can see in figure \ref{encoder} this part can be split in three different
 
 \subsection{Memory and successive inputs}
 
-This part allows the circuit to receive consecutive inputs, and it is composed by two memories and two full adders. 
+This part allows the circuit to receive consecutive inputs, and it is composed by two memories and two ripple carry adders. 
 
 \vspace{3mm}
 
@@ -750,17 +661,17 @@ The last connection that switches is, as before, the horizontal one on top of th
 The problem described at the end of the rising edge is, in fact, a problem that begins with the rising edge and ends during the falling edge. Since the first memory works during the rising edge phase, and the second one works during the falling edge phase, the second memory will suffer the same problem, and so it will have the same possible solutions explained before.
 
 
-\subsubsection{Full adders}
+\subsubsection{Ripple carry adders}
 
-This circuit works with two full adders.
-
-\vspace{3mm}
-
-During a calculation, the full adders do not work at the same time. The first full adder, highlighted in blue lets the inserted digit head towards the first memory highlighted in green. Then, this digit passes through the second memory (yellow), during the falling edge phase, and gets multiplied by 10 from the red full adder. This multiplied digit is not used unless a new digit is inserted by the user.
+This circuit works with two ripple carry adders.
 
 \vspace{3mm}
 
-If a new number button is pressed, this new value gets summed to the previous data, already multiplied by 10, and stored in the green memory. The sum of the two number is performed by the blue full adder.
+During a calculation, the RCAs do not work at the same time. The first RCA, highlighted in blue lets the inserted digit head towards the first memory highlighted in green. Then, this digit passes through the second memory (yellow), during the falling edge phase, and gets multiplied by 10 from the red RCA. This multiplied digit is not used unless a new digit is inserted by the user.
+
+\vspace{3mm}
+
+If a new number button is pressed, this new value gets summed to the previous data, already multiplied by 10, and stored in the green memory. The sum of the two number is performed by the blue RCA.
 
 \vspace{3mm}
 
@@ -770,7 +681,7 @@ If a third digit is inserted, the process repeats again.
 
 Moreover, we can notice that after multipling by 10, the first bit is always set to 0. The second and the third bits depend only from the first and second bit of the original number, because they are only affected by the multiplication by 2 (0010) and not by the multiplication by 8 (1000). 
 
-From the fourth bit the addition performed by the red full adder is needed because these binary digits are influnced by the 10x multiplication. %rivedere sta parte perchè ci sto capendo poco io che la sto scrivendo, che cazzo
+From the fourth bit the addition performed by the red RCA is needed because these binary digits are influnced by the 10x multiplication. %rivedere sta parte perchè ci sto capendo poco io che la sto scrivendo, che cazzo
 
 
 
