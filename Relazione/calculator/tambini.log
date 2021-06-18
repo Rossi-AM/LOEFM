@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.17)  18 JUN 2021 16:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.17)  18 JUN 2021 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,25 +555,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [9
 
 ] [10 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_full_adder_bis.PNG>]
+<SC_Processing_Total.JPG, id=76, 1025.0295pt x 277.63725pt>
+File: SC_Processing_Total.JPG Graphic file (type jpg)
+<use SC_Processing_Total.JPG>
+Package pdftex.def Info: SC_Processing_Total.JPG  used on input line 512.
+(pdftex.def)             Requested size: 440.75409pt x 119.38168pt.
 
-LaTeX Warning: File `SC_Processing_Total.JPG' not found on input line 512.
+Overfull \hbox (22.50041pt too wide) in paragraph at lines 512--513
+ [][] 
+ []
 
-
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:512: Package pdftex.def Error: File `SC_Processing_Total.JPG' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.512 ...hics[scale=0.43]{SC_Processing_Total.JPG}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 512.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 
 LaTeX Warning: Reference `Processing_Total' on page 11 undefined on input line 519.
 
@@ -583,52 +574,37 @@ LaTeX Warning: Reference `Processing1' on page 11 undefined on input line 530.
 
 LaTeX Warning: Reference `Processing1' on page 11 undefined on input line 530.
 
-
-LaTeX Warning: File `SC_Processing1.JPG' not found on input line 534.
-
-
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:534: Package pdftex.def Error: File `SC_Processing1.JPG' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.534 ...egraphics[scale=0.35]{SC_Processing1.JPG}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<SC_Processing1.JPG, id=77, 1040.688pt x 381.8265pt>
+File: SC_Processing1.JPG Graphic file (type jpg)
+<use SC_Processing1.JPG>
+Package pdftex.def Info: SC_Processing1.JPG  used on input line 534.
+(pdftex.def)             Requested size: 364.24626pt x 133.64127pt.
 
 LaTeX Warning: Reference `Law' on page 11 undefined on input line 539.
 
 
 LaTeX Warning: Reference `RCA' on page 11 undefined on input line 541.
 
+<SC_Processing2.JPG, id=78, 1032.2565pt x 228.25275pt>
+File: SC_Processing2.JPG Graphic file (type jpg)
+<use SC_Processing2.JPG>
+Package pdftex.def Info: SC_Processing2.JPG  used on input line 545.
+(pdftex.def)             Requested size: 443.86165pt x 98.14676pt.
 
-LaTeX Warning: File `SC_Processing2.JPG' not found on input line 545.
-
-
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:545: Package pdftex.def Error: File `SC_Processing2.JPG' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.545 ...egraphics[scale=0.43]{SC_Processing2.JPG}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `FullAdder' on page 11 undefined on input line 552.
+Overfull \hbox (25.60797pt too wide) in paragraph at lines 545--546
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+LaTeX Warning: Reference `FullAdder' on page 11 undefined on input line 552.
+
 [11
 
-] [12]
-<IM_Keyboard.jpg, id=84, 381.22424pt x 496.85625pt>
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing_Total.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing1.JPG>] [12 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing2.JPG>]
+<IM_Keyboard.jpg, id=86, 381.22424pt x 496.85625pt>
 File: IM_Keyboard.jpg Graphic file (type jpg)
 <use IM_Keyboard.jpg>
 Package pdftex.def Info: IM_Keyboard.jpg  used on input line 630.
@@ -637,7 +613,7 @@ Package pdftex.def Info: IM_Keyboard.jpg  used on input line 630.
 
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_Keyboard.JPG>]
-<IM_4BitEncoder.JPG, id=89, 617.30624pt x 468.5505pt>
+<IM_4BitEncoder.JPG, id=91, 617.30624pt x 468.5505pt>
 File: IM_4BitEncoder.JPG Graphic file (type jpg)
 <use IM_4BitEncoder.JPG>
 Package pdftex.def Info: IM_4BitEncoder.JPG  used on input line 642.
@@ -649,7 +625,7 @@ LaTeX Warning: Reference `encoder' on page 14 undefined on input line 647.
 [14
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_4BitEncoder.JPG>]
-<IM_Converter.PNG, id=93, 734.14275pt x 499.8675pt>
+<IM_Converter.PNG, id=95, 734.14275pt x 499.8675pt>
 File: IM_Converter.PNG Graphic file (type png)
 <use IM_Converter.PNG>
 Package pdftex.def Info: IM_Converter.PNG  used on input line 676.
@@ -667,7 +643,7 @@ LaTeX Warning: Reference `FlipFlopTT' on page 15 undefined on input line 700.
 
 LaTeX Warning: Reference `SignBit' on page 17 undefined on input line 775.
 
-<IM_SignBit.png, id=101, 190.91325pt x 208.98074pt>
+<IM_SignBit.png, id=103, 190.91325pt x 208.98074pt>
 File: IM_SignBit.png Graphic file (type png)
 <use IM_SignBit.png>
 Package pdftex.def Info: IM_SignBit.png  used on input line 784.
@@ -676,7 +652,7 @@ Package pdftex.def Info: IM_SignBit.png  used on input line 784.
 
 LaTeX Warning: Reference `Memories' on page 18 undefined on input line 791.
 
-<IM_Memories.PNG, id=106, 796.77675pt x 532.99126pt>
+<IM_Memories.PNG, id=108, 796.77675pt x 532.99126pt>
 File: IM_Memories.PNG Graphic file (type png)
 <use IM_Memories.PNG>
 Package pdftex.def Info: IM_Memories.PNG  used on input line 795.
@@ -693,78 +669,65 @@ LaTeX Warning: Reference `DEVOMETTERLOZIO' on page 18 undefined on input line 82
 
 LaTeX Warning: Reference `Decoder' on page 19 undefined on input line 830.
 
+<SC_Decoder.png, id=113, 1018.40475pt x 310.761pt>
+File: SC_Decoder.png Graphic file (type png)
+<use SC_Decoder.png>
+Package pdftex.def Info: SC_Decoder.png  used on input line 844.
+(pdftex.def)             Requested size: 427.72708pt x 130.51872pt.
 
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:844: LaTeX Error: File `SC_Decoder' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.844     \includegraphics[scale=0.42]{SC_Decoder}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (9.4734pt too wide) in paragraph at lines 844--845
+ [][] 
+ []
 
 
 LaTeX Warning: Reference `Converter' on page 19 undefined on input line 854.
 
 
 LaTeX Warning: Reference `Converter' on page 19 undefined on input line 854.
-
-
-LaTeX Warning: File `SC_Converter.PNG' not found on input line 879.
-
-
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:879: Package pdftex.def Error: File `SC_Converter.PNG' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.879 ...udegraphics[scale=0.43]{SC_Converter.PNG}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19
 
-]
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Decoder.PNG>]
+<SC_Converter.PNG, id=119, 997.92825pt x 274.626pt>
+File: SC_Converter.PNG Graphic file (type png)
+<use SC_Converter.PNG>
+Package pdftex.def Info: SC_Converter.PNG  used on input line 879.
+(pdftex.def)             Requested size: 429.10078pt x 118.08687pt.
+
+Overfull \hbox (10.8471pt too wide) in paragraph at lines 879--880
+ [][] 
+ []
+
 
 LaTeX Warning: Reference `DoubleDabble' on page 20 undefined on input line 888.
 
 
 LaTeX Warning: Reference `DoubleDabble' on page 20 undefined on input line 890.
 
+<SC_DoubleDabble.png, id=120, 550.4565pt x 436.029pt>
+File: SC_DoubleDabble.png Graphic file (type png)
+<use SC_DoubleDabble.png>
+Package pdftex.def Info: SC_DoubleDabble.png  used on input line 894.
+(pdftex.def)             Requested size: 236.69168pt x 187.4888pt.
 
-/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.tex:894: LaTeX Error: File `SC_DoubleDabble' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.894 ...ludegraphics[scale=0.43]{SC_DoubleDabble}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: Reference `SC_Algo' on page 20 undefined on input line 900.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 LaTeX Warning: Reference `Add3Table' on page 20 undefined on input line 936.
 
-[20]
 
-LaTeX Warning: Reference `DoubleDabble' on page 21 undefined on input line 960.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21]
+
+LaTeX Warning: Reference `DoubleDabble' on page 20 undefined on input line 960.
+
+[20 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Converter.PNG>] [21 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_DoubleDabble.PNG>] [22]
 
 LaTeX Warning: File `IM_NAND_allpowerful.png' not found on input line 974.
 
@@ -780,6 +743,10 @@ l.974 ...phics[scale=.42]{IM_NAND_allpowerful.png}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 974.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
 
 LaTeX Warning: File `IM_NOR_allpowerful.png' not found on input line 981.
 
@@ -795,12 +762,12 @@ l.981 ...raphics[scale=.5]{IM_NOR_allpowerful.png}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<IM_NOT_LAB.jpg, id=121, 3500.07625pt x 1775.63374pt>
+<IM_NOT_LAB.jpg, id=132, 3500.07625pt x 1775.63374pt>
 File: IM_NOT_LAB.jpg Graphic file (type jpg)
 <use IM_NOT_LAB.jpg>
 Package pdftex.def Info: IM_NOT_LAB.jpg  used on input line 988.
 (pdftex.def)             Requested size: 280.01183pt x 142.0536pt.
-<IM_NOR_LAB.jpg, id=122, 3116.64375pt x 1996.45876pt>
+<IM_NOR_LAB.jpg, id=133, 3116.64375pt x 1996.45876pt>
 File: IM_NOR_LAB.jpg Graphic file (type jpg)
 <use IM_NOR_LAB.jpg>
 Package pdftex.def Info: IM_NOR_LAB.jpg  used on input line 995.
@@ -808,7 +775,7 @@ Package pdftex.def Info: IM_NOR_LAB.jpg  used on input line 995.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<IM_NAND_LAB.jpg, id=123, 3439.85126pt x 1855.93375pt>
+<IM_NAND_LAB.jpg, id=134, 3439.85126pt x 1855.93375pt>
 File: IM_NAND_LAB.jpg Graphic file (type jpg)
 <use IM_NAND_LAB.jpg>
 Package pdftex.def Info: IM_NAND_LAB.jpg  used on input line 1002.
@@ -816,9 +783,9 @@ Package pdftex.def Info: IM_NAND_LAB.jpg  used on input line 1002.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22
+[23
 
- </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT_LAB.jpg>] [23 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_LAB.jpg>] (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.aux)
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT_LAB.jpg>] [24 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_LAB.jpg>] (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -827,18 +794,18 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6921 strings out of 483074
- 102335 string characters out of 5963110
- 359946 words of memory out of 5000000
- 21787 multiletter control sequences out of 15000+600000
+ 6865 strings out of 483074
+ 101199 string characters out of 5963110
+ 365946 words of memory out of 5000000
+ 21731 multiletter control sequences out of 15000+600000
  547705 words of font info for 63 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  48i,10n,46p,548b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on /home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.pdf (23 pages, 5173059 bytes).
+ </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on /home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.pdf (24 pages, 5919044 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 467 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

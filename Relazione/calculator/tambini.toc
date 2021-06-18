@@ -30,4 +30,4 @@
 \contentsline {subsection}{\numberline {4.8}Decoder}{19}%
 \contentsline {subsubsection}{\numberline {4.8.1}About the number sign}{19}%
 \contentsline {subsubsection}{\numberline {4.8.2}Double dabble}{20}%
-\contentsline {section}{\numberline {5}Appendix}{22}%
+\contentsline {section}{\numberline {5}Appendix}{23}%
