@@ -1,0 +1,33 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Basics concepts}{2}%
+\contentsline {subsection}{\numberline {1.1}Boolean algebra}{2}%
+\contentsline {subsection}{\numberline {1.2}Classical operations in boolean algebra}{2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Addition}{2}%
+\contentsline {subsubsection}{\numberline {1.2.2}Subtraction}{2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Multiplication}{3}%
+\contentsline {section}{\numberline {2}Logic gates}{3}%
+\contentsline {subsection}{\numberline {2.1}N-MOS}{4}%
+\contentsline {subsection}{\numberline {2.2}NOT gate}{5}%
+\contentsline {subsection}{\numberline {2.3}NOR gate}{6}%
+\contentsline {subsection}{\numberline {2.4}NAND gate}{6}%
+\contentsline {subsection}{\numberline {2.5}Other logic gates}{6}%
+\contentsline {subsection}{\numberline {2.6}Bistable circuit}{8}%
+\contentsline {section}{\numberline {3}Processing components}{9}%
+\contentsline {subsection}{\numberline {3.1}Half adder}{9}%
+\contentsline {subsection}{\numberline {3.2}Full adder}{9}%
+\contentsline {subsection}{\numberline {3.3}Ripple carry adder}{10}%
+\contentsline {section}{\numberline {4}16-bit calculator}{13}%
+\contentsline {subsection}{\numberline {4.1}Input with 16-bit}{13}%
+\contentsline {subsection}{\numberline {4.2}Keyboard}{13}%
+\contentsline {subsection}{\numberline {4.3}4-bit encoder}{14}%
+\contentsline {subsection}{\numberline {4.4}Memory and successive inputs}{14}%
+\contentsline {subsubsection}{\numberline {4.4.1}Rising edge}{15}%
+\contentsline {subsubsection}{\numberline {4.4.2}Falling edge}{16}%
+\contentsline {subsubsection}{\numberline {4.4.3}Full adders}{16}%
+\contentsline {subsection}{\numberline {4.5}Sign bit}{17}%
+\contentsline {subsection}{\numberline {4.6}Memory}{18}%
+\contentsline {subsection}{\numberline {4.7}Clear}{18}%
+\contentsline {subsection}{\numberline {4.8}Decoder}{19}%
+\contentsline {subsubsection}{\numberline {4.8.1}About the number sign}{19}%
+\contentsline {subsubsection}{\numberline {4.8.2}Double dabble}{20}%
+\contentsline {section}{\numberline {5}Appendix}{23}%
