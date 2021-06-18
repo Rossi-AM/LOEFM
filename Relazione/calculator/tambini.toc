@@ -1,34 +1,42 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Basics concepts}{2}%
-\contentsline {subsection}{\numberline {1.1}Boolean algebra}{2}%
-\contentsline {subsection}{\numberline {1.2}Classical operations in boolean algebra}{2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Addition}{2}%
-\contentsline {subsubsection}{\numberline {1.2.2}Subtraction}{2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Multiplication}{3}%
-\contentsline {section}{\numberline {2}Logic gates}{3}%
-\contentsline {subsection}{\numberline {2.1}N-MOS}{4}%
-\contentsline {subsection}{\numberline {2.2}NOT gate}{5}%
-\contentsline {subsection}{\numberline {2.3}NOR gate}{6}%
-\contentsline {subsection}{\numberline {2.4}NAND gate}{6}%
-\contentsline {subsection}{\numberline {2.5}Other logic gates}{6}%
-\contentsline {subsection}{\numberline {2.6}Bistable circuit}{8}%
-\contentsline {section}{\numberline {3}Processing components}{9}%
-\contentsline {subsection}{\numberline {3.1}Half adder}{9}%
-\contentsline {subsection}{\numberline {3.2}Full adder}{9}%
-\contentsline {subsection}{\numberline {3.3}Ripple carry adder}{10}%
-\contentsline {section}{\numberline {4}16-bit calculator}{12}%
-\contentsline {subsection}{\numberline {4.1}Input with 16-bit}{12}%
-\contentsline {subsection}{\numberline {4.2}Keyboard}{12}%
-\contentsline {subsection}{\numberline {4.3}4-bit encoder}{13}%
-\contentsline {subsection}{\numberline {4.4}Memory and successive inputs}{13}%
-\contentsline {subsubsection}{\numberline {4.4.1}Rising edge}{14}%
-\contentsline {subsubsection}{\numberline {4.4.2}Falling edge}{15}%
-\contentsline {subsubsection}{\numberline {4.4.3}Ripple carry adders}{15}%
-\contentsline {subsection}{\numberline {4.5}Sign bit}{16}%
-\contentsline {subsection}{\numberline {4.6}Memory}{17}%
-\contentsline {subsection}{\numberline {4.7}Clear}{18}%
-\contentsline {subsection}{\numberline {4.8}Processing}{18}%
-\contentsline {subsection}{\numberline {4.9}Decoder}{18}%
-\contentsline {subsubsection}{\numberline {4.9.1}About the number sign}{19}%
-\contentsline {subsubsection}{\numberline {4.9.2}Double dabble}{20}%
-\contentsline {section}{\numberline {5}Appendix}{22}%
+\contentsline {section}{\numberline {1}Basics concepts}{3}%
+\contentsline {subsection}{\numberline {1.1}Boolean algebra}{3}%
+\contentsline {subsection}{\numberline {1.2}Classical operations in boolean algebra}{3}%
+\contentsline {subsubsection}{\numberline {1.2.1}Addition and subtraction}{3}%
+\contentsline {subsubsection}{\numberline {1.2.2}Multiplication}{4}%
+\contentsline {section}{\numberline {2}Logic gates}{4}%
+\contentsline {subsection}{\numberline {2.1}N-MOS}{5}%
+\contentsline {subsection}{\numberline {2.2}NOT gate}{6}%
+\contentsline {subsection}{\numberline {2.3}NOR gate}{7}%
+\contentsline {subsection}{\numberline {2.4}NAND gate}{7}%
+\contentsline {subsection}{\numberline {2.5}Other logic gates}{7}%
+\contentsline {subsection}{\numberline {2.6}Bistable circuit}{9}%
+\contentsline {section}{\numberline {3}Encoder}{9}%
+\contentsline {subsection}{\numberline {3.1}Simple encoder}{9}%
+\contentsline {subsection}{\numberline {3.2}Priority encoder}{11}%
+\contentsline {section}{\numberline {4}Processing}{12}%
+\contentsline {subsection}{\numberline {4.1}Half adder and full adder}{12}%
+\contentsline {subsection}{\numberline {4.2}Ripple carry adder}{12}%
+\contentsline {section}{\numberline {5}Decoder}{14}%
+\contentsline {section}{\numberline {6}Real calculator (3-bit)}{15}%
+\contentsline {subsection}{\numberline {6.1}The blueprint}{15}%
+\contentsline {subsection}{\numberline {6.2}Breadboard 1}{16}%
+\contentsline {subsection}{\numberline {6.3}Breadboard 2}{17}%
+\contentsline {subsection}{\numberline {6.4}Breadboard 3}{18}%
+\contentsline {subsection}{\numberline {6.5}The complete project}{19}%
+\contentsline {section}{\numberline {7}16-bit calculator}{20}%
+\contentsline {subsection}{\numberline {7.1}Input with 16-bit}{20}%
+\contentsline {subsection}{\numberline {7.2}Keyboard}{20}%
+\contentsline {subsection}{\numberline {7.3}4-bit encoder}{21}%
+\contentsline {subsection}{\numberline {7.4}Memory and successive inputs}{21}%
+\contentsline {subsubsection}{\numberline {7.4.1}Rising edge}{22}%
+\contentsline {subsubsection}{\numberline {7.4.2}Falling edge}{23}%
+\contentsline {subsubsection}{\numberline {7.4.3}Ripple carry adders}{23}%
+\contentsline {subsection}{\numberline {7.5}Sign bit}{24}%
+\contentsline {subsection}{\numberline {7.6}Memory}{25}%
+\contentsline {subsection}{\numberline {7.7}Clear}{26}%
+\contentsline {subsection}{\numberline {7.8}Processing}{26}%
+\contentsline {subsection}{\numberline {7.9}Decoder}{26}%
+\contentsline {subsubsection}{\numberline {7.9.1}About the number sign}{27}%
+\contentsline {subsubsection}{\numberline {7.9.2}Double dabble}{28}%
+\contentsline {section}{\numberline {8}Appendix}{30}%

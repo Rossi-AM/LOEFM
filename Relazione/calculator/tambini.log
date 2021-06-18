@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.17)  18 JUN 2021 18:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.17)  18 JUN 2021 19:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -367,286 +367,353 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.toc)
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.toc)
 \tf@toc=\write3
 \openout3 = `tambini.toc'.
 
- [1
+ [2
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+] [3
 
 ]
-<IM_NOT.PNG, id=20, 416.30531pt x 113.67468pt>
+<IM_NOT.PNG, id=25, 416.30531pt x 113.67468pt>
 File: IM_NOT.PNG Graphic file (type png)
 <use IM_NOT.PNG>
-Package pdftex.def Info: IM_NOT.PNG  used on input line 126.
+Package pdftex.def Info: IM_NOT.PNG  used on input line 128.
 (pdftex.def)             Requested size: 167.2989pt x 45.6824pt.
-<IM_AND.PNG, id=22, 395.22656pt x 143.78719pt>
+<IM_AND.PNG, id=27, 395.22656pt x 143.78719pt>
 File: IM_AND.PNG Graphic file (type png)
 <use IM_AND.PNG>
-Package pdftex.def Info: IM_AND.PNG  used on input line 133.
+Package pdftex.def Info: IM_AND.PNG  used on input line 135.
 (pdftex.def)             Requested size: 167.2989pt x 60.8641pt.
-<IM_OR.PNG, id=23, 352.31625pt x 141.52875pt>
+<IM_OR.PNG, id=28, 352.31625pt x 141.52875pt>
 File: IM_OR.PNG Graphic file (type png)
 <use IM_OR.PNG>
-Package pdftex.def Info: IM_OR.PNG  used on input line 141.
+Package pdftex.def Info: IM_OR.PNG  used on input line 143.
 (pdftex.def)             Requested size: 167.2989pt x 67.20525pt.
-<IM_XOR.PNG, id=24, 359.09157pt x 133.24782pt>
+<IM_XOR.PNG, id=29, 359.09157pt x 133.24782pt>
 File: IM_XOR.PNG Graphic file (type png)
 <use IM_XOR.PNG>
-Package pdftex.def Info: IM_XOR.PNG  used on input line 148.
+Package pdftex.def Info: IM_XOR.PNG  used on input line 150.
 (pdftex.def)             Requested size: 167.2989pt x 62.08157pt.
-<IM_NAND.PNG, id=25, 362.85562pt x 128.73094pt>
+<IM_NAND.PNG, id=30, 362.85562pt x 128.73094pt>
 File: IM_NAND.PNG Graphic file (type png)
 <use IM_NAND.PNG>
-Package pdftex.def Info: IM_NAND.PNG  used on input line 156.
+Package pdftex.def Info: IM_NAND.PNG  used on input line 158.
 (pdftex.def)             Requested size: 167.2989pt x 59.35443pt.
-<IM_NOR.PNG, id=26, 358.33875pt x 124.21407pt>
+<IM_NOR.PNG, id=31, 358.33875pt x 124.21407pt>
 File: IM_NOR.PNG Graphic file (type png)
 <use IM_NOR.PNG>
-Package pdftex.def Info: IM_NOR.PNG  used on input line 163.
+Package pdftex.def Info: IM_NOR.PNG  used on input line 165.
 (pdftex.def)             Requested size: 167.2989pt x 57.99205pt.
-<IM_XNOR.PNG, id=27, 390.70969pt x 137.7647pt>
+<IM_XNOR.PNG, id=32, 390.70969pt x 137.7647pt>
 File: IM_XNOR.PNG Graphic file (type png)
 <use IM_XNOR.PNG>
-Package pdftex.def Info: IM_XNOR.PNG  used on input line 171.
+Package pdftex.def Info: IM_XNOR.PNG  used on input line 173.
 (pdftex.def)             Requested size: 167.2989pt x 58.98961pt.
- [3 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_AND.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_OR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XOR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XNOR.PNG>]
-<IM_NMOS_Function.png, id=39, 358.33875pt x 243.91125pt>
+ [4 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_AND.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_OR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XOR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XNOR.PNG>]
+<IM_NMOS_Function.png, id=43, 358.33875pt x 243.91125pt>
 File: IM_NMOS_Function.png Graphic file (type png)
 <use IM_NMOS_Function.png>
-Package pdftex.def Info: IM_NMOS_Function.png  used on input line 204.
+Package pdftex.def Info: IM_NMOS_Function.png  used on input line 206.
 (pdftex.def)             Requested size: 232.91742pt x 158.54042pt.
- [4
-
- </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NMOS_Function.png>]
-<IM_NOT_NMOS.JPG, id=45, 399.894pt x 420.97275pt>
-File: IM_NOT_NMOS.JPG Graphic file (type jpg)
-<use IM_NOT_NMOS.JPG>
-Package pdftex.def Info: IM_NOT_NMOS.JPG  used on input line 224.
-(pdftex.def)             Requested size: 119.96912pt x 126.29279pt.
-<IM_inverter_esa.PNG, id=46, 603.0028pt x 257.46187pt>
-File: IM_inverter_esa.PNG Graphic file (type png)
-<use IM_inverter_esa.PNG>
-Package pdftex.def Info: IM_inverter_esa.PNG  used on input line 243.
-(pdftex.def)             Requested size: 361.80447pt x 154.4783pt.
  [5
 
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NMOS_Function.png>]
+<IM_NOT_NMOS.JPG, id=49, 399.894pt x 420.97275pt>
+File: IM_NOT_NMOS.JPG Graphic file (type jpg)
+<use IM_NOT_NMOS.JPG>
+Package pdftex.def Info: IM_NOT_NMOS.JPG  used on input line 226.
+(pdftex.def)             Requested size: 119.96912pt x 126.29279pt.
+<IM_inverter_esa.PNG, id=50, 603.0028pt x 257.46187pt>
+File: IM_inverter_esa.PNG Graphic file (type png)
+<use IM_inverter_esa.PNG>
+Package pdftex.def Info: IM_inverter_esa.PNG  used on input line 245.
+(pdftex.def)             Requested size: 361.80447pt x 154.4783pt.
+ [6
+
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT_NMOS.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_inverter_esa.PNG>]
-<IM_NOR_NMOS.JPG, id=51, 451.08525pt x 520.344pt>
+<IM_NOR_NMOS.JPG, id=55, 451.08525pt x 520.344pt>
 File: IM_NOR_NMOS.JPG Graphic file (type jpg)
 <use IM_NOR_NMOS.JPG>
-Package pdftex.def Info: IM_NOR_NMOS.JPG  used on input line 262.
+Package pdftex.def Info: IM_NOR_NMOS.JPG  used on input line 264.
 (pdftex.def)             Requested size: 135.32661pt x 156.1044pt.
-<IM_NAND_NMOS.JPG, id=52, 316.18124pt x 505.89pt>
+<IM_NAND_NMOS.JPG, id=56, 316.18124pt x 505.89pt>
 File: IM_NAND_NMOS.JPG Graphic file (type jpg)
 <use IM_NAND_NMOS.JPG>
-Package pdftex.def Info: IM_NAND_NMOS.JPG  used on input line 293.
+Package pdftex.def Info: IM_NAND_NMOS.JPG  used on input line 295.
 (pdftex.def)             Requested size: 79.0451pt x 126.47218pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6
+[7
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_NMOS.JPG>]
-<IM_AND_LOGIC.JPG, id=56, 676.929pt x 143.3355pt>
+<IM_AND_LOGIC.JPG, id=61, 676.929pt x 143.3355pt>
 File: IM_AND_LOGIC.JPG Graphic file (type jpg)
 <use IM_AND_LOGIC.JPG>
-Package pdftex.def Info: IM_AND_LOGIC.JPG  used on input line 330.
+Package pdftex.def Info: IM_AND_LOGIC.JPG  used on input line 332.
 (pdftex.def)             Requested size: 203.08026pt x 43.00096pt.
-<IM_OR_LOGIC.JPG, id=57, 674.52pt x 129.48375pt>
+<IM_OR_LOGIC.JPG, id=62, 674.52pt x 129.48375pt>
 File: IM_OR_LOGIC.JPG Graphic file (type jpg)
 <use IM_OR_LOGIC.JPG>
-Package pdftex.def Info: IM_OR_LOGIC.JPG  used on input line 336.
+Package pdftex.def Info: IM_OR_LOGIC.JPG  used on input line 338.
 (pdftex.def)             Requested size: 202.35756pt x 38.84541pt.
-<IM_XOR_LOGIC.JPG, id=58, 681.14474pt x 202.95825pt>
+<IM_XOR_LOGIC.JPG, id=63, 681.14474pt x 202.95825pt>
 File: IM_XOR_LOGIC.JPG Graphic file (type jpg)
 <use IM_XOR_LOGIC.JPG>
-Package pdftex.def Info: IM_XOR_LOGIC.JPG  used on input line 342.
+Package pdftex.def Info: IM_XOR_LOGIC.JPG  used on input line 344.
 (pdftex.def)             Requested size: 204.345pt x 60.88794pt.
- [7 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_NMOS.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_AND_LOGIC.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_OR_LOGIC.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XOR_LOGIC.JPG>]
-<IM_FlipFlop.jpg, id=63, 589.0005pt x 275.22826pt>
+ [8 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_NMOS.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_AND_LOGIC.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_OR_LOGIC.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_XOR_LOGIC.JPG>]
+<IM_FlipFlop.jpg, id=67, 589.0005pt x 275.22826pt>
 File: IM_FlipFlop.jpg Graphic file (type jpg)
 <use IM_FlipFlop.jpg>
-Package pdftex.def Info: IM_FlipFlop.jpg  used on input line 364.
+Package pdftex.def Info: IM_FlipFlop.jpg  used on input line 366.
 (pdftex.def)             Requested size: 176.7015pt x 82.5691pt.
- [8
-
- </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_FlipFlop.JPG>]
-<IM_full_adder_bis.png, id=68, 481.8pt x 170.88844pt>
-File: IM_full_adder_bis.png Graphic file (type png)
-<use IM_full_adder_bis.png>
-Package pdftex.def Info: IM_full_adder_bis.png  used on input line 461.
-(pdftex.def)             Requested size: 289.08221pt x 102.53384pt.
+<simple_encoder.png, id=68, 295.85532pt x 183.68625pt>
+File: simple_encoder.png Graphic file (type png)
+<use simple_encoder.png>
+Package pdftex.def Info: simple_encoder.png  used on input line 406.
+(pdftex.def)             Requested size: 207.0973pt x 128.57947pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9
 
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_FlipFlop.JPG>] [10 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/simple_encoder.PNG>]
+<priority_encoder.png, id=77, 362.85562pt x 176.15813pt>
+File: priority_encoder.png Graphic file (type png)
+<use priority_encoder.png>
+Package pdftex.def Info: priority_encoder.png  used on input line 437.
+(pdftex.def)             Requested size: 253.99721pt x 123.30983pt.
+ [11
+
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/priority_encoder.PNG>]
+<IM_full_adder_bis.png, id=82, 481.8pt x 170.88844pt>
+File: IM_full_adder_bis.png Graphic file (type png)
+<use IM_full_adder_bis.png>
+Package pdftex.def Info: IM_full_adder_bis.png  used on input line 531.
+(pdftex.def)             Requested size: 289.08221pt x 102.53384pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12
+
 ]
-<IM_RCA_SMALL.PNG, id=72, 478.1865pt x 231.264pt>
+<IM_RCA_SMALL.PNG, id=86, 478.1865pt x 231.264pt>
 File: IM_RCA_SMALL.PNG Graphic file (type png)
 <use IM_RCA_SMALL.PNG>
-Package pdftex.def Info: IM_RCA_SMALL.PNG  used on input line 484.
+Package pdftex.def Info: IM_RCA_SMALL.PNG  used on input line 554.
 (pdftex.def)             Requested size: 310.81754pt x 150.31981pt.
- [10 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_full_adder_bis.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_RCA_SMALL.PNG>] [11]
-<IM_Keyboard.jpg, id=81, 381.22424pt x 496.85625pt>
+ [13 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_full_adder_bis.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_RCA_SMALL.PNG>]
+<basic_decoder.png, id=93, 429.85594pt x 194.22563pt>
+File: basic_decoder.png Graphic file (type png)
+<use basic_decoder.png>
+Package pdftex.def Info: basic_decoder.png  used on input line 584.
+(pdftex.def)             Requested size: 300.89711pt x 135.957pt.
+ [14 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/basic_decoder.PNG>]
+<real_calculator_blueprint.png, id=98, 432.86719pt x 227.34938pt>
+File: real_calculator_blueprint.png Graphic file (type png)
+<use real_calculator_blueprint.png>
+Package pdftex.def Info: real_calculator_blueprint.png  used on input line 616.
+(pdftex.def)             Requested size: 303.00496pt x 159.14346pt.
+ [15
+
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/real_calculator_blueprint.PNG>]
+<breadboard1_bis.jpg, id=103, 2007.5pt x 903.375pt>
+File: breadboard1_bis.jpg Graphic file (type jpg)
+<use breadboard1_bis.jpg>
+Package pdftex.def Info: breadboard1_bis.jpg  used on input line 657.
+(pdftex.def)             Requested size: 418.25368pt x 188.21185pt.
+ [16 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/breadboard1_bis.jpg>]
+<breadboard1.jpg, id=107, 1505.625pt x 677.53125pt>
+File: breadboard1.jpg Graphic file (type jpg)
+<use breadboard1.jpg>
+Package pdftex.def Info: breadboard1.jpg  used on input line 681.
+(pdftex.def)             Requested size: 418.25368pt x 188.2084pt.
+<breadboard2.jpg, id=108, 2987.16pt x 1202.24156pt>
+File: breadboard2.jpg Graphic file (type jpg)
+<use breadboard2.jpg>
+Package pdftex.def Info: breadboard2.jpg  used on input line 693.
+(pdftex.def)             Requested size: 418.25368pt x 168.33101pt.
+ [17 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/breadboard1.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/breadboard2.jpg>]
+<breadboard3.jpg, id=112, 2987.16pt x 1708.13156pt>
+File: breadboard3.jpg Graphic file (type jpg)
+<use breadboard3.jpg>
+Package pdftex.def Info: breadboard3.jpg  used on input line 707.
+(pdftex.def)             Requested size: 418.25368pt x 239.16286pt.
+ [18
+
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/breadboard3.jpg>]
+<calculator.jpg, id=116, 2987.16pt x 1804.49156pt>
+File: calculator.jpg Graphic file (type jpg)
+<use calculator.jpg>
+Package pdftex.def Info: calculator.jpg  used on input line 733.
+(pdftex.def)             Requested size: 418.25368pt x 252.65463pt.
+ [19
+
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/calculator.jpg>]
+<IM_Keyboard.jpg, id=121, 381.22424pt x 496.85625pt>
 File: IM_Keyboard.jpg Graphic file (type jpg)
 <use IM_Keyboard.jpg>
-Package pdftex.def Info: IM_Keyboard.jpg  used on input line 548.
+Package pdftex.def Info: IM_Keyboard.jpg  used on input line 804.
 (pdftex.def)             Requested size: 114.36815pt x 149.05801pt.
- [12
+ [20
+
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_Keyboard.JPG>]
-<IM_4BitEncoder.JPG, id=85, 617.30624pt x 468.5505pt>
+<IM_4BitEncoder.JPG, id=125, 617.30624pt x 468.5505pt>
 File: IM_4BitEncoder.JPG Graphic file (type jpg)
 <use IM_4BitEncoder.JPG>
-Package pdftex.def Info: IM_4BitEncoder.JPG  used on input line 560.
+Package pdftex.def Info: IM_4BitEncoder.JPG  used on input line 816.
 (pdftex.def)             Requested size: 216.06041pt x 163.99513pt.
- [13
+ [21
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_4BitEncoder.JPG>]
-<IM_Converter.PNG, id=90, 734.14275pt x 499.8675pt>
+<IM_Converter.PNG, id=129, 734.14275pt x 499.8675pt>
 File: IM_Converter.PNG Graphic file (type png)
 <use IM_Converter.PNG>
-Package pdftex.def Info: IM_Converter.PNG  used on input line 594.
+Package pdftex.def Info: IM_Converter.PNG  used on input line 850.
 (pdftex.def)             Requested size: 403.77975pt x 274.92796pt.
- [14
+ [22
 
- </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_Converter.PNG>] [15]
-<IM_SignBit.png, id=98, 190.91325pt x 208.98074pt>
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_Converter.PNG>] [23]
+<IM_SignBit.png, id=137, 190.91325pt x 208.98074pt>
 File: IM_SignBit.png Graphic file (type png)
 <use IM_SignBit.png>
-Package pdftex.def Info: IM_SignBit.png  used on input line 702.
+Package pdftex.def Info: IM_SignBit.png  used on input line 958.
 (pdftex.def)             Requested size: 95.45639pt x 104.49011pt.
- [16 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_SignBit.PNG>]
-<IM_Memories.PNG, id=103, 796.77675pt x 532.99126pt>
+ [24 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_SignBit.PNG>]
+<IM_Memories.PNG, id=142, 796.77675pt x 532.99126pt>
 File: IM_Memories.PNG Graphic file (type png)
 <use IM_Memories.PNG>
-Package pdftex.def Info: IM_Memories.PNG  used on input line 713.
+Package pdftex.def Info: IM_Memories.PNG  used on input line 969.
 (pdftex.def)             Requested size: 398.38739pt x 266.49498pt.
- [17
+ [25
 
  </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_Memories.PNG>]
-<SC_Processing_Total.JPG, id=108, 1025.0295pt x 277.63725pt>
+<SC_Processing_Total.JPG, id=148, 1025.0295pt x 277.63725pt>
 File: SC_Processing_Total.JPG Graphic file (type jpg)
 <use SC_Processing_Total.JPG>
-Package pdftex.def Info: SC_Processing_Total.JPG  used on input line 748.
+Package pdftex.def Info: SC_Processing_Total.JPG  used on input line 1004.
 (pdftex.def)             Requested size: 410.00453pt x 111.05292pt.
-<SC_Processing2.JPG, id=109, 1032.2565pt x 228.25275pt>
+<SC_Processing2.JPG, id=149, 1032.2565pt x 228.25275pt>
 File: SC_Processing2.JPG Graphic file (type jpg)
 <use SC_Processing2.JPG>
-Package pdftex.def Info: SC_Processing2.JPG  used on input line 755.
+Package pdftex.def Info: SC_Processing2.JPG  used on input line 1011.
 (pdftex.def)             Requested size: 412.89528pt x 91.29947pt.
-<SC_Decoder.png, id=110, 1018.40475pt x 310.761pt>
+<SC_Decoder.png, id=150, 1018.40475pt x 310.761pt>
 File: SC_Decoder.png Graphic file (type png)
 <use SC_Decoder.png>
-Package pdftex.def Info: SC_Decoder.png  used on input line 779.
+Package pdftex.def Info: SC_Decoder.png  used on input line 1035.
 (pdftex.def)             Requested size: 427.72708pt x 130.51872pt.
 
-Overfull \hbox (9.4734pt too wide) in paragraph at lines 779--780
+Overfull \hbox (9.4734pt too wide) in paragraph at lines 1035--1036
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing_Total.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing2.JPG>]
-<SC_Converter.PNG, id=114, 997.92825pt x 274.626pt>
+[26 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing_Total.JPG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Processing2.JPG>]
+<SC_Converter.PNG, id=154, 997.92825pt x 274.626pt>
 File: SC_Converter.PNG Graphic file (type png)
 <use SC_Converter.PNG>
-Package pdftex.def Info: SC_Converter.PNG  used on input line 802.
+Package pdftex.def Info: SC_Converter.PNG  used on input line 1058.
 (pdftex.def)             Requested size: 429.10078pt x 118.08687pt.
 
-Overfull \hbox (10.8471pt too wide) in paragraph at lines 802--803
+Overfull \hbox (10.8471pt too wide) in paragraph at lines 1058--1059
  [][] 
  []
 
-[19 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Decoder.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Converter.PNG>]
-<SC_DoubleDabble.png, id=121, 550.4565pt x 436.029pt>
+[27 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Decoder.PNG> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_Converter.PNG>]
+<SC_DoubleDabble.png, id=160, 550.4565pt x 436.029pt>
 File: SC_DoubleDabble.png Graphic file (type png)
 <use SC_DoubleDabble.png>
-Package pdftex.def Info: SC_DoubleDabble.png  used on input line 821.
+Package pdftex.def Info: SC_DoubleDabble.png  used on input line 1077.
 (pdftex.def)             Requested size: 236.69168pt x 187.4888pt.
 
 
-Package caption Warning: \label without proper reference on input line 857.
+Package caption Warning: \label without proper reference on input line 1113.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `SC_Algo' on page 20 undefined on input line 827.
+LaTeX Warning: Reference `SC_Algo' on page 28 undefined on input line 1083.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package caption Warning: \label without proper reference on input line 883.
+Package caption Warning: \label without proper reference on input line 1139.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `Add3Table' on page 20 undefined on input line 863.
+LaTeX Warning: Reference `Add3Table' on page 28 undefined on input line 1119.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_DoubleDabble.PNG>] [21]
-<IM_NAND_allpowerful.png, id=129, 306.39468pt x 383.18156pt>
+[28 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/SC_DoubleDabble.PNG>] [29]
+<IM_NAND_allpowerful.png, id=168, 306.39468pt x 383.18156pt>
 File: IM_NAND_allpowerful.png Graphic file (type png)
 <use IM_NAND_allpowerful.png>
-Package pdftex.def Info: IM_NAND_allpowerful.png  used on input line 901.
+Package pdftex.def Info: IM_NAND_allpowerful.png  used on input line 1157.
 (pdftex.def)             Requested size: 128.68489pt x 160.93515pt.
-<IM_NOR_allpowerful.png, id=130, 447.17062pt x 410.2828pt>
+<IM_NOR_allpowerful.png, id=169, 447.17062pt x 410.2828pt>
 File: IM_NOR_allpowerful.png Graphic file (type png)
 <use IM_NOR_allpowerful.png>
-Package pdftex.def Info: IM_NOR_allpowerful.png  used on input line 908.
+Package pdftex.def Info: IM_NOR_allpowerful.png  used on input line 1164.
 (pdftex.def)             Requested size: 223.58476pt x 205.1409pt.
-<IM_NOT_LAB.jpg, id=131, 3500.07625pt x 1775.63374pt>
+<IM_NOT_LAB.jpg, id=170, 3500.07625pt x 1775.63374pt>
 File: IM_NOT_LAB.jpg Graphic file (type jpg)
 <use IM_NOT_LAB.jpg>
-Package pdftex.def Info: IM_NOT_LAB.jpg  used on input line 915.
+Package pdftex.def Info: IM_NOT_LAB.jpg  used on input line 1171.
 (pdftex.def)             Requested size: 280.01183pt x 142.0536pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<IM_NOR_LAB.jpg, id=132, 3116.64375pt x 1996.45876pt>
+<IM_NOR_LAB.jpg, id=171, 3116.64375pt x 1996.45876pt>
 File: IM_NOR_LAB.jpg Graphic file (type jpg)
 <use IM_NOR_LAB.jpg>
-Package pdftex.def Info: IM_NOR_LAB.jpg  used on input line 922.
+Package pdftex.def Info: IM_NOR_LAB.jpg  used on input line 1178.
 (pdftex.def)             Requested size: 249.3366pt x 159.71996pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<IM_NAND_LAB.jpg, id=133, 3439.85126pt x 1855.93375pt>
+<IM_NAND_LAB.jpg, id=172, 3439.85126pt x 1855.93375pt>
 File: IM_NAND_LAB.jpg Graphic file (type jpg)
 <use IM_NAND_LAB.jpg>
-Package pdftex.def Info: IM_NAND_LAB.jpg  used on input line 929.
+Package pdftex.def Info: IM_NAND_LAB.jpg  used on input line 1185.
 (pdftex.def)             Requested size: 275.19373pt x 148.47774pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22
+[30
 
- </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_allpowerful.png> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_allpowerful.png>] [23 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_LAB.jpg>] (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.aux)
+ </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_allpowerful.png> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_allpowerful.png>] [31 </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOT_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NOR_LAB.jpg> </home/alessandromatteo_rossi/LOEFM/Relazione/calculator/IM_NAND_LAB.jpg>] (/home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6815 strings out of 483074
- 100116 string characters out of 5963110
- 363425 words of memory out of 5000000
- 21693 multiletter control sequences out of 15000+600000
- 546706 words of font info for 61 fonts, out of 8000000 for 9000
+ 6898 strings out of 483074
+ 101749 string characters out of 5963110
+ 363555 words of memory out of 5000000
+ 21775 multiletter control sequences out of 15000+600000
+ 547482 words of font info for 62 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 48i,10n,46p,530b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on /home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.pdf (23 pages, 5835401 bytes).
+ 48i,10n,46p,530b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/alessandromatteo_rossi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on /home/alessandromatteo_rossi/LOEFM/Relazione/calculator/tambini.pdf (31 pages, 11243179 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 511 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
