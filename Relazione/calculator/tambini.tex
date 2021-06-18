@@ -29,6 +29,8 @@
 
 \tableofcontents
 
+\clearpage
+
 \section{Basics concepts}
 
 To make calculations, a circuit needs to be able to perform logical operations. In particular, we usually use boolean algebra in digital electronics. 
@@ -325,10 +327,54 @@ The flip-flop can be created by both NOR gates and NAND gates but, since the NAN
 \end{table}
 
 
-\section{Processing}
+\section{Processing components}
 
-When the two numbers have been inserted by the user, they reach the processing section of the circuit. In this phase the numbers get summed or subtracted, depending on the user's choice. In figure \ref{Processing_Total} the processing section of the circuit, highlighted in green. The arrows with their captions will be explained later in this section.
+In order to create a calculator that could perform additions and subtractions, we needed to have a component able to sum (or subtract) two binary numbers.
 
+\subsection{Half adder}
+
+The easiest component that can do this task is the half adder. It is a small circuit with 2 inputs and two outputs, and it is capable of summing up two binary digits. The input are the two digits, and the outputs are the sum $S$, performed by a XOR gate (which truth table is in figure \ref{XOR}), and the carry-over, calculated by an AND gate (which truth table is in figure \ref{AND}).
+
+\vspace{3mm}
+
+Half adder truth table can be found in table \ref{HalfAdderTT}.
+
+
+
+The major issue with this component is not being useful during a sum of two binary numbers. We specify that a sum of two binary numbers is a classical column sum. For this reason the half adder is not the best choice, because it cannot track the carry-over of the sum performed on the previous bit, if present.
+
+\subsection{Full adder}
+
+If we want to sum two positive n-bit binary numbers, we need to keep track of the carry-overs. The right component for this duty is a full-adder, which truth table can be found in table \ref{FullAdderTT}
+
+
+
+
+
+
+\begin{table}
+  
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.43]{SC_Processing_Total.JPG}
