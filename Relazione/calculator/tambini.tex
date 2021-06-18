@@ -119,7 +119,6 @@ The main logic gates are the following, represented with their circuital symbol 
 \label{LogicGates}
 \end{figure}
 
-
 \subsection{N-MOS}
 
 In order to create these logic gates, we need to know how to use a MOSFET. For this project we used N-MOS transistors only.
@@ -324,6 +323,92 @@ The flip-flop can be created by both NOR gates and NAND gates but, since the NAN
 \caption{Flip-flop truth table. Please note that the first two rows are not ideal for the storage of data, as $Q$ and $Q'$ have the same value. Rows 3-6 represent the moment when an input is given, whereas 7 and 8 is when data is stored.}
 \label{FlipFlopTT}
 \end{table}
+
+
+\section{Processing}
+
+When the two numbers have been inserted by the user, they reach the processing section of the circuit. In this phase the numbers get summed or subtracted, depending on the user's choice. In figure \ref{Processing_Total} the processing section of the circuit, highlighted in green. The arrows with their captions will be explained later in this section.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.43]{SC_Processing_Total.JPG}
+  \caption{Picture the circuit processing part (highlighted in green)}
+  \label{Processing_Total}
+\end{figure}
+
+The processing phase is split in two subphases:
+\begin{enumerate}
+  \item During the first subphase the second number, memorized in the flip-flop memory (left side of figure \ref{Processing_Total}), gets inverted if the user picked the subtraction operation, otherwise it is not get modified.
+  \item Then the algebraic sum happens in the top right side of the circuit.
+\end{enumerate}
+
+Regarding the first point, the first mandatory step is to invert the number. We remember that the opposite of a binary number $A$ is
+\begin{equation}
+-A=NOT(A)+1
+\label{Law}
+\end{equation}
+and we also remember that in the Boolean Algebra factors can commute during a sum.
+
+So, first of all, we perform the NOT operation in figure \ref{Processing1} thanks to XOR gates. They compare the sign of the second number with the bits, one at a time, and if the sign is negative (the sign line in figure \ref{Processing1}, highlighted in red) they invert the bit. Otherwise nothing happens.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.35]{SC_Processing1.JPG}
+  \caption{Picture of the inverting part, with the sign wire highlighted in red}
+  \label{Processing1}
+\end{figure}
+
+Regarding the second point, this is not only where a unit gets added to the second number (equation \ref{Law}) but also where the algebrical sum between the two inputs happens.
+
+This sum is performed by a \textit{ripple carry adder} (shown in figure \ref{RCA} in green), which is composed by a series of full adders, highlighted in blue. The sign wire keeps being red.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.43]{SC_Processing2.JPG}
+  \caption{Picture of the ripple carry adder part, with the sign wire highlighted in red and the full adders highlighted in blue}
+  \label{RCA}
+\end{figure}
+
+The ripple carry adder (shortened in RCA) is an $B$-bit adder circuit composed of $B$ full adders. 
+
+A single full adder is a 3 input bits adder, with a 2-bit output. Its inputs are a number $A$, a number $B$ and a carry-over produced in a previous operation, whereas the outputs are a result $S$ and a carry-over $C_{out}$. Its truth table is figure \ref{FullAdder}, where the input carry-over is $C_{in}$ and the output one is $C_{out}$.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|| c | c | c || c | c ||}
+  \hline
+  A$_1$ & A$_2$ & C$_{in}$ & S & C$_{out}$ \\ \hline
+  0 & 0 & 0 & 0 & 0 \\ \hline
+  0 & 1 & 0 & 1 & 0 \\ \hline
+  1 & 0 & 0 & 1 & 0 \\ \hline
+  1 & 1 & 0 & 0 & 1 \\ \hline
+  0 & 0 & 1 & 1 & 0 \\ \hline
+  0 & 1 & 1 & 0 & 1 \\ \hline
+  1 & 0 & 1 & 0 & 1 \\ \hline
+  1 & 1 & 1 & 1 & 1 \\ \hline
+  \end{tabular}
+  \label{FullAdder}
+\end{table}
+
+By aligning $B$ full adders is possible to sum (or subtract) two $B$-bit numbers. Considering that, as already mentioned, if the number is negative it is needed to invert the number and sum 1, the ripple carry adder allows the circuit to:
+\begin{itemize}
+  \item Sum two numbers if they are both positive, with no action performed from the inverting part of the processing circuit.
+  \item Subtract one number from another by inverting the second number, as already explained, and summing 1 as the first $C_{in}$ of the first full adder of the RCA.
+\end{itemize}
+  
+In conclusion, the output moves to the decoding part of the circuit, that will allow the circuit to show the result on displays. Moreover, a XOR gate checks the relation among the sign bit and the carry-over of the last full adder. This happens because the sign of the final result depends on the relation among the modules of the two numbers, and if the first one is bigger than the other, the result will be surely positive, otherwise negative.
+
+
+
+
+
+\clearpage
+
+
+
+
+
+
 
 
 \clearpage
