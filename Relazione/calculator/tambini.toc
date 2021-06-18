@@ -1,21 +1,27 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Basics concepts}{1}{}%
-\contentsline {section}{\numberline {2}Logic gate}{2}{}%
-\contentsline {subsection}{\numberline {2.1}N-mos}{2}{}%
-\contentsline {subsection}{\numberline {2.2}NOT gate}{2}{}%
-\contentsline {subsection}{\numberline {2.3}NOR gate}{3}{}%
-\contentsline {subsection}{\numberline {2.4}NAND gate}{3}{}%
-\contentsline {subsection}{\numberline {2.5}Other gate}{3}{}%
-\contentsline {subsection}{\numberline {2.6}Bistable circuit}{4}{}%
-\contentsline {section}{\numberline {3}16-bit calculator}{4}{}%
-\contentsline {subsection}{\numberline {3.1}Input with 16-bit}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Keyboard}{5}{}%
-\contentsline {subsection}{\numberline {3.3}4-bit encoder}{5}{}%
-\contentsline {subsection}{\numberline {3.4}Memory and successive inputs}{5}{}%
-\contentsline {subsubsection}{\numberline {3.4.1}Rising edge}{5}{}%
-\contentsline {subsubsection}{\numberline {3.4.2}Falling edge}{6}{}%
-\contentsline {subsubsection}{\numberline {3.4.3}Multiplication}{6}{}%
-\contentsline {subsubsection}{\numberline {3.4.4}Adder}{7}{}%
-\contentsline {subsection}{\numberline {3.5}Sign bit}{7}{}%
-\contentsline {subsection}{\numberline {3.6}Memory}{7}{}%
-\contentsline {subsection}{\numberline {3.7}Clear}{7}{}%
+\contentsline {section}{\numberline {1}Basics concepts}{2}%
+\contentsline {section}{\numberline {2}Logic gates}{3}%
+\contentsline {subsection}{\numberline {2.1}N-MOS}{4}%
+\contentsline {subsection}{\numberline {2.2}NOT gate}{5}%
+\contentsline {subsection}{\numberline {2.3}NOR gate}{6}%
+\contentsline {subsection}{\numberline {2.4}NAND gate}{6}%
+\contentsline {subsection}{\numberline {2.5}Other logic gates}{7}%
+\contentsline {subsection}{\numberline {2.6}Bistable circuit}{8}%
+\contentsline {section}{\numberline {3}Processing components}{9}%
+\contentsline {subsection}{\numberline {3.1}Half adder}{9}%
+\contentsline {subsection}{\numberline {3.2}Full adder}{9}%
+\contentsline {section}{\numberline {4}16-bit calculator}{12}%
+\contentsline {subsection}{\numberline {4.1}Input with 16-bit}{12}%
+\contentsline {subsection}{\numberline {4.2}Keyboard}{12}%
+\contentsline {subsection}{\numberline {4.3}4-bit encoder}{13}%
+\contentsline {subsection}{\numberline {4.4}Memory and successive inputs}{13}%
+\contentsline {subsubsection}{\numberline {4.4.1}Rising edge}{14}%
+\contentsline {subsubsection}{\numberline {4.4.2}Falling edge}{15}%
+\contentsline {subsubsection}{\numberline {4.4.3}Full adders}{15}%
+\contentsline {subsection}{\numberline {4.5}Sign bit}{16}%
+\contentsline {subsection}{\numberline {4.6}Memory}{17}%
+\contentsline {subsection}{\numberline {4.7}Clear}{17}%
+\contentsline {subsection}{\numberline {4.8}Decoder}{18}%
+\contentsline {subsubsection}{\numberline {4.8.1}About the number sign}{18}%
+\contentsline {subsubsection}{\numberline {4.8.2}Double dabble}{19}%
+\contentsline {section}{\numberline {5}Appendix}{22}%
