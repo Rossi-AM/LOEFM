@@ -54,6 +54,10 @@ Once 1 and 0 are defined, we need to define the operations that can be performed
 \item $"*"$ is the multiplication, and it can be represented by an AND gate.
 \end{itemize}
 
+
+\clearpage
+
+
 \section{Logic gates}
 
 When we talk about a logic gate, we are describing a circuit that can take a certain number of inputs and gives a single output, depending on the input received. The output needs to be readable by another logic gate of the same family.
@@ -121,6 +125,11 @@ The main logic gates are the following, represented with their circuital symbol 
 \label{LogicGates}
 \end{figure}
 
+
+
+
+\clearpage
+
 \subsection{N-MOS}
 
 In order to create these logic gates, we need to know how to use a MOSFET. For this project we used N-MOS transistors only.
@@ -151,11 +160,13 @@ We do not need to distinguish linear section and saturation section, as we will 
 . We decided to use $5\,\textrm{V}$ for $V_{GS}$ to make input and output approximately the same, as we will see later.
 
 
+\clearpage
+
 
 \subsection{NOT gate}
 
 The easiest logic gate to realize is the NOT gate. We remember that the NOT gate negates the only input it receives. We need a high enough resistance and one N-MOS (as represented in figure \ref{NOT_N-MOS}) to realize it.
-\clearpage
+
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.3]{IM_NOT_NMOS.JPG}
@@ -327,6 +338,18 @@ The flip-flop can be created by both NOR gates and NAND gates but, since the NAN
 \end{table}
 
 
+
+
+
+\clearpage
+
+
+
+
+
+
+
+
 \section{Processing components}
 
 In order to create a calculator that could perform additions and subtractions, we needed to have a component able to sum (or subtract) two binary numbers.
@@ -349,19 +372,34 @@ Half adder truth table can be found in table \ref{HalfAdderTT}.
   0 & 1 & 1 & 0 \\ \hline
   1 & 1 & 0 & 1 \\ \hline
   \end{tabular}
-  \caption{Half adder truth table, where $A$ and $B$ CONTINUO DA QUI}
+  \caption{Half adder truth table, where $A_1$ and $A_2$ are the input bits, $S$ is the result, and $C$ the carry-over}
   \label{HalfAdderTT}
 \end{table}
-
-
-
-
 
 The major issue with this component is not being useful during a sum of two binary numbers. We specify that a sum of two binary numbers is a classical column sum. For this reason the half adder is not the best choice, because it cannot track the carry-over of the sum performed on the previous bit, if present.
 
 \subsection{Full adder}
 
-If we want to sum two positive n-bit binary numbers, we need to keep track of the carry-overs. The right component for this duty is a full-adder, which truth table can be found in table \ref{FullAdderTT}
+If we want to sum two positive n-bit binary numbers, we need to keep track of the carry-overs. The right component for this duty is a full-adder, whose truth table can be found in table \ref{FullAdderTT}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c || c | c |}
+  \hline
+  A$_1$ & A$_2$ & C$_{in}$ & S & C$_{out}$ \\ \hline
+  0 & 0 & 0 & 0 & 0 \\ \hline
+  0 & 1 & 0 & 1 & 0 \\ \hline
+  1 & 0 & 0 & 1 & 0 \\ \hline
+  1 & 1 & 0 & 0 & 1 \\ \hline
+  0 & 0 & 1 & 1 & 0 \\ \hline
+  0 & 1 & 1 & 0 & 1 \\ \hline
+  1 & 0 & 1 & 0 & 1 \\ \hline
+  1 & 1 & 1 & 1 & 1 \\ \hline
+  \end{tabular}
+  \caption{Full adder truth table. It is possible to see the third input that the half adder does not have, the carry-over of the previous column sum}
+  \label{FullAdderTT}
+\end{table}
+
 
 
 
