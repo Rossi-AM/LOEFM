@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Processing}{2}%
+\contentsline {section}{\numberline {2}Decoder}{4}%
+\contentsline {subsection}{\numberline {2.1}About the number sign}{4}%
+\contentsline {subsection}{\numberline {2.2}Double dabble}{5}%

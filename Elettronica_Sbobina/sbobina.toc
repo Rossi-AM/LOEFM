@@ -1,0 +1,38 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Richiami alle nozioni di base}{3}%
+\contentsline {subsection}{\numberline {1.1}Generatori}{3}%
+\contentsline {subsection}{\numberline {1.2}Resistori}{4}%
+\contentsline {subsection}{\numberline {1.3}Condensatori}{5}%
+\contentsline {subsection}{\numberline {1.4}Induttori}{5}%
+\contentsline {subsection}{\numberline {1.5}Circuiti RC nel tempo}{6}%
+\contentsline {subsection}{\numberline {1.6}Circuiti RL nel tempo}{7}%
+\contentsline {section}{\numberline {2}Leggi circuitali e concetti fondamentali}{9}%
+\contentsline {subsection}{\numberline {2.1}Leggi di Kirchhoff}{9}%
+\contentsline {subsection}{\numberline {2.2}Circuiti partitori di tensione e corrente}{10}%
+\contentsline {subsection}{\numberline {2.3}Generatori reali}{12}%
+\contentsline {subsection}{\numberline {2.4}Circuiti equivalenti di Thevenin e di Norton}{13}%
+\contentsline {subsection}{\numberline {2.5}Impedenza di sorgente, di carico ed effetto di carico}{15}%
+\contentsline {subsection}{\numberline {2.6}Caratterizzazione degli elementi R, L, C nel dominio della frequenza}{16}%
+\contentsline {subsection}{\numberline {2.7}I sistemi lineari, tempo invarianti}{18}%
+\contentsline {section}{\numberline {3}Circuiti passivi con elementi RLC}{21}%
+\contentsline {subsection}{\numberline {3.1}Circuiti RC e RL}{21}%
+\contentsline {subsection}{\numberline {3.2}Circuiti risonanti serie}{26}%
+\contentsline {subsection}{\numberline {3.3}Circuiti risonanti parallelo}{30}%
+\contentsline {section}{\numberline {4}Circuiti attivi lineari con amplificatori operazionali}{33}%
+\contentsline {subsection}{\numberline {4.1}L’amplificatore operazionale}{33}%
+\contentsline {subsection}{\numberline {4.2}Circuiti di amplificazione invertenti e non invertenti}{37}%
+\contentsline {subsection}{\numberline {4.3}Filtri attivi in frequenza}{42}%
+\contentsline {subsection}{\numberline {4.4}Circuiti risonanti attivi}{52}%
+\contentsline {section}{\numberline {5}Circuiti attivi non lineari con amplificatori operazionali}{59}%
+\contentsline {subsection}{\numberline {5.1}Diodi}{59}%
+\contentsline {subsection}{\numberline {5.2}Rettificatori}{65}%
+\contentsline {subsection}{\numberline {5.3}Circuiti astabili e affini}{69}%
+\contentsline {section}{\numberline {6}Dispositivi attivi di base}{73}%
+\contentsline {subsection}{\numberline {6.1}Dispositivi obsoleti o rari}{73}%
+\contentsline {subsection}{\numberline {6.2}MOS}{75}%
+\contentsline {section}{\numberline {7}Nozioni di base di elettronica digitale}{87}%
+\contentsline {subsection}{\numberline {7.1}Algebra Booleana}{87}%
+\contentsline {subsection}{\numberline {7.2}Porte logiche}{90}%
+\contentsline {subsection}{\numberline {7.3}Aritmetica binaria}{94}%
+\contentsline {subsection}{\numberline {7.4}Dispositivi digitali}{97}%
