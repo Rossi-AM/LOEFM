@@ -1,0 +1,245 @@
+PWD /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.tex
+OUTPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.aux
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.aux
+OUTPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.aux
+INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.toc
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.toc
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.pdf
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.toc
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM percorso luce.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM percorso luce.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM percorso luce.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM strumentazione.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM strumentazione.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM strumentazione.jpg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM fuochi.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM fuochi.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM fuochi.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM etichetta laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM etichetta laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM etichetta laser.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM cameretta.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM cameretta.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM cameretta.jpg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM pacchetto.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM pacchetto.jpg
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM pacchetto.jpg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM grafico risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella a.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella a.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella a.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella b.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella b.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella b.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella lambda sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati sistema.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella ricorsione.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella ricorsione.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella ricorsione.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella pacchetto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella pacchetto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella pacchetto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1 scarto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1 scarto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 1 scarto.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 2.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 2.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM tabella delta lambda set 2.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM risultati delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione n.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/IM comparazione delta lambda.png
+INPUT /home/alessandromatteo_rossi/LOEFM/relazione latex michelson 2/relazione latex michelson 2/relazione interferometro di michelson.aux
+INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb

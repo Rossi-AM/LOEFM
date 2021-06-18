@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Introduzione teorica}{2}%

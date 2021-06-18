@@ -1,0 +1,930 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}   %ALLOWS INSERTING IMAGES (AND MAYBE SOME MORE STUFF) %
+\usepackage{caption}
+\usepackage{subcaption} %ALLOWS CAPTIONS FOR SUBFIGURES%
+\usepackage{verbatim} % ALLOWS MULTILINE COMMENTS WITH \begin{comment} AND \end{comment} %
+\usepackage{amsmath}
+\usepackage{amssymb} % PERMETTE L'USO DI SIMBOLI MATEMATICI "AVANZATI" COME 'MINORE O UGUALE' E ALTRI %
+\usepackage{amstext}
+\usepackage{enumitem} %PERMETTE L'USO DI ELENCHI NUMERATI
+\usepackage[section]{placeins}
+\usepackage{amsthm}
+
+\geometry{a4paper}
+                        %Una riga vuota tra due scritte spazia di una riga anche sul pdf. Andare a capo una volta non provoca nulla nel pdf%
+\usepackage[italian]{babel}
+%\usepackage[french, italian]{babel} non funzione per motivi a me ignoti
+\frenchspacing 
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{Osservazione}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Ex}[section]
+
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollario}[theorem]
+
+
+%%%  INTESTAZIONE  %%%
+
+\title{Riassunto Analisi 2}
+\author{Alessandro Matteo Rossi}
+\date{\today}
+
+
+%%%  INIZIO DOCUMENTO  %%%
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lezione 1 - 01/03/2021}
+
+
+\begin{definition}[Integrale indefinito]
+    Dato $\Omega \subseteq \mathbb{R}$ aperto e $f:\Omega \rightarrow \mathbb{R}$ diciamo che $f$ ammette primitiva in $\Omega$ se $\exists F:\Omega \rightarrow \mathbb{R}$ derivabile tale che $F'(x)=f(x) \; \forall x \in \Omega$. $F$ è detta primitiva di $f$.
+\end{definition}
+
+La nozione può essere estesa a $\tilde\Omega = [a,b]$ se presenti la derivata destra in $a$ e sinistra in $b$.
+
+\vspace{3mm}
+
+\begin{remark}
+    Esistono funzioni che non ammettono primitiva. Ad esempio la funzione di Heaviside definita come $f(x)=
+    \begin{cases}
+    0, & \text{$x < 0$} \\
+    1, & \text{$x > 0$} \\
+    \end{cases}$. Infatti non esiste una funzione $F$ che abbia come derivata $f$ per ogni punto.
+\end{remark}
+
+\vspace{3mm}
+
+In $\mathbb{R}$ parlare di \textit{aperto connesso} o \textit{intervallo} è equivalente.
+
+\begin{remark}
+    Se su $\Omega = I$ intervallo $F$ e $G$ sono primitive di $f$ su $I=(a,b)$ allora $(F-G)'=0$ $\Rightarrow$ $F-G=cost$ per Lagrange, da cui deriva la caratterizzazione delle costanti.
+\end{remark}
+
+\begin{example}[Integrale di $1/x$]
+    Presa $f(x)=\frac{1}{x}$ su $\mathbb{R} \backslash \lbrace 0 \rbrace$ essa ha integrale pari a 
+        $\int_{}^{} \frac{1}{x} \, dx = 
+        \begin{cases}
+        \log x + c & \text{$x > 0$} \\
+        \log (-x) +d  & \text{$x < 0$} \\
+        \end{cases}$. 
+    È fondamentale non usare il valore assoluto poiche il nostro integrale è definito su intervalli, e pertanto $f$ è da integrare sui due intervalli su cui è definita.
+\end{example}
+
+Una condizione necessaria per avere primitiva è la \textbf{proprietà di Darboux} (è evidente che pertanto le funzioni derivate godano di (D)). Una funzione ha la proprietà di Darboux se mappa intervalli in intervalli.
+
+\begin{theorem}
+    Se $f$ ammette primitiva su $I$, allora $f$ gode di (D) su $I$.
+    \begin{proof}[Dim]
+        Siano $a,b \in I$ e sia $\gamma \in [f(a),f(b)]$ (se coincidono la tesi è ovvia!). Voglio mostrare che $\exists \, c \in [a,b]: f(c)=\gamma$, supponendo che $f(a)<\gamma < f(b)$. Sia $G(x)=F(x)-\gamma x$ dove $F'=f$. $G$ è derivabile, in quanto somma di funzioni derivabili $\Rightarrow$ è continua. La derivata di $G$ è $G'=f-\gamma$ che non è monotona ed essendo continua non è iniettiva $\Rightarrow$ non è invertibile. Allora $\exists x_1,x_2 \in (a,b): G(x_1) = G(x_2)$ e per il teorema di Rolle $\exists c \in (x_1,x_2): G'(c)=0$ e quindi $f(c) = \gamma$, che è (D).
+    \end{proof}
+\end{theorem}
+
+\newpage
+\section{Lezione 2 - 04/03/2021}
+
+Esistono funzioni che pur essendo (D) non sono integrabili, a riprova del fatto che è solo una condizione necessaria.
+\begin{example}
+    $f(x) = \begin{cases}
+        \sin \frac{1}{x} & \text{$x \neq 0$} \\
+        \frac{1}{2} & \text{$x=0$} \\
+    \end{cases}$
+    gode di (D) ma non ammette primitiva. Se per $x=0$ valesse 0, allora avrebbe primitiva.
+\end{example}
+
+Esistono due teorie dell'integrazione: quella classica di Riemann e quella moderna di Lebesgue. La teoria moderna non permette di calcolare "più" integrali di quella classica: è migliore perchè permette di dominare l'errore più efficientemente quando si calcolano integrali approssimati (spessissimo l'integrale è solo stimabile e non calcolabile con esattezza). L'integrale classico di Cauchy-Riemann è uno strumento utile per determinare la misura di superfici o solidi.
+
+\vspace{3mm}
+
+Faccio tre puntualizzazioni:
+\begin{enumerate}
+    \item Le funzioni "buone" intese come continue, monotone e ovunque derivabili sono una assoluta minoranza. In matematica domina quella che noi consideriamo patologia. È impossibile (inteso come probabilità tendente a 0) pescare dal secchio di tutte le funzioni possibili una funzione "buona", mentre è certo (inteso come probabilità tendente a 1) pescare una funzione patologica. Appare evidente che le funzioni mai derivabili sono la quasi totalità. Se ne deduce che prendere una funzione "a caso" che sia continua e derivabile ovunque voglia dire tutt'altro che prenderne una "a caso". 
+    
+    Riusciamo però a dominare la matematica con le poche funzioni "buone" rimaste, che sono continue e derivabili, perchè posso approssimare bene quanto voglio una funzione patologica con una buona (con deboli ipotesi), tanto quanto posso approssimare un trascendente (probabilità 1 se pesco tra i numeri) con un razionale (probabilità 0).
+    \item Denoto con $Y^{X}$ l'insieme di tutte le funzioni $f:X\rightarrow Y$.
+    \item D'ora in poi, se non diversamente specificato, considererò intervalli chiusi e limitati $[a,b]\subset \mathbb{R}$ e funzioni $f$ limitate.
+\end{enumerate}
+
+\begin{definition}[Partizione]
+    Una partizione di $[a,b]$ è un insieme ordinato di $n+1$ punti casuali. $P=\lbrace x_0,x_1, ...,x_n \rbrace$ t.c. $a=x_0 < x_1 < x_2 <...<x_n=b$.
+
+    Il massimo delle ampiezze degli intervalli $\max\lbrace\Delta x_i\rbrace$ è detto \textbf{taglia della partizione}, dove $\Delta x= x_i - x_{i-1}$ con $i=1,... ,n$.
+\end{definition}
+
+Per arrivare a parlare di integrale inteso come area sottesa al grafico di una funzione è necessario introdurre i concetti di somme superiori e inferiori.
+
+\vspace{5mm}
+
+Considero una funzione $f:[a,b]\rightarrow \mathbb{R}$ limitata sull'intervallo $I=[a,b]$. Sia $P=\lbrace x_0,...,x_n \rbrace$ una partizione di $[a,b]$. Scriviamo $M_i=\underset{x\in [x_{i-1},x_i]}{\sup} f(x)$ e $m_i =\underset{x\in [x_{i-1},x_i]}{\inf} f(x)$ e definiamo le \textbf{somme superiori} come $S(P,f)=\displaystyle\sum_{i=0}^{n}M_i \Delta x_i$ e le \textbf{somme inferiori} come $s(P,f)=\displaystyle\sum_{i=0}^{n}m_i \Delta x_i$, relative alla partizione $P$.
+
+\begin{remark}[$P$ e $\mathcal{P}$]
+    Considerando $\mathcal{P}$, l'isnieme di tutte le partizioni $P$ di $I=[a,b]$ ho che 
+    \[
+    M(b-a) \geq S(P,f) \geq s(P,f) \geq m(b-a) \;\;\; \forall P \in \mathcal{P}
+    \]
+\end{remark}
+
+Da qui chiamo \textbf{integrale superiore} e \textbf{integrale inferiore} le scritture
+\[
+    \overline{\int_{a}^{b}} f(x) dx= \underset{P\in\mathcal{P}}{\inf} S(f,P) \;\;\;\;\;\;\;\;\; \underline{\int_{a}^{b}} f(x) dx= \underset{P\in\mathcal{P}}{\sup} s(f,P)
+\]
+
+È evidente che $\overline\int_{a}^{b} f(x) dx \geq \underline\int_{a}^{b} f(x) dx$
+
+\begin{example}[Funzione di Dirichlet]
+    $f(x) = \begin{cases}
+        1 & x\in[a,b]\cap \mathbb{Q} \\
+        0 & x\in[a,b]\; \backslash\; \mathbb{Q} \\
+    \end{cases}$
+    In questo caso la disuguaglianza tra integrale superiore e inferiore è stretta, poichè $\underset{I}{\max}f=1$ e $\underset{I}{\min}f=0$.
+\end{example}
+
+\begin{definition}[Integrale di Riemann]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ limitata. Diciamo che $f$ è \textbf{R-integrabile} o $f\in \mathcal{R}([a,b])$ se l'integrale superiore coincide con l'integrale inferiore.
+    \[
+        \overline{\int_{a}^{b}} f(x) dx = \underline{\int_{a}^{b}} f(x) dx \doteq \int_{a}^{b} f(x)dx
+    \]
+    \label{Riemann}
+\end{definition}
+
+Si può semplificare questa definizione con una caratterizzazione delle funzioni R-integrabili che renda la definizione più facile. Prima però un risultato preliminare.
+
+\begin{lemma}[Raffinamento di una partizione]
+    Una partizione $P^*=P \bigcup \lbrace\xi_1,...,\xi_n \rbrace$ che si ottiene aggiungendo un numero finito di punti a $P$ si dice \textbf{raffinamento}.
+    
+    Se $P^*$ è un raffinamento di $P$, allora $S(P,f) \geq S(P^*,f) \geq s(P^*,f) \geq s(P,f)$.
+    \begin{proof}[Dim]
+        Per dimostrarlo è sufficiente aggiungere un solo punto alla partizione. Se $\xi \in (x_{i-1},x_i)$ allora $\underset{x \in [x_{i-1},x_i]}{\sup} f(x) = \max \lbrace \underset{x \in [x_{i-1},\xi]}{\sup} f(x), \underset{x \in [\xi,x_i]}{\sup} f(x) \rbrace$
+
+        \vspace{3mm}
+
+        quindi
+
+        \vspace{2mm}
+
+        $M_i \Delta x_i = \underset{x \in [x_{i-1},x_i]}{\sup} f(x) \Delta x_i = \underset{x \in [x_{i-1},x_i]}{\sup} f(x)(x_i -\xi + \xi - x_{i-1}) \geq \underset{x \in [x_{i-1},\xi]}{\sup} f(x)(\xi-x_{i-1}) + \underset{x \in [\xi,x_i]}{\sup} f(x)(x_i- \xi)$.
+
+        È quindi evidente che aggiungendo punti alla partizione le somme superiori descrescano e quelle inferiori crescano.
+    \end{proof}
+\end{lemma}
+
+\begin{theorem}[Criterio per la R-integrabilità]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ limitata. Allora $f\in\mathcal{R}([a,b]) \Leftrightarrow \forall\varepsilon >0 \; \exists P\in\mathcal{P}: S(P,f)-s(P,f)<\varepsilon$.
+    \begin{proof}[Dim]
+
+        ($\Leftarrow$)
+
+        Per ogni partizione $P$ abbiamo $s(P,f) \leq \underline{\int_{}^{}}f \leq \overline{\int_{}^{}}f \leq S(P,f)$ da cui $S(P,f)-s(P,f) \geq \overline{\int_{}^{}}f-\underline{\int_{}^{}}f$.
+
+        Da cui, per ipotesi,
+        $\forall \varepsilon > 0 \; \exists P: \varepsilon > S(P,f) - s(P,f) \geq \overline{\int_{}^{}}f-\underline{\int_{}^{}}f$. Al limite integrale inferiore e superiore coincidono soddisfando Def. \ref{Riemann}.
+
+        ($\Rightarrow$) Se $f$ è R-integrabile allora $\int_{a}^{b}f = \overline{\int_{}^{}} f = \underline{\int_{}^{}} f$. Poichè l'integrale superiore è $\inf$ delle somme superiori, per ogni $\varepsilon > 0 \overline{\int_{}^{}}f+ \varepsilon/2$ non è minorante: esiste una partizione $P_1$ tale che $S(P_1,f)<\overline{\int_{}^{}}f+ \varepsilon/2$. Ragionamento analogo, con i dovuti cambi di segno, si può fare per le somme inferiori e con una partizione $P_2$. Pertanto prendendo $P = P_1 \bigcup P_2$ raffinamento di queste partizioni per il Lemma si ha la descrescita delle somme superiori e la crescita delle somme inferiori e quindi la tesi.
+    \end{proof}
+\end{theorem}
+
+
+\newpage
+\section{Lezione 3 - 10/03/2021}
+
+Vediamo una serie di condizioni sufficienti affinchè una funzione limitata sia R-integrabile su un intervallo $I$ chiuso e limitato.
+
+\begin{theorem}[Condizioni sufficienti per l'integrabilità]
+    Sia $f:[a,b]\rightarrow \mathbb{R}$ una funzione limitata. Allora
+    \begin{enumerate}
+        \item $f$ è continua $\Rightarrow f \in \mathcal{R}([a,b])$
+        \item $f$ è monotona $\Rightarrow f \in \mathcal{R}([a,b])$
+        \item $f$ ha un numero finito di punti di discontinuità $\Rightarrow f \in \mathcal{R}([a,b])$
+    \end{enumerate}
+    
+    \begin{proof}[Dim. 1]
+        Se $f$ è continua su $[a,b]$ allora per Heine-Cantor è uniformemente continua, cioè
+        \[
+        \forall \varepsilon > 0 \; \exists \delta>0: \forall x,y: \left|x-y \right| < \delta, \left|f(x)-f(y)\right| < \frac{\varepsilon}{b-a}
+        \]
+        Presa ora una partizione $P=\lbrace x_0,...,x_n \rbrace$ di $[a,b]$ di taglia $\Delta x_i < \delta$. Poichè $f$ è continua su ogni subintervallino $[x_{i-1}, x_i]$ esistono $s_i$ e $t_i$ tali che $M_i=f(s_i)$ e $m_i=f(t_i)$, cioè sup e inf sono assunti per Weierstrass. 
+
+        Ma allora la differenza tra somme superiori e inferiori è
+
+        \[
+        S(P,f) - s(P,f) = \displaystyle\sum_{i=0}^{n} (M_i-m_i)\Delta x_i < \frac{\varepsilon}{b-a}\displaystyle\sum_{i=0}^{n} \Delta x_i = \varepsilon
+        \]  
+
+        il che è equivalente al criterio di R-integrabilità, da cui si deduce che la funzione sia per l'appunto R-integrabile.
+    \end{proof}
+    \begin{proof}[Dim. 2]
+        Prendo $f$ monotona crescente (ad esempio) e una partizione $P=\lbrace x_0,...,x_n \rbrace$ dell'intervallo $[a,b]$ tale che la sua taglia sia $\Delta x < \frac{\varepsilon}{f(b)-f(a)}$.
+
+        Poichè $f$ è monotona il massimo e il minimo sulla partizione sono $M_i=f(x_i)$ e $m_i=f(x_{i-1})$. Allora la differenza fra somme superiori e inferiori è \[S(P,f) - s(P,f) = \sum_{i=0}^{n}(M_i-m_i)\Delta x_i < \frac{\varepsilon}{f(b)-f(a)} \sum_{i=0}^{n}[f(x_i)-f(x_{i-1})] = \varepsilon\]
+
+        Che altro non è che la condizione di integrabilità.
+    \end{proof}
+    \begin{proof}[Dim. 3]
+        In questo caso è fondamentale lavorare con una funzione limitata. Dimostro per un punto e poi iterando posso dimostrarlo per un insieme finito di punti. Suppongo di avere un'unica discontinuità in $c \in [a,b]$. Fissato $\varepsilon>0$ considero due punti $c-\delta$ e $c+\delta$ con $\delta = \frac{\varepsilon}{6M}$ dove $M=\underset{x\in[a,b]}\sup |f(x)|$. La funzione è quindi continua sull'unione di intervalli disgiunti compatti $E=[a,c-\delta]\cup [c+\delta,b] = E_1 \cup E_2$, pertanto è R-integrabile su $E$. Considerando le restrizioni di $f$, cioè $f_1$ su $E_1$ e $f_2$ su $E_2$ esistono rispettivamente partizioni $P_1$ e $P_2$ tali che 
+        \[
+            S(P_i,f_i) - s(P_i,f_i) < \varepsilon/3        
+        \]
+        Aggiungendo all'unione delle due partizioni anche i due semiintorni di $c$ si ottiene $P=P_1 \cup \lbrace c-\delta \rbrace \cup \lbrace c+\delta \rbrace \cup P_2$ e quindi l'integrabilità su tutto il dominio.
+        \end{proof}
+\end{theorem}
+
+\begin{remark}
+    In termini semplici, non conta quanti punti di discontinuità ho, a patto che siano un insieme finito, perchè posso raffinare la partizione quanto voglio e vedere intuitivamente che qualsiasi cosa succede in un intorno della discontinuità viene ampiamente dominata dagli altri intervallini. Geometricamente alterare una funzione in un punto vuol dire aggiungere all'integrale un segmento, che per definizione ha area nulla.
+\end{remark}
+\begin{remark}
+    I punti (1) e (3) sono molto simili. Infatti essere continua vuol dire avere un numero finito di punti di discontinuità, cioè 0.
+\end{remark}
+
+\begin{remark}
+    Nel caso di funzione continua (1) non è necessario specificare la limitatezza della funzione, poichè per Weierstrass l'immagine di un compatto [a,b] è compatta, e quindi provvista di massimo e minimo.
+\end{remark}
+
+\begin{remark}
+    Lavorare su intervalli chiusi non è necessario finchè la funzione è limitata. L'intervallo compatto serve per garantire l'esistenza di estremi finiti per Weierstrass.
+\end{remark}
+
+\begin{remark}
+    Anche una funzione con un'infinità numerabile di discontinuità è R-integrabile. La dimostrazione è artificiosa, pertanto introduco solo il concetto di \textbf{misura}, utile caratterizzazione per questo fine.
+\end{remark}
+
+\begin{definition}[Misura]
+    Un sottoinsieme di $\mathbb{R}$, $S\subset \mathbb{R}$, ha \textbf{misura di Lebesgue} o L-misura nulla, e si scrive $\mu(S)=0$ se 
+    \[
+        \forall \varepsilon > 0 \; \exists \; \lbrace I_n \rbrace_{n\in \mathbb{N}} \; \text{successione di intervalli} : S \subset \bigcup_{n=1}^{+\infty} \; \text{e} \; \sum_{n=1}^{+\infty} l(I_n)<\varepsilon
+    \]
+    dove $l(I_n)$ denota il diametro (o lunghezza) dell'intervallo.
+\end{definition}
+
+\begin{example}
+    Ovviamente ogni punto ha L-misura nulla, poichè lo ricopro con una successione fatta da un unico intervallo e il cui diametro è piccolo a piacere e quindi più piccolo di $\varepsilon$.
+
+    Anche ogni insieme al più numerabile ha L-misura nulla: ricopro ogni punto con una serie geometrica $\displaystyle\sum_{i=0}^{n}\frac{\varepsilon}{2}$. Sommando tutti diametri degli intervalli, la cui unione è sottoinsieme di $S$, ottengo un diametro totale inferiore a $\varepsilon$.
+
+    Si può anche dimostrare che un insieme, esprimibile come unione al più numerabile di insiemi con L-misura nulla, ha L-misura nulla.
+\end{example}
+
+Dopo questa parentesi sulla misura di Lebesgue, che porterà in AM3 all'omonimo integrale, giungo alla caratterizzazione delle funzioni integrabili. Evidenzio il fatto che mentre l'R-integrale partizioni l'asse x per poi sommare i contributi superiori e inferiori, l'L-integrale si basa sulla partizione dell'asse y, per poi lavorare per controimmagini.
+
+\begin{theorem}[Caratterizzazione delle funzioni integrabili con la misura di Lebesgue]
+    Sia $f:[a,b] \rightarrow \mathbb{R}$ limitata. Allora $f\in \mathcal{R}([a,b]) \Leftrightarrow$ l'insieme dei suoi punti di discontinuità ha L-misura nulla. 
+\end{theorem}
+
+\begin{remark}
+    È quindi evidente che una funzione con un'infinità numerabile di discontinuità sia R-integrabile, poichè un insieme al più numerabile ha L-misura nulla, come spiegato nell'esempio precedente. Grazie a questo posso anche decidere dove mettere le discontinuità in una funzione poichè mi è sufficiente garantire la L-misura nulla di quell'insieme.
+
+    Non esiste una funzione discontinuità solo sugli irrazionali poichè inesprimbili come unione numerabile di insiemi chiusi.
+\end{remark}
+
+\begin{definition}[funzione caratteristica]
+    Una \textbf{funzione caratteristica} è quella funzione $f:S\rightarrow \mathbb{R}$ che vale 1 nei punti di $S$ e 0 altrove.
+    \[
+        \chi_S(x) = \begin{cases}
+            1 & x\in S \\
+            0 & x \notin S \\
+        \end{cases}
+    \]
+\end{definition}
+
+\begin{example}
+    La funzione di Dirichlet è la funzione caratteristica di $\mathbb{Q}$ se la faccio valere 1 lì, altrimenti è la caratteristica degli irrazionali.
+\end{example}
+
+\begin{example}
+    È evidente che se $\chi_S$ è sempre nulla l'insieme $S$ sia vuoto e se viceversa vale sempre 1, allora il dominio è tutto $S$.
+\end{example}
+
+Adesso osserviamo più da vicino $\mathcal{R}([a,b])$. Esso è strutturabile come spazio vettoriale, e questo permette di ottenere delle proprietà di cui gli integrali godono. In $\mathcal{R}([a,b])$ spazio vettoriale sul campo $\mathbb{R}$ (o $\mathbb{C}$) sono definite le operazioni di somma tra gli elementi e di prodotto per scalare del campo. Pertanto sono anche definite le combinazioni lineare di elementi di $\mathcal{R}([a,b])$, ovvero $\displaystyle\sum_{i=1}^{n}\lambda_ia_i$ con $\lambda \in \mathbb{R}$ e $a\in \mathcal{R}([a,b])$.
+
+\vspace{3mm}
+
+\begin{remark}[Proprietà dell'integrale 1]
+    Considero $\mathbb{R}^S$ insieme di tutte le funzioni $f:S\rightarrow \mathbb{R}$ dove $S=[a,b]$ intervallo. $\mathbb{R}^S$ è strutturabile a spazio vettoriale definendo la somma come $(f+g)(x)=f(x)+g(x)$ e il prodotto per scalare come $(\lambda\cdot f)(x)=\lambda \cdot f(x)$ con $\lambda\in\mathbb{R}, f,g\in\mathbb{R}^S$.
+
+    Da questo di deduce che $\mathcal{R}([a,b])$ sia sottospazio di $\mathbb{R}^S$ poichè è chiuso rispetto alle combinazioni lineari: prese due funzioni integrabili, quindi facenti parte di $\mathcal{R}([a,b])$ la loro combinazione lineare è ancora integrabile, quindi è ancora inclusa in $\mathcal{R}([a,b]$.
+
+    Questo perchè se le due funzioni sono integrabili i loro punti di discontinuità hanno L-misura nulla, e per quanto già visto in Ex 3.1, unione di al più un'infinità numerabili di insieme di L-misura nulla ha L-misura nulla, e quindi è ancora R-integrabile.
+\end{remark}
+
+\newpage
+\section{Lezione 4 - 11/03/2021}
+
+\begin{definition}[Trasformazione lineare] 
+    Una \textbf{trasformazione lineare} è un'applicazione $A:V\rightarrow W$ spazi vettoriali che verifica le relazioni:
+    \begin{enumerate}
+        \item [L1)] $A(x+y) = Ax+Ay \quad \forall x,y \in V$
+        \item [L2)] $A(\lambda x)=\lambda A x \quad \forall x \in V, \forall \lambda \in \mathbb{K}$
+    \end{enumerate}
+
+    Se prendo come spazio di partenza $V=\mathcal{R}([a,b])$ e come spazio di arrivo $W=\mathbb{R}$ allora l'applicazione 
+    \[
+        A:V\rightarrow W \quad \mathcal{R}([a,b]) \ni f \mapsto A(f) := \int_{a}^{b}f(t) \: dt \in \mathbb{R}
+    \]
+    è un'applicazione lineare.
+
+    L'integrale è un esempio di trasformazione lineare da $\mathcal{R}([a,b])$ a $\mathbb{R}$.
+\end{definition}
+
+\begin{remark}
+    Le trasformazioni lineari a valori in $\mathbb{R}$ sono chiamate \textbf{funzionali lineari}. È facilmente dimostrabile che presa $A: \rightarrow W$ si abbia che $A(V)$ è uno spazio vettoriale contenuto in $W$. Ma $A(V)$ per definizione di spazio vettoriale è chiuso rispetto alle combinazioni lineari e quindi è sottospazio di $W$. 
+    
+    Parlando di $\mathbb{R}$, esso ha due sottospazi che sono il banale $\lbrace 0 \rbrace$ e $\mathbb{R}$ stesso (non altri perchè non sarebbe chiuso rispetto alle combinazioni lineari). Potendo gli integrali essere non nulli allora $\mathcal{R}([a,b])$ (che era già spazio vettoriale su reali) è sottospazio di $\mathbb{R}$.
+    Inoltre l'applicazione $A:\mathcal{R}([a,b])\rightarrow \mathbb{R}$ è suriettiva poichè la sua immagine sono i reali.
+
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 2]
+    Questa caratterizzazione riguarda la \textbf{composizione di funzioni}. Considero $f\in\mathcal{R}([a,b])$ e $\varphi$ continua. Allora $\varphi \circ f \in \mathcal{R}([a,b])$. Questa è una conseguenza del fatto che la composizione di funzioni continue e limitate origini una continua e limitata. Anche se presente un insieme di punti di discontinuità $D\neq \varnothing$ ho che $D_{\varphi \circ f} \subseteq D_f$ e siccome $\mu(D_f)=0$ (L-misura nulla) $\Rightarrow \mu(D_{\varphi\circ f}) \Rightarrow$ la composizione è R-integrabile.
+
+    Attenzione! Non è vero che $f\circ\varphi$ è integrabile, ma non so il perchè e dovrei invece saperlo...
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 3]
+    Conseguenza importante dell'integrabilità della composizione (sotto le ipotesi della precedente affermazione) è che la composizione di una funzione integrabile con se stessa è ancora integrabile.
+    \[
+        f\in\mathcal{R} \Rightarrow f^2=f\circ f\in\mathcal{R}
+    \]
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 4]
+    Altra conseguenza dell'integrabilità della composizione (sotto le stesse ipotesi di prima) è che prese $f,g \in \mathcal{R} \Rightarrow f\cdot g \in \mathcal{R}$
+    \begin{proof}[Dim]
+        $f\cdot g = \frac{1}{2}[(f+g)^2-f^2-g^2] \in \mathcal{R}$ poichè sono somme algebriche e quadrati di funzioni R-integrabili. Detta in modo più pulito, in uno spazio vettoriali la moltiplicazione è un'operazione interna.
+    \end{proof}
+\end{remark}
+
+\begin{remark}[Proprietà dell'integrale 5]
+    Altra conseguenza dell'integrabilità della composizione (sotto le stesse ipotesi di prima) è che $f\in\mathcal{R}([a,b])\Rightarrow |f|\in \mathcal{R}([a,b])$.
+    \begin{proof}[Dim]
+        Usando la composizione posso rappresentare $|f|=\varphi \circ f$ con $\varphi(y)=|y|$ e ottenere il modulo. In alternativa posso dire che $D_{|f|}\subseteq D_f$ ed essendo $\mu(f)=0$ per considerazioni già fatte anche $\mu(|f|)=0$ e quindi è $\mathcal{R}$.
+        \end{proof}
+        Attenzione! $\mu(|f|)=0 \nRightarrow \mu(f)=0$. Inoltre una funzione non integrabile, essa può avere modulo integrabile. Questa osservazione dà una condizione solo sufficiente.
+\end{remark}
+
+\begin{example}
+    Prendo Dirichlet con -1 e 1 come $f(x)=\begin{cases}
+        -1 & x\in\mathbb{Q} \\
+        1 & x\in\mathbb{R}\backslash\mathbb{Q}\\
+    \end{cases}$
+    Questa funzione non è integrabile, ma il suo modulo $|f|=1$ lo è.
+\end{example}
+
+\begin{remark}[Proprietà dell'integrale 6]
+    (Altra conseguenza della composizione, di cui non ho identificato il nesso). Presa $f:S\rightarrow\mathbb{R}$ essa ha componente positiva e negativa che sono rispettivamente
+    \[
+        f^+=\max\lbrace f,0 \rbrace  \qquad f^-=\min\lbrace -f,0 \rbrace
+    \]
+    Entrambe sono a valori in $\mathbb{R}^+$. Se potessi inserire un disegno vedrei immediatamente che 
+    \[
+        |f|=f^++f^- \qquad f=f^+-f^-  
+    \]
+    $f,f^+,f^-$ sono tutte R-integrabili, poichè ottenibili come combinazione lineare delle altre due.
+    Inoltre è anche visibile che
+    \[
+        f^+=\frac{|f|+f}{2} \qquad f^-=\frac{|f|-f}{2}
+    \]
+    da cui si deduce che 
+    \[
+        \int f = \int f^+ - \int f^-
+    \]
+    Questo ragionamento porta alla evidente conclusione che quando calcolo un integrale prendo come positive le aree positive e come negative le aree sotto l'asse delle x.
+\end{remark}
+
+\begin{theorem}[Proprietà dell'integrale 7: linearità]
+    Siano $f_1$ e $f_2$ $\in\mathcal{R}([a,b])$. Siano $c_1$,$c_2$ $\in\mathbb{R}$. Allora $c_1f_1+c_2f_2\in\mathcal{R}([a,b])$ e si ha
+        \[\int_a^b(c_1f_1(x)+c_2f_2(x))\,dx=c_1\int_a^bf_1(x)\,dx+c_2\int_a^bf_2(x)\,dx\]
+
+    Dimostrazione sul Soardi a pagina 292 Teorema 10.4.1.
+\end{theorem}
+
+\begin{corollary}[Teorema di monotonia]
+    Siano $f,g\in\mathcal{R}([a,b])$. Se $f(x)\leq g(x)\;\forall\,x\in[a,b]$, allora $\displaystyle{\int_a^b f(x)\,dx\leq\int_a^b g(x)\,dx}$.
+    \begin{proof}[Dim.]
+        Si ha $g-f\in\mathcal{R}([a,b])$ per la linearità e quindi
+        \[\int_a^bg(x)\,dx-\int_a^bf(x)\,dx=\int_a^b(g(x)-f(x))\,dx\geq0\]
+    \end{proof}
+
+    Specifichiamo che se $f$ o $g$ sono 0 si ha che una funzione R-integrabile di segno costante allora l'integrale è monotono.
+\end{corollary}
+
+\begin{remark}[Relazioni tra moduli di integrali e integrali di moduli]
+    Forte di quanto detto nella precedente osservazione posso dire che
+    \[
+        \left|\int_{a}^{b}(f^+-f^-)\right| = \left|\int_{a}^{b}f\right|=\left|\int_{a}^{b}f^+-\int_{a}^{b}f^- \right| \leq \int_{a}^{b}f^+-\int_{a}^{b}f^- = \int_{a}^{b} |f|
+    \]
+    Questa è una conseguenza della monotonia dell'integrale, poichè se $\forall x \in [a,b] \; f \geq g \Rightarrow \int_{a}^{b}f \geq \int_{a}^{b}g$.
+\end{remark}
+
+Specifico che anche se sto indicando l'integrabilità sull'intervallo come $\mathcal{R}([a,b])$ è totalmente equivalente parlare di integrabilità su aperti o semiaperti, poichè questo vorrebbe dire avere un insieme finito di discontinuità e la R-integrabilità rimane garantita.
+
+\begin{theorem}[Integrabilità su intervalli spezzati]
+    $f\in\mathcal{R}([a,b]) \Leftrightarrow f\in\mathcal{R}([a,c]), f\in\mathcal{R}([c,b])$ con $c\in[a,b]$.
+    \begin{proof}[($\Rightarrow$)]
+        Se ho una partizione $P$ su $[a,b]$ se aggiungo il punto $c$ ne ho un raffinamento $P^*$. Se la R-integrabilità era garantita all'inizio lo è sicuramente con un raffinamento.
+    \end{proof}
+    \begin{proof}[($\Leftarrow$)]
+        Se la $f$ è integrabile su $[a,c]$ e $[c,b]$ vuol dire che $\mu([a,c])=\mu([c,b])=0$. So che l'unione di insiemi di L-misura nulla ha L-misura nulla, quindi l'integrabilità è garantita anche su $[a,b]$.
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+    Se $f\geq 0 \Rightarrow \int_{a}^{b}f \geq 0$. \; Se $f\leq 0 \Rightarrow \int_{a}^{b}f \leq 0$. Entrambi per la monotonia dell'integrale.
+\end{theorem}
+
+\begin{theorem}
+    Sia $f\in\mathcal{C}([a,b])$ e $f$ è di segno costante. Se $\int_{a}^{b}f=0 \Rightarrow f=0$.
+    \begin{proof}[Dim per assurdo]
+        Dimostro per una $f\geq 0$. Sia per assurdo $f(c)>0$ per qualche $c\in[a,b]$. Per la continuità di $f$ ho che $\exists \, \alpha,\beta \: : a<\alpha<c<\beta<b \,\wedge\, f(x) > \frac{f(c)}{2} \:\text{con}\: x\in(\alpha,\beta)$.
+        Prendo $g(x)= \begin{cases}
+            f(x) & x\in(\alpha,\beta) \\
+            0 & altrove \\
+        \end{cases}$
+        Allora $g \leq f \Rightarrow \int_a^b g \leq \int_a^b f$ ma $\int_a^b f > (\beta-\alpha)\frac{f(c)}{2}>0$. Assurdo! $f$ ha integrale nullo per ipotesi!
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[Media integrale]
+    Sia $f\in\mathcal{R}([a,b])$ e $f(x)\in[\alpha,\beta] \; \forall x\in[a,b]$. Allora $\gamma=\frac{1}{b-a}\int_a^bf(x)dx\in[\alpha,\beta]$.
+    \begin{proof}[Dim]
+        Per una funzione limitata ho che questa si trova tra $\inf f$ e $\sup f$, ed è vero che 
+        \[
+            (b-a)\inf f \leq \int_a^b f\leq (b-a)\sup f 
+        \]
+        Da cui posso definire $\gamma := \frac{1}{b-a}\int_a^b f$
+    \end{proof}
+\end{theorem}
+
+\begin{remark}
+    Il teorema della media integrale è un corollario di (D). In particolare se $f$ è continua allora il valore $\gamma$ viene realmente assunto dalla funzione per il teorema dei valori intermedi. La media integrale è una generalizzazione della media aritmetica. La media aritmetica viene fatta su un insieme discreto di punti e infatti il suo valore potrebbe non essere uno degli addendi.
+\end{remark}
+
+\vspace{3mm}
+
+Adesso introduciamo alcune convenzioni: considerando una funzione limitata $f\in\mathcal{R}([a,b])$ con $a<b$ (ho quindi un intervallo orientato) dico che:
+
+\[
+    \int_a^a f(x) \, dx = 0 \; \text{(anche se $f$ non è definita in a)} \qquad \int_a^b f(x) \, dx = -\int_b^a f(x)\, dx    
+\]
+
+\begin{remark}[Validità delle disuguaglianze tra integrali]
+    Non è più vero quanto detto in Oss. 4.7 poichè invertendo gli estremi di integrazione inverto il segno, ma è vero per $a \lesseqgtr b$ che 
+    \[
+        \left|\int_a^b f \right| \leq \left|\int_a^b \left| f \right| \right|
+    \]
+\end{remark}
+
+\begin{remark}[Introduzione alla funzione integrale]
+    Presa una qualunque funzione $f$ R-integrabie su $[a,b]$ (e ovviamente aperti o semiaperti) posso dire che esista sempre l'integrale $\displaystyle{F(x)=\int_\alpha^x f} \; \forall x \in [a,b]$. Ovviamente $F(\alpha)=0$ per convenzione. La crescita o la decrescita di $F$ dipende dal legame con la sua derivata, ma questo lo vedremo nel TFCI.
+\end{remark}
+
+\newpage
+\section{Lezione 5 - 15/03/2021}
+
+\begin{remark}[Funzione integrale e discontinuità]
+    Se nella integranda sono presenti delle discontinuità queste avranno sulla funzione integrale l'effetto di cambiare la sua velocità di crescita, ovvero impatta la sua derivata. Questo non modifica però la continuità di $F$. Infatti in prossimità di una discontinuità $\beta$ di $f$ ho che
+    \[
+        F(\beta)=\int_\alpha^\beta f \qquad F(x>\beta) = \int_\alpha^\beta f + \int_\beta^x f
+    \]
+    Essere in prossimità di $\beta$ vuol dire che $\left|x-\beta\right|<\delta$ e avrò che le immagini di questi punti sono $\left|f(\beta)-f(x)\right|<\varepsilon$. Ma questa è la definzione di continuità! Pertanto la funzione integrale $F$ è continua.
+\end{remark}
+
+\begin{remark}[Filosofeggiazioni]
+    La derivata "sregolarizza" le funzioni, mentre per l'integrale è il contrario. Cioè, integrando una funzione discontinua ottengo una funzione continua, mentre derivando una funzione (che deve essere necessariamente continua affinchè sia possibile) ne ottengo una che in genere è peggiore.
+\end{remark}
+
+\begin{definition}[\textbf{Funzione lipschitziana} in spazi normati]
+    Data $f:\Omega \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^m$, essa è K-lipschitziana su $\Omega$ se $\exists K \geq 0$ t.c. $\displaystyle{\frac{\left|\left|f(x)-f(y)\right|\right|}{x-y}\leq K \quad \forall x,y \in\Omega}$.
+\end{definition}
+
+\begin{definition}[\textbf{Funzione lipschitziana} in spazi metrici]
+    Dati $(X_1,d_1)$ e $(X_2,d_2)$, $f:X_1\rightarrow X_2$ è K-lipschitziana se $\exists K \geq 0$ t.c. $\displaystyle{\forall x,y \in X_1 \Rightarrow d_2(f(x),f(y))\leq K\cdot d_1(x,y)}$ 
+\end{definition}
+
+\begin{theorem}
+    Sia $F:\mathbb{R} \rightarrow \mathbb{R}$ derivabile (tranne al più in qualche punto) con i reali come spazio metrico. Allora $F$ è K-lipschitziana $\Leftrightarrow \underset{X}{sup}\left|F'(x)\right|\leq K$
+    \begin{proof}[Dim. ($\Rightarrow$)]
+        Siccome $F$ è lipschitziana so che $\displaystyle{\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K}$ $\forall x,x_0 \in \mathbb{R}$ da cui passando al limite si ottiene $F'(x_0)\leq K$.
+    \end{proof}
+    \begin{proof}[Dim ($\Leftarrow$)]
+        Siccome $F'(x_0)\leq K$ $\forall x_0 \in \mathbb{R}$ posso usare il Teo Lagrange (ho le ipotesi di funzione continua su $[a,b]$ compatto e derivabile su $(a,b)$ soddisfatte) per dire che allora in un intervallo $[a,b] \in \mathbb{R}$ $\exists c\in(a,b):f'(c)=\frac{f(b)-f(a)}{b-a}$ da cui potendo scegliere arbitrariamente $a$ e $b$ ottengo che $\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K$ $\forall x,x_0 \in \mathbb{R}$ che altro non è che la definizione di lipschitzianità.
+    \end{proof}
+\end{theorem}
+
+\begin{example}
+    $F(x)=\left|x\right|$ è 1-lip su $\mathbb{R}$ ma non è globalmente derivabile. Infatti la lipschitzianità non implica necessariamente la derivabilità. La lipschitzianità è però più forte della uniforme continuità, infatti la implica (e a cascata l'uniforme continuità implica la continuità semplice). Lipschitz $\Rightarrow$ uniforme continuità $\Rightarrow$ continuità. Posso ovviamente esistere funzioni globalmente continue ma non lipschitziane, come $x^{1/3}$.
+    
+    Ora dimostro che Lipschitz $\Rightarrow$ uniforme continuità.
+    \begin{proof}[Dim]
+        Avendo $f$ lipschitziana vuol dire che $\forall x,y\in\mathbb{R} \; \left|f(x)-f(y)\right| \leq K\cdot \left|x-y\right|$. Se prendo, per arrivare alla continuità uniforme, un $\varepsilon>0$ e $\left|x-y\right|<\delta(\varepsilon)=\varepsilon/K$ ho che per l'arbitrarietà di $\varepsilon$ vale che $\left|f(x)-f(y)\right| < \varepsilon$, che altro non è che la definizione di uniforme continuità (la quale so implicare la continuità semplice).
+    \end{proof}
+\end{example}
+
+\begin{remark}[Precisazioni sulla lipschitzianità]
+    Parlare di una funzione K-lip vuol dire che $K=inf \alpha: F \;\text{è}\; \alpha-lip$. K infatti è "la" costante di Lipschitz. A volte non ho necessità di trovare la migliore costante di Lipschitz, ma solo una qualunque. È evidente che presa una funzione $F$ che sia K-lipschitziana e preso un valore $H>K$ allora $F$ sia anche H-lipschitziana, poichè $\displaystyle{\frac{\left|F(x)-F(x_0)\right|}{\left|x-x_0\right|}\leq K<H}$.
+\end{remark}
+
+\begin{theorem}[TFCI]
+    Sia $f\in\mathcal{R}([a,b])$ e $F(x)=\int_a^x f(t)\,dt$. Allora
+    \begin{enumerate}
+        \item [1.] $F$ è lipschitziana su $[a,b]$ ($\Rightarrow$ uniformemente continua $\Rightarrow$ continua per quanto detto in Ex 5.1).
+        \item [2.] Se $f$ è continua in $x_0\in[a,b] \Rightarrow$ $F$ è derivabile in $x_0$ e $F'(x_0)=f(x_0)$.
+    \end{enumerate}
+
+    \begin{proof} [Dim 1]
+        Voglio dimostrare che $f\in\mathcal{R}([a,b]) \Rightarrow$ $F$ è limitata t.c. $\left|F(x)\right| \leq K$ $\forall x \in [a,b]$(il che è sufficiente a garantirmi la continuità).
+        \[
+        \left|F(x)-F(p)\right|=\left|\int_a^x f(t)\, dt - \int_a^p f(t)\, dt \right| = \left|\int_a^x f(t)\,dt + \int_p^a f(t)\,dt \right| = \left|\int_p^x f(t)\, dt\right|\leq \left|\int_p^x \left| f(t)\right|\,dt \right| \leq K\left|x-p\right|
+        \]
+        per una qualche costante $K$ (che suppongo essere la media integrale, ma non ho conferme). Ma ciò che ho ottenuto alla fine della catena di disuglianze altro non è che la lipschitzianità!
+    \end{proof}
+    \begin{proof}[Dim 2]
+        Partendo dalla continuità di $F$ appena dimostrata voglio arrivare a dire che la continuità in un punto implica la derivabilità, con derivata pari all'integranda valutata nel punto. Detto in formule:
+        \[
+            \forall x \in [a,b]: \left|x-x_0\right| < \delta \Rightarrow \left|\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| \leq \varepsilon
+        \]
+        
+        Poichè $f$ è continua in $x_0$ ho Che
+        \[
+            \forall \varepsilon >0 \; \exists\, \delta=\delta(\varepsilon): \; \forall t\in (x_0-\delta,x_0+\delta) \cap [a,b] \Rightarrow \left|f(t)-f(x_0)\right| < \varepsilon
+        \]
+        Riprendendo la prima espressione posso svilupparla:
+        \[
+            \left|\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| = \left|\frac{\int_a^xf(t)\,dt-\int_a^{x_0}f(t)\,dt}{x-x_0}-f(x_0)\right| = \left|\frac{\int_{x_0}^xf(t)\,dt}{x-x_0}-\frac{\int_{x_0}^xf(x_0)\,dt}{x-x_0}\right| = 
+        \]
+        \[
+            =\left|\frac{\int_{x_0}^x(f(t)-f(x_0))\,dt}{x-x_0}\right| \leq \frac{\left|\int_{x_0}^x(f(t)-f(x_0))\,dt\right|}{\left|x-x_0\right|}  = (\star)  
+        \]  
+        Ma come già detto nelle prime due espressioni ho che $\left|x-x_0\right|<\delta$ e $\left|t-x_0\right|<\delta$ e quindi $\left|f(t)-f(x_0)\right|<\varepsilon$. Da cui:
+        \[
+            (\star) < \frac{\left|\int_{x_0}^x \varepsilon\,dt\right|}{\left|x-x_0\right|} = \frac{\varepsilon\left|x-x_0\right|}{\left|x-x_0\right|}=\varepsilon    
+        \] 
+    \end{proof}
+\end{theorem}
+
+\begin{remark}[Precisazioni sul TFCI 1]
+    Ovviamente nelle ipotesi del TFCI non sto chiedendo una funzione continua, perchè purchè l'insieme dei punti di discontinuità sia $\mu(D)=0$ e la funzione sia limitata la R-integrabilità è garantita.
+\end{remark}
+
+\begin{remark}[Precisazioni sul TFCI 2]
+    Se $f$ è globalmente continua su $[a,b]$ allora $F\in\mathcal{C}^1([a,b])$ e quindi $F'(x) = f(x) \; \forall x\in[a,b]$ e ovviamente $f$ ammette primitiva. Essere $\mathcal{C}^n$ su un intervallo vuol dire essere continua e derivabile $n$ volte con tutte le $n$ derivate continue.
+\end{remark}
+
+\begin{remark}[Precisazioni sul TFCI 3]
+    Se il punto $x_0$ considerato nel secondo punto TFCI fosse un estremo dell'intervallo mi basterebbe avere la derivata destra o sinistra.
+\end{remark}
+
+Il TFCI porta come interessante conseguenza la Formula Fondamentale del Calcolo Integrale (FFCI o FCI).
+
+\begin{theorem}[FFCI]
+    Sia $f\in\mathcal{C}([a,b])$ e sia $\varPhi$ una primitiva di $f$ su $[a,b]$. Allora $\displaystyle{\int_a^bf(t)\,dt=\varPhi(b)-\varPhi(a)}$.
+    \begin{proof}[Dim.]
+        Poichè $f$ è continua sull'intervallo ho che $F(x)=\int_a^xf(t)\,dt$ è una primitiva di $f$ (la continuità ovviamente mi garantisce la R-integrabilità).
+        $Rightarrow$ $F$ e $\varPhi$ differiscono di una costante. Posso quindi scrivere qualcosa del tipo $\displaystyle{\varPhi(x)=F(x)+c \quad \forall\,x \in [a,b]}$. Ma quindi ho che
+        \[
+            \varPhi(b)-\varPhi(a) = F(b) + c - F(a) - c = F(b) - F(a) = \int_a^bf(t)\,dt   
+        \]
+        e così ho dimostrato la tesi.
+    \end{proof}
+\end{theorem}
+
+\begin{remark}[Notazione dell'integrale definito]
+    Parlando di valutazione della funzione integrale tra due punti, cioè $g(b)-g(a)$, posso anche indicarlo con $g(x)\big|_a^b$.
+\end{remark}
+
+\begin{theorem}[FFCI più sciolta]
+    Questa versione della FFCI chiede meno ipotesi. Si enuncia e dimostra come segue.
+
+    Sia $f\in\mathcal{R}([a,b])$ con primitiva $\varPhi$. Allora $\displaystyle{\int_a^bf(x)\,dx=\varPhi(b)-\varPhi(a)}$.
+    \begin{proof}[Dim.]
+        DA PRENDERE DAGLI APPUNTI 11MARZO2021.PDF
+    \end{proof}
+\end{theorem}
+
+\begin{remark}[Osservazioni sulla FCI]
+    \begin{enumerate}
+        \item [1.] Nella FFCI è essenziale richiedere che $f$ sia la derivata di $\varPhi$ in ogni punto dell'intervallo $[a,b]$ (quindi è importante richiedere che sia $\mathcal{C}$). Ad esempio $f(x)=sign(x)$ ha integrale $G(x)=\begin{cases}
+            -x & x \leq 0 \\
+            x+1 & x>0\\
+        \end{cases}$.
+        Ho che $G'(x)=f(x) \; \forall x \neq 0$, ma ottengo l'assurdo $0=\int_{-1}^1f(x)\,dx \neq G(1)-G(-1)=1$.
+        \item [2.] Nella formulazione più sciola della FFCI, dove non si richiede la continuità di $f$ è importante richiedere la sua integrabilità. 
+    \end{enumerate}
+\end{remark}
+
+\begin{remark}[Integrazioni di funzioni pari e dispari]
+    Sia $a>0$ e sia $f\in\mathcal{R}((c-a,c+a))$.
+
+    Se $f$ è \textbf{pari} rispetto a $c$ sia ha che $\int_{c-a}^{c+a}f(x)\,dx=2\int_c^{c+a}f(x)\,dx$. Infatti con $c=0$ e $t=-z$ ho che $\int_0^af(t)\,dt=-\int_0^{-a}f(-z)\,dz=\int_{-a}^0f(z)\,dz$ da cui la tesi.
+
+    Se $f$ è \textbf{dispari} rispetto a $c$ si ha $\int_{c-a}^{c+a}f(x)\,dx=0$. Infatti con $t=-z$ e $c=0$ ho che $\int_{-a}^{a}f(x)\,dx=-\int_a^{-a}f(-z)\,dz=\int_a^{-a}f(z)\,dz=-\int_{-a}^af(z)\,dz$
+\end{remark}
+
+\begin{definition}[Funzione localmente integrabile]
+    Sia $f:(\alpha,\beta)\rightarrow \mathbb{R}$ (o intervalli semiaperti o chiusi). Diremo che $f$ è localmente R-integrabile su $(\alpha,\beta)$ se $\forall x \in (\alpha,\beta)$ esiste un intorno $(x-\delta,x+\delta)$ in cui $f$ è R-integrabile.
+\end{definition}
+
+\begin{remark}
+    Se $f\in\mathcal{R}([a,b])\Rightarrow f\in\mathcal{R}_{loc} \Leftrightarrow f\in\mathcal{R}_{loc}(I) \Leftrightarrow f\in\mathcal{R}(I) \;\forall\; \text{compatto} \subset I$.
+
+    Il viceversa della prima implicazione non è vero, infatti $f(x)=\frac{1}{x}$ è $\mathcal{R}_{loc}((0,1))$ ma non è $\mathcal{R}([a,b])$.
+
+    Inoltre $\mathcal{R}_{loc}$ è uno spazio vettoriale contenuto in $\mathcal{R}(I)$ se $I$ è compatto.
+\end{remark}
+
+\begin{remark}
+    Ogni $f:\mathbb{R}\rightarrow\mathbb{R}$ è $\mathcal{R}_{loc}(\mathbb{R})$ e questo è abbastanza intuitivo.
+
+    $f\in\mathcal{R}_{loc}([a,b])$ con $a,b\in\mathbb{R}$ $\Leftrightarrow f\in\mathcal{R}([a,b])$. L'intervallo deve essere necessariamente compatto, solo così posso garantirmi la limitatezza. Se non fosse compatto potrei non avere limitatezza e quindi non avere R-integrabilità.
+\end{remark}
+
+\newpage
+\section{Lezione 6 - 18/03/2021}
+
+\begin{remark}
+    Quando ho un'integrale definito come $\displaystyle{\int_a^b f(x)\,dx}$ la variabile $x$ è muta, come l'indice in una sommatoria, nel senso che non appare nel risultato finito. Specifico che il parallelismo tra integrali e serie sia esteso anche molto oltre questo dettaglio.
+\end{remark}
+
+\begin{remark}[Sostituzione negli integrali definiti]
+    L'integrazione per sostituzione negli integrali definiti richiede un'azione anche sugli estremi di integrazione. Il teorema di integrazione per sostituzione lo trovo nella apposita sezione. Spiego cosa devo fare con un esempio:
+    \[\int_0^\pi \frac{dx}{1+cos^2x}=\quad (\text{sostituzione: } tg\,x = t \rightarrow x=artg\,t, \:dx=\frac{1}{1+t^2}dt)=\int_{tg\,0}^{tg\,\pi}...\,dt=\int_0^0...\,dt=0\]
+
+    Evidentemente c'è un problema nel modo in cui ho lavorato sugli estremi, perchè l'integrale di una funzione mai nulla non può essere nullo. L'errore è nel fatto che la sostituzione che sto facendo con $x=artg\,t$ ha codominio $(-\frac{\pi}{2}, \frac{\pi}{2})$ mentre l'integrale lo voglio fare sull'intervallo $(0,\pi)$. \textbf{Se voglio fare una sostituzione devo lavorare su due intervalli in corrispondenza biunivoca}. È evidente che il modo migliore per avere questa corrispondenza sia trovare l'integrale in $(0,\frac{\pi}{2})$ e $(\frac{\pi}{2},\pi)$ per poi incollarli.
+\end{remark}
+
+\begin{remark}
+    Sia $f:\mathbb{R}\rightarrow\mathbb{R}$ periodica di periodo $T$, cioè $f(x+T)=f(x)\;\forall x\in\mathbb{R}$, e integrabile su $(0,T)$. Allora $f\in\mathcal{R}_{loc}(\mathbb{R})$ e la funzione $\displaystyle{F(x)=\int_x^{x+T}f(t)\,dt}$ è costante. $\displaystyle{\int_0^T f(t)\,dt=\int_x^{x+T}f(t)\,dt \quad \forall x\in\mathbb{R}}$. Ricordo che locale integrabilità vuol dire integrabilità in ogni intervallo limitato $(a,b)\subseteq\mathbb{R}$.
+    \begin{proof}[Dim]
+        Dall'additività dell'integrale si ha
+        \[\int_x^{x+T}f(t)\,dt=\int_x^0 f(t)\,dt + \int_0^T f(t)\,dt + \int_T^{T+x}f(t)\,dt = \int_o^T f(t)\,dt\]
+        Poichè dalla periodicità ho che 
+        \[\int_x^0 f(t)\,dt=\int_x^0 f(t+T)\, dt = (\text{sostituzione: }t+T=z) = \int_{x+T}^T f(z)\,dz = -\int_T^{x+T} f(t)\,dt\]
+    \end{proof}
+\end{remark}
+
+\begin{remark}
+    Ricordo che la definizione di funzione integrale è $\displaystyle{F(x)=\int_\alpha^x f(t)\,dt}$, dove la funzione $f$ è $f:I\rightarrow\mathbb{R}$ con $\alpha,x\in I$ (i due punti appartengono all'intervallo, poichè se c'è l'integrabilità sull'aperto anche aggiungendo un numero finito di punti non la modifico).
+
+    Il dominio della funzione integrale $\Omega_F$ deve essere un intervallo $\subset \overline{I}$. Questo perchè se il dominio di $F$, che è $\Omega_F$, non fosse un intervallo, allora dovrebbero esistere due punti $x,y\in\Omega_F$ tali che $[\alpha,x]\subset I$ e $[\alpha,y]\subset I$. Ma questo significherebbe che potenzialmente $[x,y]\not\subset\Omega_F$ (l'intervallo che unisce $x$ ed $y$ non è contenuto completamente nel dominio della funzione integrale), il che è assurdo. Vorrebbe dire che in $\Omega_F$ potrei andare da $\alpha$ ad $x$, da $\alpha$ ad $y$ ma non da $x$ ad $y$.
+
+    \vspace{3mm}
+
+    In generale è possibile incontrare funzioni \underline{definite tramite} integrali, ma che non sono funzioni integrali! Ad esempio $\displaystyle{F(x)=\int_{a(x)}^{b(x)}f(t,x)\,dt}$ è una funzione definita tramite integrale, e nell'ipotesi in cui $f(t,x)$, $a(x)$, $b(x)$ siano continue, anche $F(x)$ lo è, ma ciononostante non è una funzione integrale, perchè il suo dominio non è un intervallo.
+
+    \vspace{3mm}
+
+    Un altro esempio è $\displaystyle{F(x)=\int_1^{x^2}\frac{dt}{t}}=2log\left|x\right|$, che è una funzione definita in $\mathbb{R}\backslash\lbrace0\rbrace$ che ovviamente non è un intervallo. Il dominio di $F$ non comprende lo zero poichè in quel punto la funzione non è limitata. Se evitassi il caso $x=0$ comunque non sarebbe una funzione integrale, perchè come estremo superiore ho $x^2$, mentre dovrei avere per definizione solo $x$.
+\end{remark}
+
+\begin{remark}[Cosa è una funzione integrale?]
+    DA FARE
+\end{remark}
+
+\begin{remark}[Integrali impropri: premesse qualitative]
+    Per la monotonia dell'integrale si ha che presa una funzione R-integrabile e di segno costante allora l'integrale è monotono, indipendentemente dalla relazione d'ordine tra gli estremi.
+
+    Nel lavorare con gli integrali è sempre buona regola ricordare il loro significato geometrico.
+\end{remark}
+
+CONTINUARE FINENDO LA LEZIONE 6
+
+\newpage
+\section{Lezione 7 - 22/03/2021}
+
+\begin{remark}
+    Suppongo per esempio di avere le seguenti funzioni integrali:
+    \[F(x)=\int_1^x\frac{dt}{t^2} \qquad G(x)=\int_1^x\frac{dt}{t} \qquad H(x)=\int_1^x\frac{dt}{\sqrt{t}}\]
+
+    Tratto $F(x)$. Calcolando il suo valore per $x\rightarrow+\infty$ ho che $\displaystyle{F(x)=-\frac{1}{t}\bigg|_1^x=1-\frac{1}{x}}\underset{x\rightarrow+\infty}{\uparrow}1$, dove $\uparrow$ significa "tende monotonamente a".
+
+    Questo è un potente risultato: la R-integrabilità non è garantita per intervalli illimitati, ma posso ovviare al problema vedendo l'integrale, detto \textbf{improprio} o \textbf{generalizzato}, come limite di un integrale di Riemann. Si amplia quindi la classe delle funzioni integrabili, introducendo al suo interno tutte quelle funzioni che integrate su un intervallo illimitato convergono a un valore finito. Infatti grazie a questo ampliamento ho che $\displaystyle{\int_1^{+\infty}\frac{dt}{t^2}=1}$.
+
+    Riguardo a $G(x)$ ho che $G(x)=log\,t\bigg|_1^x=log\,x\underset{x\rightarrow+\infty}{\uparrow}+\infty$. Questa funzione non è integrabile in senso improprio perchè il valore dell'integrale diverge. Si può dire, interpretando il grafico di $\displaystyle{\frac{1}{t}}$, che questo accada perchè l'integranda non si "schiaccia" abbastanza velocemente sull'asse delle ascisse. In generale l'integrale improprio è finito quando una funzione generica si "schiaccia" abbastanza velocemente contro uno dei due assi. Ciò che conta è l'ordine di infinitesimo (se si schiaccia sulle ascisse) o di infinito (se si schiaccia sulle ordinate).
+\end{remark}
+
+\begin{definition}[Integrale improprio su intervalli non limitati]
+    Sia $f:I=[a,+\infty)\rightarrow\mathbb{R}$ tale che $f\in\mathcal{R}_{loc}(I)$. Diremo che $f$ è \textbf{integrabile in senso generalizzato (o improprio) su I} (oppure che $\int_a^bf(t)\,dt$ converge) se
+    \[\text{\textbf{esiste finito}} \underset{x\rightarrow+\infty}{lim}\int_a^xf(t)\,dt:=\int_a^{+\infty}f(t)\,dt\]    
+
+    Specifico che considerare la locale integrabilità invece della R-integrabilità rende determinante la presenza o l'esclusione di un estremo, perchè essere localmente integrabili vuol dire essere integrabili in un intorno del punto.
+\end{definition}
+
+\begin{remark}
+    Tratto invece $H(x)$ non su un intervallo illimitato, ma su $(0,1)$ (la funzione è però divergente su 0). Risulta che $\displaystyle{\int_1^x\frac{dt}{\sqrt(x)}=2\sqrt(x)-2 \underset{x\rightarrow 0^+}{\uparrow}-2}$ (dove il risultato è negativo poichè $a<b$).
+
+    Specifico inoltre che $H(x)$ ammetta integrale improprio su 0 ma non a $+\infty$.
+\end{remark}
+
+\begin{definition}[Integrale improprio di funzioni illimitate]
+    Sia $f:I=[a,b)\rightarrow\mathbb{R}$ tale che $f\in\mathcal{R}([a,x])\;\forall x\in[a,b)$. Diremo che $f$ è \textbf{integrabile in senso generalizzato (o improprio) su I} (oppure che $\int_a^b f(t)\,dt$ converge) se 
+    \[\text{\textbf{esiste finito}} \underset{x\rightarrow b^-}{lim}\int_a^x f(t)\,dt:=\int_a^b f(t)\,dt\]
+\end{definition}
+
+\begin{remark}[Note sulle funzioni precendenti e su notazioni]
+    $G(x)$ non è integrabile nemmeno su $(0,1)$, dove la funzione diverge. La letteratura spesso distingue i due integrali in prima e seconda specie. Questa divisione è però inutile poichè presa una $\frac{1}{x}$, se cambio intervallo da $(0,1)$ a $(1,+\infty)$ questa diventa biunivocamente e diffeomorfamente $\frac{1}{y}$.
+\end{remark}
+
+
+
+
+
+\newpage
+\section{Tavola degli integrali}
+
+Gli integrali notevoli sono ottenibili leggendo la tabella delle derivate al contrario.
+\begin{center}
+    \begin{tabular}{||c|c|c||}
+        \hline
+        $f$ & $\int_{}^{} f$ & C.E. \\
+        \hline\hline
+        0 & $c \in \mathbb{R}$ & \\
+        $x^n$ & $\frac{x^{n+1}}{n+1} + c $ & $ n \in \mathbb{N}_0, x \in \mathbb{R}$ \\
+        $x^\alpha$ & $\frac{x^{\alpha+1}}{\alpha+1}+c$ & $ \alpha \in -1, x > 0, \alpha \in \mathbb{R}$ \\
+        $\frac{1}{x}$ & $\begin{cases}
+                        \log x + c & \text{$x > 0$} \\
+                        \log (-x), & \text{$x < 0$} \\
+                        \end{cases}$ & \\
+        $e^{x}$ & $e^{x} + c$ & $x \in \mathbb{R}$ \\
+        $\sin x$ & $-\cos x + c$ & $x \in \mathbb{R}$ \\
+        $\cos x$ & $\sin x + c$ & $x \in \mathbb{R}$ \\
+        $Ch x$ & $Sh x + c$ & $x \in \mathbb{R}$ \\
+        $Sh x$ & $Ch x + c$ & $x \in \mathbb{R}$ \\
+        $1 + \tan^2 x = \frac{1}{\cos^2 x}$ & $\tan x + c$ & $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$ \\
+        $\frac{1}{1+x^2}$ & $\arctan x + c$ & $x \in \mathbb{R}$ \\
+        $\frac{1}{\sqrt{1-x^2}}$ & $\arcsin x + c$ & $x \in (-1,1)$ \\
+        $-\frac{1}{\sqrt{1-x^2}}$ & $\arccos x + c$ & $x \in (-1,1)$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+\section{Classi di funzioni integrabili per parti}
+
+L'integrazione per parti segue la formula 
+
+\[
+    \int f(x)g'(x)\, dx=f(x)g(x)- \int f'(x)g(x)\, dx
+\]
+
+dove $f(x)$ è il \textbf{fattore finito} e $g(x)$ è il \textbf{fattore differenziale}
+\begin{itemize}
+    \item [1.] $\displaystyle{\int P(x)sinx\,dx}\quad \displaystyle{\int P(x)cosx\,dx}$ dove $P(x)$ è il fattor finito.
+    \item [2.] $\displaystyle{\int P(x)e^x\, dx} \quad \displaystyle{\int P(x)Shx\, dx} \quad \displaystyle{\int P(x)Chx\, dx}$ dove $P(x)$ è il fattor finito.
+    \item [3.] $\displaystyle{\int P(x)log^nx\, dx}$ con $n\in\mathbb{N}$ dove il logaritmo è il fattor finito.
+    \item [4.] $\displaystyle{\int P(e^x)sinx\,dx} \quad \displaystyle{\int P(e^x)cosx\,dx}$ dove la funzione trigonometrica è il fattor finito.
+    \item [5.] $\displaystyle{\int P(x)artgx\, dx} \quad \displaystyle{\int P(x)arsinx\, dx} \quad \displaystyle{\int P(x)arcosx\, dx}$ dove FORSE il polinomio è il fattor differenziale.
+\end{itemize}
+
+L'integrazione per parti può essere usata per trovare \textbf{formule ricorsive} (dimostrazioni sul quaderno a Esercitazione 2). Alcune notevoli sono:
+\begin{itemize}
+    \item $\displaystyle{I_n=\int \frac{1}{(1+x^2)^n}\,dx}$ con $n\in\mathbb{N}$ $\Longrightarrow$ $\displaystyle{I_{n+1}= \frac{2n-1}{2n}I_n+\frac{x}{2n(1+x^2)^n}}+c$
+    \item $\displaystyle{\int x^3 (1+x^2)^n\, dx}$ con $n\in\mathbb{N}$ $\Longrightarrow$ $\displaystyle{I_{n+1}=\frac{x^2(1+x^2)^{n+1}}{2(n+1)} - \frac{(1+x^2)^{n+2}}{2(n+1)(n+2)}}+c$
+    \item $\displaystyle{\int sin^nx\,dx} \quad \displaystyle{\int cos^mx\,dx} \quad \displaystyle{\int sin^nx\,cos^mx\,dx}$ con $n,m\in\mathbb{N}$ e $n,m \geq 2$
+    \begin{itemize}
+        \item [$\circ$] $\displaystyle{C_n=-\frac{1}{n}sin^{n-1}x\,cosx+\frac{n-1}{n}C_{n-2}}$ 
+        \item [$\circ$] $\displaystyle{D_n=\frac{1}{n}cos^{n-1}x\,sinx+\frac{n-1}{n}D_{n-2}}$
+        \item [$\circ$] non la so
+    \end{itemize}
+\end{itemize}
+
+Queste formule sono dimostrabili, e sui pdf sono dimostrate. La logica è integrare per parti fino a ritrovare il pezzo iniziale. Quando le si usa, se voglio trovare ad esempio $I_4$ devo necessariamente calcolare tutti le $I$ precedenti. Non è corto, ma è l'unico modo.
+
+\newpage
+\section{Incollamenti e funzioni razionali}
+
+Se devo integrare una funzione che so essere R-integrabile ma che è definita a tratti la integro intervallo per intervallo, usando costanti additive diverse, per poi con un limite trovare il valore delle n costanti in funzione della prima.
+
+\vspace{3mm}
+
+Considero una funzione razionale del tipo $\displaystyle{f(x)=\frac{P(x)}{Q(x)}}$ con $P(x)$ e $Q(x)$ polinomi. Se $deg(P)\geq deg(Q)$ divido una per l'altra, ottenendo qualcosa della forma $\displaystyle{\frac{P(x)}{Q(x)}=R(x)+\frac{S(x)}{Q(x)}}$. Così facendo riesco ad ottenere, magari iterando, il grado del numeratore del risultato inferiore a quello del denominatore ($deg(P)<deg(Q)$) e quindi posso scomporre quanto ottenuto.
+
+\vspace{3mm}
+
+Adesso vediamo un po' di casi:
+
+\begin{itemize}
+    \item [1.] $\textbf{deg(Q)=1}$
+                \newline
+                Questo vuol dire che ho $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{A}{x-x_0}\,dx=Alog\left|x-x_0\right|+c}$ con il logaritmo scritto in forma "sintetica" che vale su un solo intervallo dei possibili.
+    \item [2.] $\textbf{deg(Q)=2}$
+                \newline
+                \newline
+                $\displaystyle{\int\frac{P(x)}{Q(x)}\,dx=\int\frac{Ax+B}{ax^2+bx+c}\,dx}$.
+                \begin{itemize}
+                    \item [$\circ$] $\displaystyle{\Delta_Q>0 \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{C}{x-x_1}+\frac{D}{x-x_2}}$. 
+                    
+                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{x-x_2}\,dx=C\,log\left|x-x_1\right|+D\,log\left|x-x_2\right|+c}$.
+                    Ovviamente supponendo $x_1<x_2$ la primitiva trovata vale su uno dei seguenti intervalli $(-\infty,x_1)\vee(x_1,x_2)\vee(x_2,+\infty)$.
+
+                    \item [$\circ$] $\displaystyle{\Delta_Q=0} \Rightarrow \frac{Ax+B}{ax^2+bx+c}=\frac{Ax+B}{a(x-x_1)^2}=\frac{C}{x-x_1}+\frac{D}{(x-x_1)^2}$.
+                    
+                    Da cui l'integrale è $\displaystyle{\int\frac{C}{x-x_1}+\frac{D}{(x-x_1)^2}\,dx}=C\log\left|x-x_1\right|-\frac{D}{x-x_1} +cost$.
+                    La primitiva trovata ovviamente vale su uno dei due intervalli dove è definita.
+
+                    \item [$\circ$] $\displaystyle{\Delta_Q<0}$. In questo caso il denominatore non è scomponibile in $\mathbb{R}$, ma posso ricondurmi a una forma comoda con il completamento del quadrato. 
+                    $\displaystyle{ax^2+bx+c=a[(x-x_1)^2+k^2]}$. Da cui posso arrivare a dire $\displaystyle{\frac{Ax+B}{ax^2+bx+c}=C\frac{2ax+b}{ax^2+bx+c}+\frac{D}{(x-x_1)^2+k^2}}$.
+
+                    I due termini posso ora integrarli facilmente, perchè il primo è un $Clog\left|ax^2+bx+c\right|$ con il modulo poichè è vero che l'argomento non ha zeri, ma potrebbe essere sempre negativo, e il secondo è $\displaystyle{D\int\frac{1}{k^2}\frac{1}{1+(\frac{x-x_1}{k})^2}\,dx=\frac{D}{k}\int\frac{\frac{1}{k}}{1+(\frac{x-x_1}{k})^2}=\frac{D}{k}artg\frac{x-x_1}{k}}$.
+
+                    In questo caso non ho problemi di intervalli, perchè la primitiva è su tutto $\mathbb{R}$.
+                \end{itemize}
+    \item [3.]  $\textbf{deg(Q)>2}$ Questo è il caso peggiore, in cui la ricerca della primitiva è lunga ed estremamente tecnica. È sempre possibile scomporre in modo  unico in fattori primi il polinomio $Q(x)$ come segue:
+    \[Q(x)=\alpha(x-x_1)^{n_1}\cdot(x-x_2)^{n_2}\cdot...\cdot(x-x_k)^{n_k}\cdot(x^2+\gamma_1x+\delta_1)^{m_1}\cdot(x^2+\gamma_2x+\delta_2)^{m_2}\cdot...\cdot(x^2+\gamma_jx+\delta_j)^{m_j}\]
+    dove $\alpha\in\mathbb{R}$, le $x_1 \; i=1,..,k$ le radici reali di $Q(x)$ ciascuna con molteplicità $n_i$ mentre i restanti termini sono trinomi di secondo grado irriducibili in $\mathbb{R}$.
+
+    Si può dimostrare (sinonimo di "si fotta la dimostrazione") che se $deg(Q(x))<12$ è sempre possibile decomporre la frazione $\frac{P(x)}{Q(x)}$ come
+    \[\frac{P(x)}{Q(x)}=\frac{\alpha_{11}}{x-x_1}+\frac{\alpha_{12}}{(x-x_1)^2}+...+\frac{\alpha_{1n_2}}{(x-x_1)^{n_1}}+\frac{\alpha_{21}}{x-x_2}+\frac{\alpha_{22}}{(x-x_2)^2}+...+\frac{\alpha_{2n_2}}{(x-x_2)^{n_2}}+...+\frac{\alpha_{k1}}{x-x_k}+\]
+    \[+\frac{\alpha_{k2}}{(x-x_k)^2}+...+\frac{\alpha_{kn_k}}{(x-x_k)^{n_k}}+\frac{C_{11}x+D_{11}}{x^2+\gamma_1x+\delta_1}+\frac{C_{12}x+D_{12}}{(x^2+\gamma_1x+\delta_1)^2}+...+\frac{C_{1m_1}x+D_{1m_1}}{(x^2+\gamma_1x+\delta_1)^{m_1}}+\]
+    \[+\frac{C_{21}x+D_{21}}{x^2+\gamma_2x+\delta_2}+\frac{C_{22}x+D_{22}}{(x^2+\gamma_2x+\delta_2)^2}+...+\frac{C_{2m_2}x+D_{2m_2}}{(x^2+\gamma_2x+\delta_2)^{m_2}}+...+\frac{C_{j1}x+D_{j1}}{x^2+\gamma_jx+\delta_j}+\]
+    \[+\frac{C_{j2}x+D_{j2}}{(x^2+\gamma_jx+\delta_j)^2}+...+\frac{C_{jm_j}x+D_{jm_j}}{(x^2+\gamma_jx+\delta_j)^{m_j}}\]
+
+    In questa espressione i binomi li integro in maniera semplice, come integrale di una potenza e i trinomi irriducibili posso vederli come
+    \[\frac{Cx+D}{(x^2+\gamma x+\delta)^m}=C\frac{2x+\gamma}{(x^2+\gamma x+\delta)^m}+\frac{\tilde{D}}{(x^2+\gamma x+\delta)^m}\]
+
+    dove l'integrazione del primo addendo è un logaritmo e quella del secondo è un arcotangente (come faccio nel caso di $\Delta_Q<0$) che, se avesse una molteplicità non unitaria posso ricondurla alla formula ricorsiva di $\displaystyle{\frac{1}{(1+x^2)^m}}$.
+
+\end{itemize}
+
+\newpage
+\section{Integrali per sostituzione}
+
+Siano $f:I\rightarrow\mathbb{R}$ e $\varphi:J\rightarrow I$ due funzioni tali che $f\in\mathcal{C}^1(I)$ e $\varphi\in\mathcal{C}^1(J)$ biettiva. Se $F$ è una primitiva di $f$, cioè $\displaystyle{\int f(t)\,dt=F(t)+c \quad \forall t\in I}$ allora una primitiva di $g(x)=f(\varphi(x))\varphi'(x)$ è $G(x)=F(\varphi(x))+c$ cioè
+\[\int f(\varphi(x))\varphi'(x)\,dx = \int f(t)\,dt\bigg|_{t=\varphi(x)}=F(\varphi(x))+C \quad \forall x\in J\]
+
+Vicerversa se conosco $G$, una primitiva di $g(x)=f(\varphi(x))\varphi'(x) \quad \forall x\in J$, cioè $\int g(x)\,dx=G(x)+c \quad \forall x \in J$, allora una primitiva di $f$ è $F(t)=G(x)\bigg|_{x=\varphi^{-1}(t)}=G(\varphi^{-1}(t))+c \quad \forall t \in I$ cioè
+
+\[\int f(t)\,dt=G(\varphi^{-1}(t))+c \quad \forall t\in I\]
+
+Infatti, per la legge di trasformazione dei differeziali, che verrà giustificata in seguito, ponendo $x=\varphi^{-1}(t)$ $\displaystyle{\;dx=(\varphi^{-1})'(t)\,dt=\frac{1}{\varphi'(\varphi^{-1}(t))}\,dt}$ da cui $\int g(x)\,dx=\int f(\varphi(\varphi^{-1}(t)))$ PROSEGUIRE DA QUI DA SLIDE 11 ANALISI2EX3.PDF, CREDO CI SIA UN ERRORE NEL PDF.
+
+\vspace{3mm}
+
+Casi notevoli (dove $R$ è una funzione razionale):
+\begin{itemize}
+    \item [1.] $\displaystyle{\int R(e^x)\,dx}$ $\Longrightarrow e^x=t \longleftrightarrow x=log\,t$ e $\displaystyle{dx=\frac{dx}{dt}dt}=\frac{dt}{t}$
+    \item [2.] $\displaystyle{\int R(sin\,x,cos\,x)\,dx}$ $\displaystyle{\Longrightarrow tg\frac{x}{2} \longleftrightarrow sin\,x=\frac{2t}{1+t^2}, cos\,x=\frac{1-t^2}{1+t^2}}$ e $\displaystyle{dx=\frac{2}{1+t^2}dt}$ se $x\in(-\pi,+\pi)$.
+    \item [3.] $\displaystyle{\int R(sin^2x,cos^2x,sinxcosx,tgx)dx}$ $\displaystyle{\Longrightarrow tg\,x=t \longleftrightarrow sin^2x=\frac{t^2}{1+t^2}, cos^2x=\frac{1}{1+t^2}, sinxcosx=\frac{t}{t^2+1}}$ e $\displaystyle{dx=\frac{1}{1+t^2}dt}$ se $x\in(-\pi/2,+\pi/2)$.
+    Questi integrali possono essere risolti con la sostituzione "universale" $t=tg\frac{x}{2}$, ma con questa sostituzione più appropriata risultano più semplici.
+    \item [4.] $\displaystyle{\int R(x^{p_1/q_1},x^{p_2/q_2},...,x^{p_n/q_n})\,dx}$ con $p_1,q_1\in\mathbb{N}$ $\Longrightarrow x=t^q, q=m.c.m.(q_1,...,q_n)$ e $dx=qt^{q-1}dt$.
+    \item [5.] $\displaystyle{\int R\left(\sqrt[q]{\frac{Ax+B}{Cx+D}}\right)dx}$ con $AD-BC=0$ $\Longrightarrow \displaystyle{\frac{Ax+B}{Cx+D}=t^q} \longleftrightarrow x=\frac{Dt^q-B}{A-Ct^q}$ e $\displaystyle{dx=q\frac{(AD-BC)t^{q-1}}{(A-Ct^q)^2}dt}$
+    \item [6.] $\displaystyle{\int R(x,\sqrt{a^2-x^2})\,dx} \Longrightarrow x=asint$ con $t\in[-\pi/2,+\pi/2]$ e $dx=acost\,dt$
+    \item [7.] $\displaystyle{\int R(x, \sqrt{x^2-a^2})\,dx}$ $\Longrightarrow x=aCht$ con $t\in\mathbb{R}^+$ e $dx=aSht\,dt$
+    \item [8.] $\displaystyle{\int R(x,\sqrt{x^2+a^2})\,dx}$ $\Longrightarrow x=aSht$ con $t\in\mathbb{R}$ e $dx=aCht\,dt$
+    \item [9.] $\displaystyle{\int x^{2n+1}R(\sqrt{a^2-x^2})\,dx}$, $\displaystyle{\int x^{2n+1}R(\sqrt{x^2-a^2})\,dx}$,$\displaystyle{\int x^{2n+1}R(\sqrt{a^2+x^2})\,dx}$ $\Longrightarrow \sqrt{\pm a^2 \pm x^2}=t$, $t\in\mathbb{R}^+$.
+\end{itemize}
+
+\newpage
+\section{Integrali definiti}
+
+\begin{theorem}[TFCI]
+    Se $f$ continua a limitata in $[a,b]$ e $F$ è una primitiva di $f$ su $[a,b]$ allora $\int_a^b f(x)\,dx = F(b)-F(a)$.
+\end{theorem}
+
+\begin{theorem}[TFCI con integrale improprio]
+    Se $f$ è continua e limtiata in $[a,b)$, $F$ è una primitiva di $f$ su $[a,b)$ ed $\displaystyle{\exists \underset{x\rightarrow b^-}{lim}F(x)=F(b^-)}$, allora $\int_a^bf(x)\,dx=F(b^-)-F(a)$.
+\end{theorem}
+
+\begin{theorem}[Sostituzione per integrali definiti]
+    Siano $f:[a,b]\rightarrow\mathbb{R}$ e $\varphi:[c,d]\rightarrow[a,b]$ che siano $f\in\mathcal{C}([a,b])$ e $\varphi\in\mathcal{C}'([c,d])$ e $\varphi$ invertibile, allora vale
+    \[\int_a^bf(x)\,dx=\int_{\varphi^{-1}(a)}^{\varphi^{-1}(b)}f(\varphi(t))\varphi'(t)\,dt\]
+    Nota bene: posso anche trovare la primitiva con il cambio di variabile, tornare alla variabile di partenza e quindi calcolare il valore dell'integrale.
+\end{theorem}
+
+\begin{remark}[Integrali definiti con funzioni pari e dispari]
+    \hspace{1mm}
+    \begin{itemize}
+        \item Se $f$ è una funzione \underline{pari}, cioè $f(x)=f(-x)$, allora $\int_{-a}^af(x)\,dx = 2 \int_0^af(x)\,dx$.
+        \item Se $f$ è una funzione \underline{dispari}, cioè $f(x)=-f(x)$, allora $\int_{-a}^af(x)\,dx = 0$.
+    \end{itemize}
+\end{remark}
+
+
+
+
+
+
+
+
+
+%È
+\end{document}
+
+

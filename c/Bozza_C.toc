@@ -1,0 +1,16 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Introduzione teorica}{2}%
+\contentsline {section}{\numberline {2}Progettazione dell'esperimento}{4}%
+\contentsline {section}{\numberline {3}Misure}{7}%
+\contentsline {subsection}{\numberline {3.1}Raccolta dati}{7}%
+\contentsline {subsection}{\numberline {3.2}Analisi dati - Misure Rossi e Tambini}{7}%
+\contentsline {subsection}{\numberline {3.3}Analisi dati - Misure Ramella e Redaelli}{8}%
+\contentsline {section}{\numberline {4}Calcolo c\begin {footnotesize}\textsubscript {BEST}\end {footnotesize}}{9}%
+\contentsline {section}{\numberline {5}Conclusioni}{9}%
+\contentsline {section}{\numberline {6}Appendice}{10}%
+\contentsline {subsection}{\numberline {6.1}Grafici e Tabelle - Rossi e Tambini}{10}%
+\contentsline {subsection}{\numberline {6.2}Grafici e Tabelle - Ramella e Redaelli}{18}%
+\contentsline {subsection}{\numberline {6.3}Grafici e Tabelle - Calcolo c}{21}%
