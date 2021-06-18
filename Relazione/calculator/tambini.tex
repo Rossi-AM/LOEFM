@@ -592,7 +592,7 @@ It is important to point out that this part works by using the concepts of "risi
 \begin{figure}[h]
     \centering
     \includegraphics[scale=.55]{IM_Converter.PNG}
-    \caption{}
+    \caption{The two memories (green and yellow), the 10x multiplier (the red RCA) and the adder (the blue RCA)}
     \label{Converter}
 \end{figure}
 
@@ -706,56 +706,73 @@ To do the subtraction we could have used the full subtractor, but we decided to 
 
 \clearpage
 \subsection{Memory}
-The final part of the input is the two memories in figure \ref{Memories}.
+The final part of the input is composed by the two memories in figure \ref{Memories}.
 
 \begin{figure}[h]
     \centering  
-    \includegraphics[scale=.4]{IM_Memories.PNG}
+    \includegraphics[scale=.5]{IM_Memories.PNG}
     \caption{Final part of the input section, composed of two memories, one for each number that needs storage}
     \label{Memories}
 \end{figure}
 
 \vspace{3mm}
 
-The first memory, highlighted in green, is where the first number gets stored. Considering that the first number is always positive, we can save it, and give it to the processing section, just as it is. 
-
-\vspace{1mm}
-
-Since we want this memory to be modified only when it has to register the first number, we added the AND wire that is controlled by the wire exiting the OR in figure \ref{SignBit}. 
-
-\vspace{1mm}
-
-With this, the memory will store information only when $+$ or $-$ are pressed. The wire is also connected to the right,side of the memory to a line that clear the memory from immage%number of immage (10x multiplier)
-making it possible to input the second number.
+The first memory, highlighted in green, is where the first number gets stored. Considering that, the first number is always positive, we can save it and give it to the processing section, just as it is. 
 
 \vspace{3mm}
 
-The second memory, highlighted in yellow, works in the same way as the first one but take the check at the input is done with the $=$ sign instead. %eh?
-
-One difference between the first and second memory are the XOR gates beyond the second memory. A XOR takes as first input a bit and as second the sign bit. Then the XOR output will be the same as the first input if the sign bit is positive, and inverted if negative. This is done to perform an addition between a negative and a positive number. 
+Since we want this memory to be modified only when it has to register the first number, we added the "NAND wire" that is the wire exiting the OR in figure \ref{SignBit}. This horizontal wire is located over the green memory.
 
 \vspace{3mm}
 
-To see the complete process about the addition of positive and negative number check section \ref{DEVOMETTERLOZIO}
+With this, the memory will store information only when $+$ or $-$ are pressed. The vertical wire that exists the OR gate on the top right corner of the green memory is responsible of clearing the green memory in figure \ref{Converter}, making it possible to insert the second number.
+
+\vspace{3mm}
+
+The second memory, highlighted in yellow, works in the same way as the first one, but it stores the number when the "=" button in pressed.
+
+\vspace{3mm}
+
+The XOR gates beyond the yellow memory invert the bits of second number, as already explained in section \ref{RCA_Section}, when the user is doing a subtraction.
 
 \subsection{Clear}
 
 The last input, not discussed yet, is the clear button. This button is connected to the reset line of all the memories and the sign bit, and it switches every flip-flop to 0. 
 
-\clearpage
+\subsection{Processing}
+
+The processing phase of the 16-bit calculator is done as explained in section \ref{RCA_Section}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.4]{SC_Processing_Total.JPG}
+  \caption{Processing section of the 16-bit calculator. The XOR gates in the bottom left zone are the ones highlighted in red in figure \ref{Memories} }
+  \label{ProcessingTotal}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.4]{SC_Processing2.JPG}
+  \caption{Ripple carry adder to sum the first and the second number. The red wire is the sign bit}
+  \label{Processing2}
+\end{figure}
+
+The results that exit the RCA will go to the decoding part.
+
+
+
+
 \subsection{Decoder}
 
-After the inputs have been processed (added or subtracted), it is needed a decoder (see figure \ref{Decoder}) in order to convert the output from binary number to its decimal form. Considering that this 16-bit calculator allows the user to insert numbers within the range (INSERIRE IL RANGE CAZZO), the operative boundary of this calculator is (INSERIRE).
+After the inputs have been processed, it is needed a decoder (see figure \ref{Decoder}) in order to convert the output from binary to its decimal form.
 
 \vspace{3mm}
 
-The largest number that can be shown as result is around $\pm$INSERIER (+INSERIER or -INSERIER, to be exact), both positive and negative. So the decoding circuit needs to have 6 led displays for the digits and one extra display for the sign.
+The theorical largest number, in absolute value, that can be outputted by 17 bits (one of them is the sign bit) is $2^{16}$. So the decoding circuit needs to have 5 led displays for the digits and one extra display for the sign. It is possible to note that the image shows a 6th led display for the digits, because we originally thought, by mistake, we could have a 18 bit output.
 
 \vspace{3mm}
 
-We decided to operate the binary-decimal conversion with the so called "double dabble" circuit, that will be explained later in the report. Nevertheless this was not the main problem. The double-dabble converts positive numbers perfectly, but not negative ones. The major issue was to adapt this circuit to work with both positive and negative numbers. 
-
-The representation of the negative binary numbers follows the "two's complement" rule. It means that taken a B number of bits, all the numbers that can be represented with a 0 in the $B-1$ position are considered positive, otherwise they are negative. This allows to split the 17 bits available in two sets of 16 bits, and so it is possible to have the range described above.
+We decided to operate the binary-decimal conversion with the so called "double dabble" circuit, that will be explained later in the report. Nevertheless this was not the main problem. The double-dabble converts positive numbers perfectly, but not negative ones. So we had to convert a negative number, if outputted, to a positive one and send the sign to the sign led display.
 
 \begin{figure}[h]
     \centering
@@ -766,44 +783,36 @@ The representation of the negative binary numbers follows the "two's complement"
 
 \subsubsection{About the number sign}
 
-The number sign has to be taken into account before converting the number into its decimal form. The number is a 16-bit binary, as already said, and it has one extra bit for the sign, the 16th bit.
+The number sign has to be taken into account before converting the number into its decimal form. The number is a 16-bit binary, as already said, and it has one extra bit for the sign.
 
+\vspace{3mm}
 
-This part of the circuit (represented in figure \ref{Converter}) uses full-adders and XOR logic gates, components that got already discussed in the previous sections. After the processing of the operation between the two inputs, the first 16 bits reach the A input of a specific full adder (the green lines in figure \ref{Converter}), whereas the sign bit follows the red path.
+This part of the circuit (represented in figure \ref{Converter_bis}) uses a ripple carry adder and XOR logic gates, components that got already discussed in the previous sections. After the operation has been done between the two inputs, the first 16 bits reach the A input the full adders (the green lines in figure \ref{Converter_bis}), whereas the sign bit follows the red path.
 
-This 16th bit reaches every B input of all the full adders, and also the XOR gates, that compare the result of the single full adders with the 16th bit. The sign bit is true (or 1) when the number is negative and 0 otherwise. This allows the full adders to sum 1, following the formula above, if the processing output is negative, whereas if it is positive the number just stays the same.
+\vspace{3mm}
 
-After this, the XOR gates, which truth table is 
-\begin{center}
-\begin{tabular}{||c|c||c||}
-    \hline
-    A & B & A XOR B \\
-    \hline
-    0 & 0 & 0 \\
-    \hline
-    0 & 1 & 1 \\
-    \hline
-    1 & 0 & 1 \\
-    \hline
-    1 & 1 & 0 \\
-    \hline
-\end{tabular}
-\end{center}
+This sign bit reaches every full adder B input, and also the XOR gates, that compare the result of the single full adders with the sign bit. The sign bit is true (or 1) when the number is negative and 0 otherwise. This allows the full adders to sum 1, following the formula above, if the processing output is negative, whereas if it is positive the number just stays the same.
 
-give the final result, which will go to the double dabble. Considering the full adder output as "A" for the XOR, and the sign bit as "B", it is possible to deduct that when the sign is false (so the processing output is positive) the XOR gates do not modify the full adder output (which do not work too, considering that their "B", the sign bit, is false as well). When the XOR "B" is true (so the processing output is negative), the XOR gives the opposite of its "A" as output.
+\vspace{3mm} 
+
+After this, the XOR gates, which truth table is give the final result, which will go to the double dabble.
 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.43]{SC_Converter.PNG}
     \caption{Picture of the first part of the decoder}
-    \label{Converter}
+    \label{Converter_bis}
   \end{figure}
-
+\pagebreak
 \subsubsection{Double dabble}
 
 This second part of the decoder is reached by the number that needs to be converted into decimal form. 
 
-The entire circuit relies on an algorithmic process based on the concept of "shift and add 3", which is the name of the component that mostly populates figure \ref{DoubleDabble}.
+\vspace{3mm}
+
+The entire circuit relies on an algorithmic process, based on the concept of "shift and add 3", which is the name of the component that mostly populates figure \ref{DoubleDabble}.
+
+\vspace{3mm}
 
 This algorithm takes a binary number and after having processed it gives an output divided into smaller parts composed of 4 bits each. Everyone of these parts will be then elaborated by 7 segment decoders and represent a single digit of the decimal number. The 7-segment decoders are obviously connected to 7-segments led displays, that can be seen on the right side of figure \ref{DoubleDabble}.
 
@@ -875,9 +884,9 @@ The goal of the "Shift and add 3" component, programmed using the customizable l
     \caption{"Shift and add 3" truth table}
   \end{table}
 
-It is clear, thanks to this figure, that when the number is greater than four it gets added three to it. The "shift" part can be seen in figure \ref{DoubleDabble}. If we consider the input A0 of a single Add3 component, when can see that its output, S0, is the input A1 for the next component.
+It is clear, thanks to this figure, that when the number is greater than four it gets added three to it. The "shift" part can be seen in figure \ref{DoubleDabble}. If we consider the input A0 of a single Add3 component, its output, S0, is the input A1 for the next component.
 
-After all this process the number is divided into 4 bit groups that enter the 7-segment decoders and than display the result.
+After all this process the number is divided into 4 bit groups that enter the 7-segment decoders and than display the result on led displays.
 
 
 
